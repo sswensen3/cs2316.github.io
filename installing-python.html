@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CS 2316 - Installing Python</title>
+  <meta name="viewport" content="width=device-width">
+
+  <!-- syntax highlighting CSS -->
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/navbar-fixed-top.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+    </head>
+    <body>
+
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">CS 2316</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="syllabus.html">Syllabus</a></li>
+              <li><a href="policies.html">Policies</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="resources.html">Resources</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      <div class="container">
+      <h2>Installing and Configuring Python</h2>
+
+<p>Step 1: Download the latest Python 3 installer for your operating system at <a href="https://www.python.org/downloads/">https://www.python.org/downloads</a></p>
+
+<p>Once Python is intalled, you need to ensure that you can run it from the command line, that is, that the <code>python3</code> executable is on your <code>path</code>.  If you run Linux, you probably don't need help with this.  If you run Mac OS X it just works.  If you run Windows, follow these steps:</p>
+
+<ol>
+<li>Go to the control panel, however you do that on your version of Windows.</li>
+<li>Go to the place for "advanced system settings."  There should be a button labelled "Environment Variables..." -- click on it.</li>
+<li>In the Environment Variables dialog find the <code>Path</code> variable under system variables (not user variables).  Select it and click the Edit.. button below.</li>
+<li>In the Edit dialog box put your cursor at the beginning of the entry (DON'T ERASE ANYTHING!) and type <code>C:\Python34;</code>. The semicolon delimits directory entries in the path.  Click OK.</li>
+<li>If your OS shell was open, close it and re-open it.</li>
+</ol>
+
+Note: these instructions assume that you accepted the defaults when you installed Python.  If you installed Python somethere else, enter that location in place of <code>C:\Python34;</code>.
+
+<h3>Checking Your Python Installation</h3>
+
+<ol>
+<li>Open a terminal, i.e., operating system (OS) command shell.</li>
+<ul>
+<li> The Mac OS X terminal is <code>/Applications/Utilities/Terminal.app</code> in the Finder.  You should drag Terminal to your dock -- you'll use it often.</li>
+<li>On Windows search for and run <code>cmd.exe</code></li>
+</ul>
+<li>At the command prompt type <code>python3 --version</code>.  You should get a response like <code>Python 3.4.0</code>.  Note: on Windows the Python 3 command is just <code>python</code> (without the 3).
+</li>
+</ol>
+
+<h3>The OS Shell Versus the Python Shell</h3>
+
+<p>The prompt for the OS shell typically ends with <code>$</code> on Unix, usually following the form <code>user@computer-name:pwd $</code> where <code>pwd</code> means present working directory.</p>
+
+<p>The prompt for the Python shell is <code>>>></code>, three greater-than symbols.</p>
+
+<h2>Additional Libraries</h2>
+
+<ul>
+<li>If you run on Mac OS X, <a href="http://www.python.org/download/mac/tcltk/"> you will need ActiveTcl as well - read this</a></li>
+<li>Pymysql for Python3 <a href="http://www.summet.com/dmsi/html/pymysql.html#installing-pymysql-for-python3">Installation Instructions</a></li>
+</ul>
+
+      </div>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  </body>
+  </html>
