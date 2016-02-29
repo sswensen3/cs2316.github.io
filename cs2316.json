@@ -1,0 +1,154 @@
+{
+    "intro-cs2316": {
+        "topic": "<a href=\"slides/intro-cs2316.pdf\">Intro to CS 2316</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "intro-python": {
+        "topic": "<a href=\"slides/python-overview.pdf\">Intro to Python</a>",
+        "readings": ["<a href=\"http://interactivepython.org/runestone/static/thinkcspy/GeneralIntro/introduction.html\">ITCS - Introduction</a>",
+                     "IP 1"],
+        "resources": [""]
+    },
+    "values-variables": {
+        "topic": "<a href=\"slides/values-variables.pdf\">Values and Variables</a>",
+        "readings": ["<a href=\"http://interactivepython.org/runestone/static/thinkcspy/SimplePythonData/simpledata.html\">ITCS - Simple Data</a>", "IP 2"],
+        "resources": [""]
+    },
+    "data-structures": {
+        "topic": "<a href=\"slides/data-structures.pdf\">Data Structures</a>",
+        "readings": ["<a href=\"http://interactivepython.org/runestone/static/thinkcspy/Lists/lists.html\">ITCS - Lists</a>", "<a href=\"http://interactivepython.org/runestone/static/thinkcspy/Dictionaries/dictionaries.html\">ITCS - Dictionaries</a>", "IP 2-3"],
+        "resources": [""]
+    },
+    "functions": {
+        "topic": "<a href=\"slides/functions.pdf\">Functions</a>",
+        "readings": ["<a href=\"http://interactivepython.org/runestone/static/thinkcspy/Functions/functions.html\">ITCS - Functions</a>", "<a href=\"http://interactivepython.org/runestone/static/thinkcspy/PythonTurtle/helloturtle.html\">ITCS - Turtles</a>", "IP 4"],
+        "resources": [""]
+    },
+    "control-structures": {
+        "topic": "<a href=\"slides/control-structures.pdf\">Control Structures</a>",
+        "readings": ["<a href=\"http://interactivepython.org/runestone/static/thinkcspy/Selection/selection.html\">ITCS - Selection</a>",
+                     "<a href=\"http://interactivepython.org/runestone/static/thinkcspy/MoreAboutIteration/moreiteration.html\">ITCS - Iteration</a>", "IP 4"],
+        "resources": [""]
+    },
+    "modules-programs": {
+        "topic": "<a href=\"slides/modules-programs.pdf\">Modules and Programs</a>",
+        "readings": ["<a href=\"http://interactivepython.org/runestone/static/thinkcspy/PythonModules/modules.html\">ITCS - Modules</a>", "IP 6"],
+        "resources": ["<a href=\"code/hanglib/\">hanglib</a>"]
+    },
+    "data-representation": {
+        "topic": "<a href=\"slides/data-representation.pdf\">Data Representation</a>",
+        "readings": [""],
+        "resources": []
+    },
+    "classes-objects": {
+        "topic": "<a href=\"slides/classes-objects.pdf\">Classes and Objects</a>",
+        "readings": ["<a href=\"http://interactivepython.org/runestone/static/thinkcspy/Classes/classesintro.html\">ITCS - Classes and Objects</a>"],
+        "resources": ["<a href=\"code/classes/student.py\">student.py</a>"]
+    },
+    "review1": {
+        "topic": "Review 1",
+        "readings": [""],
+        "resources": [""]
+    },
+    "csv-files": {
+        "topic": "<a href=\"slides/csv-files.pdf\">CSV Files</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "xml": {
+        "topic": "<a href=\"slides/xml.pdf\">XML</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "json": {
+        "topic": "<a href=\"slides/json.pdf\">JavaSctipt Object Notation</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "relational-databases": {
+        "topic": "<a href=\"slides/relational-databases.pdf\">Relational Databases</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "database-normalization": {
+        "topic": "<a href=\"slides/db-normalization.pdf\">Database Normalization</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "sql": {
+        "topic": "<a href=\"slides/sql.pdf\">SQL</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "python-xml-databases": {
+        "topic": "<a href=\"slides/python-xml-database.pdf\">Python XML and Database APIs</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "review2": {
+        "topic": "Review 2",
+        "readings": [""],
+        "resources": [""]
+    },
+    "html": {
+        "topic": "<a href=\"slides/html.pdf\">HTML</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "flask": {
+        "topic": "<a href=\"slides/flask.pdf\">Flask</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "text-processing": {
+        "topic": "<a href=\"slides/text-processing.pdf\">Text Processing</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "web-mining": {
+        "topic": "<a href=\"slides/web-mining.pdf\">Web Mining</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "python-guis": {
+        "topic": "<a href=\"slides/tkinter.pdf\">Python GUIs using tkinter</a>",
+        "readings": [""],
+        "resources": [""]
+    },
+    "review3": {
+        "topic": "Review 3",
+        "readings": [""],
+        "resources": [""]
+    },
+    "data-analysis": {
+        "topic": "Data Analysis",
+        "readings": [""],
+        "resources": [""]
+    },
+    "ipython": {
+        "topic": "IPython",
+        "readings": [""],
+        "resources": [""]
+    },
+    "numpy": {
+        "topic": "NumPy",
+        "readings": [""],
+        "resources": [""]
+    },
+    "pandas": {
+        "topic": "Pandas",
+        "readings": [""],
+        "resources": [""]
+    },
+    "matplotlib": {
+        "topic": "MatPlotLib",
+        "readings": [""],
+        "resources": [""]
+    },
+    "review4": {
+        "topic": "Review 4",
+        "readings": [""],
+        "resources": [""]
+    }
+}

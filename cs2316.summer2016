@@ -3,6 +3,8 @@ layout: default
 title: CS 2316 - Summer 2016
 ---
 
+<h1>Summer 2016 - Georgia Tech Lorraine</h1>
+
 <h2>Weekly Schedule</h2>
 
 <ul>
@@ -70,9 +72,9 @@ Week 8
 2016-07-05; text-processing
 2016-07-06; web-mining
 2016-07-07; web-mining
-2016-07-08; tkinter
+2016-07-08; python-guis
 Week 9
-2016-07-11; tkinter
+2016-07-11; python-guis
 2016-07-12; review3
 2016-07-13; <b>Exam 3</b>
 2016-07-14; Bastille Day - No class
@@ -86,13 +88,13 @@ Week 10
 2016-07-22; No Class
 Week 11
 2016-07-25; pandas
-2016-07-26; visualization
+2016-07-26; matplotlib
 2016-07-27;
 2016-07-28;
 2016-07-29; review4
 Finals Week
-2016-08-01
-2016-08-02
-2016-08-03
-2016-08-04
+2016-08-01;
+2016-08-02;
+2016-08-03;
+2016-08-04;
 2016-08-05; Departure
