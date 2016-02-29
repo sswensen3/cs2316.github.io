@@ -1,74 +1,95 @@
 ---
 layout: default
-title: CS 4400 - Summer 2016
+title: CS 2316 - Summer 2016
 ---
 
+<h2>Weekly Schedule</h2>
+
+<ul>
+  <li>Lecture: 4 days per week from 10:30 - 11:30</li>
+</ul>
+
+<h2>Lecture Schedule</h2>
+
+<p>
+  Topics link to slides, where available.
+</p>
+
+<p>ITCS means <a href="http://interactivepython.org/runestone/static/thinkcspy/toc.html">Interactive Think CS Textbook</a> - awesome resource!</p>
+<p>IP means <a href="http://shop.oreilly.com/product/0636920028659.do">Introducting Python</a></p>
+<p>TP means Think Python, 2nd Edition, by Allen B. Downey, O'Reilly Media, December 2015. Available free at <a href="http://greenteapress.com/wp/think-python-2e/">http://greenteapress.com/wp/think-python-2e/</a> and from O'Reilly at <a href="http://shop.oreilly.com/product/0636920045267.do">http://shop.oreilly.com/product/0636920045267.do</a></p>
+
+BEGIN_SCHEDULE
+Block 1: Python Review
 Week 1
 2016-05-16
 2016-05-17; Arrival and Check In
 2016-05-18; Orientations
-2016-05-19
-2016-05-20
+2016-05-19; intro-python
+2016-05-20; values-variables
 Week 2
 2016-05-23; No Class
-2016-05-24
-2016-05-25
-2016-05-26
-2016-05-27
+2016-05-24; data-structures
+2016-05-25; functions
+2016-05-26; control-structures
+2016-05-27; modules-programs
 Week 3
-2016-05-30
-2016-05-31
-2016-06-01
+2016-05-30; data-representation
+2016-05-31; classes-objects
+2016-06-01; review1
 2016-06-02; Field Trip
-2016-06-03
+2016-06-03; <b>Exam 1</b>
+Block 2: Data Formats and Storage
 Week 4
 2016-06-06; No Class
-2016-06-07
-2016-06-08
-2016-06-09
-2016-06-10
+2016-06-07; csv-files
+2016-06-08; xml
+2016-06-09; xml
+2016-06-10; json
 Week 5
 2016-06-13; No Class
-2016-06-14
-2016-06-15
-2016-06-16
-2016-06-17
+2016-06-14; relational-databases
+2016-06-15; relational-databases
+2016-06-16; database-normalization
+2016-06-17; sql
 Week 6
-2016-06-20
-2016-06-21
-2016-06-22
-2016-06-23
+2016-06-20; sql
+2016-06-21; python-xml-databases
+2016-06-22; review2
+2016-06-23; <b>Exam 2</b>
 2016-06-24; No Class
+Block 3: The Web and Desktop UIs
 Week 7
 2016-06-27; No Class
-2016-06-28
-2016-06-29
-2016-06-30
-2016-07-01
+2016-06-28; html
+2016-06-29; flask
+2016-06-30; flask
+2016-07-01; text-processing
 Week 8
 2016-07-04; No Class
-2016-07-05
-2016-07-06
-2016-07-07
-2016-07-08
+2016-07-05; text-processing
+2016-07-06; web-mining
+2016-07-07; web-mining
+2016-07-08; tkinter
 Week 9
-2016-07-11
-2016-07-12
-2016-07-13
+2016-07-11; tkinter
+2016-07-12; review3
+2016-07-13; <b>Exam 3</b>
 2016-07-14; Bastille Day - No class
 2016-07-15; No Class
+Block 4: Data Analysis
 Week 10
-2016-07-18
-2016-07-19
-2016-07-20
-2016-07-21
+2016-07-18; data-analysis
+2016-07-19; ipython
+2016-07-20; numpy
+2016-07-21; pandas
 2016-07-22; No Class
 Week 11
-2016-07-25
-2016-07-26
-2016-07-27
-2016-07-28
-2016-07-29
+2016-07-25; pandas
+2016-07-26; visualization
+2016-07-27;
+2016-07-28;
+2016-07-29; review4
 Finals Week
 2016-08-01
 2016-08-02
