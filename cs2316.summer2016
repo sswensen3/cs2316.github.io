@@ -27,35 +27,35 @@ Week 1
 2016-05-16
 2016-05-17; Arrival and Check In
 2016-05-18; Orientations
-2016-05-19; intro-python
-2016-05-20; values-variables
+2016-05-19; intro-cs2316
+2016-05-20; intro-python
 Week 2
 2016-05-23; No Class
-2016-05-24; data-structures
-2016-05-25; functions
-2016-05-26; control-structures
-2016-05-27; modules-programs
+2016-05-24; values-variables
+2016-05-25; data-structures
+2016-05-26; functions
+2016-05-27; control-structures
 Week 3
-2016-05-30; data-representation
-2016-05-31; classes-objects
-2016-06-01; review1
+2016-05-30; modules-programs
+2016-05-31;
+2016-06-01; data-representation
 2016-06-02; Field Trip
-2016-06-03; <b>Exam 1</b>
+2016-06-03; classes-objects
 Block 2: Data Formats and Storage
 Week 4
 2016-06-06; No Class
-2016-06-07; csv-files
-2016-06-08; xml
-2016-06-09; xml
-2016-06-10; json
+2016-06-07; review1
+2016-06-08; <b>Exam 1</b>
+2016-06-09; csv-files
+2016-06-10; xml
 Week 5
 2016-06-13; No Class
-2016-06-14; relational-databases
+2016-06-14; json
 2016-06-15; relational-databases
-2016-06-16; database-normalization
+2016-06-16; sql
 2016-06-17; sql
 Week 6
-2016-06-20; sql
+2016-06-20; python-xml-databases
 2016-06-21; python-xml-databases
 2016-06-22; review2
 2016-06-23; <b>Exam 2</b>
