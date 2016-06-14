@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage[abbr]{harvard}
+\usepackage{hyperref}
+
+%\hypersetup{urlcolor=cyan}
+
+\newcommand{\link}[2]{\href{#1}{\textcolor{blue}{\underline{#2}}}}
+\newcommand{\code}{http://www.cc.gatech.edu/~simpkins/teaching/gatech/cs2316/code}
+
+
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\usepackage{listings}
+% Default settings for code listings
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\scriptsize\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=true
+}
+
+
+\textwidth = 6.5 in
+\textheight = 9.5 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = -0.25 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+\parskip = 0.0 in
+\parindent = 0.0in
+\itemsep = 0in
+
+\title{Tides}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace{-1in}
+\section{Introduction}
+
+In this assignment you will practice
+\begin{itemize}
+\itemsep0em
+\item writing Python command-line utilities,
+\item File I/O,
+\item obtaining data,
+\item processing CSV files, and
+\item using Python's date/time libraries.
+\end{itemize}
+
+\section{Problem Description}
+
+You are a scuba diving instructor who plans \link{dive trips}{http://proscuba.training/trips.html} to West Palm Beach, FL that includes dives at the world famous Blue Heron Bridge. The Blue Heron Bridge is a shore dive that is only appropriate for open water divers at slack high tide, so planning is essential.
+
+\section{Solution Description}
+
+Write a Python program that accepts command line arguments specifying time windows and days of the week, reads the NOAA tide tables to find high tides that occur on those days and during those time windows, and displays these days and tides to the user on the console.
+
+Your program will use annual tide tables for the Port of Palm Beach (Station ID ) stored in a CSV file, which you can download from \link{NOAA's Tides and Currents Service}{https://tidesandcurrents.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?Stationid=8722588} (the ``CSV'' file is labeled TXT).
+
+If the user supplies less than the required minimum of four command-line arguments, display a usage message such as:
+
+\begin{lstlisting}
+Usage:
+   find_tides.py tides-file begin-window end-window *days
+Where:
+   tides-file is the name of a NOAA tide tables TXT file
+   begin-window is the earliest acceptable high tide in HH:MM {AM|PM}
+   begin-window is the latest acceptable high tide
+   *days is one or more days on which to check, in three-letter format
+Example:
+   find_tides.py wpb-tides-2015.txt '09:30 AM' '11:00 AM' Fri Sat Sun
+finds all Fridays, Saturdays, and Sundays on which there is a high
+tide between 9:30am and 11:00am in the wpb-tides-2015.txt file
+\end{lstlisting}
+
+A successful run of the program will look something like this:
+
+\begin{lstlisting}
+
+\end{lstlisting}
+
+
+\section{Tips and Considerations}
+
+\begin{itemize}
+  \itemsep0em
+  \item Load the NOAA annual tide table TXT file into your text editor to study its format and content.
+\item You'll need to ignore/skip the header lines at the top of the NOAA annual tide table TXT file.
+\item Take note of the delimiter used in the NOAA annual tide table TXT file.
+\item You'll probably want to use Python's {\tt datetime} module.
+\item Since the NOAA annual tide table TXT file contains lines with human-readable information, reporting tides to the user is a simple matter of printing lines that match the constraints given by the user on the command line, as in the example above.
+\end{itemize}
+
+\section{Turn-in Procedure}
+
+Submit your {\tt find_tides.py} NOAA annulal tide tables TXT files on T-Square as two separate attachments.  When you're ready, double-check that you have submitted and not just saved a draft.
+
+\section{Verify the Success of Your Submission to T-Square}
+
+Practice safe submission! Verify that your HW files were truly submitted correctly, the upload was successful, and that your program runs with no syntax or runtime errors. It is solely your responsibility to turn in your homework and practice this safe submission safeguard.
+
+\begin{enumerate}
+\itemsep0em
+\item After uploading the files to T-Square you should receive an email from T-Square listing the names of the files that were uploaded and received. If you do not get the confirmation email almost immediately, something is wrong with your HW submission and/or your email. Even receiving the email does not guarantee that you turned in exactly what you intended.
+\item After submitting the files to T-Square, return to the Assignment menu option and this homework. It should show the submitted files.
+\item Download copies of your submitted files from the T-Square Assignment page placing them in a new folder.
+\item Re-run and test the files you downloaded from T-Square to make sure it's what you expect.
+\item This procedure helps guard against a few things.
+\begin{enumerate}
+\itemsep0em
+\item It helps insure that you turn in the correct files.
+\item It helps you realize if you omit a file or files.\footnote{Missing files will not be given any credit, and non-compiling homework solutions will receive few to zero points. Also recall that late homework will not be accepted regardless of excuse. Treat the due date with respect.  Do not wait until the last minute!}
+(If you do discover that you omitted a file, submit all of your files again, not just the missing one.)
+\item Helps find syntax errors or runtime errors that you may have added after you last tested your code.
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
