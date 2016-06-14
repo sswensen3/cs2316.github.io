@@ -16,11 +16,12 @@ Text is the raw material of the craft of programming.  You should become good at
 
 I used [Emacs](http://www.gnu.org/software/emacs/) for years, then tried [Atom](https://atom.io/), then switched back to Emacs.  I've also tried [Vim](http://www.vim.org/) and know basic vi, but nothing beats Emacs.  If you can't get used to Emacs or Vim, Atom or SublimeText are good choices. [Atom](https://atom.io/)'s user interface is almost a complete clone of [Sublime Text](http://www.sublimetext.com/), which is a good thing, but [Atom](https://atom.io/) uses much different technology, and is free and open source.
 
-Many people who insist on using Windows like [Notepad++](http://notepad-plus-plus.org/), but [Atom](https://atom.io/) or [Sublime Text](http://www.sublimetext.com/) are much better. As a computer science major you will use Unix during your studies, and if you're currently a Windows user you will almost certainly switch to a Unix (like Linux or Mac OS X) for your personal computing after learning more about computing.  So get in the habit of strongly preferring cross-platform software (yeah, I know, games -- that's what dual-booting is for).
+Many people who insist on using Windows like [Notepad++](http://notepad-plus-plus.org/), but [Atom](https://atom.io/) and [Sublime Text](http://www.sublimetext.com/) are much better. As a computer science major you will use Unix during your studies, and if you're currently a Windows user you will almost certainly switch to a Unix (like Linux or Mac OS X) for your personal computing after learning more about computing.  So get in the habit of strongly preferring cross-platform software (yeah, I know, games -- that's what dual-booting is for).
 
 If you're going to get a computer science or engineering degree, I recommend that you learn [Emacs](http://www.gnu.org/software/emacs/) or [Vim](http://www.vim.org/), because they can be used in a terminal window and are available on every UNIX platform, Windows, and Mac.
 
 #Customizing your text editor
+
 Having a go-to text editor improves your productivity in part because it will be set up with your preferred defaults.  Customization is important because many text editors and IDEs are configured with bad defaults.  Good programmers insist on writing code that is clear and consistently formatted.  Having a well-configured text editor helps you do that.
 
 If you're running Mac OS X, my [dotfiles](https://github.com/csimpkins/dotfiles) will give you a big head start on your Emacs configuration and your general configuration.

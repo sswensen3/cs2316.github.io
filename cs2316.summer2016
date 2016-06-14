@@ -32,65 +32,66 @@ Week 1
 Week 2
 2016-05-23; No Class
 2016-05-24; values-variables
-2016-05-25; data-structures
+2016-05-25; data-structures; <a href="summer2016/hw0/hw0.pdf">HW0 Assigned</a>
 2016-05-26; functions
 2016-05-27; control-structures
 Week 3
-2016-05-30; modules-programs
-2016-05-31;
+2016-05-30; modules-programs; <a href="summer2016/hw1/hw1-hangman.pdf">HW1 Assigned</a>
+2016-05-31; modules-programs; <a href="summer2016/hw0/hw0.pdf">HW0 Due</a>
 2016-06-01; data-representation
-2016-06-02; Field Trip
+2016-06-02; Field Trip;
 2016-06-03; classes-objects
-Block 2: Data Formats and Storage
 Week 4
 2016-06-06; No Class
-2016-06-07; review1
-2016-06-08; <b>Exam 1</b>
-2016-06-09; csv-files
-2016-06-10; xml
+2016-06-07; <a href="exercises/grades.py">In-class programming exercise(s)</a>
+2016-06-08; Review 1
+2016-06-09; <b>Exam 1</b>
+2016-06-10; <b>Programming Quiz 1</b?; <a href="summer2016/hw1/hw1-hangman.pdf">HW1 Due</a>
+Block 2: Data Formats and Storage
 Week 5
 2016-06-13; No Class
-2016-06-14; json
-2016-06-15; relational-databases
-2016-06-16; sql
-2016-06-17; sql
+2016-06-14; csv-files; HW 2 Assigned
+2016-06-15; xml
+2016-06-16; json; HW2 Due
+2016-06-17;
 Week 6
-2016-06-20; python-xml-databases
-2016-06-21; python-xml-databases
-2016-06-22; review2
-2016-06-23; <b>Exam 2</b>
+2016-06-20; relational-databases
+2016-06-21; sql
+2016-06-22; sql
+2016-06-23; python-xml-databases
 2016-06-24; No Class
-Block 3: The Web and Desktop UIs
+
 Week 7
 2016-06-27; No Class
-2016-06-28; html
-2016-06-29; flask
-2016-06-30; flask
-2016-07-01; text-processing
+2016-06-28; <a href="exercises/">In-class programming exercise(s)</a>
+2016-06-29; review2
+2016-06-30; <b>Exam 2</b>
+2016-07-01; <b>Programming Quiz 2</b>; Withdrawal deadline: 2 July
+Block 3: The Web and Desktop UIs
 Week 8
 2016-07-04; No Class
-2016-07-05; text-processing
-2016-07-06; web-mining
-2016-07-07; web-mining
-2016-07-08; python-guis
+2016-07-05; html
+2016-07-06; flask
+2016-07-07; flask
+2016-07-08; text-processing
 Week 9
-2016-07-11; python-guis
-2016-07-12; review3
-2016-07-13; <b>Exam 3</b>
+2016-07-11; text-processing
+2016-07-12; web-mining
+2016-07-13; python-guis
 2016-07-14; Bastille Day - No class
 2016-07-15; No Class
-Block 4: Data Analysis
 Week 10
-2016-07-18; data-analysis
-2016-07-19; ipython
-2016-07-20; numpy
-2016-07-21; pandas
+2016-07-18; python-guis
+2016-07-19; review3
+2016-07-20; <b>Exam 3</b>
+2016-07-21; <b>Programming Quiz 3</b>
 2016-07-22; No Class
+Block 4: Data Analytics
 Week 11
-2016-07-25; pandas
-2016-07-26; matplotlib
-2016-07-27;
-2016-07-28;
+2016-07-25; jupyter
+2016-07-26; numpy
+2016-07-27; pandas
+2016-07-28; matplotlib
 2016-07-29; review4
 Finals Week
 2016-08-01;
