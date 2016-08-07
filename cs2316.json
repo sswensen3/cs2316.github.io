@@ -53,17 +53,17 @@
     },
     "csv-files": {
         "topic": "<a href=\"slides/csv-files.pdf\">CSV Files</a>",
-        "readings": [""],
-        "resources": [""]
+        "readings": ["IP 8", "<a href=\"\"></a>"],
+        "resources": ["<a href=\"code/structured-files/\">Data Files</a>"]
     },
     "xml": {
         "topic": "<a href=\"slides/xml.pdf\">XML</a>",
-        "readings": [""],
+        "readings": ["IP 8", "<a href=\"\"></a>"],
         "resources": [""]
     },
     "json": {
-        "topic": "<a href=\"slides/json.pdf\">JavaSctipt Object Notation</a>",
-        "readings": [""],
+        "topic": "<a href=\"slides/json.html\">JavaScript Object Notation</a>",
+        "readings": ["IP 8", "<a href=\"http://json.org/\">JSON Spec</a>"],
         "resources": [""]
     },
     "relational-databases": {
@@ -93,28 +93,38 @@
     },
     "html": {
         "topic": "<a href=\"slides/html.pdf\">HTML</a>",
-        "readings": [""],
+        "readings": ["IP 8", "<a href=\"\"></a>"],
         "resources": [""]
     },
     "flask": {
         "topic": "<a href=\"slides/flask.pdf\">Flask</a>",
-        "readings": [""],
-        "resources": [""]
+        "readings": ["IP 9", "<a href=\"http://flask.pocoo.org/\">Flask Web site</a>"],
+        "resources": ["<a href=\"code/web/gradebook.zip\">Gradeboook App</a>"]
     },
     "text-processing": {
         "topic": "<a href=\"slides/text-processing.pdf\">Text Processing</a>",
-        "readings": [""],
+        "readings": ["IP 7", "<a href=\"https://docs.python.org/3/library/re.html\">Python RE Module</a>", "<a href=\"https://docs.python.org/3/howto/regex.html\">Python Regex HowTo</a>"],
         "resources": [""]
+    },
+    "web-scraping": {
+        "topic": "<a href=\"slides/web-mining.pdf\">Web Scraping</a>",
+        "readings": [""],
+        "resources": ["<a href=\"code/web/wx.py\">wx.py</a>"]
+    },
+    "web-services": {
+        "topic": "<a href=\"slides/web-services.pdf\">Web Services</a>",
+        "readings": [""],
+        "resources": ["<a href=\"code/web/wx.py\">wx.py</a>"]
     },
     "web-mining": {
-        "topic": "<a href=\"slides/web-mining.pdf\">Web Mining</a>",
-        "readings": [""],
-        "resources": [""]
+        "topic": "<a href=\"slides/web-mining.html\">Web Mining</a>",
+        "readings": ["<a href=\"https://www.crummy.com/software/BeautifulSoup/bs4/doc/\">Beautiful Soup</a>", "<a href=\"http://docs.python-requests.org/en/master/\">Requests</a>"],
+        "resources": ["<a href=\"code/web/wx.py\">wx.py</a>"]
     },
     "python-guis": {
-        "topic": "<a href=\"slides/tkinter.pdf\">Python GUIs using tkinter</a>",
+        "topic": "<a href=\"slides/pyqt-guis.html\">Python GUIs</a>",
         "readings": [""],
-        "resources": [""]
+        "resources": ["<a href=\"code/gui/helloqt.py\">helloqt.py</a>"]
     },
     "review3": {
         "topic": "Review 3",

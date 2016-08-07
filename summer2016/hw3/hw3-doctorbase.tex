@@ -1,0 +1,165 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage[abbr]{harvard}
+\usepackage{hyperref}
+
+%\hypersetup{urlcolor=cyan}
+
+\newcommand{\link}[2]{\href{#1}{\textcolor{blue}{\underline{#2}}}}
+\newcommand{\code}{http://www.cc.gatech.edu/~simpkins/teaching/gatech/cs2316/code}
+
+
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\usepackage{listings}
+% Default settings for code listings
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\scriptsize\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=true
+}
+
+
+\textwidth = 6.5 in
+\textheight = 9.5 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = -0.25 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+\parskip = 0.0 in
+\parindent = 0.0in
+\itemsep = 0in
+
+\title{DoctorBase}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace{-1in}
+\section{Introduction}
+
+A common task in data management systems is receiving data from an external system in XML fiels and storing it in a relational database. Python includes libraries for easily reading XML files and interacting with databases. We store data in databases for record keeping and so that we can answer questions about the data.
+
+In this assignment you will
+\begin{itemize}
+\itemsep0em
+\item create a SQLite database using provided database creation scripts,
+\item write a Python program that parses an XML data file and inserts the data from it into the database, and
+\item create a SQL script with queries to answer questions about data in the database.
+\end{itemize}
+
+\section{Problem Description}
+
+You're starting a new job as a database manager at the Centers for Disease Control (CDC). In this role you need to manage and analyze data about doctors and patient care. You receive doctor data from outside sources in the form of XML files which you need to insert into your database, and you use the database to answer questions about the data.
+
+\section{Solution Description}
+
+You'll store data in a SQLite database and import data from XML files using a Python script.
+
+\subsection{Preparing Your Database (10 points)}
+
+You've been provided with two database scripts create the database and populate it with data (download \link{http://www.cc.gatech.edu/~simpkins/teaching/gatech/cs2316/summer2016/hw3/doctors-schema.sql}{{\tt doctors-schema.sql}} and \link{http://www.cc.gatech.edu/~simpkins/teaching/gatech/cs2316/summer2016/hw3/doctors-data.sql}{{\tt doctors-data.sql}}). Run {\tt sqlite3} with the database file name {\tt doctors.sqlite3} as an argument and run your database creation and population scripts on this database.  This will look something like:
+
+\begin{lstlisting}[language=bash]
+$ sqlite3 doctors.sqlite3
+SQLite version 3.7.9 2011-11-01 00:52:41
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+sqlite> .read doctors-schema.sql
+sqlite> .read doctors-data.sql
+sqlite> .exit
+\end{lstlisting}
+
+After the session above the current directory will have a file called {\tt doctors.sqlite3} with populated tables.
+
+\section{Importing XML Data into a Database}
+
+Write a Python script named {\tt import\_doctors.py} that reads an XML file named in the first command-line argument to your program and inserts the doctor data contained in the XML file into the {\tt doctor} table of the database specified as the second command-line argument to your script.  Test your program on the database you created in the previous step.  You should develop your program in stages, described in the sections below.
+
+\subsection{Inserting Doctors (40 points)}
+
+Your script should have a function with the signature {\tt insert(conn, first\_name, last\_name, specialty)} that inserts a single doctor record into the database represented by the \link{https://docs.python.org/3/library/sqlite3.html?highlight=connection\#connection-objects}{connection} object {\tt conn}.  Remember to commit your changes to the database so they are saved in the database file.
+
+\subsection{Extracting Elements from doctors.xml (30 points)}
+
+Your script's main block should parse an XML file with the same structure as \link{http://www.cc.gatech.edu/~simpkins/teaching/gatech/cs2316/summer2016/hw3/doctors.xml}{{\tt doctors.xml}} using Python's {\tt xml.etree.ElementTree} parser.  With the tree that {\tt ElementTree.parse()} returns your program should:
+
+\begin{enumerate}
+\itemsep0em
+\item find all the {\tt doctor} elements
+\item for each {\tt doctor} element
+\begin{enumerate}
+\itemsep0em
+  \item extract the firstName, secondName, and specialty element text
+  \item call {\tt insert(conn, first\_name, last\_name, specialty)}
+    with the data from the elements above
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Querying a Database (30 points)}\label{query}
+
+Write a SQL script, {\tt query-doctors.sql}, that includes queries to answer the following questions:
+
+\begin{itemize}
+\itemsep0em
+\item What are the first names and last names of the patients who have cardiologists for primary care providers (PCP)?
+\item What are the first names and last names of the patients who saw their doctor (PCP) in May 2010?
+\item OPTIONAL BONUS (5 points): What are the first name and last name of the doctor who has the most patients (not the most visits)?
+\item OPTIONAL BONUS (5 points): What are the first names and last names of the doctors who have no patients (not visits)?
+\end{itemize}
+
+Your {\tt query-doctors.sql} should contain only the {\tt SELECT} queries requested above.
+
+\section{Tips}
+
+\begin{itemize}
+\itemsep0em
+\item Your {\tt import\_doctors.py} should look like the example program we wrote in class.
+\item Review the \link{\code/databases}{example SQL code} on the course web site.
+\item SQLite doesn't have a datetime data type, so you have two options: Julian day, or text.  The simplest approach is using the {\tt text} type for your datetime column and storing datetime values using \link{http://www.w3.org/TR/NOTE-datetime}{the subest of ISO 8601 used by internet applications}.  For example, the text representing 11:55pm on 26 June 2014 would be {\tt 2014-06-26T23:55}.  Can you think of an advantage of formatting datetime strings like this?
+\item If you use the datetime format suggested above, you can match parts of a field using the {\tt LIKE} or {\tt GLOB} SQL operators.  For example, to find all the rows in {\tt visit} that occurred in March 2005, you could use {\tt  select * from visit where date like '2005-03-\%';} or {\tt select * from visit where date glob '2005-03-*';}
+\end{itemize}
+
+\section{Turn-in Procedure}
+
+Submit your {\tt import\_doctors.py}, {\tt query-doctors.sql} and {\tt doctors.sqlite3} files on T-Square as attachments.  When you're ready, double-check that you have submitted and not just saved a draft.
+
+\section{Verify the Success of Your Submission to T-Square}
+
+Practice safe submission! Verify that your HW files were truly submitted correctly, the upload was successful, and that your program runs with no syntax or runtime errors. It is solely your responsibility to turn in your homework and practice this safe submission safeguard.
+
+\begin{enumerate}
+\itemsep0em
+\item After uploading the files to T-Square you should receive an email from T-Square listing the names of the files that were uploaded and received. If you do not get the confirmation email almost immediately, something is wrong with your HW submission and/or your email. Even receiving the email does not guarantee that you turned in exactly what you intended.
+\item After submitting the files to T-Square, return to the Assignment menu option and this homework. It should show the submitted files.
+\item Download copies of your submitted files from the T-Square Assignment page placing them in a new folder.
+\item Re-run and test the files you downloaded from T-Square to make sure it's what you expect.
+\item This procedure helps guard against a few things.
+\begin{enumerate}
+\itemsep0em
+\item It helps insure that you turn in the correct files.
+\item It helps you realize if you omit a file or files. Missing files will not be given any credit! If you do discover that you omitted a file, submit all of your files again, not just the missing one.
+\item Helps find syntax errors or runtime errors that you may have added after you last tested your code.
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
