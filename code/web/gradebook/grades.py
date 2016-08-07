@@ -1,15 +1,22 @@
 from flask import Flask, request, render_template
-import csv
+import csv, os
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    courses = []
+    for file in os.listdir('.'):
+        if file.endswith(".csv"):
+            course_term = file.split('.')[0]
+            course, term = course_term.split('_')
+            courses.append((course, term))
+    print(courses)
+    return render_template('index.html', courses=courses)
 
 @app.route('/grades/<course>/<term>')
 def gradebook(course, term):
-    file_name = course + term + '.csv'
+    file_name = course + "_" + term + '.csv'
     rows = []
     with open(file_name, 'r') as fin:
         reader = csv.reader(fin)

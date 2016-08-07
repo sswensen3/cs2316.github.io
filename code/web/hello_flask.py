@@ -6,9 +6,13 @@ app = Flask(__name__)
 def index():
     return '<h1>Hello, Flask!</h1>'
 
+@app.route('/fun')
+def fun():
+    return 'Yippee!'
+
 @app.route('/user/<fname>/<lname>')
 def user(fname, lname):
-    return '<h1>Hello, %s, %s!</h1>' % (lname, fname)
+    return '<h1>Hello, {}, {}!</h1>'.format(lname, fname)
 
 @app.route('/mybrowser')
 def my_browser():

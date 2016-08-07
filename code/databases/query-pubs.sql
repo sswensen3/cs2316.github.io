@@ -43,7 +43,8 @@ select author_id, last_name, count(author_id) as pub_count
     limit 1;
 
 -- All authors tied for most pubs
-select last_name, pub_count from (select author_id, last_name, count(author_id) as pub_count
-    from author join author_pub using (author_id) join pub using (pub_id)
-    group by author_id
-    order by pub_count desc);
+select last_name, pub_count
+    from (select author_id, last_name, count(author_id) as pub_count
+         from author join author_pub using (author_id) join pub using (pub_id)
+         group by author_id
+         order by pub_count desc);
