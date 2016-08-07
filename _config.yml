@@ -1,0 +1,5 @@
+name: CS 2316
+markdown: kramdown
+highlighter: rouge
+kramdown:
+    input: GFM
