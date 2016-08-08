@@ -1,0 +1,85 @@
+<books>
+  <book>
+    <title>Simulacra and Simulation</title>
+    <authors>
+      <author>Jean Baudrillard</author>
+    </authors>
+  </book>
+  <book>
+    <title>The Fault in Our Stars</title>
+    <authors>
+      <author>John Green</author>
+    </authors>
+  </book>
+  <book>
+    <title>A Game of Thrones</title>
+    <authors>
+      <author>George R.R. Martin</author>
+    </authors>
+  </book>
+  <book>
+    <title>A Clash of Kings</title>
+    <authors>
+      <author>George R.R. Martin</author>
+    </authors>
+  </book>
+  <book>
+    <title>A Storm of Swords</title>
+    <authors>
+      <author>George R.R. Martin</author>
+    </authors>
+  </book>
+  <book>
+    <title>A Feast for Crows</title>
+    <authors>
+      <author>George R.R. Martin</author>
+    </authors>
+  </book>
+  <book>
+    <title>A Dance with Dragons</title>
+    <authors>
+      <author>George R.R. Martin</author>
+    </authors>
+  </book>
+  <book>
+    <title>The Winds of Winter</title>
+    <authors>
+      <author>George R.R. Martin</author>
+    </authors>
+  </book>
+  <book>
+    <title>A Dream of Spring</title>
+    <authors>
+      <author>George R.R. Martin</author>
+    </authors>
+  </book>
+  <book>
+    <title>Introduction to Algorithms</title>
+    <authors>
+      <author>Thomas H. Cormen</author>
+      <author>Charles E. Lieserson</author>
+      <author>Ronald Rivest</author>
+      <author>Clifford Stein</author>
+    </authors>
+  </book>
+  <book>
+    <title>Algorithms Unlocked</title>
+    <authors>
+      <author>Thomas H. Cormen</author>
+    </authors>
+  </book>
+  <book>
+    <title>Computer Organization and Design</title>
+    <authors>
+      <author>David A. Patterson</author>
+      <author>John L. Hennessy</author>
+    </authors>
+  </book>
+  <book>
+    <title>Computer Architecture</title>
+    <authors>
+      <author>John L. Hennessy</author>
+      <author>David A. Patterson</author>
+    </authors>
+  </book>
+</books>
