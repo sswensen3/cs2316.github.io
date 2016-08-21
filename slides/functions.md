@@ -33,21 +33,15 @@ Hello
 
 The general form of a function definition is
 
-`def` *function_name(parameter_list):*
-    *function_body*
+```Python
+def <function_name>(<parameter_list>):
+    <function_body>
+```
 
 - The first line is called the header.
 - *function_name* is the name you use to call the function.
 - *parameter_list* is a list of parameters to the function, which may be empty.
 - *function_body* is a sequence of expressions and statements.
-
-Our say_hello() function has an empty parameter list and a body of only one statement:
-
-```Python
->>> def say_hello():
-...     print('Hello')
-...
-```
 
 # Function Parameters
 
@@ -127,7 +121,7 @@ Hello
 
 # Muliple Parameters
 
-A function can take any number of paramters.
+A function can take any number of parameters.
 
 ```Python
 >>> def greet(name, greeting):
@@ -179,7 +173,7 @@ You can specify default parameter values so that you don't have to provide an ar
 Hello, Elmo
 ```
 
-If you provide an argument for a paramter with a default value, the parameter takes the argument value passed in the call instead of the default value.
+If you provide an argument for a parameter with a default value, the parameter takes the argument value passed in the call instead of the default value.
 
 ```Python
 >>> greet('Elmo', 'Hi')
@@ -261,98 +255,71 @@ Information hiding is a general principle of software engineering. If you only n
 
 `fac_iter()` is a (tail) recursive function. Recursion is important for computer scientists, but a practically-oriented Python-programming engineer will mostly use iteration, higher-order functions and loops, which are more [Pythonic](http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html). Any recursive computation can be formulated as an imperative computation.
 
-# Representing Computation Strategies
+# Higher-Order Functions
 
-Say we want to compute grades using one of two grade-inclusion strategies. One strategy is to drop the lowest grade:
-
-```Python
->>> grades = [100, 90, 0, 80]
->>> def drop_lowest(grades):
-...     return sorted(grades)[1:]
-```
-
-The other is to replace the lowest grade with the second-lowest grade:
+A higher order function is a function that takes another function as a parameter or returns a function as a value. We've already used one:
 
 ```Python
->>> def replace_lowest(grades):
-...     result = grades.copy()
-...     lowest_two = sorted([(k, i) for i, k in enumerate(grades)])[:2]
-...     lowest_index = lowest_two[0][1]
-...     second_lowest_index = lowest_two[1][1]
-...     result[lowest_index] = result[second_lowest_index]
-...     return result
+>>> help(sorted)
 ...
->>> replace_lowest(grades)
-[100, 90, 80, 80]
->>> grades
-[100, 90, 0, 80]
+sorted(iterable, key=None, reverse=False)
+    Return a new list containing all items from the iterable in ascending order.
+
+    A custom key function can be supplied to customise the sort order, and the
+    reverse flag can be set to request the result in descending order.
 ```
 
-Note: these functions return new lists, leaving argument unchanged.
+The second parameter, `key`, is a function. In general, a *sort key* is the part of an object on which comparisons are made in a sorting algorithm.
 
-# `enumerate` and `sorted`
+# Sorting without a `key`
 
-Notice that in the list comprehension over the iterator returned by enumerate(grades) we reversed the key and index values:
+Say we have a list of tuples, *(name, gpa, major)*:
 
 ```Python
->>> def replace_lowest(grades):
-...     result = grades.copy()
-...     **lowest_two = sorted([(k, i) for i, k in enumerate(grades)])[:2]**
-...     lowest_index = lowest_two[0][1]
-...     second_lowest_index = lowest_two[1][1]
-...     result[lowest_index] = result[second_lowest_index]
-...     return result
-...
+>>> import pprint as pp
+>>> studs = [("Stan", 2.5, "ISyE"), ("Kyle", 2.2, "CS"),
+...          ("Cartman", 2.4, "CmpE"), ("Kenny", 4.0, "ME")]
 ```
 
-Why did we do that?
+The default sort order is simply elementwise by the default order for each type in the tuple:
+
+```Python
+>>> pp.pprint(sorted(studs))
+[('Cartman', 2.4, 'CmpE'),
+ ('Kenny', 4.0, 'ME'),
+ ('Kyle', 2.2, 'CS'),
+ ('Stan', 2.5, 'ISyE')]
+```
+
+Answer for yourself: what if two students had the same name?
+
+# Sorting with a `key`
+
+If we want a different sort order, we can define a function that extracts the part of each tuple by which we want to sort.
+
+```Python
+>>> def by_gpa(stud):
+...     return stud[1]
+...
+>>> pp.pprint(sorted(studs, key=by_gpa))
+[('Kyle', 2.2, 'CS'),
+ ('Cartman', 2.4, 'CmpE'),
+ ('Stan', 2.5, 'ISyE'),
+ ('Kenny', 4.0, 'ME')]
+```
 
 # Lambda Functions
 
-Remember when we sorted a list of (grade, index) tuples:
+The `by_gpa` function is pretty simple. Instead of defining a named function, we can define it inline with an anonymous function, a.k.a., a *lambda function*:
 
 ```Python
-sorted([(k, i) for i, k in enumerate(grades)])
+>>> pp.pprint(sorted(studs, key=lambda t: t[1]))
+[('Kyle', 2.2, 'CS'),
+ ('Cartman', 2.4, 'CmpE'),
+ ('Stan', 2.5, 'ISyE'),
+ ('Kenny', 4.0, 'ME')]
 ```
 
-We reversed the key and index so that `sorted` would sort by grades instead of indexes. Another way to do that is to pass a key function to the `sorted` function. The key function is applied to each element of the sequence before it is sorted. Here we pass an anonymous function, or a *lambda* expression:
+The general form is `lambda <parameter_list>: <expression>`
 
-```Python
->>> sorted([e for e in enumerate(grades)], key=lambda e: e[1])
-[(2, 0), (3, 80), (1, 90), (0, 100)]
-```
-
-The general form of a lambda expression is
-
-`lambda` *<parameters>*: *<expression>*
-
-- lambda function bodies are limited to one expression.
-
-```Python
->>> (lambda x: x + 1)(1)
-2
->>> add_one = lambda x: x + 1
->>> add_one(1)
-2
-```
-
-# Higher-Order Functions
-
-With the two strategies represented as functions we can write another function that calculates a grade after applying one of the strategies:
-
-```Python
->>> def calc_grade(grades, strategy):
-...     grades_to_use = strategy(grades)
-...     return sum(grades_to_use) / len(grades_to_use)
-...
->>> sum(grades_to_use) / len(grades_to_use)
-67.5
->>> calc_grade(grades, replace_lowest)
-87.5
->>> calc_grade(grades, drop_lowest)
-90.0
-```
-
-
-- `calc_grade` is a *higher-order function* because it takes a function as a parameter.
-- Notice that we refer to a function by name when we pass it as an arument or assign it to a variable, and call it by appending () after the function name.
+The body of a lambda function is limited to a single expression, which is implicitly returned.

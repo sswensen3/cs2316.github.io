@@ -28,29 +28,53 @@ All values have types. Python can tell you the type of a value with the built-in
 <class 'str'>
 ```
 
-Types determine which operations are available on values. For example, exponentiation is defined for numbers (like int or float) but not for str (string) values.
+# The Meaning of Types
+
+Types determine which operations are available on values. For example, exponentiation is defined for numbers (like int or float):
 
 ```Python
 >>> 2**3
 8
+```
+
+... but not for `str` (string) values:
+
+```Python
 >>> "pie"**3
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
 ```
 
+# Python is Dynamically Typed
+
+Python is dynamically typed, meaning that types are not resoved until run-time. This means two things practically:
+
+1. Values have types, variables don't:
+
+```Python
+>> a = 1
+>>> type(a)
+<class 'int'>
+>>> a = 1.1 # This would not be allowed in a statically typed language
+>>> type(a)
+<class 'float'>
+```
+
+2. Python doesn't report type errors until run-time. We'll see many examples of this fact.
+
 # Overloaded Operators
 
 Some operators are overloaded, meaning they have different meanings when applied to different types. For example, + means addition for numbers and concatenation for strings:
 
 ```python
->>> 2+2
+>>> 2 + 2
 4
 >>> "Yo" + "lo!"
 'Yolo!'
 ```
 
-`*` multiplication for numbers and repetition for strings:
+`*` means multiplication for numbers and repetition for strings:
 
 ```python
 >>> 2 * 3
@@ -97,10 +121,7 @@ A variable is a name for a value. You bind a value to a variable using an assign
 'Ok'
 ```
 
-We say "a gets the value 'OK'".
-
-`=` is the assignment operator and an assignment statement has the
-form *<variable_name> = <expression>*
+`=` is the assignment operator and an assignment statement has the form `<variable_name> = <expression>`
 
 Variable names, or identifiers, may contain letters, numbers, or underscores and may not begin with a number.
 
@@ -154,7 +175,7 @@ Python evaluates the expression on the right-hand side, then binds the expressio
 
 Note that the value of `a` used in the expression on the right hand side is the value it had before the assignment statement.
 
-What's the type of a?
+What's the type of `a`?
 
 # Type Conversions
 
@@ -207,6 +228,9 @@ Note that the REPL echoes the value with a \n to represent the newline character
 I do HTML for them all,
 even made a home page for my dog.
 ```
+
+# Strings
+
 Choice of quote character is usually a matter of taste, but the choice can sometimes buy convenience. If your string contains a quote character you can either escape it:
 
 ```Python
@@ -221,7 +245,7 @@ or use the other quote character:
 
 # String Operations
 
-Because strings are sequences we can get a string's length with len():
+Because strings are sequences we can get a string's length with `len()`:
 
 ```Python
 >>> i = "team"
@@ -229,7 +253,7 @@ Because strings are sequences we can get a string's length with len():
 4
 ```
 
-and access characters in the string by index (offset from beginning – first index is 0) using []:
+and access characters in the string by index (offset from beginning – first index is 0) using `[]`:
 
 ```Python
 >>> i[1]
