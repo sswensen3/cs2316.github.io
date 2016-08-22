@@ -31,7 +31,10 @@ On Unix/BASH you can create both of these directories at once with
 ```sh
 $ mkdir -p cs2316/hw0
 ```
-Note: the `$` is the command prompt (would be something like `C:\>` on Windows), the text after it is what you enter.
+
+Windows uses the same commands for directory navigation and creation, `cd` and `mkdir`, but Windows's `mkdir` command doesn't have the `-p` option.
+
+Note: the `$` is the command prompt on most Unix shells and Windows 10's Ubuntu BASH shell (would be something like `C:\>` in Windows `cmd`), the text after it is what you enter.
 
 - On the command line, go to the `hw0` directory you just created and enter these commands:
 

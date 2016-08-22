@@ -17,10 +17,11 @@ Try to do the following before the first day of class.
 
 ```sh
 $ conda update conda
+$ conda install pymysql flask requests beautifulsoup4 pyqt
 $ conda install numpy pandas scipy matplotlib scikit-learn ipython-notebook
 ```
 
-For the Python bootcamp you don't technically need the second line above, but these are common packages used in data analytics.
+For this class you don't technically need the third line above, but these are common packages used in data analytics, which is a major application area for Python. We may discuss some of these as special topics during the last week of the course.
 
 - Alternate methods: [Installing Python](installing-python.html) (But, seriously, just use  [Miniconda](http://conda.pydata.org/miniconda.html). It's the best thing to happen to Python package management, well, ever.)
 

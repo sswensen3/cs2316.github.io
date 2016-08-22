@@ -1,93 +1,64 @@
----
-layout: default
-title: CS 2316 - Fall 2016
----
-
-<h1>Fall 2016</h1>
-
-<h2>Weekly Schedule</h2>
-
-<ul>
-  <li>Lecture: Mondays, Wednesdays, and Fridays, 2:05 pm - 2:55 pm in Clough Undergraduate Commons 144</li>
-  <li>Recitation: Thursdays, 4:35 pm - 5:55 pm in Bunger-Henry 380</li>
-</ul>
-
-<h2>Schedule</h2>
-
-<p>
-  Topics link to slides, where available.
-</p>
-
-<p>ITCS means <a href="http://interactivepython.org/runestone/static/thinkcspy/toc.html">Interactive Think CS Textbook</a> - awesome resource!</p>
-<p>IP means <a href="http://shop.oreilly.com/product/0636920028659.do">Introducting Python</a></p>
-<p>TP means Think Python, 2nd Edition, by Allen B. Downey, O'Reilly Media, December 2015. Available free at <a href="http://greenteapress.com/wp/think-python-2e/">http://greenteapress.com/wp/think-python-2e/</a> and from O'Reilly at <a href="http://shop.oreilly.com/product/0636920045267.do">http://shop.oreilly.com/product/0636920045267.do</a></p>
-
-BEGIN_SCHEDULE
-Block 1: Python Review
 Week 1
-2016-08-22; intro-cs2316
-2016-08-24; intro-python
-2016-05-26; values-variables
+2016-08-22;intro-cs2316;[HW 0 Assigned](fall2016/hw0/hw0.html)
+2016-08-24;intro-python
+2016-08-26;values-variables
 Week 2
-2016-08-29; data-structures
-2016-08-31; functions
-2016-09-02; control-structures
+2016-08-29;values-variables
+2016-08-31;data-structures;[HW 0 Due Thursday 2016-09-01](fall2016/hw0/hw0.html)
+2016-09-02;data-structures
 Week 3
-2016-09-05; Labor Day - No class
-2016-09-07; modules-programs
-2016-09-09; data-representation
+2016-09-05;Labor Day - No Class
+2016-09-07;strings
+2016-09-09;functions
 Week 4
-2016-09-12; classes-objects
-2016-09-14; review1
-2016-09-16; <b>Exam 1</b>
-Block 2: Data Formats and Storage
+2016-09-12;control-structures
+2016-09-14;control-structures
+2016-09-16;modules-programs
 Week 5
-2016-09-19; file-io
-2016-09-21; csv-files
-2016-09-23; csv-files
+2016-09-19;functools
+2016-09-21;classes-objects
+2016-09-23;classes-objects
 Week 6
-2016-09-26; xml
-2016-09-28; json
-2016-09-30; relational-databases
+2016-09-26;review1
+2016-09-28;exam1
+2016-09-30;pq1;Progress Reports Due
 Week 7
-2016-10-03; sql
-2016-10-05; sql
-2016-10-07; python-xml-databases
+2016-10-03;csv-files
+2016-10-05;xml
+2016-10-07;json
 Week 8
-2016-10-10; Fall Break - No class
-2016-10-12; review2
-2016-10-14; <b>Exam 2</b>
-Block 3: The Web and Desktop UIs
+2016-10-10;Fall Break - No Class
+2016-10-12;relational-databases
+2016-10-14;sql
 Week 9
-2016-10-17; html
-2016-10-19; flask
-2016-10-21; flask
+2016-10-17;review2
+2016-10-19;exam2
+2016-10-21;pq2
 Week 10
-2016-10-24; text-processing
-2016-10-26; text-processing
-2016-10-28; web-mining
+2016-10-24;html
+2016-10-26;flask
+2016-10-28;flask;Withdrawal Deadline 29 Oct
 Week 11
-2016-10-31; web-mining
-2016-11-02; python-guis
-2016-11-04; python-guis
+2016-10-31;regular-expressions
+2016-11-02;web-mining
+2016-11-04;web-mining
 Week 12
-2016-11-07; python-guis
-2016-11-09; review3
-2016-11-11; <b>Exam 3</b>
-Block 4: Data Analysis
+2016-11-07;python-guis
+2016-11-09;python-guis
+2016-11-11;python-guis
 Week 13
-2016-11-14; data-analysis
-2016-11-16; ipython
-2016-11-18; numpy
-Thanksgiving Week
-2016-11-21; No Class
-2016-11-23; Thanksgiving Break - no class
-2016-11-25; Thanksgiving Break - no class
+2016-11-14;review3
+2016-11-16;exam3
+2016-11-18;pq3
 Week 14
-2016-11-28; pandas
-2016-11-30; pandas
-2016-12-02; matplotlib
+2016-11-21
+2016-11-23;Thanksgiving - No Class
+2016-11-25;Thanksgiving - No Class
 Week 15
-2016-12-05; Review
-Finals Exam
-2016-12-14; Final Exam, 11:30am - 2:20pm
+2016-11-28;Special Topics
+2016-11-30;Special Topics
+2016-12-02;Special Topics
+Week 16
+2016-12-05;Special Topics
+Finals Week
+2016-12-14;Final Exam, 11:30am-2:20pm
