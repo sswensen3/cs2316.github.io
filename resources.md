@@ -5,8 +5,6 @@ title: CS 2316 - Resources
 
 # Resources
 
-
-
 ## Get Started
 
 Try to do the following before the first day of class.
@@ -38,7 +36,7 @@ For this class you don't technically need the third line above, but these are co
 
     - Note: on Windows the Python 3 command is just <code>python</code> (without the 3). Anaconda/Miniconda also aliases `python` to `python3`.
 
-### 2. Choose, install and configure a text editor using our [text editors guide](text-editors.html).
+### 3. Choose, install and configure a text editor using our [text editors guide](text-editors.html).
 
 In this class we will use the terminal, the Python REPLs (`python` and `ipython`), and text editors. We will not use an integrated development environment (IDE) such as IDLE or PyCharm. Learning how to use the command line and text editors is crucial to becoming a competent programmer and data manipulator.
 
