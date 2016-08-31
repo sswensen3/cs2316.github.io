@@ -8,12 +8,12 @@ Slides are written in Markdown and converted to Reveal.js HTML using [Pandoc](ht
 
 ```sh
 $ cd slides
-$ pandoc -s --mathjax -t revealjs -V theme=gt -V slideNumber=true -V progress=true -o intro-python.html intro-python.md
+$ pandoc -s --mathjax -t revealjs -V theme=gt -V "slideNumber='c/t'" -V progress=true -o intro-python.html intro-python.md
 
 ```
 
 To generate all the slides:
 
 ```sh
-$ for file in `ls *.md`; do pandoc -s --mathjax -t revealjs -V theme=gt -V slideNumber=true -V progress=true -o $(basename $file .md).html $file; done
+for file in `ls *.md`; do pandoc -s --mathjax -t revealjs -V theme=gt -V "slideNumber='c/t'" -V progress=true -o $(basename $file .md).html $file; done
 ```
