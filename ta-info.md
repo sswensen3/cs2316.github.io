@@ -1,8 +1,3 @@
----
-layout: default
-title: CS 2316 - Meet the TAs
----
-
 # Meet the TAs
 
 ### TA Recitation Sections:
@@ -11,13 +6,13 @@ title: CS 2316 - Meet the TAs
 - **A3**: Megi Guliashvili & Brandon Best
 - **A4**: Zeba Munshi & Alex Ketchum
 - **A5**: Elise Alfonso & Smita Tejo
----
+
 ## Head TA: Kate Unsworth
 ![](images/kate.jpg "Kate")  
 **Major**: Industrial Engineering  
 **Year**: 5th (victory lap)  
 **Hometown**: Lawrenceville, GA  
-**Hobbies**: "Cooking and baking, laughing at salads." 
+**Hobbies**: "Cooking and baking, laughing at salads."  
 kunsworth@gatech.edu
 
 ## Elise Alfonso  
@@ -25,7 +20,8 @@ kunsworth@gatech.edu
 **Major**: Industrial Engineering  
 **Year**: 4th  
 **Hometown**: Miami, FL  
-**Hobbies**: "I enjoy dancing, cooking, baking, and watching TV."
+**Hobbies**: "I enjoy dancing, cooking, baking, and watching TV."  
+ealfonso7@gatech.edu
 
 ## Brandon Best  
 ![](images/brandon.png "Brandon")  
@@ -53,7 +49,7 @@ mguliashvili3@gatech.edu
 alexketchum@gatech.edu
 
 ## Katie Lau  
-![](images/kate.png "Katie")  
+![](images/katie.png "Katie")  
 **Major**: Industrial Engineering  
 **Year**: 3rd  
 **Hometown**: Snellville, GA  
@@ -89,11 +85,11 @@ mtarbell3@gatech.edu
 **Major**: Industrial Engineering  
 **Year**: 3rd  
 **Hometown**: Plainsboro, NJ  
-**Hobbies**: "I like making bad playlists on Spotify."
+**Hobbies**: "I like making bad playlists on Spotify."  
 smitatejo@gatech.edu
 
 ## Sam Yeager  
-![](images/sam.jpg "Sam")  
+![](images/sam.JPG "Sam")  
 **Major**: MS Analytics  
 **Year**: 2nd  
 **Hometown**: Memphis, TN  
