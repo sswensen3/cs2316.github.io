@@ -92,7 +92,7 @@ If all the tests pass, then you'll probably (but not defnitely) get a 100 on thi
 ```Python
     """Calculate the volume of a cylinder given its radius and height.
 
-    Paramters:
+    Parameters:
     radius: int or float -- the radius of the cylinder
     height: int or float -- the height of the cylinder
 
@@ -154,9 +154,9 @@ Tip: The [find](https://docs.python.org/3/library/stdtypes.html#str.find) method
 ### Function: `course_avg`
 
 ```Python
-    """Caclulate course average based on weighting in syllabus
+    """Calculate course average based on weighting in syllabus
 
-    Keyword Parameters:
+    Parameters:
     exams: Sequence[int] -- 4 scores: 3 exams, last is the final exam
     hws: Sequence[int] -- homework scores
 
@@ -173,10 +173,10 @@ Tip: The [find](https://docs.python.org/3/library/stdtypes.html#str.find) method
 ### Function: `course_grade`
 
 ```Python
-    """Caclulate course average based on weighting in syllabus and return
+    """Calculate course average based on weighting in syllabus and return
     a str grade based on syllabus cutoffs
 
-    Keyword Parameters:
+    Parameters:
     exams: Sequence[int] -- 4 scores: 3 exams, last is the final exam
     hws: Sequence[int] -- homework scores
 
