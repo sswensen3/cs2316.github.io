@@ -34,7 +34,7 @@
     "control-structures": {
         "topic": "[Control Structures](slides/control-structures.html)",
         "materials": ["[ITCS - Selection](http://interactivepython.org/runestone/static/thinkcspy/Selection/toctree.html)",
-                     "[ITCS - Iteration](http://interactivepython.org/runestone/static/thinkcspy/MoreAboutIteration/toctree.html)", "IP 4"],
+                      "[ITCS - Iteration](http://interactivepython.org/runestone/static/thinkcspy/MoreAboutIteration/toctree.html)", "IP 4","Exercise: [grades.py](exercises/grades.py)"],
         "order": [9,10]
     },
     "functional-programming": {
