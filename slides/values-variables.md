@@ -94,13 +94,13 @@ Mathematical expressions are evaluated using precedence and associativity rules 
 42
 ```
 
+If you want a different order of operations, use parentheses:
+
 ```python
 >>> (2 + 4) * 10
 60
 
 ```
-
-If you want a different order of operations, use parentheses:
 
 Note that precedence and associativity rules apply to overloaded versions of operators as well:
 
@@ -196,8 +196,13 @@ Traceback (most recent call last):
 ValueError: invalid literal for int() with base 10: 'False'
 ```
 
-- `float`s are truncated when converted to `int`s
-- The `bool` literals `True` and `False` can be converted to numbers
+# Exercise
+
+Create variables named
+
+- `exam1`, `exam2`, and `exam3` and assign them literal values,
+- `exam_avg` which is assigned the value of an expression computing the average of the exams above, and
+- `grade_report`, which is a string of the form "Your exam average is X", where X is the value of `exam_avg`
 
 # Strings
 
@@ -217,7 +222,7 @@ Three ways to define string literals:
 
 # Strings
 
-Note that the REPL echoes the value with a \n to represent the newline character. Use the print function to get your intended output:
+Note that the REPL echoes the value with a `\n` to represent the newline character. Use the print function to get your intended output:
 
 ```Python
 >>> nerdy = """I do HTML for them all,
@@ -300,20 +305,15 @@ Note that the result of an index access is a string:
 
 `str` is a class (you'll learn about classes later) with many methods (a method is a function that is part of an object). Invoke a method on a string using the dot operator.
 
+`str.find(substr)` returns the index of the first occurence of
+`substr` in `str`
+
 ```Python
->>> south_park = "stan kyle cartman kenny"
->>> kids = south_park.split()
->>> kids
-['stan', 'kyle', 'cartman', 'kenny']
->>> ",".join(kids)
-'stan,kyle,cartman,kenny'
->>> kids
-['stan', 'kyle', 'cartman', 'kenny']
->>> [s.capitalize() for s in kids]
-['Stan', 'Kyle', 'Cartman', 'Kenny']
+>>> 'foobar'.find('o')
+1
 ```
 
-There are many more functions on strings. Review the book and play around to become comfortable with them.
+**Exercise**: using the `find` method and string slicing, write an expression that returns the user name from an email address, e.g., "bob@aol.com" => "bob". Do the same for the host name, e.g., "aol.com".
 
 # Values, Variables, and Expression
 
