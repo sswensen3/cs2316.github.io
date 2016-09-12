@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Data Structures</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/gt.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Data Structures</h1>
+</section>
+
+<section id="built-in-data-structures" class="slide level1">
+<h1>Built-in Data Structures</h1>
+<p>Values can be collected in data structures:</p>
+<ul>
+<li>Lists</li>
+<li>Tuples</li>
+<li>Dictionaries</li>
+<li>Sets</li>
+</ul>
+<p>This lecture just an overview. See the <a href="https://docs.python.org/3.4/library/stdtypes.html">Python documentation</a> for complete details.</p>
+</section>
+<section id="lists" class="slide level1">
+<h1>Lists</h1>
+<p>A list is an indexed sequence of Python objects.</p>
+<ul>
+<li>Create a list with square brackets</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys <span class="op">=</span> [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>]</code></pre></div>
+<ul>
+<li>Create an empty list with empty square brackets or <code>list()</code> function</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> empty <span class="op">=</span> []
+<span class="op">&gt;&gt;&gt;</span> leer <span class="op">=</span> <span class="bu">list</span>()</code></pre></div>
+<ul>
+<li>Normally you store elements of the same type in a list, but you can mix element types</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> mixed <span class="op">=</span> [<span class="dv">1</span>, <span class="st">&#39;Two&#39;</span>, <span class="fl">3.14</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(mixed[<span class="dv">0</span>])
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;int&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(mixed[<span class="dv">1</span>])
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;str&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(mixed[<span class="dv">2</span>])
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;float&#39;</span><span class="op">&gt;</span></code></pre></div>
+</section>
+<section id="creating-lists-from-strings" class="slide level1">
+<h1>Creating Lists from Strings</h1>
+<ul>
+<li>Create a list from a string with str's split() function:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> grades_line <span class="op">=</span> <span class="st">&quot;90, 85, 92, 100&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> grades_line.split()
+[<span class="st">&#39;90,&#39;</span>, <span class="st">&#39;85,&#39;</span>, <span class="st">&#39;92,&#39;</span>, <span class="st">&#39;100&#39;</span>]</code></pre></div>
+<ul>
+<li>By default <code>split()</code> uses whitespace to delimit elements. To use a different delimiter, pass as argument to <code>split()</code>:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> grades_line.split(<span class="st">&#39;,&#39;</span>)
+[<span class="st">&#39;90&#39;</span>, <span class="st">&#39; 85&#39;</span>, <span class="st">&#39; 92&#39;</span>, <span class="st">&#39; 100&#39;</span>]</code></pre></div>
+<ul>
+<li>The <code>list()</code> function converts any iterable object (like sequences) to a list. Remember that strings are sequences of characters:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="st">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>)
+[<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;f&#39;</span>, <span class="st">&#39;g&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;i&#39;</span>, <span class="st">&#39;j&#39;</span>, <span class="st">&#39;k&#39;</span>, <span class="st">&#39;l&#39;</span>, <span class="st">&#39;m&#39;</span>,
+<span class="co">&#39;n&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39;p&#39;</span>, <span class="st">&#39;q&#39;</span>, <span class="st">&#39;r&#39;</span>, <span class="st">&#39;s&#39;</span>, <span class="st">&#39;t&#39;</span>, <span class="st">&#39;u&#39;</span>, <span class="st">&#39;v&#39;</span>, <span class="st">&#39;w&#39;</span>, <span class="st">&#39;x&#39;</span>, <span class="st">&#39;y&#39;</span>,
+<span class="co">&#39;z&#39;</span>]</code></pre></div>
+</section>
+<section id="accessing-list-elements" class="slide level1">
+<h1>Accessing List Elements</h1>
+<p>Individual list elements are accessed by index.</p>
+<ul>
+<li>First element at index 0</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys <span class="op">=</span> [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys[<span class="dv">0</span>]
+<span class="co">&#39;Stan&#39;</span></code></pre></div>
+<ul>
+<li>Negative indexes offset from the end of the list backwards</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys[<span class="op">-</span><span class="dv">1</span>]
+<span class="co">&#39;Kenny&#39;</span></code></pre></div>
+<ul>
+<li>Lists are mutable, meaning you can add, delete, and modify elements</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys[<span class="dv">2</span>] <span class="op">=</span> <span class="st">&#39;Eric&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Eric&#39;</span>, <span class="st">&#39;Kenny&#39;</span>]</code></pre></div>
+</section>
+<section id="list-operators" class="slide level1">
+<h1>List Operators</h1>
+<p>The <code>in</code> operator tests for list membership. Can be negated with not:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Kyle&#39;</span> <span class="op">in</span> boys
+<span class="va">True</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Kyle&#39;</span> <span class="op">not</span> <span class="op">in</span> boys
+<span class="va">False</span></code></pre></div>
+<ul>
+<li>The + operator concatenates two lists (note 'Butters' in list):</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys <span class="op">+</span> [<span class="st">&#39;Butters&#39;</span>]
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>, <span class="st">&#39;Butters&#39;</span>]
+The <span class="op">*</span> operator repeats a <span class="bu">list</span> to produce a new <span class="bu">list</span>:
+<span class="op">&gt;&gt;&gt;</span> [<span class="st">&#39;Ni&#39;</span>] <span class="op">*</span> <span class="dv">5</span>
+[<span class="st">&#39;Ni&#39;</span>, <span class="st">&#39;Ni&#39;</span>, <span class="st">&#39;Ni&#39;</span>, <span class="st">&#39;Ni&#39;</span>, <span class="st">&#39;Ni&#39;</span>]</code></pre></div>
+</section>
+<section id="functions-on-lists" class="slide level1">
+<h1>Functions on Lists</h1>
+<p>Python provides several built-in functions that take list parameters.</p>
+<ul>
+<li><code>len(s)</code> returns the number of elements in the list <code>s</code> (more generally, the sequence <code>s</code>)</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">len</span>(boys)
+<span class="dv">4</span></code></pre></div>
+<ul>
+<li><code>min(s)</code> returns the least element of <code>s</code>, <code>max(s)</code> returns the greatest</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">min</span>(boys)
+<span class="co">&#39;Cartman&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">min</span>([<span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">9</span>])
+<span class="dv">0</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">max</span>(boys)
+<span class="co">&#39;Stan&#39;</span></code></pre></div>
+</section>
+<section id="the-del-statement" class="slide level1">
+<h1>The <code>del</code> Statement</h1>
+<p>The <code>del</code> statement deletes variables.</p>
+<ul>
+<li>Each element of a list is a variable whose name is formed by indexing into the list with square brackets.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys <span class="op">=</span> [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys[<span class="dv">3</span>]
+<span class="co">&#39;Kenny&#39;</span></code></pre></div>
+<ul>
+<li>Like any variable, a list element can be deleted with <code>del</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">del</span> boys[<span class="dv">3</span>]
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>] <span class="co"># You killed Kenny!</span></code></pre></div>
+<ul>
+<li>A list variable is a variable, so you can delete the whole list</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">del</span> boys
+<span class="op">&gt;&gt;&gt;</span> boys
+Traceback (most recent call last):
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">NameError</span>: name <span class="st">&#39;boys&#39;</span> <span class="op">is</span> <span class="op">not</span> defined</code></pre></div>
+</section>
+<section id="list-methods" class="slide level1">
+<h1>List Methods</h1>
+<p>Methods are invoked on an object (an instance of a class) by appending a dot, <code>.</code>, and the method name.</p>
+<ul>
+<li><code>s.count(x)</code>: number of occurences of <code>x</code> in the sequence <code>s</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> surfin_bird <span class="op">=</span> <span class="st">&quot;Bird bird bird b-bird&#39;s the word&quot;</span>.split()
+<span class="op">&gt;&gt;&gt;</span> surfin_bird
+[<span class="st">&#39;Bird&#39;</span>, <span class="st">&#39;bird&#39;</span>, <span class="st">&#39;bird&#39;</span>, <span class="st">&quot;b-bird&#39;s&quot;</span>, <span class="st">&#39;the&#39;</span>, <span class="st">&#39;word&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> surfin_bird.count(<span class="st">&#39;bird&#39;</span>)
+<span class="dv">2</span></code></pre></div>
+<ul>
+<li><code>s.append(x)</code> adds the single element <code>x</code> to the end of <code>s</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys.append(<span class="st">&#39;Butters&#39;</span>)
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>, <span class="st">&#39;Butters&#39;</span>]
+s.extend(t) adds the elements of t to the end of s
+<span class="op">&gt;&gt;&gt;</span> boys.extend([<span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Jimmy&#39;</span>])
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Jimmy&#39;</span>]</code></pre></div>
+</section>
+<section id="list-methods-1" class="slide level1">
+<h1>List Methods</h1>
+<ul>
+<li><code>s.remove(x)</code> removes the first occurrence of <code>x</code> in <code>s</code>, or raises a <code>ValueError</code> if <code>x</code> is not in <code>s</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys.remove(<span class="st">&#39;Kenny&#39;</span>)
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Jimmy&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys.remove(<span class="st">&#39;Professor Chaos&#39;</span>)
+Traceback (most recent call last):
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">ValueError</span>: <span class="bu">list</span>.remove(x): x <span class="op">not</span> <span class="op">in</span> <span class="bu">list</span></code></pre></div>
+<ul>
+<li><code>s.pop()</code> removes and returns the last element of the list</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys.pop()
+<span class="co">&#39;Jimmy&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>]</code></pre></div>
+</section>
+<section id="slicing" class="slide level1">
+<h1>Slicing</h1>
+<p>Slicing lists works just like slicing strings (they're both sequences)</p>
+<ul>
+<li>Take the first two elements:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys <span class="op">=</span> [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys[<span class="dv">0</span>:<span class="dv">2</span>]
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>]</code></pre></div>
+<ul>
+<li>Take every second element, starting with the first:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys[::<span class="dv">2</span>]
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Tweak&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys[<span class="dv">0</span>:<span class="dv">5</span>:<span class="dv">2</span>] <span class="co"># same as above</span>
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Tweak&#39;</span>]</code></pre></div>
+<ul>
+<li>Take the second from the end:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys[<span class="op">-</span><span class="dv">2</span>]
+<span class="co">&#39;Butters&#39;</span></code></pre></div>
+<p>Note that slice operations return new lists.</p>
+</section>
+<section id="aliases" class="slide level1">
+<h1>Aliases</h1>
+<p>Aliasing occurs when two or more variables reference the same object</p>
+<ul>
+<li>Assignment from a variable creates an alias</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> brats <span class="op">=</span> boys
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> brats
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>]</code></pre></div>
+<p>Now boys and brats are aliases.</p>
+<ul>
+<li>Changes to one are reflected in the other, becuase they reference the same object</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> brats.append(<span class="st">&#39;Timmy&#39;</span>)
+<span class="op">&gt;&gt;&gt;</span> brats
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]</code></pre></div>
+</section>
+<section id="copies" class="slide level1">
+<h1>Copies</h1>
+<p>Operators create copies</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> brats <span class="op">+</span> [<span class="st">&#39;Bebe&#39;</span>, <span class="st">&#39;Wendy&#39;</span>]
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>, <span class="st">&#39;Bebe&#39;</span>,
+<span class="co">&#39;Wendy&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> brats
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]</code></pre></div>
+<p>You have to reassign to the list to make an update:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> brats <span class="op">=</span> brats <span class="op">+</span> [<span class="st">&#39;Bebe&#39;</span>, <span class="st">&#39;Wendy&#39;</span>] <span class="co"># could also use shortcut +=</span>
+<span class="op">&gt;&gt;&gt;</span> brats
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>, <span class="st">&#39;Bebe&#39;</span>,
+<span class="co">&#39;Wendy&#39;</span>]</code></pre></div>
+<p>Notice that after the reassignment, <code>brats</code> is no longer an alias of <code>boys</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]</code></pre></div>
+</section>
+<section id="slicing-creates-copies-usually" class="slide level1">
+<h1>Slicing Creates Copies (Usually)</h1>
+<ul>
+<li>Slice on the right hand side of an assignment creates a copy:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> first_two <span class="op">=</span> boys[:<span class="dv">2</span>]
+<span class="op">&gt;&gt;&gt;</span> first_two
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> first_two[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;Stan the man&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> first_two
+[<span class="st">&#39;Stan the man&#39;</span>, <span class="st">&#39;Kyle&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]</code></pre></div>
+<ul>
+<li>Slices on the left hand side allow for flexible assignment</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys[<span class="dv">0</span>:<span class="dv">2</span>] <span class="op">=</span> [<span class="st">&#39;Randy&#39;</span>, <span class="st">&#39;Sharon&#39;</span>, <span class="st">&#39;Gerald&#39;</span>, <span class="st">&#39;Sheila&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Randy&#39;</span>, <span class="st">&#39;Sharon&#39;</span>, <span class="st">&#39;Gerald&#39;</span>, <span class="st">&#39;Sheila&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>,
+<span class="co">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]</code></pre></div>
+</section>
+<section id="a-few-more-list-operations" class="slide level1">
+<h1>A Few More List Operations</h1>
+<p>You can combine the elements of a list to form a string with <code>str</code>'s <code>join()</code> method.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> aretha <span class="op">=</span> [<span class="st">&#39;R&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;P&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;T&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;-&quot;</span>.join(aretha)
+<span class="co">&#39;R-E-S-P-E-C-T&#39;</span></code></pre></div>
+<p><code>sorted()</code> function returns a new list</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">sorted</span>(aretha)
+[<span class="st">&#39;C&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;P&#39;</span>, <span class="st">&#39;R&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;T&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> aretha <span class="co"># Notice original is unchanged</span>
+[<span class="st">&#39;R&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;P&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;T&#39;</span>]</code></pre></div>
+<p><code>sort()</code> method modifies the list it is invoked on</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> aretha.sort()
+<span class="op">&gt;&gt;&gt;</span> aretha
+[<span class="st">&#39;C&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;E&#39;</span>, <span class="st">&#39;P&#39;</span>, <span class="st">&#39;R&#39;</span>, <span class="st">&#39;S&#39;</span>, <span class="st">&#39;T&#39;</span>]</code></pre></div>
+</section>
+<section id="example-grades" class="slide level1">
+<h1>Example: Grades</h1>
+<p>Start with a list representing a line from a gradebook file</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> grades_line <span class="op">=</span> [<span class="st">&#39;Chris&#39;</span>, <span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">95</span>]
+<span class="op">&gt;&gt;&gt;</span> grades_line
+[<span class="st">&#39;Chris&#39;</span>, <span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">95</span>]</code></pre></div>
+<p>Get the sublist containing just the grades by slicing</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> grades <span class="op">=</span> grades_line[<span class="dv">1</span>:]
+<span class="op">&gt;&gt;&gt;</span> grades
+[<span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">95</span>]</code></pre></div>
+<p>Sum the grades using Python's built-in <code>sum()</code> function</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">sum</span>(grades)
+<span class="dv">285</span></code></pre></div>
+<ul>
+<li>And get the average by dividing by the number of grades</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">sum</span>(grades) <span class="op">/</span> <span class="bu">len</span>(grades)
+<span class="fl">95.0</span></code></pre></div>
+</section>
+<section id="tuples" class="slide level1">
+<h1>Tuples</h1>
+<p>Tuples are like lists, but are immutable.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">Tuples are created by separating objects <span class="cf">with</span> commas
+<span class="op">&gt;&gt;&gt;</span> pair <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>
+<span class="op">&gt;&gt;&gt;</span> pair
+(<span class="dv">1</span>, <span class="dv">2</span>)</code></pre></div>
+<p>Tuples can be used in assignments to &quot;unpack&quot; a sequence</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a, b <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]
+<span class="op">&gt;&gt;&gt;</span> a
+<span class="dv">1</span>
+<span class="op">&gt;&gt;&gt;</span> b
+<span class="dv">2</span></code></pre></div>
+<p>Tuple assignment can be used to swap values</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> b, a <span class="op">=</span> a, b
+<span class="op">&gt;&gt;&gt;</span> a, b
+(<span class="dv">2</span>, <span class="dv">1</span>)</code></pre></div>
+</section>
+<section id="dictionaries" class="slide level1">
+<h1>Dictionaries</h1>
+<p>A dictionary is a map from keys to values.</p>
+<p>Create dictionaries with <code>{}</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> capitals <span class="op">=</span> {}</code></pre></div>
+<p>Add key-value pairs with assignment operator</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> capitals[<span class="st">&#39;Georgia&#39;</span>] <span class="op">=</span> <span class="st">&#39;Atlanta&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> capitals[<span class="st">&#39;Alabama&#39;</span>] <span class="op">=</span> <span class="st">&#39;Montgomery&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> capitals
+{<span class="st">&#39;Georgia&#39;</span>: <span class="st">&#39;Altanta&#39;</span>, <span class="st">&#39;Alabama&#39;</span>: <span class="st">&#39;Montgomery&#39;</span>}</code></pre></div>
+<p>Keys are unique, so assignment to same key updates mapping</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> capitals[<span class="st">&#39;Alabama&#39;</span>] <span class="op">=</span> <span class="st">&#39;Birmingham&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> capitals
+{<span class="st">&#39;Georgia&#39;</span>: <span class="st">&#39;Altanta&#39;</span>, <span class="st">&#39;Alabama&#39;</span>: <span class="st">&#39;Birmingham&#39;</span>}</code></pre></div>
+</section>
+<section id="dictionary-operations" class="slide level1">
+<h1>Dictionary Operations</h1>
+<p>Remove a key-value mapping with <code>del</code> statement</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">del</span> capitals[<span class="st">&#39;Alabama&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> capitals
+{<span class="st">&#39;Georgia&#39;</span>: <span class="st">&#39;Atlanta&#39;</span>}</code></pre></div>
+<p>Use the <code>in</code> operator to test for existence of key (not value)</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Georgia&#39;</span> <span class="op">in</span> capitals
+<span class="va">True</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Atlanta&#39;</span> <span class="op">in</span> capitals
+<span class="va">False</span></code></pre></div>
+<p>Extend a dictionary with <code>update()</code> method, get values as a list with values method</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> capitals.update({<span class="st">&#39;Tennessee&#39;</span>: <span class="st">&#39;Nashville&#39;</span>, <span class="st">&#39;Mississippi&#39;</span>:
+<span class="co">&#39;Jackson&#39;</span>})
+<span class="op">&gt;&gt;&gt;</span> capitals.values()
+dict_values([<span class="st">&#39;Jackson&#39;</span>, <span class="st">&#39;Nashville&#39;</span>, <span class="st">&#39;Atlanta&#39;</span>])</code></pre></div>
+</section>
+<section id="conversions-to-dict" class="slide level1">
+<h1>Conversions to <code>dict</code></h1>
+<p>Any sequence of two-element sequences can be converted to a <code>dict</code></p>
+<p>A list of two-element lists:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">dict</span>([[<span class="dv">1</span>, <span class="dv">1</span>], [<span class="dv">2</span>, <span class="dv">4</span>], [<span class="dv">3</span>, <span class="dv">9</span>], [<span class="dv">4</span>, <span class="dv">16</span>]])
+{<span class="dv">1</span>: <span class="dv">1</span>, <span class="dv">2</span>: <span class="dv">4</span>, <span class="dv">3</span>: <span class="dv">9</span>, <span class="dv">4</span>: <span class="dv">16</span>}</code></pre></div>
+<p>A list of two-element tuples:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">dict</span>([(<span class="st">&#39;Lassie&#39;</span>, <span class="st">&#39;Collie&#39;</span>), (<span class="st">&#39;Rin Tin Tin&#39;</span>, <span class="st">&#39;German</span>
+<span class="st">Shepherd&#39;</span>)])
+{<span class="st">&#39;Rin Tin Tin&#39;</span>: <span class="st">&#39;German Shepherd&#39;</span>, <span class="st">&#39;Lassie&#39;</span>: <span class="st">&#39;Collie&#39;</span>}</code></pre></div>
+<p>Even a list of two-character strings:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">dict</span>([<span class="st">&#39;a1&#39;</span>, <span class="st">&#39;a2&#39;</span>, <span class="st">&#39;b3&#39;</span>, <span class="st">&#39;b4&#39;</span>])
+{<span class="st">&#39;b&#39;</span>: <span class="st">&#39;4&#39;</span>, <span class="st">&#39;a&#39;</span>: <span class="st">&#39;2&#39;</span>}</code></pre></div>
+<p>Notice that subsequent pairs overwrote previously set keys.</p>
+</section>
+<section id="sets" class="slide level1">
+<h1>Sets</h1>
+<p>Sets have no duplicates, like the keys of a <code>dict</code>. They can be iterated over (we'll learn that later) but can't be accessed by index.</p>
+<ul>
+<li>Create an empty set with <code>set()</code> function, add elements with <code>add()</code> method</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> names <span class="op">=</span> <span class="bu">set</span>()
+<span class="op">&gt;&gt;&gt;</span> names.add(<span class="st">&#39;Ally&#39;</span>)
+<span class="op">&gt;&gt;&gt;</span> names.add(<span class="st">&#39;Sally&#39;</span>)
+<span class="op">&gt;&gt;&gt;</span> names.add(<span class="st">&#39;Mally&#39;</span>)
+<span class="op">&gt;&gt;&gt;</span> names.add(<span class="st">&#39;Ally&#39;</span>)
+<span class="op">&gt;&gt;&gt;</span> names
+{<span class="st">&#39;Ally&#39;</span>, <span class="st">&#39;Mally&#39;</span>, <span class="st">&#39;Sally&#39;</span>}</code></pre></div>
+<ul>
+<li>Converting to set a convenient way to remove duplicates</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">set</span>([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>])
+{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}</code></pre></div>
+</section>
+<section id="set-operations" class="slide level1">
+<h1>Set Operations</h1>
+<p>Intersection (elements in <code>a</code> <em>and</em> <code>b</code>)</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>}
+<span class="op">&gt;&gt;&gt;</span> b <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">3</span>}
+<span class="op">&gt;&gt;&gt;</span> a <span class="op">&amp;</span> b <span class="co"># or a.intersetion(b)</span>
+{<span class="dv">2</span>}</code></pre></div>
+<p>Union (elements in <code>a</code> <em>or</em> <code>b</code>)</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">|</span> b <span class="co"># or a.union(b)</span>
+{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</code></pre></div>
+</section>
+<section id="set-operations-1" class="slide level1">
+<h1>Set Operations</h1>
+<p>Difference (elements in <code>a</code> that are not in <code>b</code>)</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">-</span> b <span class="co"># or a.difference(b)</span>
+{<span class="dv">1</span>}</code></pre></div>
+<p>Symmetric difference (elements in <code>a</code> or <code>b</code> but not both)</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">^</span> b <span class="co"># or a.symmetric_difference(b)</span>
+{<span class="dv">1</span>, <span class="dv">3</span>}</code></pre></div>
+</section>
+<section id="set-predicates" class="slide level1">
+<h1>Set Predicates</h1>
+<p>A predicate function asks a question with a <code>True</code> or <code>False</code> answer.</p>
+<p>Subset of:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span>a <span class="op">&lt;=</span> b <span class="co"># or a.issubset(b)</span>
+<span class="va">False</span></code></pre></div>
+<p>Proper subset of:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">&lt;</span> b
+<span class="va">False</span></code></pre></div>
+</section>
+<section id="set-predicates-1" class="slide level1">
+<h1>Set Predicates</h1>
+<p>Superset of:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">&gt;=</span> b <span class="co"># or a.issuperset(b)</span>
+<span class="va">False</span></code></pre></div>
+<p>Proper superset of:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">&gt;</span> b
+<span class="va">False</span></code></pre></div>
+</section>
+<section id="closing-thoughts" class="slide level1">
+<h1>Closing Thoughts</h1>
+<p>Typical Python programs make extensive use of built-in data structures and often combine them (lists of lists, dictionaries of lists, etc)</p>
+<ul>
+<li>These are just the basics</li>
+<li>Explore these data structures on your own</li>
+<li>Read the books and Python documentation</li>
+</ul>
+<p>This is a small taste of the expressive power and syntactic convenience of Python's data structures.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

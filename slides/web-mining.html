@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="CS 2316">
+  <title>Web Mining</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/gt.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Web Mining</h1>
+  <h2 class="author">CS 2316</h2>
+</section>
+
+<section id="web-mining" class="slide level1">
+<h1>Web Mining</h1>
+<p>Two ways to mine data from the web</p>
+<ul>
+<li>The hard way, by web scraping</li>
+<li>The easy way, using web service APIs</li>
+</ul>
+<p>We’ll see examples of both.</p>
+</section>
+<section id="web-scraping" class="slide level1">
+<h1>Web Scraping</h1>
+<p>Web scraping, a.k.a. screen scraping, means getting data from a web page. Suppose we want to get the current wind data for a city from <a href="http://openweathermap.org/">Open Weather Map</a>.</p>
+<figure>
+<img src="weather-city.png" />
+</figure>
+</section>
+<section id="what-is-a-web-page" class="slide level1">
+<h1>What is a Web Page?</h1>
+<p>A web page is a chunk of text containing HTML code. The browser &quot;renders&quot; the HTML graphically. So web scraping means analyzing text using Python's text processing features.</p>
+<figure>
+<img src="weather-city-html.png" />
+</figure>
+</section>
+<section id="finding-the-data-on-the-page" class="slide level1">
+<h1>Finding The Data On the Page</h1>
+<p>First you need to find the data within the HTML code for a page so you can construct a regex. Your browser's developer features can help you find the data:</p>
+<figure>
+<img src="weather-city-devtools.png" />
+</figure>
+</section>
+<section id="getting-the-web-pages-html-code" class="slide level1">
+<h1>Getting the Web Page's HTML Code</h1>
+<p>To get the HTML code of the web page into a Python string variable that you can play with, use Python's <code>urllib.request</code> module.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> urllib.request
+<span class="co"># 2994160 is the city code for Metz, FR</span>
+request <span class="op">=</span> urllib.request.Request(<span class="st">&quot;http://www.openweathermap.com/city/2994160&quot;</span>)
+response <span class="op">=</span> urllib.request.urlopen(request)
+page_bytes <span class="op">=</span> response.read()
+page_text <span class="op">=</span> page_bytes.decode()
+<span class="co"># page_text is Python str containing the HTML code</span></code></pre></div>
+</section>
+<section id="extracting-the-data" class="slide level1">
+<h1>Extracting the Data</h1>
+<p>Looks like the wind data is in the second <code>&lt;td&gt;</code> element after the <code>&lt;div class=&quot;weather-widget&quot;&gt;</code> tag, following a <code>&lt;td&gt;Wind&lt;/td&gt;</code> element. We can play around with the HTML text in the Python REPL. We eventually end up with:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">wind <span class="op">=</span> re.findall(<span class="vs">r&#39;&lt;td&gt;Wind&lt;/td&gt;&lt;td&gt;(.+?)&lt;/td&gt;&#39;</span>, page_text.replace(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>,<span class="st">&quot;&quot;</span>))[<span class="dv">0</span>]</code></pre></div>
+<p>Notice that we used a capture group to get the element data.</p>
+</section>
+<section id="aside-parsing-html" class="slide level1">
+<h1>Aside: Parsing HTML</h1>
+<p>HTML is context free language, which roughly means that it supports arbitrary nesting of elements. For example, you could have arbitrarily nested <code>div</code> elements with &quot;leaf&quot; elements containing text data, e.g.:</p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div&gt;</span>
+    <span class="kw">&lt;div&gt;</span>
+        <span class="kw">&lt;div&gt;</span>some text<span class="kw">&lt;/div&gt;</span>
+    <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre></div>
+<p>By the rules of HTML, you could nest <code>div</code> tags as deeply as you want.</p>
+<p>Regular expressions match regular laguages, which don't support arbitrary nesting. So how can we use regexes to &quot;parse&quot; HTML?</p>
+</section>
+<section id="regex-matching-in-html-code" class="slide level1">
+<h1>Regex Matching in HTML Code</h1>
+<p>Parsing means scanning the linear sequence of symbols in a string to determine its structure (usually by putting the symbols in a tree).</p>
+<p>We don't need to parse HTML to find data on a web page. While the HTML <em>language</em> supports arbitrary nesting, a particular web page will be nested to a particular depth, resulting a simple linear sequence of symbols that we can patch with a regular expression.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

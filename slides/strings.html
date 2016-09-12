@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Strings</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/gt.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Strings</h1>
+</section>
+
+<section id="string-interpolation-with" class="slide level1">
+<h1>String Interpolation with <code>%</code></h1>
+<p>The old-style (2.X) string format operator, %, takes a string with format specifiers on the left, and a single value or tuple of values on the right, and substitutes the values into the string according to the conversion rules in the format specifiers. For example:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;</span><span class="sc">%d</span><span class="st"> </span><span class="sc">%s</span><span class="st"> </span><span class="sc">%s</span><span class="st"> </span><span class="sc">%s</span><span class="st"> </span><span class="sc">%f</span><span class="st">&quot;</span> <span class="op">%</span> (<span class="dv">6</span>, <span class="st">&#39;Easy&#39;</span>, <span class="st">&#39;Pieces&#39;</span>, <span class="st">&#39;of&#39;</span>, <span class="fl">3.14</span>)
+<span class="co">&#39;6 Easy Pieces of 3.140000&#39;</span></code></pre></div>
+<p>Conversion rules on next slide ...</p>
+</section>
+<section id="old-style-2.x-conversion-rules" class="slide level1">
+<h1>Old-style (2.X) Conversion Rules</h1>
+<ul>
+<li><code>%s</code> string</li>
+<li><code>%d</code> decimal integer</li>
+<li><code>%x</code> hex integer</li>
+<li><code>%o</code> octal integer</li>
+<li><code>%f</code> decimal float</li>
+<li><code>%e</code> exponential float</li>
+<li><code>%g</code> decimal or exponential float</li>
+<li><code>%%</code> a literal</li>
+</ul>
+</section>
+<section id="string-formatting-with" class="slide level1">
+<h1>String Formatting with <code>%</code></h1>
+<p>Specify field widths with a number between % and conversion rule:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> sunbowl2012 <span class="op">=</span> [(<span class="st">&#39;Georgia Tech&#39;</span>, <span class="dv">21</span>), (<span class="st">&#39;USC&#39;</span>, <span class="dv">7</span>)]
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="op">in</span> sunbowl2012:
+...     <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">%14s</span><span class="st"> </span><span class="sc">%2d</span><span class="st">&#39;</span> <span class="op">%</span> team)
+...
+Georgia Tech <span class="dv">21</span>
+         USC  <span class="dv">7</span></code></pre></div>
+</section>
+<section id="alignment-with" class="slide level1">
+<h1>Alignment with <code>%</code></h1>
+<p>Fields right-aligned by default. Left-align with - in front of field width:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="op">in</span> sunbowl2012:
+...     <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">%-14s</span><span class="st"> </span><span class="sc">%2d</span><span class="st">&#39;</span> <span class="op">%</span> team)
+...
+Georgia Tech   <span class="dv">21</span>
+USC             <span class="dv">7</span></code></pre></div>
+<p>Specify n significant digits for floats with a .n after the field width:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;</span><span class="sc">%5.2f</span><span class="st">&#39;</span> <span class="op">%</span> math.pi
+<span class="co">&#39; 3.14&#39;</span></code></pre></div>
+<p>Notice that the field width indludes the decimal point and output is left-padded with spaces.</p>
+</section>
+<section id="string-interpolation-with-format" class="slide level1">
+<h1>String Interpolation with <code>format()</code></h1>
+<p>New-style (3.X) interpolation uses the string method <code>format</code>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;{} {} {} {} {}&quot;</span>.<span class="bu">format</span>(<span class="dv">6</span>, <span class="st">&#39;Easy&#39;</span>, <span class="st">&#39;Pieces&#39;</span>, <span class="st">&#39;of&#39;</span>, <span class="fl">3.14</span>)
+<span class="co">&#39;6 Easy Pieces of 3.14&#39;</span></code></pre></div>
+<p>Old-style formats only resolve arguments by position. New-style formats can take values from any position by putting the position number in the <code>{}</code> (Notice that positions start with 0):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;</span><span class="sc">{4}</span><span class="st"> </span><span class="sc">{3}</span><span class="st"> </span><span class="sc">{2}</span><span class="st"> </span><span class="sc">{1}</span><span class="st"> </span><span class="sc">{0}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="dv">6</span>, <span class="st">&#39;Easy&#39;</span>, <span class="st">&#39;Pieces&#39;</span>, <span class="st">&#39;of&#39;</span>, <span class="fl">3.14</span>)
+<span class="co">&#39;3.14 of Pieces Easy 6&#39;</span></code></pre></div>
+</section>
+<section id="arguments-to-format" class="slide level1">
+<h1>Arguments to <code>format()</code></h1>
+<p>Can also use named arguments, like functions:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;</span><span class="sc">{count}</span><span class="st"> pieces of </span><span class="sc">{kind}</span><span class="st"> pie&quot;</span>.<span class="bu">format</span>(kind<span class="op">=</span><span class="st">&#39;punkin&#39;</span>, count<span class="op">=</span><span class="dv">3</span>)
+<span class="co">&#39;3 pieces of punkin pie&#39;</span></code></pre></div>
+<p>Or dictionaries (note that there's one dict argument, number 0):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;</span><span class="sc">{0[count]}</span><span class="st"> pieces of </span><span class="sc">{0[kind]}</span><span class="st"> pie&quot;</span>.<span class="bu">format</span>({<span class="st">&#39;kind&#39;</span>:<span class="st">&#39;punkin&#39;</span>,
+<span class="co">&#39;count&#39;</span>:<span class="dv">3</span>})
+<span class="co">&#39;3 pieces of punkin pie&#39;</span></code></pre></div>
+</section>
+<section id="string-formatting-with-format" class="slide level1">
+<h1>String Formatting with <code>format()</code></h1>
+<p>Conversion types appear after a colon:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;{:d} {} {} {} {:f}&quot;</span>.<span class="bu">format</span>(<span class="dv">6</span>, <span class="st">&#39;Easy&#39;</span>, <span class="st">&#39;Pieces&#39;</span>, <span class="st">&#39;of&#39;</span>, <span class="fl">3.14</span>)
+<span class="co">&#39;6 Easy Pieces of 3.140000&#39;</span></code></pre></div>
+<p>Argument names can appear before the :, and field formatters appear between the : and the conversion specifier (note the &lt; and &gt; for left and right alignment):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="op">in</span> sunbowl2012:
+...     <span class="bu">print</span>(<span class="st">&#39;{:&lt;14s} {:&gt;2d}&#39;</span>.<span class="bu">format</span>(team[<span class="dv">0</span>], team[<span class="dv">1</span>]))
+...
+Georgia Tech  <span class="dv">21</span>
+USC            <span class="dv">7</span></code></pre></div>
+</section>
+<section id="sequence-unpacking" class="slide level1">
+<h1>Sequence Unpacking</h1>
+<p>Recall that <code>sunbowl2012</code> is a list of tuples. You can unpack the tuple to supply its elements as individual arguments to format (or any function) by prepending tuple with * :</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="op">in</span> sunbowl2012:
+...     <span class="bu">print</span>(<span class="st">&#39;{:&lt;14s} {:&gt;2d}&#39;</span>.<span class="bu">format</span>(<span class="op">*</span>team))
+...
+Georgia Tech  <span class="dv">21</span>
+USC            <span class="dv">7</span></code></pre></div>
+</section>
+<section id="useful-string-methods-1-of-4" class="slide level1">
+<h1>Useful String Methods (1 of 4)</h1>
+<p><code>str.find(substr)</code> returns the index of the first occurence of <code>substr</code> in <code>str</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;foobar&#39;</span>.find(<span class="st">&#39;o&#39;</span>)
+<span class="dv">1</span></code></pre></div>
+<p><code>str.replace(old, new)</code> returns a copy of str with all occurrences of <code>old</code> replaced with <code>new</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;foobar&#39;</span>.replace(<span class="st">&#39;bar&#39;</span>, <span class="st">&#39;fighter&#39;</span>)
+<span class="co">&#39;foofighter&#39;</span></code></pre></div>
+<p><code>str.split(delimiter)</code> returns a list of substrings from <code>str</code> delimited by <code>delimiter</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;foobar&#39;</span>.split(<span class="st">&#39;ob&#39;</span>)
+[<span class="st">&#39;fo&#39;</span>, <span class="st">&#39;ar&#39;</span>]</code></pre></div>
+</section>
+<section id="useful-string-methods-2-of-4" class="slide level1">
+<h1>Useful String Methods (2 of 4)</h1>
+<p><code>str.join(iterable)</code> returns a string that is the concatenation of all the elements of <code>iterable</code> with str in in between each element</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;ob&#39;</span>.join([<span class="st">&#39;fo&#39;</span>, <span class="st">&#39;ar&#39;</span>])
+<span class="co">&#39;foobar&#39;</span></code></pre></div>
+<p><code>str.strip()</code> returns a copy of <code>str</code> with leading and trailing whitespace removed</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39; landing   &#39;</span>.strip()
+<span class="co">&#39;landing&#39;</span></code></pre></div>
+<p><code>str.rstrip()</code> returns a copy of <code>str</code> with only trailing whitespace removed</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39; landing   &#39;</span>.rstrip()
+<span class="co">&#39; landing&#39;</span></code></pre></div>
+</section>
+<section id="useful-string-methods-3-of-4" class="slide level1">
+<h1>Useful String Methods (3 of 4)</h1>
+<p><code>str.rjust(width)</code> returns a copy of str that is <code>width</code> characters or <code>len(str)</code> in length, whichever is greater, padded with leading spaces as necessary</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;rewards&#39;</span>.rjust(<span class="dv">20</span>)
+<span class="co">&#39;             rewards&#39;</span></code></pre></div>
+<p><code>str.upper()</code> returns a copy of <code>str</code> with each character converted to upper case.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;CamelCase&#39;</span>.upper()
+<span class="co">&#39;CAMELCASE&#39;</span></code></pre></div>
+<p><code>str.isupper()</code> returns <code>True</code> if <code>str</code> is all upper case</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;CamelCase&#39;</span>.isupper()
+<span class="va">False</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;CAMELCASE&#39;</span>.isupper()
+<span class="va">True</span></code></pre></div>
+</section>
+<section id="useful-string-methods-4-of-4" class="slide level1">
+<h1>Useful String Methods (4 of 4)</h1>
+<p><code>str.isdigit()</code> returns <code>True</code> if <code>str</code> is all digits</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;42&#39;</span>.isdigit()
+<span class="va">True</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;99 bottles of beer&#39;</span>.isdigit()
+<span class="va">False</span></code></pre></div>
+<p><code>str.startswith(substr_or_tuple)</code> returns <code>True</code> if <code>str</code> starts with <code>substr_or_tuple</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;a bang! a whimper&#39;</span>.startswith(<span class="st">&#39;a bang&#39;</span>)
+<span class="va">True</span></code></pre></div>
+<p><code>str.endswith(substr_or_tuple)</code> returns <code>True</code> if <code>str</code> ends with <code>substr_or_tuple</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;bang! a whimper&#39;</span>.endswith(<span class="st">&#39;a whimper&#39;</span>)
+<span class="va">True</span></code></pre></div>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="CS 2316">
+  <title>JavaScript Object Notation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/gt.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">JavaScript Object Notation</h1>
+  <h2 class="author">CS 2316</h2>
+</section>
+
+<section id="representing-data-in-text-formats" class="slide level1">
+<h1>Representing Data in Text Formats</h1>
+<p>We've seen two ways of representing data in text formats so far:</p>
+<ul>
+<li><p>CSV files, and</p>
+<ul>
+<li>Simple one record per row format</li>
+<li>Can't represent nested structure</li>
+</ul></li>
+<li><p>XML</p>
+<ul>
+<li>Elements represented by tags</li>
+<li>Tree structure models nested data</li>
+<li>Verbose</li>
+</ul></li>
+</ul>
+<p>Today we'll see a third way, JSON, which has much of the expressive power of XML with much less verbosity.</p>
+</section>
+<section id="json" class="slide level1">
+<h1>JSON</h1>
+<ul>
+<li>Stands for JavaScript Object Notation</li>
+<li>Valid JavaScript code</li>
+<li>Often valid Python code</li>
+</ul>
+</section>
+<section id="csv-redux" class="slide level1">
+<h1>CSV Redux</h1>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Values and Variables</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/gt.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Values and Variables</h1>
+</section>
+
+<section id="values" class="slide level1">
+<h1>Values</h1>
+<p>An expression has a value, which is found by evaluating the expression. When you type expressions into the Python REPL, Python evaluates them and prints their values.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">1</span>
+<span class="dv">1</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="fl">3.14</span>
+<span class="fl">3.14</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;pie&quot;</span>
+<span class="co">&#39;pie&#39;</span></code></pre></div>
+<p>The expressions above are literal values. A literal is a textual representation of a value in Python source code.</p>
+</section>
+<section id="types" class="slide level1">
+<h1>Types</h1>
+<p>All values have types. Python can tell you the type of a value with the built-in type function:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(<span class="dv">1</span>)
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;int&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(<span class="fl">3.14</span>)
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;float&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(<span class="st">&quot;pie&quot;</span>)
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;str&#39;</span><span class="op">&gt;</span></code></pre></div>
+</section>
+<section id="the-meaning-of-types" class="slide level1">
+<h1>The Meaning of Types</h1>
+<p>Types determine which operations are available on values. For example, exponentiation is defined for numbers (like int or float):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span><span class="op">**</span><span class="dv">3</span>
+<span class="dv">8</span></code></pre></div>
+<p>... but not for <code>str</code> (string) values:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;pie&quot;</span><span class="op">**</span><span class="dv">3</span>
+Traceback (most recent call last):
+  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">TypeError</span>: unsupported operand <span class="bu">type</span>(s) <span class="cf">for</span> <span class="op">**</span> <span class="op">or</span> <span class="bu">pow</span>(): <span class="st">&#39;str&#39;</span> <span class="op">and</span> <span class="st">&#39;int&#39;</span></code></pre></div>
+</section>
+<section id="python-is-dynamically-typed" class="slide level1">
+<h1>Python is Dynamically Typed</h1>
+<p>Python is dynamically typed, meaning that types are not resoved until run-time. This means two things practically:</p>
+<ol type="1">
+<li>Values have types, variables don't:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;</span> a <span class="op">=</span> <span class="dv">1</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;int&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> <span class="fl">1.1</span> <span class="co"># This would not be allowed in a statically typed language</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(a)
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;float&#39;</span><span class="op">&gt;</span></code></pre></div>
+<ol start="2" type="1">
+<li>Python doesn't report type errors until run-time. We'll see many examples of this fact.</li>
+</ol>
+</section>
+<section id="overloaded-operators" class="slide level1">
+<h1>Overloaded Operators</h1>
+<p>Some operators are overloaded, meaning they have different meanings when applied to different types. For example, + means addition for numbers and concatenation for strings:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>
+<span class="dv">4</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Yo&quot;</span> <span class="op">+</span> <span class="st">&quot;lo!&quot;</span>
+<span class="co">&#39;Yolo!&#39;</span></code></pre></div>
+<p><code>*</code> means multiplication for numbers and repetition for strings:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span>
+<span class="dv">6</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Yo&quot;</span> <span class="op">*</span> <span class="dv">3</span>
+<span class="co">&#39;YoYoYo&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="dv">3</span> <span class="op">*</span> <span class="st">&quot;Yo&quot;</span>
+<span class="co">&#39;YoYoYo&#39;</span></code></pre></div>
+</section>
+<section id="expression-evaluation" class="slide level1">
+<h1>Expression Evaluation</h1>
+<p>Mathematical expressions are evaluated using precedence and associativity rules as you would expect from math:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> <span class="dv">10</span>
+<span class="dv">42</span></code></pre></div>
+<p>If you want a different order of operations, use parentheses:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> (<span class="dv">2</span> <span class="op">+</span> <span class="dv">4</span>) <span class="op">*</span> <span class="dv">10</span>
+<span class="dv">60</span></code></pre></div>
+<p>Note that precedence and associativity rules apply to overloaded versions of operators as well:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;Honey&quot;</span> <span class="op">+</span> <span class="st">&quot;Boo&quot;</span> <span class="op">*</span> <span class="dv">2</span>
+<span class="co">&#39;HoneyBooBoo&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> (<span class="st">&quot;Honey&quot;</span> <span class="op">+</span> <span class="st">&quot;Boo&quot;</span>) <span class="op">*</span> <span class="dv">2</span>
+<span class="co">&#39;HoneyBooHoneyBoo&#39;</span></code></pre></div>
+</section>
+<section id="variables" class="slide level1">
+<h1>Variables</h1>
+<p>A variable is a name for a value. You bind a value to a variable using an assignment statement (or as we'll learn later, passing an argument to a function):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> <span class="st">&quot;Ok&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> a
+<span class="co">&#39;Ok&#39;</span></code></pre></div>
+<p><code>=</code> is the assignment operator and an assignment statement has the form <code>&lt;variable_name&gt; = &lt;expression&gt;</code></p>
+<p>Variable names, or identifiers, may contain letters, numbers, or underscores and may not begin with a number.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> 16_candles <span class="op">=</span> <span class="st">&quot;Molly Ringwald&quot;</span>
+  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>
+    16_candles <span class="op">=</span> <span class="st">&quot;Molly Ringwald&quot;</span>
+             <span class="op">^</span>
+<span class="pp">SyntaxError</span>: invalid syntax</code></pre></div>
+</section>
+<section id="keywords" class="slide level1">
+<h1>Keywords</h1>
+<p>Python reserves some identifiers for its own use.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">class</span> <span class="op">=</span> <span class="st">&quot;CS 2316&quot;</span>
+  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>
+    <span class="kw">class</span> <span class="op">=</span> <span class="st">&quot;CS 2316&quot;</span>
+          <span class="op">^</span>
+<span class="pp">SyntaxError</span>: invalid syntax</code></pre></div>
+<p>The assignment statement failed becuase class is one of Python's keywords:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="va">False</span>      <span class="kw">class</span>      <span class="cf">finally</span>    <span class="op">is</span>         <span class="cf">return</span>
+<span class="va">None</span>       <span class="cf">continue</span>   <span class="cf">for</span>        <span class="kw">lambda</span>     <span class="cf">try</span>
+<span class="va">True</span>       <span class="kw">def</span>        <span class="im">from</span>       <span class="kw">nonlocal</span>   <span class="cf">while</span>
+<span class="op">and</span>        <span class="kw">del</span>        <span class="kw">global</span>     <span class="op">not</span>        <span class="cf">with</span>
+<span class="im">as</span>         <span class="cf">elif</span>       <span class="cf">if</span>         <span class="op">or</span>         <span class="cf">yield</span>
+<span class="cf">assert</span>     <span class="cf">else</span>       <span class="im">import</span>     <span class="cf">pass</span>
+<span class="cf">break</span>      <span class="cf">except</span>     <span class="op">in</span>         <span class="cf">raise</span></code></pre></div>
+</section>
+<section id="assignment-semantics" class="slide level1">
+<h1>Assignment Semantics</h1>
+<p>Python evaluates the expression on the right-hand side, then binds the expression's value to the variable on the left-hand side. Variables can be reassigned:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> <span class="st">&quot;Ok&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> a
+<span class="co">&#39;Ok&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> a <span class="op">*</span> <span class="dv">3</span>
+<span class="op">&gt;&gt;&gt;</span> a
+<span class="co">&#39;OkOkOk&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> a <span class="op">*</span> <span class="dv">3</span>
+<span class="op">&gt;&gt;&gt;</span> a
+<span class="co">&#39;OkOkOkOkOkOkOkOkOk&#39;</span></code></pre></div>
+<p>Note that the value of <code>a</code> used in the expression on the right hand side is the value it had before the assignment statement.</p>
+<p>What's the type of <code>a</code>?</p>
+</section>
+<section id="type-conversions" class="slide level1">
+<h1>Type Conversions</h1>
+<p>Python can create new values out of values with different types by applying conversions named after the target type.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">int</span>(<span class="fl">2.9</span>)
+<span class="dv">2</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">float</span>(<span class="va">True</span>)
+<span class="fl">1.0</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">int</span>(<span class="va">False</span>)
+<span class="dv">0</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">str</span>(<span class="va">True</span>)
+<span class="co">&#39;True&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">int</span>(<span class="st">&quot;False&quot;</span>)
+Traceback (most recent call last):
+  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">ValueError</span>: invalid literal <span class="cf">for</span> <span class="bu">int</span>() <span class="cf">with</span> base <span class="dv">10</span>: <span class="st">&#39;False&#39;</span></code></pre></div>
+</section>
+<section id="exercise" class="slide level1">
+<h1>Exercise</h1>
+<p>Create variables named</p>
+<ul>
+<li><code>exam1</code>, <code>exam2</code>, and <code>exam3</code> and assign them literal values,</li>
+<li><code>exam_avg</code> which is assigned the value of an expression computing the average of the exams above, and</li>
+<li><code>grade_report</code>, which is a string of the form &quot;Your exam average is X&quot;, where X is the value of <code>exam_avg</code></li>
+</ul>
+</section>
+<section id="strings" class="slide level1">
+<h1>Strings</h1>
+<p>Three ways to define string literals:</p>
+<ul>
+<li><p>with single quotes: <code>'Ni!'</code></p></li>
+<li><p>double quotes: <code>&quot;Ni!&quot;</code></p></li>
+<li><p>Or with triples of either single or double quotes, which creates a multi-line string:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;&quot;&quot;I do HTML for them all,</span>
+<span class="st">... even made a home page for my dog.&quot;&quot;&quot;</span>
+<span class="co">&#39;I do HTML for them all,\neven made a home page for my dog.&#39;</span></code></pre></div></li>
+</ul>
+</section>
+<section id="strings-1" class="slide level1">
+<h1>Strings</h1>
+<p>Note that the REPL echoes the value with a <code>\n</code> to represent the newline character. Use the print function to get your intended output:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> nerdy <span class="op">=</span> <span class="st">&quot;&quot;&quot;I do HTML for them all,</span>
+<span class="st">... even made a home page for my dog.&quot;&quot;&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> nerdy
+<span class="co">&#39;I do HTML for them all,\neven made a home page for my dog.&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(nerdy)
+I do HTML <span class="cf">for</span> them <span class="bu">all</span>,
+even made a home page <span class="cf">for</span> my dog.</code></pre></div>
+</section>
+<section id="strings-2" class="slide level1">
+<h1>Strings</h1>
+<p>Choice of quote character is usually a matter of taste, but the choice can sometimes buy convenience. If your string contains a quote character you can either escape it:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> journey <span class="op">=</span> <span class="st">&#39;Don</span><span class="ch">\&#39;</span><span class="st">t stop believing.&#39;</span></code></pre></div>
+<p>or use the other quote character:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> journey <span class="op">=</span> <span class="st">&quot;Don&#39;t stop believing.&quot;</span></code></pre></div>
+</section>
+<section id="string-operations" class="slide level1">
+<h1>String Operations</h1>
+<p>Because strings are sequences we can get a string's length with <code>len()</code>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> i <span class="op">=</span> <span class="st">&quot;team&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">len</span>(i)
+<span class="dv">4</span></code></pre></div>
+<p>and access characters in the string by index (offset from beginning – first index is 0) using <code>[]</code>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> i[<span class="dv">1</span>]
+<span class="co">&#39;e&#39;</span></code></pre></div>
+<p>Note that the result of an index access is a string:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(i[<span class="dv">1</span>])
+<span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;str&#39;</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> i[<span class="dv">3</span>] <span class="op">+</span> i[<span class="dv">1</span>]
+<span class="co">&#39;me&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> i[<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> i[<span class="dv">1</span>] <span class="co"># Note that a negative index goes from the end</span>
+<span class="co">&#39;me&#39;</span></code></pre></div>
+</section>
+<section id="string-slicing" class="slide level1">
+<h1>String Slicing</h1>
+<p><em>[:end]</em> gets the first characters up to but not including <em>end</em></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> al_gore <span class="op">=</span> <span class="st">&quot;manbearpig&quot;</span>
+<span class="op">&gt;&gt;&gt;</span> al_gore[:<span class="dv">3</span>]
+<span class="co">&#39;man&#39;</span></code></pre></div>
+<p><em>[begin:end]</em> gets the characters from <em>begin</em> up to but not including end</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> al_gore[<span class="dv">3</span>:<span class="dv">7</span>]
+<span class="co">&#39;bear&#39;</span></code></pre></div>
+<p><em>[begin:]</em> gets the characters from <em>begin</em> to the end of the string</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> al_gore[<span class="dv">7</span>:]
+<span class="co">&#39;pig&#39;</span>
+<span class="op">&gt;&gt;&gt;</span></code></pre></div>
+</section>
+<section id="string-methods" class="slide level1">
+<h1>String Methods</h1>
+<p><code>str</code> is a class (you'll learn about classes later) with many methods (a method is a function that is part of an object). Invoke a method on a string using the dot operator.</p>
+<p><code>str.find(substr)</code> returns the index of the first occurence of <code>substr</code> in <code>str</code></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;foobar&#39;</span>.find(<span class="st">&#39;o&#39;</span>)
+<span class="dv">1</span></code></pre></div>
+<p><strong>Exercise</strong>: using the <code>find</code> method and string slicing, write an expression that returns the user name from an email address, e.g., &quot;bob@aol.com&quot; =&gt; &quot;bob&quot;. Do the same for the host name, e.g., &quot;aol.com&quot;.</p>
+</section>
+<section id="values-variables-and-expression" class="slide level1">
+<h1>Values, Variables, and Expression</h1>
+<ul>
+<li>Values are the atoms of computer programs</li>
+<li>We (optionally) combine values using operators and functions to form compound expressions</li>
+<li>We create variables, which are identifiers that name values, define other identifiers that name functions, classes, modules and packages</li>
+<li>By choosing our identifiers, or names, carefully we can create beautiful, readable programs</li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

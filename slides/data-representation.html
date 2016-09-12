@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Data Representation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/gt.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Data Representation</h1>
+</section>
+
+<section id="data-representation" class="slide level1">
+<h1>Data Representation</h1>
+<p>Today we’ll do an exercise in representing data, examining:</p>
+<ul>
+<li>records as lists,</li>
+<li>databases as lists of lists,</li>
+<li>records as dictionaries,</li>
+<li>databases as dictonaries,</li>
+</ul>
+<p>and culminating in an introduction to objects.</p>
+</section>
+<section id="records" class="slide level1">
+<h1>Records</h1>
+<p>A record is a structured data type, a metaphor that maps a human concept to a computer language representation. For example, we could say that a student is a</p>
+<ul>
+<li>student id</li>
+<li>name</li>
+<li>list of grades</li>
+</ul>
+<p>Each student record would contain these three fields. The simplest way to represent a record like this in Python is with a list:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> chris <span class="op">=</span> [’gtg034t’, ’Chris’, [<span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">90</span>]]
+<span class="op">&gt;&gt;&gt;</span> chris
+[’gtg034t’, ’Chris’, [<span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">90</span>]]</code></pre></div>
+<p>Notice that we can nest lists within lists.</p>
+</section>
+<section id="records-as-lists" class="slide level1">
+<h1>Records as Lists</h1>
+<p>With our list-based records, getting a field means indexing into the list:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> chris_id <span class="op">=</span> chris[<span class="dv">0</span>]
+<span class="op">&gt;&gt;&gt;</span> chris_id
+’gtg034t’</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">We index into sub<span class="op">-</span>lists <span class="im">as</span> well:
+<span class="op">&gt;&gt;&gt;</span> chris_exam1 <span class="op">=</span> chris[<span class="dv">2</span>][<span class="dv">0</span>]
+<span class="op">&gt;&gt;&gt;</span> chris_exam1
+<span class="dv">100</span></code></pre></div>
+<p>Notice that we give meaningful names to the variables we store the values in, e.g., <code>chris_exam1</code>, but the indexed records themselves don’t have meanful names, e.g., it’s not obvious that <code>chris[2][0]</code> is Chris’s Exam 1 score.</p>
+</section>
+<section id="field-labels-for-list-based-records" class="slide level1">
+<h1>Field Labels for List-based Records</h1>
+<p>We can create contstants to improve readability:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> ID, NAME, GRADES <span class="op">=</span> <span class="bu">range</span>(<span class="dv">3</span>)
+<span class="op">&gt;&gt;&gt;</span> ID, NAME, GRADES
+(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>)</code></pre></div>
+<p>Note that we name variables that are meant to be constant in ALL CAPS. This is a hint to the programmer that we shouldn’t reassign these variables, but Python won’t prevent it.</p>
+<p>Now we can get fields from list-based student records more readably:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> chris[ID]
+’gtg034t’</code></pre></div>
+<p>But it’s still brittle. We have to maintain the mapping from index constants to fields. If we re-arrange our lists we have to update the field constants. We’ll revisit this idea in a minute...</p>
+</section>
+<section id="databases-as-lists-of-lists" class="slide level1">
+<h1>Databases as Lists of Lists</h1>
+<p>If we had multiple students we could store them in a list:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> eva <span class="op">=</span> [’eluator3’, ’Eva’, [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">100</span>]]
+<span class="op">&gt;&gt;&gt;</span> alyssa <span class="op">=</span> [’ahacker3’, ’Alyssa’, [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">100</span>]]
+<span class="op">&gt;&gt;&gt;</span> students <span class="op">=</span> [chris, eva, alyssa]</code></pre></div>
+<p>We can then use familiar list operations to operate on the student database:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> stud <span class="op">in</span> students:
+...     stud[GRADES][<span class="dv">1</span>] <span class="op">+=</span> <span class="dv">10</span> <span class="co"># give each student 10 points on exam 2</span>
+<span class="op">&gt;&gt;&gt;</span> exam2avg <span class="op">=</span> <span class="bu">sum</span>([stud[GRADES][<span class="dv">1</span>] <span class="cf">for</span> stud <span class="op">in</span> students]) <span class="op">/</span>
+<span class="bu">len</span>(students)
+<span class="op">&gt;&gt;&gt;</span> exam2avg
+<span class="fl">103.33333333333333</span></code></pre></div>
+<p>Eventually, maintaining the mapping between indexes and their meanings will become hard to maintain. Dictionaries are a better approach.</p>
+</section>
+<section id="records-as-dictionaries" class="slide level1">
+<h1>Records as Dictionaries</h1>
+<p>Dictonaries maintain an efficient mapping between keys and their values. A dictonary can express a student record more naturally:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> chris <span class="op">=</span> {’id’: ’gtg034t’, ’name’: ’Chris’,
+...          ’grades’: {’exam1’: <span class="dv">100</span>, ’exam2’: <span class="dv">80</span>, ’exam3’: <span class="dv">90</span>}}
+<span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> pprint <span class="im">as</span> pp
+<span class="op">&gt;&gt;&gt;</span> pp.pprint(chris)
+{’grades’: {’exam1’: <span class="dv">100</span>, ’exam2’: <span class="dv">80</span>, ’exam3’: <span class="dv">90</span>}, ’id’: ’gtg034t’, ’name’: ’Chris’}</code></pre></div>
+<p>Notice that we’re nesting dictionaries just like we nested lists.</p>
+</section>
+<section id="databases-as-dictionaries-of-dictionaries" class="slide level1">
+<h1>Databases as Dictionaries of Dictionaries</h1>
+<p>As we’ll learn later, database records must have a unique key. Dictionaries employ the same idea:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> students <span class="op">=</span> {}
+<span class="op">&gt;&gt;&gt;</span> students[eva[’id’]] <span class="op">=</span> eva
+<span class="op">&gt;&gt;&gt;</span> students[alyssa[’id’]] <span class="op">=</span> alyssa
+<span class="op">&gt;&gt;&gt;</span> students[chris[’id’]] <span class="op">=</span> chris
+<span class="op">&gt;&gt;&gt;</span> pp.pprint(students)
+{’ahacker3’: {’grades’: {’exam1’: <span class="dv">100</span>, ’exam2’: <span class="dv">100</span>, ’exam3’: <span class="dv">100</span>},
+             ’id’: ’ahacker3’,
+             ’name’: ’Alyssa’},
+[...]</code></pre></div>
+<p>We can use comprehensions to do queries. For example, to get the names of all students who scored higher than 90 on exam2:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> [students[stud][’name’] <span class="cf">for</span> stud <span class="op">in</span> students.keys()
+...                         <span class="cf">if</span> students[stud][’grades’][’exam2’] <span class="op">&gt;</span> <span class="dv">90</span>]
+[’Alyssa’, ’Eva’]</code></pre></div>
+</section>
+<section id="named-tuples" class="slide level1">
+<h1>Named Tuples</h1>
+<p>Named tuples</p>
+</section>
+<section id="classes-and-objects" class="slide level1">
+<h1>Classes and Objects</h1>
+<p>Dictionaries are an improvement, but classes provide the cleanest representation. See student.py for a Student class:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Student():
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="bu">id</span>, name, exams):
+        <span class="va">self</span>.<span class="bu">id</span> <span class="op">=</span> <span class="bu">id</span>
+        <span class="va">self</span>.name <span class="op">=</span> name
+        <span class="va">self</span>.exams <span class="op">=</span> exams
+
+    <span class="kw">def</span> exam(<span class="va">self</span>, number):
+        <span class="cf">return</span> <span class="va">self</span>.exams[number <span class="op">-</span> <span class="dv">1</span>]</code></pre></div>
+<p>Using classes is much clearer:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> classes.student <span class="im">import</span> Student
+<span class="op">&gt;&gt;&gt;</span> chris <span class="op">=</span> Student(’gtg034t’, ’Chris Rock’, [<span class="dv">100</span>, <span class="dv">80</span>, <span class="dv">90</span>])
+<span class="op">&gt;&gt;&gt;</span> eva <span class="op">=</span> Student(’eluator3’, ’Eva Luator’, [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">100</span>])
+<span class="op">&gt;&gt;&gt;</span> alyssa <span class="op">=</span> Student(’ahacker3’, ’Alyssa Hacker’, [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">100</span>])
+<span class="op">&gt;&gt;&gt;</span> students <span class="op">=</span> [chris, eva, alyssa]
+<span class="op">&gt;&gt;&gt;</span> [stud.name <span class="cf">for</span> stud <span class="op">in</span> students <span class="cf">if</span> stud.exam(<span class="dv">2</span>) <span class="op">&gt;</span> <span class="dv">90</span>]
+[’Eva Luator’, ’Alyssa Hacker’]</code></pre></div>
+<p>We’ll learn about classes and objects in detail next lecture.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

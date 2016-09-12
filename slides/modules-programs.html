@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Modules and Programs</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/gt.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Modules and Programs</h1>
+</section>
+
+<section id="python-programs" class="slide level1">
+<h1>Python Programs</h1>
+<p>Python code organized in</p>
+<ul>
+<li>modules,</li>
+<li>packages, and</li>
+<li>scripts.</li>
+</ul>
+<p>We've already used some modules, now we'll learn what they are, how they're orgainized in packages, and how to write Python programs that can be run on their own, not just entered in the Python command shell.</p>
+</section>
+<section id="modules" class="slide level1">
+<h1>Modules</h1>
+<p>A module is a file with Python code. Python includes many standard modules, such as <code>turtle</code>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> turtle
+<span class="op">&gt;&gt;&gt;</span> turtle.left(<span class="dv">90</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.forward(<span class="dv">80</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.right(<span class="dv">90</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.forward(<span class="dv">80</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.left(<span class="fl">143.14</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.forward(<span class="dv">50</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.left(<span class="fl">73.73</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.forward(<span class="dv">50</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.left(<span class="fl">98.14</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.forward(<span class="fl">113.14</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.left(<span class="dv">135</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.forward(<span class="dv">80</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.left(<span class="dv">135</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.forward(<span class="fl">113.14</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.left(<span class="dv">135</span>)
+<span class="op">&gt;&gt;&gt;</span> turtle.forward(<span class="dv">80</span>)</code></pre></div>
+<p>You can see what this draws by running house.py.</p>
+</section>
+<section id="importing-modules" class="slide level1">
+<h1>Importing Modules</h1>
+<p><code>import</code>ing a module means getting names from the module into scope. When you import a module, you can access the modules components with the dot operator as in the previous example.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> math
+<span class="op">&gt;&gt;&gt;</span> math.sqrt(<span class="dv">64</span>)
+<span class="fl">8.0</span></code></pre></div>
+<p>You can also import a module and give it an alias: import <module> as <local-name></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> math <span class="im">as</span> m
+<span class="op">&gt;&gt;&gt;</span> m.sqrt(<span class="dv">64</span>)
+<span class="fl">8.0</span></code></pre></div>
+</section>
+<section id="importing-into-local-scope" class="slide level1">
+<h1>Importing into Local Scope</h1>
+<p>Remember that importing brings names into the scope of the import. Here we import the math module into one function.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> hypotenuse(a, b):
+...     <span class="im">import</span> math
+...     <span class="cf">return</span> math.sqrt(a<span class="op">*</span>a <span class="op">+</span> b<span class="op">*</span>b)
+...
+<span class="op">&gt;&gt;&gt;</span> hypotenuse(<span class="dv">3</span>, <span class="dv">4</span>)
+<span class="fl">5.0</span>
+<span class="op">&gt;&gt;&gt;</span> math.sqrt(<span class="dv">64</span>)
+Traceback (most recent call last):
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">NameError</span>: name <span class="st">&#39;math&#39;</span> <span class="op">is</span> <span class="op">not</span> defined</code></pre></div>
+</section>
+<section id="importing-names-from-a-module" class="slide level1">
+<h1>Importing Names from a Module</h1>
+<p>You can import only certain names from a module:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> math <span class="im">import</span> sqrt
+<span class="op">&gt;&gt;&gt;</span> sqrt(<span class="dv">64</span>)
+<span class="fl">8.0</span>
+<span class="op">&gt;&gt;&gt;</span> floor(<span class="fl">1.2</span>)
+Traceback (most recent call last):
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">NameError</span>: name <span class="st">&#39;floor&#39;</span> <span class="op">is</span> <span class="op">not</span> defined</code></pre></div>
+<p>Or all names from a module:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> math <span class="im">import</span> <span class="op">*</span>
+<span class="op">&gt;&gt;&gt;</span> floor(<span class="fl">1.2</span>)
+<span class="dv">1</span>
+<span class="op">&gt;&gt;&gt;</span> sin(<span class="dv">0</span>)
+<span class="fl">0.0</span>
+<span class="op">&gt;&gt;&gt;</span> sin(.<span class="dv">5</span> <span class="op">*</span> pi)
+<span class="fl">1.0</span></code></pre></div>
+<p>Notice that with this syntax you don't have to use a fully-qualified name, e.g., module.name</p>
+</section>
+<section id="module-search-path" class="slide level1">
+<h1>Module Search Path</h1>
+<p>Just as an operating system command shell searches for executable programs by searching the directories listed in the <code>PATH</code> environment variable, Python finds modules by searching directories. The module search path is stored in <code>sys.path</code>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys
+<span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> pprint <span class="im">as</span> pp
+<span class="op">&gt;&gt;&gt;</span> pp.pprint(sys.path)
+[<span class="st">&#39;&#39;</span>,
+ <span class="co">&#39;/home/chris/miniconda3/lib/python35.zip&#39;</span>,
+ <span class="co">&#39;/home/chris/miniconda3/lib/python3.5&#39;</span>,
+ <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/plat-linux&#39;</span>,
+ <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/lib-dynload&#39;</span>,
+ <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/site-packages&#39;</span>,
+ <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/site-packages/setuptools-23.0.0-py3.5.egg&#39;</span>]</code></pre></div>
+<p>Notice that the current directory, represented by the ” at the beginning of the search path.</p>
+<p>Also, note use of <code>pprint</code>.</p>
+</section>
+<section id="packages" class="slide level1">
+<h1>Packages</h1>
+<p>Modules are just Python files. The directory path from some sys.path root to a Python source file is called a package. Make a directory called hanglib and download this file into it: drawing.py</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> hanglib.drawing
+<span class="op">&gt;&gt;&gt;</span> hanglib.drawing.stand()</code></pre></div>
+<p><code>hanglib</code> is a package 1 and drawing is a module within the hanglib package. Of course, you could import it as an alias to make coding more convenient:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> hanglib.drawing
+<span class="op">&gt;&gt;&gt;</span> hanglib.drawing.stand()
+<span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> hanglib.drawing <span class="im">as</span> draw
+<span class="op">&gt;&gt;&gt;</span> draw.head()</code></pre></div>
+<p>Notice that, as in this example, we can make our own modules.</p>
+</section>
+<section id="python-scripts" class="slide level1">
+<h1>Python Scripts</h1>
+<p>Take a look at the drawing.py file. Notice the if statement at the bottom:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># is this the main (top-level) module?</span>
+<span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:
+    stand()
+    head()
+    body()
+    leftarm()
+    rightarm()
+    leftleg()
+    rightleg()
+    <span class="co"># Pause so the user can see the drawing before exiting.</span>
+    <span class="bu">input</span>(<span class="st">&#39;Press any key to exit.&#39;</span>)</code></pre></div>
+<p>This makes the module a runnable Python program. It's similar to the main function or method from some other programming languages. With it we can import the file as a module to use its functions (or objects or variables), or run it from the command line.</p>
+</section>
+<section id="shebang" class="slide level1">
+<h1>Shebang!</h1>
+<p>Another way to run a Python program (on Unix) is to tell the host operating system how to run it. We do that with a &quot;shebang&quot; line at the beginning of a Python program:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python3</span></code></pre></div>
+<p>This line says &quot;run python3 and pass this file as an argument.&quot; So if you have a program called foo with shebang line as above and which has been set executable (chmod +x foo.py), thse are equivalent:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python3 foo.py
+$ .<span class="op">/</span>foo.py</code></pre></div>
+</section>
+<section id="interactive-programs" class="slide level1">
+<h1>Interactive Programs</h1>
+<p>The input() function Python reads all the characters typed into the console until the user presses ENTER and returns them as a string:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> x <span class="op">=</span> <span class="bu">input</span>()
+abcdefg1234567
+<span class="op">&gt;&gt;&gt;</span> x
+<span class="co">&#39;abcdefg1234567&#39;</span></code></pre></div>
+<p>We can also supply a prompt for the user:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">input</span>(<span class="st">&#39;Give me a number: &#39;</span>)
+Give me a number: <span class="dv">3</span>
+<span class="co">&#39;3&#39;</span></code></pre></div>
+<p>And remember, input() returns a string that may need to be converted.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Give me a number and I&#39;ll double it: &quot;</span>))
+Give me a number <span class="op">and</span> I<span class="st">&#39;ll double it: 3</span>
+<span class="st">6</span></code></pre></div>
+</section>
+<section id="command-line-arguments" class="slide level1">
+<h1>Command Line Arguments</h1>
+<figure>
+<img src="Argument_Clinic.png" />
+</figure>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python args.py one <span class="dv">2</span> two <span class="op">+</span> one</code></pre></div>
+<p>The <code>python</code> invocation above contains 6 command line arguments.</p>
+</section>
+<section id="command-line-arguments-in-python" class="slide level1">
+<h1>Command-line Arguments in Python</h1>
+<p>When you run a Python program, Python collects the arguments to the program in a variable called sys.argv. Given a Python program (<code>arguments.py</code>):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python3</span>
+<span class="im">import</span> sys
+
+<span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">&lt;</span> <span class="dv">2</span>:
+    <span class="bu">print</span>(<span class="st">&quot;You&#39;ve given me nothing to work with.&quot;</span>)
+<span class="cf">else</span>:
+    <span class="bu">print</span>(sys.argv[<span class="dv">1</span>] <span class="op">+</span><span class="st">&quot;? Well I disagree!&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ .<span class="op">/</span>arguments.py Pickles
+Pickles? Well I disagree<span class="op">!</span>
+[chris@lawn<span class="dv">-128-61-62-82</span> <span class="op">~/</span>work<span class="op">/</span>vcs<span class="op">/</span>github<span class="op">/</span>data<span class="op">-</span>python<span class="op">/</span>code]
+$ .<span class="op">/</span>arguments.py
+You<span class="st">&#39;ve given me nothing to work with.</span></code></pre></div>
+</section>
+<section id="conclusion" class="slide level1">
+<h1>Conclusion</h1>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/kQFKtI6gn9Y" frameborder="0" allowfullscreen>
+</iframe>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

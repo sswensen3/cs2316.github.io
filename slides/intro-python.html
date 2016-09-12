@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Introduction to Python</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/gt.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Introduction to Python</h1>
+</section>
+
+<section id="introduction-to-python" class="slide level1">
+<h1>Introduction to Python</h1>
+<center>
+<img src="http://imgs.xkcd.com/comics/python.png"/>
+</center>
+<p><a href="http://xkcd.com/353/" class="uri">http://xkcd.com/353/</a></p>
+</section>
+<section id="the-python-language" class="slide level1">
+<h1>The Python Language</h1>
+<ul>
+<li><p>Python is a general-purpose programming language, meaning you can write any kind of program in Python.1</p>
+<ul>
+<li>The opposite of a general purpose language is a domain-specific language, which is designed for one kind of application. Later we’ll learn a domain-specific langauge called SQL which is just for manipulating relational databases.</li>
+</ul></li>
+<li><p>Python is interpreted, meaning you can run programs directly after you write them; you don’t have to compile programs to some intermediate form for the operating system or a virtual machine to execute.</p></li>
+</ul>
+<p>The coolest thing about Python ...</p>
+</section>
+<section id="the-python-name" class="slide level1">
+<h1>The Python Name</h1>
+<center>
+<img src="Flyingcircus_2.jpg" alt="By BBC - http://www.bbc.co.uk/comedy/guide/articles/m/gallery/montypythonsflyi_1299002137_2.shtml, released for free downloadoriginally listed differently, when i sent an inquiering e-mail i got the response back that I had inquired about a promotional photograph, so have relisted it, https://en.wikipedia.org/w/index.php?curid=6130072" />
+</center>
+<p>Python was named for Monty Python, of which Python’s creator, Guido van Rossum, is a big fan.</p>
+</section>
+<section id="the-python-program" class="slide level1">
+<h1>The <code>python</code> Program</h1>
+<p>Practically speaking, Python is a program on your computer that interprets Python programs and statements.</p>
+<ul>
+<li><p>You can ask <code>python3</code> a question without running any Python code. For example, this is how you ask which version of Python is installed (Note: the <code>$</code> character is the command prompt in the Unix Bash shell. The Windows command prompt is <code>C:\&gt;</code>.):</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python <span class="op">--</span>version
+Python <span class="fl">3.5.2</span> :: Continuum Analytics, Inc.</code></pre></div></li>
+</ul>
+<p>If you get some other response, like command not found, then you haven’t properly installed Python.</p>
+</section>
+<section id="executing-python-code" class="slide level1">
+<h1>Executing Python Code</h1>
+<ul>
+<li><p>You can run a Python program, which has a .py extension by convention:</p>
+<pre class="sh"><code>$ python myprogram.py</code></pre></li>
+<li><p>Or you can invoke the interactive Python shell (sometimes called REPL for &quot;Read-Eval-Print Loop&quot;):</p>
+<pre class="sh"><code>$ python3
+Python 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;</code></pre>
+<p>To exit the Python shell type Ctrl-D on Unix, or Ctrl-Z on Windows.</p></li>
+</ul>
+</section>
+<section id="hello-python" class="slide level1">
+<h1>Hello, Python</h1>
+<p>Since Kernighan and Ritchie's &quot;The C Programming Language&quot; it's customary for your first program in a new language to be &quot;Hello, world!&quot;</p>
+<ul>
+<li><p>Open your text editor, paste the following code into a buffer (or tab or window or whatever your editor calls it), and save it as <code>hello.py</code>:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&quot;Hello, world!&quot;</span>)</code></pre></div></li>
+<li><p>Then open your command shell (terminal on Unix or CMD.exe on Windows), go to the directory where you saved <code>hello.py</code> and enter:</p>
+<pre class="sh"><code>$ python3 hello.py</code></pre>
+<p>Hello, world! will be printed to the console on the next line.</p></li>
+</ul>
+</section>
+<section id="interpreting-python-programs" class="slide level1">
+<h1>Interpreting Python Programs</h1>
+<p>What happens when we enter <code>python3 hello.py</code> at an operating system command shell prompt?</p>
+<ol type="1">
+<li><code>python3</code> tells the OS to load the Python interpreter into memory and run it. <code>python3</code> is the name of an executable file on your hard disk which your OS can find because its directory is on the <code>PATH</code></li>
+<li>We invoke <code>python3</code> with a <em>command line argument</em>, which <code>python3</code> reads after it starts running</li>
+<li>Since the command line argument was the name of a file (<code>hello.py</code>), the <code>python3</code> loads the file named by the argument and executes the Python code in it.</li>
+</ol>
+<p>A Python program, or script, is just a sequence of Python statements and expressions.</p>
+</section>
+<section id="the-python-repl" class="slide level1">
+<h1>The Python REPL</h1>
+<p>Invoke the Python interactive shell by entering python3 at your command shell’s prompt without any arguments and type in the same line we put in hello.py:</p>
+<pre class="sh"><code>$ python3
+Python 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;</code></pre>
+<p><code>&gt;&gt;&gt;</code> is the command prompt for the Python REPL.</p>
+<ul>
+<li>REPL stands for <strong>R</strong>ead <strong>E</strong>val <strong>P</strong>rint <strong>L</strong>oop -- <strong>R</strong>ead an expression or statement at the command prompt, <strong>E</strong>valuate the expression or execute the statement, <strong>P</strong>rint the result to the console, <strong>L</strong>oop back to <strong>R</strong>ead step</li>
+</ul>
+<p>We’ll spend a lot of time in the REPL.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
