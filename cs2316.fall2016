@@ -12,10 +12,10 @@ Week 3
 2016-09-09;functions
 Week 4
 2016-09-12;control-structures
-2016-09-14;control-structures;[HW 1 Due](fall2016/hw1/hw1.html),[HW 2 Assigned](fall2016/hw2/hw2.html)
+2016-09-14;functional-programming;[HW 1 Due](fall2016/hw1/hw1.html),[HW 2 Assigned](fall2016/hw2/hw2.html)
 2016-09-16;modules-programs
 Week 5
-2016-09-19;functools
+2016-09-19;modules-programs
 2016-09-21;classes-objects;[HW 2 Due](fall2016/hw2/hw2.html),[HW 3 Assigned](fall2016/hw3/hw3.html)
 2016-09-23;classes-objects
 Week 6
@@ -51,13 +51,14 @@ Week 13
 2016-11-16;exam3
 2016-11-18;pq3
 Week 14
-2016-11-21
+2016-11-21;Thanksgiving - No Class
 2016-11-23;Thanksgiving - No Class
 2016-11-25;Thanksgiving - No Class
+SciPy
 Week 15
-2016-11-28;Special Topics
-2016-11-30;Special Topics;[HW 7 Due](fall2016/hw7/hw7.html)
-2016-12-02;Special Topics
+2016-11-28;numpy
+2016-11-30;matplotlib;[HW 7 Due](fall2016/hw7/hw7.html)
+2016-12-02;pandas
 Week 16
 2016-12-05;Special Topics
 Finals Week
