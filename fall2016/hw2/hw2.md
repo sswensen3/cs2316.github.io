@@ -7,12 +7,11 @@ title: Homework 2
 
 ## Introduction
 
-In this homework you will practice writing Python programs that use
+In this homework you will practice
 
 - control structures,
-- functional programming,
-- separate modules, and
-- classes.
+- functional programming, and
+- using modules.
 
 ## Problem Description
 
