@@ -1,11 +1,13 @@
 ---
 layout: homework
-title: Homework <N>
+title: Homework 6
 ---
 
-# Homework <N>
+# Homework 6
 
 ## Introduction
+
+In this homework you will practice mining data from the internet.
 
 ## Problem Description
 

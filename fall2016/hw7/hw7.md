@@ -1,11 +1,13 @@
 ---
 layout: homework
-title: Homework <N>
+title: Homework 7
 ---
 
-# Homework <N>
+# Homework 7
 
 ## Introduction
+
+In this homework you will practice writing GUI applications.
 
 ## Problem Description
 

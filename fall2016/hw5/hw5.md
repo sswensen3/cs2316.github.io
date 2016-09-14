@@ -1,11 +1,13 @@
 ---
 layout: homework
-title: Homework <N>
+title: Homework 5
 ---
 
-# Homework <N>
+# Homework 5
 
 ## Introduction
+
+In this homework you will practice creating web applications.
 
 ## Problem Description
 

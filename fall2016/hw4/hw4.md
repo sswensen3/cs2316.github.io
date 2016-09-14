@@ -1,11 +1,17 @@
 ---
 layout: homework
-title: Homework <N>
+title: Homework 4
 ---
 
-# Homework <N>
+# Homework 4
 
 ## Introduction
+
+In this homework you will practice
+
+- processing CSV data,
+- processing XML data,
+- working with databases.
 
 ## Problem Description
 

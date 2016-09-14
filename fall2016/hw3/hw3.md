@@ -1,11 +1,13 @@
 ---
 layout: homework
-title: Homework <N>
+title: Homework 3
 ---
 
-# Homework <N>
+# Homework 3
 
 ## Introduction
+
+In this homework you will practice using classes and objects in Python.
 
 ## Problem Description
 
