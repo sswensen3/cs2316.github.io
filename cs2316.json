@@ -44,7 +44,7 @@
     },
     "modules-programs": {
         "topic": "[Modules and Programs](slides/modules-programs.html)",
-        "materials": ["[ITCS - Modules](http://interactivepython.org/runestone/static/thinkcspy/PythonModules/toctree.html)", "IP 6", "[hanglib](code/hanglib/)"],
+        "materials": ["[ITCS - Modules](http://interactivepython.org/runestone/static/thinkcspy/PythonModules/toctree.html)", "IP 6", "[hanglib](code/hanglib/)", "Exercise: [Hangman](exercises/hangman.html)"],
         "order": [12]
     },
     "data-representation": {
@@ -74,17 +74,17 @@
     },
     "csv-files": {
         "topic": "[CSV Files](slides/csv-files.html)",
-        "materials": ["IP 8", "[Data Files](code/structured-files/)"],
+        "materials": ["IP 8", "[Data Files](code/structured-files/)", "Exercise: [Tides](exercises/tides.html)", "Exercise: [T^2 is Awful](exercises/t2isawful.html)"],
         "order": [18]
     },
     "xml": {
         "topic": "[XML](slides/xml.pdf)",
-        "materials": ["IP 8"],
+        "materials": ["IP 8", "Exercise: [Books](exercises/books.html)"],
         "order": [19]
     },
     "json": {
         "topic": "[JavaScript Object Notation](slides/json.html)",
-        "materials": ["IP 8", "[JSON Spec](http://json.org/)"],
+        "materials": ["IP 8", "[JSON Spec](http://json.org/)", "Exercise: [Data Converter](exercises/data-converter.html)"],
         "order": [20]
     },
     "relational-databases": {
@@ -99,7 +99,7 @@
     },
     "sql": {
         "topic": "[SQL](slides/sql.pdf)",
-        "materials": [""],
+        "materials": ["Exercise: [Pubs Queries](exercises/pubs-queries.sql)"],
         "order": [22]
     },
     "python-xml-databases": {
