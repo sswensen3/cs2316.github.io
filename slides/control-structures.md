@@ -245,25 +245,6 @@ Alligator
 No animals of note.
 ```
 
-# List Comprehensions
-
-A list comprehension iterates over a (optionally filtered) sequence,
-applies an operation to each element, and collects the results of these
-operations in a new list.
-
-```Python
->>> grades = [100, 90, 0, 80]
->>> [x for x in grades]
-[100, 90, 0, 80]
->>> [x + 10 for x in grades]
-[110, 100, 10, 90]
->>> [x + 50 for x in grades if x < 50]
-[50]
-```
-
-List comprehensions are a concise way to accomplish transformations
-which could otherwise be done with loops.
-
 # Run-time Errors
 
 An error detected during execution is called an exception and is represented at runtime by an exception object. The Python interpreter raises an exception at the point an error occurs. The exception is handled by some exception-handling code. Here we don't handle the ValueError ourselves, so it's handled by the Python shell:

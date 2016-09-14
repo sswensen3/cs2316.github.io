@@ -270,18 +270,6 @@ Tiger
 Alligator
 No animals of note.</code></pre></div>
 </section>
-<section id="list-comprehensions" class="slide level1">
-<h1>List Comprehensions</h1>
-<p>A list comprehension iterates over a (optionally filtered) sequence, applies an operation to each element, and collects the results of these operations in a new list.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> grades <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">80</span>]
-<span class="op">&gt;&gt;&gt;</span> [x <span class="cf">for</span> x <span class="op">in</span> grades]
-[<span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">80</span>]
-<span class="op">&gt;&gt;&gt;</span> [x <span class="op">+</span> <span class="dv">10</span> <span class="cf">for</span> x <span class="op">in</span> grades]
-[<span class="dv">110</span>, <span class="dv">100</span>, <span class="dv">10</span>, <span class="dv">90</span>]
-<span class="op">&gt;&gt;&gt;</span> [x <span class="op">+</span> <span class="dv">50</span> <span class="cf">for</span> x <span class="op">in</span> grades <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">50</span>]
-[<span class="dv">50</span>]</code></pre></div>
-<p>List comprehensions are a concise way to accomplish transformations which could otherwise be done with loops.</p>
-</section>
 <section id="run-time-errors" class="slide level1">
 <h1>Run-time Errors</h1>
 <p>An error detected during execution is called an exception and is represented at runtime by an exception object. The Python interpreter raises an exception at the point an error occurs. The exception is handled by some exception-handling code. Here we don't handle the ValueError ourselves, so it's handled by the Python shell:</p>
