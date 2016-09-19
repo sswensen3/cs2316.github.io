@@ -59,6 +59,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 </head>
 <body>
   <div class="reveal">
@@ -80,36 +81,100 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="functions-as-arguments" class="slide level1">
 <h1>Functions as Arguments</h1>
+<p>Remember the <code>key</code> argument to <code>sorted</code>?</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> studs <span class="op">=</span> [(<span class="st">&quot;Stan&quot;</span>, <span class="fl">2.5</span>, <span class="st">&quot;ISyE&quot;</span>), (<span class="st">&quot;Kyle&quot;</span>, <span class="fl">2.2</span>, <span class="st">&quot;CS&quot;</span>),
+...          (<span class="st">&quot;Cartman&quot;</span>, <span class="fl">2.4</span>, <span class="st">&quot;CmpE&quot;</span>), (<span class="st">&quot;Kenny&quot;</span>, <span class="fl">4.0</span>, <span class="st">&quot;ME&quot;</span>)]
+<span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> by_gpa(stud):
+...     <span class="cf">return</span> stud[<span class="dv">1</span>]
+...
+<span class="op">&gt;&gt;&gt;</span> pp.pprint(<span class="bu">sorted</span>(studs, key<span class="op">=</span>by_gpa))
+[(<span class="st">&#39;Kyle&#39;</span>, <span class="fl">2.2</span>, <span class="st">&#39;CS&#39;</span>),
+ (<span class="st">&#39;Cartman&#39;</span>, <span class="fl">2.4</span>, <span class="st">&#39;CmpE&#39;</span>),
+ (<span class="st">&#39;Stan&#39;</span>, <span class="fl">2.5</span>, <span class="st">&#39;ISyE&#39;</span>),
+ (<span class="st">&#39;Kenny&#39;</span>, <span class="fl">4.0</span>, <span class="st">&#39;ME&#39;</span>)]</code></pre></div>
+<p><code>sorted</code> is a <em>higher-order function</em>. There are more general higher-order functions that are commonly used in functional programming.</p>
 </section>
 <section id="map" class="slide level1">
 <h1><code>map</code></h1>
+<p>Common to build a sequence out of transformations of elements of an existing sequence. Here's the imperative approach:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> houses <span class="op">=</span> [<span class="st">&quot;Stark&quot;</span>, <span class="st">&quot;Lannister&quot;</span>, <span class="st">&quot;Targaryen&quot;</span>]
+<span class="op">&gt;&gt;&gt;</span> shout <span class="op">=</span> []
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> house <span class="op">in</span> houses:
+...     shout.append(house.upper())
+...
+<span class="op">&gt;&gt;&gt;</span> shout
+[<span class="st">&#39;STARK&#39;</span>, <span class="st">&#39;LANNISTER&#39;</span>, <span class="st">&#39;TARGARYEN&#39;</span>]</code></pre></div>
+<p>Heres' the functional approach:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> house: house.upper(), houses))
+[<span class="st">&#39;STARK&#39;</span>, <span class="st">&#39;LANNISTER&#39;</span>, <span class="st">&#39;TARGARYEN&#39;</span>]</code></pre></div>
+<p>Note that <code>map</code> returns an iterator, so we pass it to the <code>list</code> constructor.</p>
 </section>
 <section id="filter" class="slide level1">
 <h1><code>filter</code></h1>
-</section>
-<section id="reduce" class="slide level1">
-<h1><code>reduce</code></h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> nums <span class="op">=</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>, nums)
+<span class="op">&lt;</span><span class="bu">filter</span> <span class="bu">object</span> at <span class="bn">0x1013e87f0</span><span class="op">&gt;</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>, nums))
+[<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>]</code></pre></div>
 </section>
 <section id="list-comprehensions" class="slide level1">
 <h1>List Comprehensions</h1>
-</section>
-<section id="list-comprehensions-1" class="slide level1">
-<h1>List Comprehensions</h1>
-<p>A list comprehension iterates over a (optionally filtered) sequence, applies an operation to each element, and collects the results of these operations in a new list.</p>
+<p>A list comprehension iterates over a (optionally filtered) sequence, applies an operation to each element, and collects the results of these operations in a new list, just like <code>map</code>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> grades <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">80</span>]
 <span class="op">&gt;&gt;&gt;</span> [x <span class="cf">for</span> x <span class="op">in</span> grades]
 [<span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">80</span>]
 <span class="op">&gt;&gt;&gt;</span> [x <span class="op">+</span> <span class="dv">10</span> <span class="cf">for</span> x <span class="op">in</span> grades]
-[<span class="dv">110</span>, <span class="dv">100</span>, <span class="dv">10</span>, <span class="dv">90</span>]
-<span class="op">&gt;&gt;&gt;</span> [x <span class="op">+</span> <span class="dv">50</span> <span class="cf">for</span> x <span class="op">in</span> grades <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">50</span>]
+[<span class="dv">110</span>, <span class="dv">100</span>, <span class="dv">10</span>, <span class="dv">90</span>]</code></pre></div>
+<p>We can also filter in a comprehension:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> [x <span class="op">+</span> <span class="dv">50</span> <span class="cf">for</span> x <span class="op">in</span> grades <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">50</span>]
 [<span class="dv">50</span>]</code></pre></div>
-<p>List comprehensions are a concise way to accomplish transformations which could otherwise be done with loops.</p>
+<p>Comprehensions are more Pythonic than using <code>map</code> and <code>filter</code> directly.</p>
 </section>
 <section id="dictionary-comprehensions" class="slide level1">
 <h1>Dictionary Comprehensions</h1>
+<p>First, zip:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">words <span class="op">=</span> [<span class="st">&quot;Winter is coming&quot;</span>, <span class="st">&quot;Hear me roar&quot;</span>, <span class="st">&quot;Fire and blood&quot;</span>]
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="bu">zip</span>(houses, words))
+[(<span class="st">&#39;Stark&#39;</span>, <span class="st">&#39;Winter is coming&#39;</span>), (<span class="st">&#39;Lannister&#39;</span>, <span class="st">&#39;Hear me roar&#39;</span>), (<span class="st">&#39;Targaryen&#39;</span>, <span class="st">&#39;Fire and blood&#39;</span>)]</code></pre></div>
+<p>Dictionary comprehension using tuple unpacking:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> house2words <span class="op">=</span> {house: words <span class="cf">for</span> house, words <span class="op">in</span> <span class="bu">zip</span>(houses, words)}
+<span class="op">&gt;&gt;&gt;</span> house2words
+{<span class="st">&#39;Lannister&#39;</span>: <span class="st">&#39;Hear me roar&#39;</span>, <span class="st">&#39;Stark&#39;</span>: <span class="st">&#39;Winter is coming&#39;</span>, <span class="st">&#39;Targaryen&#39;</span>: <span class="st">&#39;Fire and blood&#39;</span>}</code></pre></div>
+<p>Of course, we could just use the <code>dict</code> constructor on the <code>zip</code> object.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">dict</span>(<span class="bu">zip</span>(houses, words))
+{<span class="st">&#39;Lannister&#39;</span>: <span class="st">&#39;Hear me roar&#39;</span>, <span class="st">&#39;Stark&#39;</span>: <span class="st">&#39;Winter is coming&#39;</span>, <span class="st">&#39;Targaryen&#39;</span>: <span class="st">&#39;Fire and blood&#39;</span>}</code></pre></div>
+</section>
+<section id="reduce" class="slide level1">
+<h1><code>reduce</code></h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> functools
+<span class="op">&gt;&gt;&gt;</span> functools.<span class="bu">reduce</span>(<span class="kw">lambda</span> x, y: x <span class="op">+</span> y, [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>])
+<span class="dv">45</span></code></pre></div>
+<p>Confirm this using the standard sum <span class="math inline">\(\Sigma_{i=1}^{n} i = \frac{n(n + 1)}{2}\)</span></p>
+<p>Here's factorial:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> functools.<span class="bu">reduce</span>(<span class="kw">lambda</span> x, y: x <span class="op">*</span> y, [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>])
+<span class="dv">120</span>
+<span class="op">&gt;&gt;&gt;</span> functools.<span class="bu">reduce</span>(<span class="kw">lambda</span> x, y: x <span class="op">*</span> y, <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">6</span>))
+<span class="dv">120</span></code></pre></div>
 </section>
 <section id="generator-functions" class="slide level1">
 <h1>Generator Functions</h1>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> class_dates(first, last, class_days):
+    <span class="co">&quot;&quot;&quot;Generate dates from first to last whose weekdays are in class_days</span>
+
+<span class="co">    &gt;&gt;&gt; import datetime</span>
+<span class="co">    &gt;&gt;&gt; begin = datetime.date(2016, 8, 22)</span>
+<span class="co">    &gt;&gt;&gt; end = datetime.date(2016, 8, 25)</span>
+<span class="co">    &gt;&gt;&gt; list(class_dates(begin, end, &quot;TR&quot;))</span>
+<span class="co">    [datetime.date(2016, 8, 23), datetime.date(2016, 8, 25)]</span>
+<span class="co">    &quot;&quot;&quot;</span>
+    day <span class="op">=</span> first
+    <span class="co"># e.g., &quot;MWF&quot; =&gt; [0, 2, 4]</span>
+    class_day_ints <span class="op">=</span> [i <span class="cf">for</span> i, letter <span class="op">in</span> <span class="bu">enumerate</span>(<span class="st">&quot;MTWRFSU&quot;</span>)
+                           <span class="cf">if</span> letter <span class="op">in</span> class_days]
+    <span class="cf">while</span> day <span class="op">&lt;=</span> last:
+        <span class="cf">if</span> day.weekday() <span class="op">in</span> class_day_ints:
+            <span class="cf">yield</span> day
+        day <span class="op">+=</span> dt.timedelta(days<span class="op">=</span><span class="dv">1</span>)</code></pre></div>
 </section>
 <section id="generator-expressions" class="slide level1">
 <h1>Generator Expressions</h1>
