@@ -62,31 +62,53 @@ class Stark:
 
 # Classes and Objects
 
-In this example, `ned` and `robb` are *instances* of `Stark`
+In this example, `ned` and `robb` are *instances* of `Stark`. Each instance has it's own `name`.
 
 ```Python
+>>> import got
 >>> ned = got.Stark("Eddard")
 >>> ned.name
 'Eddard'
->>> ned.full_name()
-'Eddard Stark'
 >>> robb = got.Stark("Robb")
 >>> robb.name
 'Robb'
->>> robb.full_name()
-'Robb Stark'
->>> ned.full_name()
+```
+
+Ivoking the `full_name()` method on an object implicitly passes the object as the first argument (`self`), which you could (but shoudn't) do explicitly:
+
+```Python
+>>> ned.full_name()          # This is normal
+'Eddard Stark'
+>>> got.Stark.full_name(ned) # This is only instructive
 'Eddard Stark'
 ```
 
+# Class Members
+
 Each instance shares the class attributes `creator`, `words`, `sigil`, and `home`.
+
+```Python
+>>> got.Stark.sigil
+'Direwolf'
+>>> ned.sigil
+'Direwolf'
+>>> robb.sigil
+'Direwolf'
+```
+
+Remember that the `is` operator returns `True` if its operands reference the same object in memory. So this deomonstrates that `sigil` is shared between the `Stark` class and all instances of the `Stark` class:
+
+```Python
+>>> got.Stark.sigil is ned.sigil
+True
+```
+
 
 # Superclasses
 
 Superclasses, or parent classes, or base classes, define attributes that you wish to be common to a family of objects.
 
 Notice that all of our noble houses have the same creator, and every instance has a name. We can represent this commonality by creating a base class for all house classes:
-
 
 ```
 class GotCharacter:
@@ -96,7 +118,22 @@ class GotCharacter:
         self.name = name if name else "No one"
 ```
 
-Let's refactor our GoT houses to use this superclass.
+# Refactored `Stark`
+
+Here is `Stark` refactored to use the `GotCharacter` superclass:
+
+```Python
+class Stark(GotCharacter):
+    words = "Winter is coming"
+    sigil = "Direwolf"
+    home = "Winterfell"
+
+    def __init__(self, name):
+        # This is how you invoke a superclass method
+        super().__init__(name)
+```
+
+Exercise: refactor the other GoT houses to use the `GotCharacter` superclass.
 
 # Magic, a.k.a., __Dunder__ Methods
 
@@ -123,6 +160,31 @@ class SuperTrooper(Trooper):
             return True
         else:
             return self.name < other.name
+```
+
+# Sortable `SuperTrooper`s
+
+With the definition of `__lt__(self, other)` in `SuperTrooper`, a list of `SuperTrooper`s is sortable.
+
+```Python
+    sts = [SuperTrooper("Thorny", True),
+           SuperTrooper("Mac", True),
+           SuperTrooper("Rabbit", True),
+           SuperTrooper("Farva", True),
+           SuperTrooper("Foster", False)]
+    print("SuperTroopers:")
+    print(sts)
+    print("SuperTroopers sorted by mustache, then by name:")
+    print(sorted(sts))
+```
+
+Produces:
+
+```sh
+SuperTroopers:
+[<Thorny :-{>, <Mac :-{>, <Rabbit :-{>, <Farva :-{>, <Foster :-|>]
+SuperTroopers sorted by mustache, then by name:
+[<Foster :-|>, <Farva :-{>, <Mac :-{>, <Rabbit :-{>, <Thorny :-{>]
 ```
 
 # Conclusion

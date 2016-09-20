@@ -119,20 +119,32 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section>
 <section id="classes-and-objects" class="slide level1">
 <h1>Classes and Objects</h1>
-<p>In this example, <code>ned</code> and <code>robb</code> are <em>instances</em> of <code>Stark</code></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> ned <span class="op">=</span> got.Stark(<span class="st">&quot;Eddard&quot;</span>)
+<p>In this example, <code>ned</code> and <code>robb</code> are <em>instances</em> of <code>Stark</code>. Each instance has it's own <code>name</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> got
+<span class="op">&gt;&gt;&gt;</span> ned <span class="op">=</span> got.Stark(<span class="st">&quot;Eddard&quot;</span>)
 <span class="op">&gt;&gt;&gt;</span> ned.name
 <span class="co">&#39;Eddard&#39;</span>
-<span class="op">&gt;&gt;&gt;</span> ned.full_name()
-<span class="co">&#39;Eddard Stark&#39;</span>
 <span class="op">&gt;&gt;&gt;</span> robb <span class="op">=</span> got.Stark(<span class="st">&quot;Robb&quot;</span>)
 <span class="op">&gt;&gt;&gt;</span> robb.name
-<span class="co">&#39;Robb&#39;</span>
-<span class="op">&gt;&gt;&gt;</span> robb.full_name()
-<span class="co">&#39;Robb Stark&#39;</span>
-<span class="op">&gt;&gt;&gt;</span> ned.full_name()
+<span class="co">&#39;Robb&#39;</span></code></pre></div>
+<p>Ivoking the <code>full_name()</code> method on an object implicitly passes the object as the first argument (<code>self</code>), which you could (but shoudn't) do explicitly:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> ned.full_name()          <span class="co"># This is normal</span>
+<span class="co">&#39;Eddard Stark&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> got.Stark.full_name(ned) <span class="co"># This is only instructive</span>
 <span class="co">&#39;Eddard Stark&#39;</span></code></pre></div>
+</section>
+<section id="class-members" class="slide level1">
+<h1>Class Members</h1>
 <p>Each instance shares the class attributes <code>creator</code>, <code>words</code>, <code>sigil</code>, and <code>home</code>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> got.Stark.sigil
+<span class="co">&#39;Direwolf&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> ned.sigil
+<span class="co">&#39;Direwolf&#39;</span>
+<span class="op">&gt;&gt;&gt;</span> robb.sigil
+<span class="co">&#39;Direwolf&#39;</span></code></pre></div>
+<p>Remember that the <code>is</code> operator returns <code>True</code> if its operands reference the same object in memory. So this deomonstrates that <code>sigil</code> is shared between the <code>Stark</code> class and all instances of the <code>Stark</code> class:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> got.Stark.sigil <span class="op">is</span> ned.sigil
+<span class="va">True</span></code></pre></div>
 </section>
 <section id="superclasses" class="slide level1">
 <h1>Superclasses</h1>
@@ -143,7 +155,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
     def __init__(self, name=None):
         self.name = name if name else &quot;No one&quot;</code></pre>
-<p>Let's refactor our GoT houses to use this superclass.</p>
+</section>
+<section id="refactored-stark" class="slide level1">
+<h1>Refactored <code>Stark</code></h1>
+<p>Here is <code>Stark</code> refactored to use the <code>GotCharacter</code> superclass:</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> Stark(GotCharacter):
+    words <span class="op">=</span> <span class="st">&quot;Winter is coming&quot;</span>
+    sigil <span class="op">=</span> <span class="st">&quot;Direwolf&quot;</span>
+    home <span class="op">=</span> <span class="st">&quot;Winterfell&quot;</span>
+
+    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):
+        <span class="co"># This is how you invoke a superclass method</span>
+        <span class="bu">super</span>().<span class="fu">__init__</span>(name)</code></pre></div>
+<p>Exercise: refactor the other GoT houses to use the <code>GotCharacter</code> superclass.</p>
 </section>
 <section id="magic-a.k.a.-dunder-methods" class="slide level1">
 <h1>Magic, a.k.a., <strong>Dunder</strong> Methods</h1>
@@ -169,6 +193,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <span class="cf">return</span> <span class="va">True</span>
         <span class="cf">else</span>:
             <span class="cf">return</span> <span class="va">self</span>.name <span class="op">&lt;</span> other.name</code></pre></div>
+</section>
+<section id="sortable-supertroopers" class="slide level1">
+<h1>Sortable <code>SuperTrooper</code>s</h1>
+<p>With the definition of <code>__lt__(self, other)</code> in <code>SuperTrooper</code>, a list of <code>SuperTrooper</code>s is sortable.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">    sts <span class="op">=</span> [SuperTrooper(<span class="st">&quot;Thorny&quot;</span>, <span class="va">True</span>),
+           SuperTrooper(<span class="st">&quot;Mac&quot;</span>, <span class="va">True</span>),
+           SuperTrooper(<span class="st">&quot;Rabbit&quot;</span>, <span class="va">True</span>),
+           SuperTrooper(<span class="st">&quot;Farva&quot;</span>, <span class="va">True</span>),
+           SuperTrooper(<span class="st">&quot;Foster&quot;</span>, <span class="va">False</span>)]
+    <span class="bu">print</span>(<span class="st">&quot;SuperTroopers:&quot;</span>)
+    <span class="bu">print</span>(sts)
+    <span class="bu">print</span>(<span class="st">&quot;SuperTroopers sorted by mustache, then by name:&quot;</span>)
+    <span class="bu">print</span>(<span class="bu">sorted</span>(sts))</code></pre></div>
+<p>Produces:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="kw">SuperTroopers</span>:
+[<span class="kw">&lt;Thorny</span> :-{<span class="kw">&gt;</span>, <span class="kw">&lt;</span>Mac :-{<span class="kw">&gt;</span>, <span class="kw">&lt;</span>Rabbit :-{<span class="kw">&gt;</span>, <span class="kw">&lt;</span>Farva :-{<span class="kw">&gt;</span>, <span class="kw">&lt;</span>Foster :-<span class="kw">|&gt;</span>]
+<span class="kw">SuperTroopers</span> sorted by mustache, then by name:
+[<span class="kw">&lt;Foster</span> :-<span class="kw">|&gt;</span>, <span class="kw">&lt;Farva</span> :-{<span class="kw">&gt;</span>, <span class="kw">&lt;</span>Mac :-{<span class="kw">&gt;</span>, <span class="kw">&lt;</span>Rabbit :-{<span class="kw">&gt;</span>, <span class="kw">&lt;</span>Thorny :-{<span class="kw">&gt;</span>]</code></pre></div>
 </section>
 <section id="conclusion" class="slide level1">
 <h1>Conclusion</h1>

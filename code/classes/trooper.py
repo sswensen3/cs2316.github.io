@@ -4,6 +4,16 @@ class Trooper:
     def __init__(self, name):
         self.name = name
 
+    # Used by print()
+    def __str__(self):
+        return "<Officer {}>".format(self.name)
+
+    # Used by REPL
+    def __repr__(self):
+        # Call other instance methods within the same class by passing
+        # self reference
+        return str(self)
+
 
 class SuperTrooper(Trooper):
 
@@ -28,11 +38,30 @@ class SuperTrooper(Trooper):
         else:
             return self.name < other.name
 
-if __name__=="__main__":
+def main(args):
+    ts = [Trooper("Thorny"),
+          Trooper("Mac"),
+          Trooper("Rabbit"),
+          Trooper("Farva"),
+          Trooper("Foster")]
+    print("Regular Troopers:")
+    print(ts)
+    # Regular Troopers aren't sortable because Trooper doesn't have a
+    # __lt__ method. If you uncomment the line below, this script
+    # won't run.
+
+    #print(sorted(ts))
+
     sts = [SuperTrooper("Thorny", True),
            SuperTrooper("Mac", True),
            SuperTrooper("Rabbit", True),
            SuperTrooper("Farva", True),
            SuperTrooper("Foster", False)]
+    print("SuperTroopers:")
     print(sts)
+    print("SuperTroopers sorted by mustache, then by name:")
     print(sorted(sts))
+
+if __name__=="__main__":
+    import sys
+    main(sys.argv)

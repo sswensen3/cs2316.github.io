@@ -1,11 +1,17 @@
-class Stark:
+class GotCharacter:
     creator = "George R.R. Martin"
+
+    def __init__(self, name=None):
+        self.name = name if name else "No one"
+
+class Stark(GotCharacter):
     words = "Winter is coming"
     sigil = "Direwolf"
     home = "Winterfell"
 
-    def __init__(self, name=None):
-        self.name = name if name else "No one"
+    def __init__(self, name):
+        # This is how you invoke a superclass method
+        super().__init__(name)
 
     def full_name(self):
         return "{} Stark".format(self.name)
@@ -20,7 +26,7 @@ class Lannister:
         self.name = name if name else "No one"
 
     def full_name(self):
-        return "{} Stark".format(self.name)
+        return "{} Lannister".format(self.name)
 
 
 class Targaryen:
@@ -33,4 +39,4 @@ class Targaryen:
         self.name = name if name else "No one"
 
     def full_name(self):
-        return "{} Stark".format(self.name)
+        return "{} Targaryen".format(self.name)
