@@ -98,13 +98,7 @@ class GotCharacter:
 
 Let's refactor our GoT houses to use this superclass.
 
-# Magic Methods
-
-![](magic_mike_hero.jpg)
-
-Source: [http://www.warnerbros.com/magic-mike](http://www.warnerbros.com/magic-mike)
-
-# __Dunder__ Methods
+# Magic, a.k.a., __Dunder__ Methods
 
 ```Python
 class SuperTrooper(Trooper):

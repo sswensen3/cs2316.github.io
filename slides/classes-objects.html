@@ -145,15 +145,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         self.name = name if name else &quot;No one&quot;</code></pre>
 <p>Let's refactor our GoT houses to use this superclass.</p>
 </section>
-<section id="magic-methods" class="slide level1">
-<h1>Magic Methods</h1>
-<figure>
-<img src="magic_mike_hero.jpg" />
-</figure>
-<p>Source: <a href="http://www.warnerbros.com/magic-mike" class="uri">http://www.warnerbros.com/magic-mike</a></p>
-</section>
-<section id="dunder-methods" class="slide level1">
-<h1><strong>Dunder</strong> Methods</h1>
+<section id="magic-a.k.a.-dunder-methods" class="slide level1">
+<h1>Magic, a.k.a., <strong>Dunder</strong> Methods</h1>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> SuperTrooper(Trooper):
 
     <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, is_mustached):
