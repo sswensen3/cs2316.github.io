@@ -9,6 +9,7 @@ title: Homework 2
 
 In this homework you will practice
 
+- data structures,
 - control structures,
 - functional programming, and
 - using modules.
@@ -102,9 +103,16 @@ def draw_skyline(t,wn):
 
 ### `main`
 
-Write a main function that does the following:
+Write a main function with the following "main loop":
 
-- ...
+- While the use has not entered "quit":
+
+    - Present the user with a list of options, 1 through 7 corresponding to the functions above (not including `main`)
+    - Prompt the user to enter one of the numbers in the list, or "quit" to quit the program
+    - If the user enters a valid number, prompt the user for any input the corresponding function needs and call the function with appropriate arguments.
+    - If the user enters "quit" print "Bye" and exit the main loop.
+    - If the user enters invalid input, give the user an informative error message.
+
 
 Of course, structure your main method as we have been taught:
 
