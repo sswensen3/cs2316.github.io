@@ -54,7 +54,7 @@
     },
     "classes-objects": {
         "topic": "[Classes and Objects](slides/classes-objects.html)",
-        "materials": ["[ITCS - Classes and Objects](http://interactivepython.org/runestone/static/thinkcspy/ClassesBasics/toctree.html)", "[OOP Code](code/oop/)"],
+        "materials": ["[ITCS - Classes and Objects](http://interactivepython.org/runestone/static/thinkcspy/ClassesBasics/toctree.html)", "[OOP Code](code/classes-objects/)"],
         "order": [13,14]
     },
     "review1": {
