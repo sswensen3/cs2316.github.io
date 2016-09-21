@@ -35,7 +35,7 @@ Write a Python program in a file named `hangman.py` that implements the classic 
     - If, after the user's guess, the word is completely revealed, the user wins and the game is over.  Report this to the user and exit.
     - If, after the user's guess, the hangman is complete (head, body, arms, legs, etc.), the user loses and the game is over.  Report this to the user and exit.
 
-Your program should use two provided modules, `drawing` and `words`, both located in the `hanglib` package.  Instructions for downloading these files:
+Your program should use two provided modules, `draw` and `words`, both located in the `hanglib` package.  Instructions for downloading these files:
 
 - Create a `hangman` subdirectory of your coursework directory. This directory will contain your `hangman.py` file.
 - Create a `hanglib` subdirectory of your `hangman` directory
