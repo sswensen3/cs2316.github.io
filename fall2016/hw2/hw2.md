@@ -29,105 +29,106 @@ Notes:
 - Unless otherwise stated, you can assume inputs will be valid in this assignment (i.e. error checking is not required).
 - In a Python module you must define a value (such as a function) before referencing it. So if you call function A from function B, the definition of function A must come before the definition of function B in the file.
 
+## Problem Descrtiption
+
+You're a curious linguist with computer hacking skills and you want to see, roughly, if [Zipf's Law](https://en.wikipedia.org/wiki/Zipf%27s_law) holds for texts contained in files lying around on your disk.
+
 ## Solution Description
 
 Write a Python module in `hw2.py` that includes the following functions.
 
 ```Python
-def letter_dict(text):
-	"""Returns a dictionary with all the letters in a string, along with how many times they appear.
+def normalize_text(text):
+    """Return copy of text in lowercase with punctuation removed.
 
-	Parameters:
-	text: string -- a string with text
+    Parameters:
+    text: str - text to normalize
 
-	Return: char_dict: dict -- dictionary with key as a character and value as the number of times it appears
+    Return: str which is copy of text converted to lowercase with
+    punctuation (the chars in string.punctuation) removed.
 
-	Usage examples:
-	>>> letter_dict('Hello Everybody how aRe you doIng today?')
-	{'?': 1, 'a': 2, 'g': 1, 'w': 1, 'y': 4, 'u': 1, 'b': 1, 'n': 1, 'o': 6, 'v': 1, 'd': 3, ' ': 6, 'e': 4, 't': 1, 'r': 2, 'l': 2, 'i': 1, 'h': 2}
-	"""
+    Usage examples:
+    >>> normalize_text("Numchuk skills, bow hunting skills, computer hacking skills...")
+    'numchuk skills bow hunting skills computer hacking skills'
+    """
 ```
 
 ```Python
-def dict2tuples(char_dict, key=None):
-	"""Convert a str:int dictionary to a list of (str, int) tuples, optionally sorted
+def mk_word2count(text):
+    """Return a dictionary mapping words in text to their count in text.
 
-	Parameters:
-    char_dict: dict[str -> int]
+    Parameters:
+    text: str -- string containing words separated by spaces
+
+    Return: char_dict: dict -- dictionary whose keys are words and
+    assocviated values are the number of times the word appears in text
+
+    Usage examples:
+
+    """
+    word2count = {}
+```
+
+```Python
+def dict2tuples(word_dict, key=None):
+    """Convert a str:int dictionary to a list of (str, int) tuples, optionally sorted
+
+    Parameters:
+    word_dict: dict[str -> int]
     key: (optional) a key function to extract the element of the tuples by which to sort
 
-	Return: a list[(str, int)], optionally sorted by key
+    Return: a list[(str, int)], optionally sorted in descending order by key
 
     Usage example:
     >>> dict2tuples({'a': 2, 'b': 5, 'c': 1}, key=lambda t: t[1])
-    [('c', 1), ('a', 2), ('b', 5)]
-	"""
+    [('b', 5), ('a', 2), ('c', 1)]
+    """
+    return sorted([(k, v) for k, v in word_dict.items()], key=key, reverse=True)
 ```
 
 ```Python
-def draw_polygon(sides,t,wn):
-	"""Returns the inner angle of a polygon and draw the polygon using turtle.
+def normalize_counts(tuples, max_value=100):
+    """Normalize the second values in tuples.
 
-	Parameters:
-	sides: int -- the number of sides of the polygon
-	t: turtle - a turtle object created in main function
-	wn: screen - the screen created in main function
+    Parameters:
+    tuples: Sequence[(str, int)] -- (word, count) tuples
+    max_value: int -- the max value of the normalized counts (min value is 0)
 
-	Return: angle: int -- The inner angle of a polygon given by (180*(sides-2))/sides
+    Return: Sequence[(str, int)] with same first elements as tuples
+    but whose second elements are normalized to the range 0 to
+    max_value.
 
-	Usage examples:
-	>>> draw_polygon(5)
-	108
-	"""
+    Usage examples:
+    >>> wctups = [('a', 200), ('the', 180), ('an', 160), ('shenannigans', 50)]
+    >>> normalize_counts(wctups, 100)
+    [('a', 100), ('the', 90), ('an', 80), ('shenannigans', 25)]
+    """
 ```
 
 ```Python
-def draw_bar_chart(bar_list):
-	"""Converts a list of numbers between 0-300 into a bar chart with heights corresponding to the numbers
-	then draws the bar chart using the turtle module.
-	Bars in the range 0-100,100-200,200-300, should be red,blue and green respecitvely.
-	It should write the height of each bar above the bar.
+def char_hist(bar_list):
+    """Create a text-based bar chart from bar_list.
 
-	Parameters:
-	bar_list: Sequence(int) -- a list with numbers corresponding to the heights of each bar in a barchart
-	t: turtle - a turtle object created in main function
-	wn: screen - the screen created in main function
+    Parameters:
+    tuples: Sequence[(str, int)] -- (label, length) tuples
 
+    Return: list[str] with one line per tuple in bar_list. Each line,
+    a str in the returned list, has the right-aligned label, a |
+    character, then length Xs
 
-	Return: out_list: list -- number of red, green and blue bars in that order
-
-	Usage examples:
-	>>> draw_bar_chart([50,212,126,299,123,75])
-	[2,2,2]
-	"""
-```
-
-```Python
-def draw_skyline(t,wn):
-	"""Draws a skyline using turtle with at least ten buildings, with at least three different styles.
-
-	Parameters:
-	t: turtle - a turtle object created in main function
-    wn: screen - the screen created in main function
-
-    Return:
-    None
-
+    Usage Examlpes:
+    >>> from pprint import pprint
+    >>> pprint(char_hist([('a', 10),('the', 9),('an', 8),('shenannigans', 2)]))
+    ['           a | XXXXXXXXXX',
+     '         the | XXXXXXXXX',
+     '          an | XXXXXXXX',
+     'shenannigans | XX']
     """
 ```
 
 ### `main`
 
-Write a main function with the following "main loop":
-
-- While the use has not entered "quit":
-
-    - Present the user with a list of options, 1 through 7 corresponding to the functions above (not including `main`)
-    - Prompt the user to enter one of the numbers in the list, or "quit" to quit the program
-    - If the user enters a valid number, prompt the user for any input the corresponding function needs and call the function with appropriate arguments.
-    - If the user enters "quit" print "Bye" and exit the main loop.
-    - If the user enters invalid input, give the user an informative error message.
-
+More to come! Please check the T-Square announcements to see when this homework is updated.
 
 Of course, structure your main method as we have been taught:
 
