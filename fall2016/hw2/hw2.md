@@ -12,7 +12,7 @@ In this homework you will practice
 - data structures,
 - control structures,
 - functional programming, and
-- using modules.
+- using modules that you learn on your own from documentation.
 
 ## General Instructions
 
@@ -63,10 +63,11 @@ def mk_word2count(text):
     Return: char_dict: dict -- dictionary whose keys are words and
     assocviated values are the number of times the word appears in text
 
-    Usage examples:
+    Usage examples: (Note technique for testing dict equality.)
 
+    >>> mk_word2count('the butcher the baker the candlestick maker') == {'butcher': 1, 'baker': 1, 'candlestick': 1, 'the': 3, 'maker': 1}
+    True
     """
-    word2count = {}
 ```
 
 ```Python
@@ -106,29 +107,56 @@ def normalize_counts(tuples, max_value=100):
 ```
 
 ```Python
-def char_hist(bar_list):
+def word_hist(bar_list):
     """Create a text-based bar chart from bar_list.
 
     Parameters:
-    tuples: Sequence[(str, int)] -- (label, length) tuples
+    bar_list: Sequence[(str, int)] -- (label, length) tuples
 
-    Return: list[str] with one line per tuple in bar_list. Each line,
-    a str in the returned list, has the right-aligned label, a |
+    Return: list[str] with one line per tuple in bar_list. Each line --
+    a str in the returned list -- has the right-aligned label, a |
     character, then length Xs
 
     Usage Examlpes:
     >>> from pprint import pprint
-    >>> pprint(char_hist([('a', 10),('the', 9),('an', 8),('shenannigans', 2)]))
+    >>> pprint(word_hist([('a', 10),('the', 9),('an', 8),('shenannigans', 2)]))
     ['           a | XXXXXXXXXX',
      '         the | XXXXXXXXX',
      '          an | XXXXXXXX',
      'shenannigans | XX']
     """
+    max_len = len(max(bar_list, key=lambda t: len(t[0]))[0])
+    return ["{word} | {bars}".format(word=w.rjust(max_len),
+                                     width=max_len, bars="X"*len)
+            for w, len in bar_list]
 ```
 
 ### `main`
 
-More to come! Please check the T-Square announcements to see when this homework is updated.
+The user may supply zero to three command line arguments to **your** Python script. The first argument, if supplied, must be the name of a text file to read and analyze. The second argument is the maximum bar length for the word frequency histogram, and the third argument is the number of lines of the bar graph to display. If the user supplies a file name on the command line and the file does not exist, you may simple allow the program to exit due to the missing file and let Python report that the file was not found. If the user does not supply a file name on the command line, prompt the user for the file name. If the file does not exist, tell the user the file doesn't exist and prompt the user repeatedly until they enter the name of a file that exists.
+
+Here's a snippet of code that checks for the existence of a file:
+
+```Python
+import os.path
+os.path.exists("file_name.txt") # returns True if file_name.txt exists
+```
+
+Once you have a valid file name, read the file contents into a string. Here's a snippet of code that opens a file for reading as text and reads the file contents into a `str` variable:
+
+```Python
+infile = open(file_name, 'r')
+text = infile.read()
+```
+
+Once you read the contents of the file into a `str`, use the functions you created above to:
+
+- normalize the text to remove punctuation and make all letters lowercase,
+- create a dictionary mapping words from the text to the occurence counts,
+- create a list of tuples whose first elements are words from the word count dictionary, and whose second elements are the associatd counts -- this list should be sorte in descending order by word count, e.g., largest count first,
+-- normalize the counts in the list of word count tuples to the maximum bar length of your histogram,
+- create a histogram using your `word_hist` function, and
+- print the first `num_lines` of the histogram, where `num_lines` is the number of lines of the histogram to display.
 
 Of course, structure your main method as we have been taught:
 
