@@ -169,6 +169,93 @@ if __name__=="__main__":
    main(sys.argv)
 ```
 
+Here's a sample program run, using the file [i-have-a-dream.txt](i-have-a-dream.txt):
+
+```sh
+$ python hw2.py i-have-a-dream.txt 80 80
+            the | XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+             of | XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                | XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+             to | XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+            and | XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+              a | XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+             be | XXXXXXXXXXXXXXXXXXXXXXXXX
+             we | XXXXXXXXXXXXXXXXXXXXX
+           will | XXXXXXXXXXXXXXXXXXXXX
+           that | XXXXXXXXXXXXXXXXXX
+             is | XXXXXXXXXXXXXXXXXX
+             in | XXXXXXXXXXXXXXXX
+             as | XXXXXXXXXXXXXXX
+           this | XXXXXXXXXXXXXX
+        freedom | XXXXXXXXXXXXXX
+           from | XXXXXXXXXXXXXX
+            our | XXXXXXXXXXXXX
+           have | XXXXXXXXXXXXX
+           with | XXXXXXXXXX
+            not | XXXXXXXXXX
+            one | XXXXXXXXXX
+          negro | XXXXXXXXXX
+            let | XXXXXXXXX
+            day | XXXXXXXX
+           ring | XXXXXXX
+           come | XXXXXXX
+          dream | XXXXXXX
+          every | XXXXXXX
+            for | XXXXXXX
+             go | XXXXXXX
+         nation | XXXXXXX
+            are | XXXXXX
+             by | XXXXXX
+            you | XXXXXX
+      satisfied | XXXXXX
+          their | XXXXXX
+           back | XXXXXX
+           must | XXXXXX
+           able | XXXXXX
+           when | XXXXX
+          today | XXXXX
+            all | XXXXX
+            now | XXXX
+           long | XXXX
+       together | XXXX
+          white | XXXX
+              i | XXXX
+         cannot | XXXX
+        justice | XXXX
+            men | XXXX
+          faith | XXX
+          shall | XXX
+          there | XXX
+           free | XXX
+             it | XXX
+             on | XXX
+          great | XXX
+            new | XXX
+             my | XXX
+            has | XXX
+        america | XXX
+           time | XXX
+          check | XXX
+          which | XXX
+          years | XXX
+           land | XXX
+            can | XXX
+            who | XXX
+           down | XXX
+       mountain | XXX
+             an | XXX
+          still | XXX
+       american | XXX
+             so | XXX
+          black | XXX
+    mississippi | XXX
+           into | XXX
+           hope | XXX
+       children | XXX
+          later | XXX
+```
+
+Note that the full output would be very long and words with low rank would have no `X`s.
 
 ## Submission Instructions
 
