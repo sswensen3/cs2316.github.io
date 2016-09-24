@@ -126,8 +126,7 @@ def word_hist(bar_list):
      'shenannigans | XX']
     """
     max_len = len(max(bar_list, key=lambda t: len(t[0]))[0])
-    return ["{word} | {bars}".format(word=w.rjust(max_len),
-                                     width=max_len, bars="X"*length)
+    return ["{word} | {bars}".format(word=w.rjust(max_len), bars="X"*length)
             for w, length in bar_list]
 ```
 
@@ -144,14 +143,14 @@ if __name__=="__main__":
    main(sys.argv)
 ```
 
-The user may supply one to four command line arguments to **your** Python script. The arguments are compiled as a list of strings and passed to `args` in the `main()` function.
+The user may supply one to three command line arguments to **your** Python script. The first argument to the `python` interpreter, `sys.argv[0]`, is the name of your script, i.e.,  `args[0] = "hw2.py"`, so there will be 1 to 4 arguments in `sys.argv`. `sys.argv`, a list of strings, should be passed as-is to the `main()` function to minimize confusion.
 
   * The first argument will be the file name of Python script (ie. `args[0] = "hw2.py"`).
   * The second argument, if supplied, must be the name of a text file to read and analyze.
-    + If the user supplies a file name on the command line and the file does not exist, you may simple allow the program to exit due to the missing file and let Python report that the file was not found. 
+    + If the user supplies a file name on the command line and the file does not exist, you may simple allow the program to exit due to the missing file and let Python report that the file was not found.
     + If the user does not supply a file name on the command line, prompt the user for the file name. If the file does not exist, tell the user the file doesn't exist and prompt the user repeatedly until they enter the name of a file that exists.
-  * The third argument, if supplied, is the maximum bar length for the word frequency histogram. 
-  * The fourth argument, if supplied, is the number of lines of the bar graph to display. 
+  * The third argument, if supplied, is the maximum bar length for the word frequency histogram.
+  * The fourth argument, if supplied, is the number of lines of the bar graph to display.
 
 Here's a snippet of code that checks for the existence of a file:
 
