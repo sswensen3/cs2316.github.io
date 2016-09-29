@@ -68,7 +68,7 @@
         "order": [16]
     },
     "pq1": {
-        "topic": "**Programming Quiz 1**",
+        "topic": "**Programming Extra Credit 1**",
         "materials": [""],
         "order": [17]
     },
@@ -118,7 +118,7 @@
         "order": [24]
     },
     "pq2": {
-        "topic": "**Programming Quiz 2**",
+        "topic": "**Programming Extra Credit 2**",
         "materials": [""],
         "order": [25]
     },
@@ -169,7 +169,7 @@
         "order": [36]
     },
     "pq3": {
-        "topic": "**Programming Quiz 3**",
+        "topic": "**Programming Extra Credit 3**",
         "materials": [""],
         "order": [37]
     },
