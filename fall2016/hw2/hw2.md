@@ -55,7 +55,7 @@ def normalize_text(text):
 
 ```Python
 def mk_word2count(text):
-    """Return a dictionary mapping words in text to their count in text.
+    """Return a dictionary mapping words in text to their count in text. Be sure to account for newlines in the text!
 
     Parameters:
     text: str - string containing words separated by spaces
