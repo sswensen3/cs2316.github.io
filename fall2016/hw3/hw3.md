@@ -37,6 +37,7 @@ class Cat:
     Each cat must have a name, a color, and optionally a favorite food that defaults to “Meow Mix.” Each cat also has a boolean attribute variable called is_hungry which is initially True and an attribute happiness: an int that represents the cat’s level of happiness (higher = happier) and starts at 1. Cats may also have as many optional parameters and variables as you would like.
     """
 ```
+
 ```Python
 def __init__(self, name, color, fav_food):
     """Initialize a Cat object, saving as instance attributes its name, color, favorite food (defaults to “Meow Mix”), and any other attributes you would like.
@@ -51,6 +52,7 @@ def __init__(self, name, color, fav_food):
     Etc. of your choosing(Please remove this line and document your own parameters here)
     """
 ```
+
 ```Python
 def __eq__(self, other):
     """Compares two Cats to test equality. Cats should be equal if their names and colors are the same.
@@ -61,6 +63,7 @@ def __eq__(self, other):
     Return: Boolean -- True if the Cats were equal, False otherwise
     """
 ```
+
 ```Python
 def __repr__(self):
     """Describe the Cat. Return a string that lists the pairs of attribute/values for that Cat. Including: name, color, is_hungry, fav_food, age, happiness, etc. (attributes you add for creativity’s sake or to make your additional methods work)
@@ -76,6 +79,7 @@ def __repr__(self):
     [('name', 'Garbage'), ('color', 'grey'), ('fav_food', 'Meow Mix')]
     """
 ```
+
 ```Python
 def __str__(self):
     """Gives an aesthetically pleasing representation of the referenced cat object. All cats will have the same representation.
@@ -90,6 +94,7 @@ def __str__(self):
     =^.^=
     Sprinkles
 ```
+
 ```Python
 def feed(self, food):
     """Give food to a Cat, changing its is_hungry value to False, and when given its favorite food, a cat’s happiness will increase by 1.
@@ -101,9 +106,8 @@ def feed(self, food):
     Return: None
     """
 ```
-```Python
-##Write at least 2 more methods for Cat objects with documentation. Be creative and have fun. Bonus points can be awarded at the discretion of your TA for exceptional creativity.
-```
+
+###Write at least 2 more methods for Cat objects with documentation. Be creative and have fun. Bonus points can be awarded at the discretion of your TA for exceptional creativity.
 
 ### Main
 
