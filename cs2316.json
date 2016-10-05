@@ -74,7 +74,7 @@
     },
     "csv-files": {
         "topic": "[CSV Files](slides/csv-files.html)",
-        "materials": ["IP 8", "[Data Files](code/structured-files/)", "Exercise: [Tides](exercises/tides.html)", "Exercise: [T^2 is Awful](exercises/t2isawful.html)", "Exercise: [Grades Report](exercises/grades_report.html)"],
+        "materials": ["IP 8", "Exercise: [T^2 is Awful](exercises/t2isawful.html)", "Exercise: [Tides](exercises/tides.html)", "Exercise: [Grades Report](exercises/grades_report.html)"],
         "order": [18,19]
     },
     "xml": {
