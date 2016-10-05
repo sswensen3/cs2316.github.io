@@ -74,17 +74,12 @@
     },
     "csv-files": {
         "topic": "[CSV Files](slides/csv-files.html)",
-        "materials": ["IP 8", "[Data Files](code/structured-files/)", "Exercise: [Tides](exercises/tides.html)", "Exercise: [T^2 is Awful](exercises/t2isawful.html)"],
-        "order": [18]
+        "materials": ["IP 8", "[Data Files](code/structured-files/)", "Exercise: [Tides](exercises/tides.html)", "Exercise: [T^2 is Awful](exercises/t2isawful.html)", "Exercise: [Grades Report](exercises/grades_report.html)"],
+        "order": [18,19]
     },
     "xml": {
         "topic": "[XML](slides/xml.pdf)",
         "materials": ["IP 8", "Exercise: [Books](exercises/books.html)"],
-        "order": [19]
-    },
-    "json": {
-        "topic": "[JavaScript Object Notation](slides/json.html)",
-        "materials": ["IP 8", "[JSON Spec](http://json.org/)", "Exercise: [Data Converter](exercises/data-converter.html)"],
         "order": [20]
     },
     "relational-databases": {
@@ -148,10 +143,15 @@
         "materials": [""],
         "order": [100]
     },
+    "json": {
+        "topic": "[JavaScript Object Notation](slides/json.html)",
+        "materials": ["IP 8", "[JSON Spec](http://json.org/)", "Exercise: [Data Converter](exercises/data-converter.html)"],
+        "order": [30]
+    },
     "web-mining": {
         "topic": "[Web Mining](slides/web-mining.html)",
         "materials": ["[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)", "[Requests](http://docs.python-requests.org/en/master/)", "[wx.py](code/web/wx.py)"],
-        "order": [30, 31]
+        "order": [31]
     },
     "python-guis": {
         "topic": "[Python GUIs](slides/pyqt-guis.html)",

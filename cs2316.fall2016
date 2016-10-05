@@ -24,8 +24,8 @@ Week 6
 2016-09-30;pq1;Progress Reports Due,[pec1.py](fall2016/pec1/pec1.py)
 Week 7
 2016-10-03;csv-files;[HW 2 Due](fall2016/hw2/hw2.html),[HW 3 Assigned](fall2016/hw3/hw3.html)
-2016-10-05;xml
-2016-10-07;json
+2016-10-05;csv-files
+2016-10-07;xml
 Week 8
 2016-10-10;Fall Break - No Class
 2016-10-12;relational-databases;[HW 3 Due](fall2016/hw3/hw3.html),[HW 4 Assigned](fall2016/hw4/hw4.html)
@@ -40,7 +40,7 @@ Week 10
 2016-10-28;flask;Withdrawal Deadline 29 Oct
 Week 11
 2016-10-31;regular-expressions
-2016-11-02;web-mining;[HW 5 Due](fall2016/hw5/hw5.html),[HW 6 Assigned](fall2016/hw6/hw6.html)
+2016-11-02;json;[HW 5 Due](fall2016/hw5/hw5.html),[HW 6 Assigned](fall2016/hw6/hw6.html)
 2016-11-04;web-mining
 Week 12
 2016-11-07;python-guis
