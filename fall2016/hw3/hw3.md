@@ -156,6 +156,15 @@ garfield.feed(“lasagna”)
 >>>
 ```
 
+The following may be helpful for capturing print statements to the console:
+- Write a print statement whenever necessary
+    - Immediately after the print statement, append the same output to log.txt
+- When the user types to the console, append their input string to log.txt
+    - Then respond appropriately to whatever that input was
+- When your program ends, be sure that your log.txt has been closed
+
+
+
 
 User input: “census” calls the `__repr__` method on all instances of cats.
 
@@ -174,19 +183,6 @@ feed <cat>  =  <cat>.feed(userin(“Feed what food?”))
 census  =  <cat> … ##for all cats that exist
 ```
 
-The following may be helpful for capturing print statements to the console
-
-```Python
-import sys
-temp = sys.stdout
-
-sys.stdout = open('README.txt', 'a')    ##This line sends a print statement to README.txt
-print ('This is only visible in the text file')
-sys.stdout.close()  ##Always close your files when you finish with them or rewrite their variables
-
-sys.stdout = temp   ##This line resets the print statements to the console
-print('This is visible on the console')
-```
 
 ## Submission Instructions
 
