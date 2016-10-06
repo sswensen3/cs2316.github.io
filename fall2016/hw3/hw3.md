@@ -32,7 +32,7 @@ Write a Python module in 'hw3.py' that includes the following:
 Test your code with the docstrings, but don't worry if they fail because you added more than what was necessary. They are simply to provide an example to keep you on the right track for this homework
 ```Python
 class Cat:
-    """An object of class Cat will have a minimum of 8 methods: __init__, __eq__, __str__, __repr__, feed, info, and at least two methods of your choice.
+    """An object of class Cat will have a minimum of 7 methods: __init__, __eq__, __str__, __repr__, feed, and at least three methods of your choice.
     
     The Cat class has to keep track of the total number of cats owned as num_cats.
     Each cat must have a name, a color, and optionally a favorite food that defaults to “Meow Mix.” Each cat also has a boolean attribute variable called is_hungry which is initially True and an attribute happiness: an int that represents the cat’s level of happiness (higher = happier) and starts at 1. Cats may also have as many optional parameters and variables as you would like.
