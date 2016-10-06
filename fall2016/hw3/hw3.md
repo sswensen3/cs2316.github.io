@@ -30,6 +30,7 @@ Your best friend is a bonafide cat person. She loves cats, but is deathly allerg
 ## Solution Description
 Write a Python module in 'hw3.py' that includes the following:
 Test your code with the docstrings, but don't worry if they fail because you added more than what was necessary. They are simply to provide an example to keep you on the right track for this homework
+
 ```Python
 class Cat:
     """An object of class Cat will have a minimum of 7 methods: __init__, __eq__, __str__, __repr__, feed, and at least three methods of your choice.
@@ -135,6 +136,7 @@ Every output printed to the console and everything typed by the user should be s
 So my first line of log.txt should be `‘Welcome to Cat Sim v1.0. What is your name?”` and the last line would be `“Thanks for playing, Jon!”`
 
 User input strings will perform functions and methods written in the script without using classic function calls, so an example would be (bold text is repl prompt from input(), underlined text is performed at this time, but not displayed to user):
+
 ```Text
 >>>Welcome to Cat Sim v1.0. What is your name? Jon
 ‘Hello Jon.’
@@ -155,6 +157,7 @@ garfield.feed(“lasagna”)
 ```
 
 The following may be helpful to use for capturing print statements to the console
+
 ```Python
 import sys
 sys.stdout = open('README.txt', 'a')
@@ -165,10 +168,12 @@ User input: “census” calls the `__repr__` method on all instances of cats.
 
 ## Additional Documents
 ### README.txt
+
 A text file containing the instructions to your sim:
 each line in the text document should have the user input followed by the python code it calls.
 Don't forget that "census" and "quit" are required for all README.txt files.
 Ex: 
+
 ```Text
 adopt  =  Cat(userin(“Congrats! What’s your new cat’s name?”), userin(“What color?”), userin(“What’s its favorite food?”))
 feed <cat>  =  <cat>.feed(userin(“Feed what food?”))
