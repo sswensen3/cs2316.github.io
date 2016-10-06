@@ -156,6 +156,15 @@ garfield.feed(“lasagna”)
 >>>
 ```
 
+The following may be helpful for capturing print statements to the console:
+- Write a print statement whenever necessary
+    - Immediately after the print statement, append the same output to log.txt
+- When the user types to the console, append their input to log.txt
+    - Then respond appropriately to whatever that response was
+- When your program ends, be sure that your log.txt has been closed
+
+
+
 
 User input: “census” calls the `__repr__` method on all instances of cats.
 
@@ -173,14 +182,6 @@ adopt  =  Cat(userin(“Congrats! What’s your new cat’s name?”), userin(�
 feed <cat>  =  <cat>.feed(userin(“Feed what food?”))
 census  =  <cat> … ##for all cats that exist
 ```
-
-The following may be helpful for capturing print statements to the console:
-- Write a print statement whenever necessary
-    - Immediately after the print statement, append the same output to log.txt
-- When the user types to the console, append their input to log.txt
-    - Then respond appropriately to whatever that response was
-- When your program ends, be sure that your log.txt has been closed
-
 
 
 ## Submission Instructions
