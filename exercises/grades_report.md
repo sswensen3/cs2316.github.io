@@ -1,5 +1,5 @@
 ---
-layout: exercises
+layout: exercise
 title: Grades Report Exercise
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: exercises
+layout: exercise
 title: T^2 is Awful Exercise
 ---
 
