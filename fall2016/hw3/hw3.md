@@ -29,6 +29,7 @@ Your best friend is a bonafide cat person. She loves cats, but is deathly allerg
 
 ## Solution Description
 Write a Python module in 'hw3.py' that includes the following:
+Test your code with the docstrings, but don't worry if they fail because you added more than what was necessary. They are simply to provide an example to keep you on the right track for this homework
 ```Python
 class Cat:
     """An object of class Cat will have a minimum of 8 methods: __init__, __eq__, __str__, __repr__, feed, info, and at least two methods of your choice.
@@ -39,7 +40,7 @@ class Cat:
 ```
 
 ```Python
-def __init__(self, name, color, fav_food):
+def __init__(self, name, color, fav_food="Meow Mix"):
     """Initialize a Cat object, saving as instance attributes its name, color, favorite food (defaults to “Meow Mix”), and any other attributes you would like.
     Prints a message saying that a new cat has been acquired and what its name is.
     
@@ -61,6 +62,12 @@ def __eq__(self, other):
     other: Cat -- the second Cat you want to use
 
     Return: Boolean -- True if the Cats were equal, False otherwise
+    
+    Usage Examples:
+    >>> cat = Cat("Sprinkles", "white")
+    >>> other_cat = Cat("Princess Lady", "white", "Fancy Feast")
+    >>> cat == other_cat
+    False
     """
 ```
 
@@ -74,8 +81,8 @@ def __repr__(self):
     info_list: String -- Start with a list of tuples where each tuple has 2 items, an attribute followed by its value. Then convert to a string and return it.
     
     Usage Examples:
-    >>>cat = Cat("Garbage", "grey")    ### It is OK if this fails after you add additional attributes to your cats.
-    >>>cat                             ### Just maintain the same format for additional attributes as well
+    >>> cat = Cat("Garbage", "grey")    ### It is OK if this fails after you add additional attributes to your cats.
+    >>> cat                             ### Just maintain the same format for additional attributes as well
     [('name', 'Garbage'), ('color', 'grey'), ('fav_food', 'Meow Mix')]
     """
 ```
@@ -89,8 +96,8 @@ def __str__(self):
     Return: A String containing a cat emoji (of your choosing) and a newline character and the cat's name
     """
     Usage Examples:
-    >>>cat = Cat("Sprinkles", "white")
-    >>>print(cCat)
+    >>> cat = Cat("Sprinkles", "white")
+    >>> print(cCat)
     =^.^=
     Sprinkles
 ```
@@ -104,10 +111,16 @@ def feed(self, food):
     self
     food: String -- the food being given to the cat
     Return: None
+    
+    Usage Examples:
+    >>> new_cat = Cat("Princess Lady", "white", "Fancy Feast")
+    >>> new_cat.feed("Fancy Feast")
+    Princess Lady ate Fancy Feast and is no longer hungry.
+    Princess Lady seems happier!
     """
 ```
 
-###Write at least 2 more methods for Cat objects with documentation. Be creative and have fun. Bonus points can be awarded at the discretion of your TA for exceptional creativity.
+#### Write at least 2 more methods for Cat objects with documentation. Be creative and have fun. Bonus points can be awarded at the discretion of your TA for exceptional creativity.
 
 ### Main
 
