@@ -19,6 +19,8 @@ Write a program called `student_emails.py` that reads a CSV student roster downl
 
 ### Sample Output
 
+Using the sample file [t2isawful.csv](t2isawful.csv):
+
 ```sh
 $ python student_email.py t2isawful.csv
 Jay Chandrasekhar <jchandrasekhar3@gatech.edu>
