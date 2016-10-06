@@ -159,8 +159,8 @@ garfield.feed(“lasagna”)
 The following may be helpful for capturing print statements to the console:
 - Write a print statement whenever necessary
     - Immediately after the print statement, append the same output to log.txt
-- When the user types to the console, append their input to log.txt
-    - Then respond appropriately to whatever that response was
+- When the user types to the console, append their input string to log.txt
+    - Then respond appropriately to whatever that input was
 - When your program ends, be sure that your log.txt has been closed
 
 
