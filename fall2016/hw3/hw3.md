@@ -33,7 +33,7 @@ Test your code with the docstrings, but don't worry if they fail because you add
 
 ```Python
 class Cat:
-    """An object of class Cat will have a minimum of 7 methods: __init__, __eq__, __str__, __repr__, feed, and at least three methods of your choice.
+    """An object of class Cat will have a minimum of 8 methods: __init__, __eq__, __str__, __repr__, feed, and at least three methods of your choice.
     
     The Cat class has to keep track of the total number of cats owned as num_cats.
     Each cat must have a name, a color, and optionally a favorite food that defaults to “Meow Mix.” Each cat also has a boolean attribute variable called is_hungry which is initially True and an attribute happiness: an int that represents the cat’s level of happiness (higher = happier) and starts at 1. Cats may also have as many optional parameters and variables as you would like.
@@ -126,18 +126,18 @@ def feed(self, food):
 ### Main
 
 ```Python
-def main:
-"""Main asks for a username using user input.
-Asks <username> to begin the game and uses a while loop to continuously accept user input until user quits the sim with “quit.”
-"quit" and "census" are user input calls that will end the sim and call the __repr__ method for ALL cats, respectively.
-Every output printed to the console and everything typed by the user should be saved to a text file named log.txt while the main loop is running.
-"""
+def main(args):
+    """Main asks for a username using user input.
+    Asks <username> to begin the game and uses a while loop to continuously accept user input until user quits the sim with “quit.”
+    "quit" and "census" are user input calls that will end the sim and call the __repr__ method for ALL cats, respectively.
+    Every output printed to the console and everything typed by the user should be saved to a text file named log.txt while the main        loop is running.
+    """
 ```
 So my first line of log.txt should be `‘Welcome to Cat Sim v1.0. What is your name?”` and the last line would be `“Thanks for playing, Jon!”`
 
-User input strings will perform functions and methods written in the script without using classic function calls, so an example would be (bold text is repl prompt from input(), underlined text is performed at this time, but not displayed to user):
+User input strings will perform functions and methods written in the script without using classic function calls, so an example would be:
 
-```Text
+```
 >>>Welcome to Cat Sim v1.0. What is your name? Jon
 ‘Hello Jon.’
 >>>What would you like to do next? Adopt
@@ -147,7 +147,7 @@ User input strings will perform functions and methods written in the script with
 Garfield = Cat(“garfield”, “orange”)
 ‘Garfield is now happily in your home!’
 >>>What would you like to do next? Feed Garfield
->>>Feed what food?
+>>>Feed what food? lasagna
 garfield.feed(“lasagna”)
 ‘Garfield has been fed and is no longer hungry’
 ‘That food was great! Garfield looks happier than before!’
@@ -157,6 +157,7 @@ garfield.feed(“lasagna”)
 ```
 
 The following may be helpful for capturing print statements to the console:
+
 - Write a print statement whenever necessary
     - Immediately after the print statement, append the same output to log.txt
 - When the user types to the console, append their input string to log.txt
