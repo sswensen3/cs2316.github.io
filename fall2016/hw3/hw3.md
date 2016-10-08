@@ -153,7 +153,7 @@ def feed(self, food):
     """
 ```
 
-#### Write at least 2 more methods for Cat objects with documentation. Be creative and have fun. Bonus points can be awarded at the discretion of your TA for exceptional creativity.
+#### Write at least 3 more methods for Cat objects with documentation. Be creative and have fun. Bonus points can be awarded at the discretion of your TA for exceptional creativity.
 
 ### Main
 
