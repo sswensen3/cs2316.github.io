@@ -184,7 +184,7 @@ That food was great! Garfield looks happier than before!
 Thanks for playing, Jon!
 ```
 
-So the first line of `log.txt` should be `‘Welcome to Cat Sim v1.0. What is your name?”` and the last line would be `“Thanks for playing, Jon!”`
+So the first line of `log.txt` should be `'Welcome to Cat Sim v1.0. What is your name?'` and the last line would be `'Thanks for playing, Jon!'`
 
 The following may be helpful for capturing print statements to the console:
 
