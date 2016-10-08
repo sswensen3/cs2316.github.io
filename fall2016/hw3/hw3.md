@@ -24,45 +24,58 @@ Notes:
 - Unless otherwise stated, you can assume inputs will be valid in this assignment (i.e. error checking is not required).
 - In a Python module you must define a value (such as a function) before referencing it. So if you call function A from function B, the definition of function A must come before the definition of function B in the file.
 
+
 ## Problem Description
 Your best friend is a bonafide cat person. She loves cats, but is deathly allergic. So for her birthday, you’ve decided to make a crazy cat lady simulator! So start coding!
 
 ## Solution Description
-Write a Python module in 'hw3.py' that includes the following:
-Test your code with the docstrings, but don't worry if they fail because you added more than what was necessary. They are simply to provide an example to keep you on the right track for this homework
+Write a Python module in `hw3.py` that includes the following:
 
 ```Python
 class Cat:
-    """An object of class Cat will have a minimum of 8 methods: __init__, __eq__, __str__, __repr__, feed, and at least three methods of your choice.
+    """An object of class Cat will have a minimum of 8 methods: __init__, 
+    __eq__, __str__, __repr__, feed, and at least three methods of your choice.
     
-    The Cat class has to keep track of the total number of cats owned as num_cats.
-    Each cat must have a name, a color, and optionally a favorite food that defaults to “Meow Mix.” Each cat also has a boolean attribute variable called is_hungry which is initially True and an attribute happiness: an int that represents the cat’s level of happiness (higher = happier) and starts at 1. Cats may also have as many optional parameters and variables as you would like.
+    The Cat class has to keep track of the total number of cats owned as 
+    num_cats.
+    
+    Each cat must have a name, a color, and optionally a favorite food that 
+    defaults to “Meow Mix.” Each cat also has a boolean attribute variable 
+    called is_hungry which is initially True and an attribute happiness: an int 
+    that represents the cat’s level of happiness (higher = happier) and starts 
+    at 1. Cats may also have as many optional parameters and variables as you 
+    would like.
     """
 ```
 
 ```Python
 def __init__(self, name, color, fav_food="Meow Mix"):
-    """Initialize a Cat object, saving as instance attributes its name, color, favorite food (defaults to “Meow Mix”), and any other attributes you would like.
-    Prints a message saying that a new cat has been acquired and what its name is.
+    """Initialize a Cat object, saving as instance attributes its name, color, 
+    favorite food (defaults to “Meow Mix”), and any other attributes you would 
+    like; and prints a message saying that a new cat has been acquired and what 
+    its name is.
     
     Parameters: 
-    self
-    name: String
-    color: String
-    fav_food: String -- is “Meow Mix” if not given
-    Etc. of your choosing(Please remove this line and document your own parameters here)
-    age: Int -- representing age in years of the Cat    ##not required, just example
+        self
+        name: String
+        color: String
+        fav_food: String -- is “Meow Mix” if not given
+        Etc. of your choosing(Please remove this line and document your own 
+        parameters here)
+        age: Int -- representing age in years of the Cat    ##not required, just example
     """
 ```
 
 ```Python
 def __eq__(self, other):
-    """Compares two Cats to test equality. Cats should be equal if their names and colors are the same.
-    Parameters:
-    self
-    other: Cat -- the second Cat you want to use
+    """Compares two Cats to test equality. Cats should be equal if their names 
+    and colors are the same.
 
-    Return: Boolean -- True if the Cats were equal, False otherwise
+    Parameters:
+        self
+        other: Cat object -- the second Cat you want to use
+
+    Return: Boolean -- True if the Cat objects are equal, False otherwise
     
     Usage Examples:
     >>> cat = Cat("Sprinkles", "white")
@@ -74,12 +87,18 @@ def __eq__(self, other):
 
 ```Python
 def __repr__(self):
-    """Describe the Cat. Return a string that lists the pairs of attribute/values for that Cat. Including: name, color, is_hungry, fav_food, age, happiness, etc. (attributes you add for creativity’s sake or to make your additional methods work)
+    """Describe the Cat object. Return a string that lists the pairs of 
+    attribute/values for that Cat. Including: name, color, is_hungry, fav_food, 
+    age, happiness, etc. (Remember: you can add attributes for creativity’s 
+    sake or to make your additional methods work.)
     
-    Parameters: self
+    Parameters: 
+        self
     
     Return:
-    info_list: String -- Start with a list of tuples where each tuple has 2 items, an attribute followed by its value. Then convert to a string and return it.
+    info_list: String -- Start with a list of tuples where each tuple has 2 
+        items, an attribute followed by its value. Then convert to a string and 
+        return it.
     
     Usage Examples:
     >>> cat = Cat("Garbage", "grey")    ### It is OK if this fails after you add additional attributes to your cats.
@@ -90,14 +109,18 @@ def __repr__(self):
 
 ```Python
 def __str__(self):
-    """Gives an aesthetically pleasing representation of the referenced cat object. All cats will have the same representation.
+    """Gives an aesthetically pleasing representation of the referenced cat 
+    object. All cats will have the same representation.
     
-    Parameters: self
+    Parameters: 
+        self
     
-    Return: A String containing a cat emoji (of your choosing) and a newline character and the cat's name
+    Return: A String containing a cat emoji (of your choosing) and a newline 
+        character and the cat's name
+
     Usage Examples:
     >>> cat = Cat("Sprinkles", "white")
-    >>> print(cCat)
+    >>> print(cat)
     =^.^=
     Sprinkles
     """
@@ -105,12 +128,16 @@ def __str__(self):
 
 ```Python
 def feed(self, food):
-    """Give food to a Cat, changing its is_hungry value to False, and when given its favorite food, a cat’s happiness will increase by 1.
-    This method should print that the cat has been fed and if the cat is fed its favorite food, an additional message will say that the cat is noticeably happier.
+    """Give food to a Cat, changing its is_hungry value to False, and when given 
+    its favorite food, a cat’s happiness will increase by 1.
+    This method should print that the cat has been fed and if the cat is fed its 
+    favorite food, an additional message will say that the cat is noticeably 
+    happier.
 
     Parameters:
-    self
-    food: String -- the food being given to the cat
+        self
+        food: String -- the food being given to the cat
+    
     Return: None
     
     Usage Examples:
@@ -128,55 +155,54 @@ def feed(self, food):
 ```Python
 def main(args):
     """Main asks for a username using user input.
-    Asks <username> to begin the game and uses a while loop to continuously accept user input until user quits the sim with “quit.”
-    "quit" and "census" are user input calls that will end the sim and call the __repr__ method for ALL cats, respectively.
-    Every output printed to the console and everything typed by the user should be saved to a text file named log.txt while the main        loop is running.
+    Asks <username> to begin the game and uses a while loop to continuously 
+    accept user input until user quits the sim with 'quit'.
+    
+    'quit' and 'census' are user input calls that will end the sim and call 
+    the __repr__ method for ALL cats, respectively.
+    
+    Every output printed to the console and everything typed by the user should 
+    be saved to a text file named log.txt while the main loop is running.
     """
 ```
-So my first line of log.txt should be `‘Welcome to Cat Sim v1.0. What is your name?”` and the last line would be `“Thanks for playing, Jon!”`
 
 User input strings will perform functions and methods written in the script without using classic function calls, so an example would be:
 
 ```
 >>>Welcome to Cat Sim v1.0. What is your name? Jon
-‘Hello Jon.’
+Hello Jon.
 >>>What would you like to do next? Adopt
 >>>Congrats! What’s your new cat’s name? Garfield
 >>>What color? Orange
 >>>What’s its favorite food? lasagna
-Garfield = Cat(“garfield”, “orange”)
-‘Garfield is now happily in your home!’
+Garfield is now happily in your home!
 >>>What would you like to do next? Feed Garfield
 >>>Feed what food? lasagna
-garfield.feed(“lasagna”)
-‘Garfield has been fed and is no longer hungry’
-‘That food was great! Garfield looks happier than before!’
+Garfield has been fed and is no longer hungry
+That food was great! Garfield looks happier than before!
 >>>What would you like to do next? Quit
-‘Thanks for playing, Jon!’
->>>
+Thanks for playing, Jon!
 ```
+
+So the first line of `log.txt` should be `‘Welcome to Cat Sim v1.0. What is your name?”` and the last line would be `“Thanks for playing, Jon!”`
 
 The following may be helpful for capturing print statements to the console:
 
-- Write a print statement whenever necessary
-    - Immediately after the print statement, append the same output to log.txt
-- When the user types to the console, append their input string to log.txt
-    - Then respond appropriately to whatever that input was
-- When your program ends, be sure that your log.txt has been closed
+- Write a print statement whenever necessary.
+    - Immediately after the print statement, append the same output to `log.txt`.
+- When the user types to the console, append their input string to `log.txt`.
+    - Then respond appropriately to whatever that input was.
+- When your program ends, be sure that your `log.txt` has been closed.
 
-
-
-
-User input: “census” calls the `__repr__` method on all instances of cats.
+If the user inputs 'census', the `__repr__` method is called on all instances of cats.
 
 ## Additional Documents
 
 ### README.txt
 
-A text file containing the instructions to your sim:
-each line in the text document should have the user input followed by the python code it calls.
-Don't forget that "census" and "quit" are required for all README.txt files.
-Ex: 
+A text file containing the instructions to your sim. Each line in the text document should have the user input followed by the Python code it calls. Don't forget that 'census' and 'quit' are required for all `README.txt` files.
+
+**Example:** 
 
 ```Text
 adopt  =  Cat(userin(“Congrats! What’s your new cat’s name?”), userin(“What color?”), userin(“What’s its favorite food?”))
@@ -184,6 +210,8 @@ feed <cat>  =  <cat>.feed(userin(“Feed what food?”))
 census  =  <cat> … ##for all cats that exist
 ```
 
+## Tips
+Test your code with the docstrings, but don't worry if they fail because you added more than what was necessary. They are simply to provide an example to keep you on the right track for this homework.
 
 ## Submission Instructions
 
@@ -195,23 +223,23 @@ Practice safe submission! Verify that your HW files were truly submitted correct
 - After submitting the files to T-Square, return to the Assignment menu option and this homework. It should show the submitted files.
 - Download copies of your submitted files from the T-Square Assignment page placing them in a new folder.
 - Re-run and test the files you downloaded from T-Square to make sure it's what you expect.
-- This procedure helps guard against a few things.
+- This procedure helps guard against a few things:
 
-    - It helps insure that you turn in the correct files.
+    - It helps ensure that you turn in the correct files.
     - It helps you realize if you omit a file or files. Missing files will not be given any credit, and non-compiling homework solutions will receive few to zero points. Also recall that late homework will not be accepted regardless of excuse. Treat the due date with respect.  Do not wait until the last minute! (If you do discover that you omitted a file, submit all of your files again, not just the missing one.)
     - Helps find syntax errors or runtime errors that you may have added after you last tested your code.
     
 ## Grading
 
- (5) Every Cat has a name
+ (5) Every Cat instance has a name.
  
- (40) Cat class has at least 8 working methods, including: init, eq, repr, str, feed
+ (40) `Cat` class has at least 8 working methods, including: `__init__`, `__eq__`, `__repr__`, `__str__`, `feed`, and a minimum of 3 custom methods.
  
- (15) main loop executes and creates a properly formatted log.txt (-2 if not formatted correctly, but still present)
+ (15) `main` loop executes and creates a properly formatted `log.txt` (-2 if not formatted correctly, but still present)
  
- (25) user interactive sim works according to instructions of README.txt and ends on ‘quit’ (if README.txt is missing, but sim works according to main loop, -10)
+ (25) User interactive sim works according to instructions of `README.txt` and ends on user inputting 'quit' (if `README.txt` is missing, but sim works according to `main` loop, -10)
  
- (15) ‘census’ prints ALL attributes/variables for ALL cats. (-2 points for each attribute missing)
+ (15) User inputting 'census' prints ALL attributes/variables for ALL cats. (-2 points for each attribute missing)
  
 
  (up to 5) BONUS: exceptional creativity at discretion of grading TA
