@@ -103,7 +103,7 @@ def __repr__(self):
     Usage Examples:
     >>> cat = Cat("Garbage", "grey")    ### It is OK if this fails after you add additional attributes to your cats.
     >>> cat                             ### Just maintain the same format for additional attributes as well
-    [('name', 'Garbage'), ('color', 'grey'), ('fav_food', 'Meow Mix'), ('is_hungry', 'True'), ('happiness', 0)]
+    [('name', 'Garbage'), ('color', 'grey'), ('fav_food', 'Meow Mix'), ('is_hungry', True), ('happiness', 1)]
     """
 ```
 
