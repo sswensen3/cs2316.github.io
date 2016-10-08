@@ -29,6 +29,11 @@ Notes:
 Your best friend is a bonafide cat person. She loves cats, but is deathly allergic. So for her birthday, you’ve decided to make a crazy cat lady simulator! So start coding!
 
 ## Solution Description
+
+### Regarding doctests
+Test your code with the doctests, and feel free to add more. Don't worry if they fail because you added more than what was necessary. The doctests are there to provide an example to keep you on the right track for this homework. The doctests provided below will not be used for grading (but we probably will use other tests!).
+
+### Regarding the code
 Write a Python module in `hw3.py` that includes the following:
 
 ```Python
@@ -209,9 +214,6 @@ adopt  =  Cat(userin(“Congrats! What’s your new cat’s name?”), userin(�
 feed <cat>  =  <cat>.feed(userin(“Feed what food?”))
 census  =  <cat> … ##for all cats that exist
 ```
-
-## Tips
-Test your code with the docstrings, but don't worry if they fail because you added more than what was necessary. They are simply to provide an example to keep you on the right track for this homework.
 
 ## Submission Instructions
 
