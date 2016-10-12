@@ -79,7 +79,12 @@
     },
     "xml": {
         "topic": "[XML](slides/xml.pdf)",
-        "materials": ["IP 8", "Exercise: [Books](exercises/books.html)"],
+        "materials": ["IP 8", "[people.xml](code/structured-files/people.xml)", "Exercise: [Books](exercises/books.html)"],
+        "order": [19]
+    },
+    "json": {
+        "topic": "[JavaScript Object Notation](slides/json.html)",
+        "materials": ["IP 8", "[JSON Spec](http://json.org/)", "Exercise: [Data Converter](exercises/data-converter.html)"],
         "order": [20]
     },
     "relational-databases": {
