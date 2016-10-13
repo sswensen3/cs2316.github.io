@@ -5,6 +5,19 @@ title: Homework 4
 
 # Homework 4
 
+## General Instructions
+
+**This is an individual assignment.**
+
+Collaboration at a reasonable level will not result in substantially similar code. Students may only collaborate with fellow students currently taking CS 2316, the TA's and the lecturer. Collaboration means talking through problems, assisting with debugging, explaining a concept, etc. You should not exchange code or write code for others.
+
+Notes:
+
+- Include a comment with your name and GTID at the top of all Python files.
+- *Do not wait until the last minute* to do this assignment in case you run into problems.
+- You must include docstrings for all functions! There will be a point deduction if your code doesn't have docstrings. You should copy the docstrings from the instructions below, and feel free to add your own use cases for your own testing purposes.
+- As stated at the bottom of this page, non-compiling code (code that does not run at all due to substantial runtime/syntax errors) will receive few to zero points! Make sure to test your submitted file and make sure the code runs.
+
 ## Introduction
 
 In this homework you will practice
@@ -22,11 +35,18 @@ The second is a CSV file that contains pricing information for stocks in the S&P
 
 Note that stocks move in and out of the S&P 500.  Some stocks may be represented in the CSV file, but not in the XML file (and vice-versa).  However, most of the stocks that were in the S&P 500 in 2010 remain today. 
 
+## Provided Files
+
+- [SP500_ind.csv](SP500_ind.csv)
+- [SP500_symbols.xml](SP500_symbols.xml)
+
+Note: You may find that XML files are easier to read if opened in a browser such as Chrome rather than in a text editor.
+
 ## Solution Description
 
 Write a Python module in `hw4.py` that includes the functions from the following tasks.
 
-Task 1:
+### Task 1:
 
 Your first task is to process the existing XML file and rewrite it in a cleaner, more tree-like form.  The XML file you were given is simply a root with 500 children.  That’s a pretty lame tree!  The XML tree you create should have a root containing the tag SP500.  The children of the root node will be nodes representing the sectors that make up the S&P 500.  Each sector is then broken down into several industries, so the children of the sector nodes will represent the industries that make up that sector.  Finally, the children of each industry node will represent the stocks that make up the industry.   
 
@@ -55,12 +75,13 @@ A sample section (for the Telecommunications Services sector) of the tree you ar
 Use the following two functions to create the new XML file:
 
 ```Python
-def readTree(filename):
+def read_tree(filename):
 	"""This function will read in the existing xml file and return a dictionary.
 	The keys to the dictionary will be the sectors found in the xml file
 	The value of each key will be another dictionary!
 	This dictionary's keys will be the industries that make up that particular sector.
-	The value of each key will be a list of the xml elements in the original tree for the stocks that make up that industry.
+	The value of each key will be a list of the xml elements in the original tree for the stocks 
+	that make up that industry.
 	
 	Parameters: 
 	filename: str - name of the existing xml file
@@ -70,24 +91,24 @@ def readTree(filename):
 ```
 
 ```Python
-def createTree(aDict):
-	"""This function takes in the dictionary you created in readTree
+def create_tree(xml_dict):
+	"""This function takes in the dictionary you created in read_tree
 	Iterate through the dictionary, and create an xml tree in the format described in the assignment
 	Write that tree to a file called "output.xml"
 	
 	Parameters:
-	aDict: dict - the dictionary you created in readTree
+	xml_dict: dict - the dictionary you created in read_tree
 	
 	Return: none
 	"""
 ```
 	
-Task 2:
+### Task 2:
 
 Now that you have experience working with XML files and you understand the hierarchical structure of the S&P 500, it’s time to move on to the even more exciting CSV pricing data! The first thing we need to do is get the CSV data in a usable format.  We will do that with the following functions:
 
 ```Python
-def readCSV(filename):
+def read_CSV(filename):
 	"""This function will read in the csv file, and return a list of lists. 
 	Each list will be in the following format:[date, ticker, open, high, low, close, volume]. 
 	The date should be in the form of a datetime object - (hint: look at datetime.datetime.strptime). 
@@ -101,13 +122,14 @@ def readCSV(filename):
 ```
 
 ```Python
-def stock_dictionary(aList):
-	"""This function will take in the list of lists created in readCSV and return a dictionary. 
+def stock_dictionary(csv_list):
+	"""This function will take in the list of lists created in read_CSV and return a dictionary. 
 	Each key will be a stock ticker. Each value will be a list of lists, with each list in the format 
-	[dateObj, open, high, low, close, volume]. Each value should only contain information pertinent to the corresponding key.
+	[dateObj, open, high, low, close, volume]. Each value should only contain information pertinent to 
+	the corresponding key.
 	
 	Parameters:
-	aList: list - nested list that was created in readCSV
+	csv_list: list - nested list that was created in read_CSV
 	
 	Return: a dictionary with the information of the nested list
 	"""
@@ -116,12 +138,12 @@ def stock_dictionary(aList):
 Perfect - we’re done processing the CSV data!  We have a dictionary with each stock’s ticker as a key, and information about that stock as a value.  Let’s write a few functions that use the dictionary to calculate some interesting metrics.
 
 ```Python	
-def calcAvgOpen(aDict, ticker):
+def calc_avg_open(stock_dict, ticker):
 	"""This function takes in the dictionary you created in stock_dictionary and a ticker.  
 	Return the average opening price for the stock as a float.
 	
 	Parameters:
-	aDict: dict - created in the stock_dictionary function
+	stock_dict: dict - created in the stock_dictionary function
 	ticker: str - refers to a specific stock
 	
 	Return: float which is the average opening price of the stock
@@ -129,7 +151,7 @@ def calcAvgOpen(aDict, ticker):
 ```
 
 ```Python
-def findReturn(aDict, ticker, tup1, tup2):
+def find_return(stock_dict, ticker, start, end):
 	"""This function takes in the stock dictionary, a ticker, and two tuples.  The tuples
 	represent dates, where each item in the tuple is an int.  
 	It calculates the return of the stock between the two dates.  Calculate the return using
@@ -140,17 +162,17 @@ def findReturn(aDict, ticker, tup1, tup2):
 	return None.
 	
 	Parameters:
-	aDict: dict - created in the stock_dictionary function
+	stock_dict: dict - created in the stock_dictionary function
 	ticker: str - refers to a specific stock
-	tup1: tuple - represents the start date in the format (Month,Date,Year)
-	tup2: tuple - represents the end date in the format (Month,Date,Year)
+	start: tuple - represents the start date in the format (Month,Date,Year)
+	end: tuple - represents the end date in the format (Month,Date,Year)
 	
 	Return: float of the mathematical return
 	"""
 ```
 
 ```Python
-def vwap(aDict, ticker):
+def vwap(stock_dict, ticker):
 	"""This function takes in the stock dictionary and a ticker.  Return the volume weighted average
 	price (VWAP) of the stock.  In order to do this, first find the average price of the stock on
 	each day.  Then, multiply that price with the volume on that day.  Take the sum of these values.  
@@ -158,7 +180,7 @@ def vwap(aDict, ticker):
 	(hint: average price for each day = (high + low + close)/3)
 	
 	Parameters:
-	aDict: dict - created in the stock_dictionary function
+	stock_dict: dict - created in the stock_dictionary function
 	ticker: str - refers to a specific stock
 	
 	Return: float which is the VWAP of the stock
@@ -166,47 +188,51 @@ def vwap(aDict, ticker):
 ```
 
 ```Python
-def tickerFind(bDict, tup0):
-	"""This function takes in the dictionary created in readTree and a tuple that contains a
+def ticker_find(tree_dict, info):
+	"""This function takes in the dictionary created in read_tree and a tuple that contains a
 	sector and an industry that belongs to that sector.  Return a list of tickers of the stocks that belong
 	to that industry.
 	
 	Parameters:
-	bDict: dict - created in the readTree function
-	tup0: tuple - in the format (sector, industry)
+	tree_dict: dict - created in the read_tree function
+	info: tuple - in the format (sector, industry)
 	
 	Return: list of tickers that belong to that industry
 	"""
 ```
 
-Awesome!  Now let's write a main function that puts it all together.  
+Awesome!  Now let's write a main function that puts it all together. The main function will take in an XML file, a CSV file, a sector name, an industry name, and (optionally) an output CSV file.
 
 
 Using the functions you have created:
 
-1. Find the tickers associated with the sector and industry
-2. Find the VWAP and average opening price associated with each ticker
+1. Read the XML file and use ticker_find with the resulting dictionary to find the tickers associated with the sector and industry supplied by the user
+2. Find the VWAP and average opening price associated with each of the tickers found
+3. Either print the results or write them to a CSV file as explained below
 
 		
 To perform these calculations, your main function should call (in a logical order, with the appropriate parameters):
 
-- readTree
-- readCSV
-- createTree (not used for the output of main but convenient to create the xml file for the user)
+- read_tree
+- read_CSV
+- create_tree (not used for the output of main but convenient to create the xml file for the user)
 - stock_dictionary
-- tickerFind
+- ticker_find
 - vwap
-- calcAvgOpen
+- calc_avg_open
 
 Notes:
 
-- If a CSV file name is not supplied:
+- If less than four args are supplied or one or more args is invalid (i.e. causes one or more functions to throw an error):
+Print an error message and end the program, either with return or with a call to sys.exit().
+
+- If an output CSV file name (fifth arg) is not supplied:
 Print out the ticker, vwap and average opening price on a single line
 
-- If a CSV file name is supplied:
+- If an output CSV file name (fifth arg) is supplied:
 Write each ticker, vwap, and average opening price as a row in the CSV file
 
-- If the ticker does not have pricing information, do not include the row in your print statements or CSV file		
+- If the ticker does not have pricing information, do not include the row in your print statements or CSV file.		
 
 ```Python
 def main(args):
