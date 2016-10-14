@@ -26,7 +26,7 @@ Notes:
 
 
 ## Problem Description
-Your best friend is a bonafide cat person. She loves cats, but is deathly allergic. So for her birthday, you’ve decided to make a crazy cat lady simulator! So start coding!
+Your best friend is a bonafide cat person. She loves cats, but is deathly allergic. So for her birthday, you've decided to make a crazy cat lady simulator! So start coding!
 
 ## Solution Description
 
@@ -45,9 +45,9 @@ class Cat:
     num_cats.
     
     Each cat must have a name, a color, and optionally a favorite food that 
-    defaults to “Meow Mix.” Each cat also has a boolean attribute variable 
+    defaults to "Meow Mix." Each cat also has a boolean attribute variable 
     called is_hungry which is initially True and an attribute happiness: an int 
-    that represents the cat’s level of happiness (higher = happier) and starts 
+    that represents the cat's level of happiness (higher = happier) and starts 
     at 1. Cats may also have as many optional parameters and variables as you 
     would like.
     """
@@ -56,7 +56,7 @@ class Cat:
 ```Python
 def __init__(self, name, color, fav_food="Meow Mix"):
     """Initialize a Cat object, saving as instance attributes its name, color, 
-    favorite food (defaults to “Meow Mix”), and any other attributes you would 
+    favorite food (defaults to "Meow Mix"), and any other attributes you would 
     like; and prints a message saying that a new cat has been acquired and what 
     its name is.
     
@@ -64,7 +64,7 @@ def __init__(self, name, color, fav_food="Meow Mix"):
         self
         name: String
         color: String
-        fav_food: String -- is “Meow Mix” if not given
+        fav_food: String -- is "Meow Mix" if not given
         Etc. of your choosing(Please remove this line and document your own 
         parameters here)
         age: Int -- representing age in years of the Cat    ##not required, just example
@@ -94,7 +94,7 @@ def __eq__(self, other):
 def __repr__(self):
     """Describe the Cat object. Return a string that lists the pairs of 
     attribute/values for that Cat. Including: name, color, is_hungry, fav_food, 
-    age, happiness, etc. (Remember: you can add attributes for creativity’s 
+    age, happiness, etc. (Remember: you can add attributes for creativity's 
     sake or to make your additional methods work.)
     
     Parameters: 
@@ -134,7 +134,7 @@ def __str__(self):
 ```Python
 def feed(self, food):
     """Give food to a Cat, changing its is_hungry value to False, and when given 
-    its favorite food, a cat’s happiness will increase by 1.
+    its favorite food, a cat's happiness will increase by 1.
     This method should print that the cat has been fed and if the cat is fed its 
     favorite food, an additional message will say that the cat is noticeably 
     happier.
@@ -177,9 +177,9 @@ User input strings will perform functions and methods written in the script with
 >>>Welcome to Cat Sim v1.0. What is your name? Jon
 Hello Jon.
 >>>What would you like to do next? Adopt
->>>Congrats! What’s your new cat’s name? Garfield
+>>>Congrats! What's your new cat's name? Garfield
 >>>What color? Orange
->>>What’s its favorite food? lasagna
+>>>What's its favorite food? lasagna
 Garfield is now happily in your home!
 >>>What would you like to do next? Feed Garfield
 >>>Feed what food? lasagna
@@ -189,7 +189,7 @@ That food was great! Garfield looks happier than before!
 Thanks for playing, Jon!
 ```
 
-So the first line of `log.txt` should be `‘Welcome to Cat Sim v1.0. What is your name?”` and the last line would be `“Thanks for playing, Jon!”`
+So the first line of `log.txt` should be `'Welcome to Cat Sim v1.0. What is your name?"` and the last line would be `"Thanks for playing, Jon!"`
 
 The following may be helpful for capturing print statements to the console:
 
@@ -210,8 +210,8 @@ A text file containing the instructions to your sim. Each line in the text docum
 **Example:** 
 
 ```Text
-adopt  =  Cat(userin(“Congrats! What’s your new cat’s name?”), userin(“What color?”), userin(“What’s its favorite food?”))
-feed <cat>  =  <cat>.feed(userin(“Feed what food?”))
+adopt  =  Cat(userin("Congrats! What's your new cat's name?"), userin("What color?"), userin("What's its favorite food?"))
+feed <cat>  =  <cat>.feed(userin("Feed what food?"))
 census  =  <cat> … ##for all cats that exist
 ```
 
