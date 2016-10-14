@@ -9,8 +9,8 @@ title: CS 2316 - TAs
 - **A1**: Daniel Paré & Katie Lau
 - **A2/A6/GR**: Michael Tarbell & Samuel Yeager
 - **A3**: Megi Guliashvili & Brandon Best
-- **A4**: Zeba Munshi & Alex Ketchum
-- **A5**: Elise Alfonso & Smita Tejo
+- **A4**: Elise Alfonso & Alex Ketchum
+- **A5**: Zeba Munshi & Smita Tejo
 
 ## Head TA: Kate Unsworth
 ![](images/kate.jpg "Kate")
