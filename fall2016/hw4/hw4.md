@@ -247,7 +247,12 @@ def main(args):
 	
 	Return: none
 	"""
+	
+if __name__=="__main__":
+   import sys
+   main(sys.argv)
 ```
+
 
 ## Submission Instructions
 
