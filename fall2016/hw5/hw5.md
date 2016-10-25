@@ -11,25 +11,25 @@ title: Homework 5
  + processing CSV files
 ## Problem Description
   
- +You will be given a CSV file which has an inventory of items. The CSV file has the columns: itenName,value,quantity. You will be using this file to create a table with the primary key of the table being the itemName. You will also be creating an Owner class that will have the ability to sell and buy inventory. The Owner class will keep track of their inventory and the amount of the cash they have. You will then create a main function that will allow a user to create multiple owners that can buy and sell inventory from the same database. Your table of inventory will have to update with each transaction that an owner completes.
+You will be given a CSV file which has an inventory of items. The CSV file has the columns: itenName,value,quantity. You will be using this file to create a table with the primary key of the table being the itemName. You will also be creating an Owner class that will have the ability to sell and buy inventory. The Owner class will keep track of their inventory and the amount of the cash they have. You will then create a main function that will allow a user to create multiple owners that can buy and sell inventory from the same database. Your table of inventory will have to update with each transaction that an owner completes.
 
 ## Solution Description
- + 
- +```Python
- +
- +class Owner:
- +    """Onwers have a unique name, money, and a dictionary of their inventory in the form
- +    {item:(value, quantity)}
- +    """
- +
- +    def __init__(self, starting_cash = 500, inventoryDict = {}, database):
- +        """starting_cash and inventoryDict have initital default values, but anything
- +        can be passed in to be the initial values"""
- +
- +    def buyCheapest(self, item = None):
- +        """Buys the cheapest of the specified item, and if no item is specified,
- +        buys the cheapest thing in the database. The price to buy something is
- +        95% of its value.  Reduce the owners money by that much, decrease the count of that item in the database (or remove it if there's none left after you decreae the count), and add it to the owners inventoryDict, with the value
+  
+ ```Python
+ 
+ class Owner:
+     """Onwers have a unique name, money, and a dictionary of their inventory in the form
+     {item:(value, quantity)}
+     """
+ 
+     def __init__(self, starting_cash = 500, inventoryDict = {}, database):
+         """starting_cash and inventoryDict have initital default values, but anything
+         can be passed in to be the initial values"""
+ 
+     def buyCheapest(self, item = None):
+         """Buys the cheapest of the specified item, and if no item is specified,
+         buys the cheapest thing in the database. The price to buy something is
+         95% of its value.  Reduce the owners money by that much, decrease the count of that item in the database (or remove it if there's none left after you decreae the count), and add it to the owners inventoryDict, with the value
  +        being the price you paid for it. If you buy that item again, you will just increase the quantity of that item in your inventoryDict. If the owner does not have enough money to buy any of the items in the database print a message to the user that they do not have sufficient funds.
  +        """
  +
