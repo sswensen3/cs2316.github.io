@@ -14,6 +14,15 @@ title: Homework 5
 You will be given a CSV file which has an inventory of items. The CSV file has the columns: itenName,value,quantity. You will be using this file to create a table with the primary key of the table being the itemName. You will also be creating an Owner class that will have the ability to sell and buy inventory. The Owner class will keep track of their inventory and the amount of the cash they have. You will then create a main function that will allow a user to create multiple owners that can buy and sell inventory from the same database. Your table of inventory will have to update with each transaction that an owner completes.  If updateing the value of an 
 item when buying or selling makes the value a non integer, round that value to the nearest integer.
 
+If an owner trys to sell something not in their inventory, or trys to buy something that they cant afford, or trys to buy something
+from the database that doesnt exist, please do not allow the code to throw errors.  Use try and expect statements and print a helpful
+message to the console that is relevant to whatever caused the error.  
+
+The value of an item in an owners inventory is the last price that item was bought for.  If your inventoryDict has the Key/Value pair
+{light:(15,2)} and you buy a new light that has value 20, your inventory dicty should be updated to look like {light:(19, 3)}.
+
+
+
 ## Solution Description
   
  ```Python
@@ -29,7 +38,7 @@ item when buying or selling makes the value a non integer, round that value to t
  
      def buyCheapest(self, item = None):
          """Buys the cheapest of the specified item, and if no item is specified,
-         buys the cheapest thing in the database. The price to buy something is
+         buys one of the cheapest items in the database. The price to buy something is
          95% of its value.  Reduce the owners money by that much, decrease the 
          count of that item in the database (or remove it if there's none left
          after you decreae the count), and add it to the owners inventoryDict, 
@@ -45,7 +54,8 @@ item when buying or selling makes the value a non integer, round that value to t
          in inventory.  The ammount of of money you make when you buy something 
          is 105% its value. Increase the owners money by that much, add it to the
          database with the value being the price you sold it for (unless the item
-         is already in the database, in which case, you just increase the count). 
+         is already in the database, in which case, you just increase the count 
+         of the most expensive). 
          Then, decrease the count of that item (or remove it if the count is 1)
          from the inventoryDict. 
           """
