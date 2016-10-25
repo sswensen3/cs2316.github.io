@@ -78,9 +78,9 @@ Use the following two functions to create the new XML file:
 def read_tree(filename):
 	"""This function will read in the existing xml file and return a dictionary.
 	The keys to the dictionary will be the sectors found in the xml file
-	The value of each key will be another dictionary!
-	This dictionary's keys will be the industries that make up that particular sector.
-	The value of each key will be a list of the xml elements in the original tree for the stocks 
+	The value of each key will be another inner dictionary!
+	The inner dictionary's keys will be the industries that make up that particular sector.
+	The onner dictionary's values will be a list of the xml elements in the original tree for the stocks 
 	that make up that industry.
 	
 	Parameters: 
@@ -134,6 +134,8 @@ def stock_dictionary(csv_list):
 	Return: a dictionary with the information of the nested list
 	"""
 ```
+
+### Task 3
 
 Perfect - we’re done processing the CSV data!  We have a dictionary with each stock’s ticker as a key, and information about that stock as a value.  Let’s write a few functions that use the dictionary to calculate some interesting metrics.
 
@@ -201,6 +203,8 @@ def ticker_find(tree_dict, info):
 	"""
 ```
 
+### Task 4
+
 Awesome!  Now let's write a main function that puts it all together. The main function will take in an XML file, a CSV file, a sector name, an industry name, and (optionally) an output CSV file.
 
 
@@ -213,17 +217,17 @@ Using the functions you have created:
 		
 To perform these calculations, your main function should call (in a logical order, with the appropriate parameters):
 
-- read_tree
-- read_CSV
-- create_tree (not used for the output of main but convenient to create the xml file for the user)
-- stock_dictionary
-- ticker_find
-- vwap
-- calc_avg_open
+- `read_tree`
+- `read_CSV`
+- `create_tree` (not used for the output of main but convenient to create the xml file for the user)
+- `stock_dictionary`
+- `ticker_find`
+- `vwap`
+- `calc_avg_open`
 
 Notes:
 
-- If less than four args are supplied or one or more args is invalid (i.e. causes one or more functions to throw an error):
+- If less than four args are supplied *or* one or more args is invalid (i.e. causes one or more functions to throw an error):
 Print an error message and end the program, either with return or with a call to sys.exit().
 
 - If an output CSV file name (fifth arg) is not supplied:
@@ -251,6 +255,55 @@ def main(args):
 if __name__=="__main__":
    import sys
    main(sys.argv)
+```
+
+### Example of Output
+
+There are four ways that the code needs to run. Make sure it can do all of these.
+
+#### Example 1: Print to Console
+If the following command is entered at the command line, then it should print out as shown.
+Note:  
+  1. The order of the output may be different with your code.
+  2. The numbers may have more or less decimals, minimum 3.
+
+```sh
+$ python hw4.py SP500_symbols.xml SP500_ind.csv "Industrials" "Railroads"
+['CSX', 48.86921631681422, 49.388408163265304]
+['NSC', 52.53540628217838, 52.79002040816327]
+['UNP', 67.659293582584, 67.99489795918366]
+```
+
+#### Example 2: Write to File
+If the following command is entered at the command line, then it should write a .csv file shown further below.
+```sh
+$ python hw4.py SP500_symbols.xml SP500_ind.csv "Industrials" "Railroads" output.csv
+```
+
+The .csv output file should look like below.
+Note:  
+  1. The order of the output may be different with your code.
+  2. The numbers may have more or less decimals, minimum 3.
+```
+CSX,48.86921631681422,49.388408163265304
+NSC,52.53540628217838,52.79002040816327
+UNP,67.659293582584,67.99489795918366
+```
+
+#### Example 3: Not Enough Arguments
+If the following command is entered at the command line without at least 5 arguments, then an error message should print. Note: the error message can be anything you want.
+
+```sh
+$ python hw4.py SP500_symbols.xml SP500_ind.csv "Industrials"
+Missing 1 required argument(s). Exiting program.
+```
+
+#### Example 4: Invalid Arguments
+If the following command is entered at the command line with at least 5 arguments but one or more of the arguments is invalid (i.e. throws an error), then an error message should print. Note: the error message can be anything you want.
+
+```sh
+$ python hw4.py gilligan the_skipper_too the_millionare and_his_wife
+Cannot find 'gilligan' file. Exiting program.
 ```
 
 
