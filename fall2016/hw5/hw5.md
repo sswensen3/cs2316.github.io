@@ -3,18 +3,18 @@ layout: homework
 title: Homework 5
 ---
 
-## Introduction
+### Introduction
   
  -In this homework you will practice creating web applications.
  -
  +- working with SQL and databases
  +- processing CSV files
-  ## Problem Description
+ ## Problem Description
   
  +You will be given a CSV file which has an inventory of items. The CSV file has the columns: itenName,value,quantity. You will be using this file to create a table with the primary key of the table being the itemName. You will also be creating an Owner class that will have the ability to sell and buy inventory. The Owner class will keep track of their inventory and the amount of the cash they have. You will then create a main function that will allow a user to create multiple owners that can buy and sell inventory from the same database. Your table of inventory will have to update with each transaction that an owner completes.
  +
  +
-  ## Solution Description
+ ## Solution Description
  + 
  +```Python
  +
@@ -78,12 +78,12 @@ title: Homework 5
  +
  +
   
-  ## Submission Instructions
+## Submission Instructions
   
  +
  +Attach your `hw5.py` file to your T-Square HW5 assignment submission.
  +
  +
-  ## Verify Your T-Square Submission!
+ ## Verify Your T-Square Submission!
   
   Practice safe submission! Verify that your HW files were truly submitted correctly, the upload was successful, and that your program runs with no syntax or runtime errors. It is solely your responsibility to turn in your homework and practice this safe submission safeguard.
