@@ -80,7 +80,7 @@ def read_tree(filename):
 	The keys to the dictionary will be the sectors found in the xml file
 	The value of each key will be another inner dictionary!
 	The inner dictionary's keys will be the industries that make up that particular sector.
-	The onner dictionary's values will be a list of the xml elements in the original tree for the stocks 
+	The inner dictionary's values will be a list of the xml elements in the original tree for the stocks 
 	that make up that industry.
 	
 	Parameters: 
