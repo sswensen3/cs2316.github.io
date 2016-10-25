@@ -105,6 +105,6 @@ item when buying or selling makes the value a non integer, round that value to t
  Attach your `hw5.py` file to your T-Square HW5 assignment submission.
  
  
- ## Verify Your T-Square Submission!
+## Verify Your T-Square Submission!
   
   Practice safe submission! Verify that your HW files were truly submitted correctly, the upload was successful, and that your program runs with no syntax or runtime errors. It is solely your responsibility to turn in your homework and practice this safe submission safeguard.
