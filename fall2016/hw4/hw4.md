@@ -276,6 +276,7 @@ $ python hw4.py SP500_symbols.xml SP500_ind.csv "Industrials" "Railroads"
 
 #### Example 2: Write to File
 If the following command is entered at the command line, then it should write a .csv file shown further below.
+
 ```sh
 $ python hw4.py SP500_symbols.xml SP500_ind.csv "Industrials" "Railroads" output.csv
 ```
@@ -284,7 +285,8 @@ The .csv output file should look like below.
 Note:  
   1. The order of the output may be different with your code.
   2. The numbers may have more or less decimals, minimum 3.
-```
+
+```sh
 CSX,48.86921631681422,49.388408163265304
 NSC,52.53540628217838,52.79002040816327
 UNP,67.659293582584,67.99489795918366
