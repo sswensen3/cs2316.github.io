@@ -33,7 +33,6 @@ https://docs.python.org/3.5/library/sqlite3.html
 ## Solution Description
   
  ```Python
- 
 class Owner:
 	"""The Owner class should have one class attribute db (initialized as None) which will represent a
 	database connection object. Each owner instance should have instance variables that hold the 
