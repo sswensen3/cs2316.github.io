@@ -11,7 +11,7 @@ title: Homework 5
  + processing CSV files
 ## Problem Description
   
-You will be given a CSV file which has an inventory of items. The CSV file has the columns: itemName,value,quantity. You will be using this file to create a table called Inventory within an SQLite database with the primary key of the table being the itemName. You will also be creating an Owner class that will have the ability to sell and buy inventory by interacting with the database. The Owner class will keep track of owners' inventory and the amount of the cash they have. You will then create a main function that will allow a user to create multiple owners that can buy and sell inventory from the same Inventory table in a given database. Your table of inventory will have to update with each transaction that an owner completes. If updating the value of an item when buying or selling makes the value a non-integer, round that value to the nearest integer.
+You will be given a CSV file which has an inventory of items. The CSV file has the columns: item_name,value,quantity. You will be using this file to create a table called Inventory within an SQLite database with the composite key of the table being the item_name and value. You will also be creating an Owner class that will have the ability to sell and buy inventory by interacting with the database. The Owner class will keep track of owners' inventory and the amount of the cash they have. You will then create a main function that will allow a user to create multiple owners that can buy and sell inventory from the same Inventory table in a given database. Your table of inventory will have to update with each transaction that an owner completes. If updating the value of an item when buying or selling makes the value a non-integer, round that value to the nearest integer.
 
 If an owner tries to sell something that's not in their inventory, or tries to buy something that they can't afford, or tries to buy something from the database that doesnt exist, please do not allow the code to throw errors. Use try and except statements and print a helpful message to the console that is relevant to whatever caused the error.  
 
@@ -33,14 +33,13 @@ class Owner:
 	"""
 
 	def __init__(self, name, money = 500.0, inventory_dict = {}):
-		"""money and inventory_dict have initital default values, but anything
-		can be passed in to be the initial values.
+		"""money and inventory_dict have initital default values, but any other money amount can be passed in to the init method
 
 		Parameters:
 		self
 		name: String
 		money: float -- the Owner's money, is 500.0 if not given
-		inventory_dict: dict -- keeps track of Owner's inventory, is {} if not given
+		inventory_dict: dict -- keeps track of Owner's inventory, is {} when first initialized}
 		"""
 
 	def buy_cheapest(self, item_name = None):
@@ -116,7 +115,7 @@ class Owner:
 		"""
  
 def create_db(file_name):
-	"""Creates a local SQLite database using the sqlite3 module and then creates a table called Inventory in the database. The table should be populated from a csv file. There will be three columns: itemName, Price, and Quantity. The primary key will be the itemName. Price and Quantity will both be stored as integers in the database.
+	"""Creates a local SQLite database using the sqlite3 module and then creates a table called Inventory in the database. The table should be populated from a csv file. There will be three columns: item_name, Price, and Quantity. The composite key of the table will be the item_name and value. Price and Quantity will both be stored as integers in the database.
 
 	Parameters:
 	file_name: String -- the name of the csv file that contains the inventory
