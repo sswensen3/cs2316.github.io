@@ -5,7 +5,7 @@ title: Homework 5
 
 ### Introduction
   
- -In this homework you will practice:
+In this homework you will practice:
  + working with SQL and databases
  + processing CSV files
  
@@ -32,7 +32,7 @@ https://docs.python.org/3.5/library/sqlite3.html
 
 ## Solution Description
   
- ```Python
+ ```python
  
 class Owner:
 	"""The Owner class should have one class attribute db (initialized as None) which will represent a
