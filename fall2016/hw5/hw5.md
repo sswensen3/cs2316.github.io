@@ -33,6 +33,7 @@ https://docs.python.org/3.5/library/sqlite3.html
 ## Solution Description
   
 #### Classes 
+
  ```Python
 class Owner:
 	"""The Owner class should have one class attribute db (initialized as None) which will represent a
