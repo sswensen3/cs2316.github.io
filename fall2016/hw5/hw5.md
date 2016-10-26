@@ -134,6 +134,7 @@ class Owner:
 		None
 		"""
 ```
+
 #### Functions
  
 ``` Python
@@ -167,7 +168,6 @@ def main(args):
 	"""
  
  ```
-
 
 Example shell interaction:
 
