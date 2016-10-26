@@ -32,13 +32,16 @@ https://docs.python.org/3.5/library/sqlite3.html
 
 ## Solution Description
   
+#### Classes 
  ```Python
 class Owner:
 	"""The Owner class should have one class attribute db (initialized as None) which will represent a
 	database connection object. Each owner instance should have instance variables that hold the 
 	owner's unique name, money, and a dictionary of their inventory in the form {item:(value, quantity)}
 	"""
+```
 
+```Python
 	def __init__(self, name, money = 500.0, inventory_dict = {}):
 		"""money and inventory_dict have initital default values, but any other money amount can be 
 		passed in to the init method
@@ -129,7 +132,10 @@ class Owner:
 		Return:
 		None
 		"""
+```
+#### Functions
  
+``` Python
 def create_db(file_name):
 	"""Creates a local SQLite database using the sqlite3 module and then creates a table called 
 	Inventory in the database. The table should be populated from a csv file. There will be three 
