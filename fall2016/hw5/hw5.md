@@ -56,9 +56,7 @@ class Owner:
 	database connection object. Each owner instance should have instance variables that hold the 
 	owner's unique name, money, and a dictionary of their inventory in the form {item:(value, quantity)}
 	"""
-```
 
-```Python
 	def __init__(self, name, money = 500.0, inventory_dict = {}):
 		"""money and inventory_dict have initital default values, but any other money amount can be 
 		passed in to the init method
