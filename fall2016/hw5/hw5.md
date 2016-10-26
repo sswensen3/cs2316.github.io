@@ -21,7 +21,7 @@ If an owner tries to sell something that's not in their inventory, or tries to b
 The value of an item and the item name create a unique identifier for the inventory_dict.  If your inventory_dict has the Key/Value pair `("light", 15) : 2` and you buy a new light that has value `20`, your inventory dict should be updated to look like `{ ("light", 15) : 2 , ("light", 19) : 1 }`.
 
 
-####Important Note: You need to use SQL queries on the db for most of the functions; points will not be given for manipulating csv data.
+#### Important Note: You need to use SQL queries on the db for most of the functions; points will not be given for manipulating csv data.
 
 Here is a helpful link for understanding sqlite3 and creating local databases:
 https://docs.python.org/3.5/library/sqlite3.html
@@ -32,7 +32,7 @@ https://docs.python.org/3.5/library/sqlite3.html
 
 ## Solution Description
   
- ```python
+ ```Python
  
 class Owner:
 	"""The Owner class should have one class attribute db (initialized as None) which will represent a
@@ -183,7 +183,7 @@ Thanks for playing, Megi!
  
  Attach your `hw5.py` file to your T-Square HW5 assignment submission.
  
- ** Homework 5 submissions should run without syntax or runtime errors! Non-compiling code will receive a 0. Be sure to follow the instructions below to verify that files are submitted correctly and the code works when you run it. **
+ **Homework 5 submissions should run without syntax or runtime errors! Non-compiling code will receive a 0. Be sure to follow the instructions below to verify that files are submitted correctly and the code works when you run it.**
  
  
 ## Verify Your T-Square Submission!
