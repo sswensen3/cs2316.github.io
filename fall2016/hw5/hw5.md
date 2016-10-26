@@ -167,7 +167,7 @@ def main(args):
 	the program.
 	"""
  
- ```
+```
 
 Example shell interaction:
 
