@@ -3,6 +3,22 @@ layout: homework
 title: Homework 5
 ---
 
+# Homework 5
+
+## General Instructions
+
+**This is an individual assignment.**
+
+Collaboration at a reasonable level will not result in substantially similar code. Students may only collaborate with fellow students currently taking CS 2316, the TA's and the lecturer. Collaboration means talking through problems, assisting with debugging, explaining a concept, etc. You should not exchange code or write code for others.
+
+Notes:
+
+- Include a comment with your name and GTID at the top of all Python files.
+- *Do not wait until the last minute* to do this assignment in case you run into problems.
+- You must include docstrings for all functions! There will be a point deduction if your code doesn't have docstrings. You should copy the docstrings from the instructions below, and feel free to add your own use cases for your own testing purposes.
+- As stated at the bottom of this page, non-compiling code (code that does not run at all due to substantial runtime/syntax errors) will receive few to zero points! Make sure to test your submitted file and make sure the code runs.
+
+
 ### Introduction
   
 In this homework you will practice:
