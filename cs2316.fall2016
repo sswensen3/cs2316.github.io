@@ -36,10 +36,10 @@ Week 9
 2016-10-21;pq2
 Week 10
 2016-10-24;relational-databases
-2016-10-26;sql;[HW 4 Due](fall2016/hw4/hw4.html),[HW 5 Assigned](fall2016/hw5/hw5.html)
-2016-10-28;html;Withdrawal Deadline 29 Oct
+2016-10-26;sql;[HW 4 Due 2016-10-27](fall2016/hw4/hw4.html),[HW 5 Assigned](fall2016/hw5/hw5.html)
+2016-10-28;python-xml-databases;Withdrawal Deadline 29 Oct
 Week 11
-2016-10-31;flask
+2016-10-31;html
 2016-11-02;regular-expressions;[HW 5 Due](fall2016/hw5/hw5.html),[HW 6 Assigned](fall2016/hw6/hw6.html)
 2016-11-04;web-mining
 Week 12
@@ -60,6 +60,6 @@ Week 15
 2016-11-30;matplotlib;[HW 7 Due](fall2016/hw7/hw7.html)
 2016-12-02;pandas
 Week 16
-2016-12-05;Special Topics
+2016-12-05;flask
 Finals Week
 2016-12-14;Final Exam, 11:30am-2:20pm
