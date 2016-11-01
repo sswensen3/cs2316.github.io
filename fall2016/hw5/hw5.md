@@ -201,7 +201,13 @@ Owner created!
 Thanks for playing, Megi!
 ```
  
- 
+## Extra Credit Opportunity
+This assignment originally required you to change the value of items when they were purchased and sold. The instructions have been simplified, so you can now earn **5 extra credit points** for implementing the item pricing as originally specified. The instructions for this optional extra credit are:
+
+- In `buy_cheapest`, the price to buy an item is 95% of its value. Reduce the Owner's money by that much and add the item to the Owner's inventory_dict, with the value being the price they paid for it.
+- In `sell_item`, the amount of money an Owner makes when they sell something is 105% of its value. Increase the Owner's money by that much, and add it to the Inventory table with the value being the price for which it was sold.
+- In `fire_sale`, the Owner earns only 80% of the value of every item they sell.
+- In `buy_all`, the price for each item bought is 95% of the value.
   
 ## Submission Instructions
   
