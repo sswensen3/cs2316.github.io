@@ -17,7 +17,7 @@ Notes:
 - *Do not wait until the last minute* to do this assignment in case you run into problems.
 - You must include docstrings for all functions! There will be a point deduction if your code doesn't have docstrings. You should copy the docstrings from the instructions below, and feel free to add your own use cases for your own testing purposes.
 - Non-compiling code (code that does not run at all due to substantial runtime/syntax errors) will receive few to zero points! Make sure to test your submitted file and make sure the code runs.
-- Write your SQL statements as efficiently as possible. Try to do the majority of your data selection in the SQL statement and as little as possible in python. You may use multiple SQL statements as long as they do different things. For example, the following would be fine. use the SELECT statement buy_cheapest to get the cheapest item and its price, then in a separate statement UPDATE the count if it is greater than 1, or DELETE the row if count is 1.
+- Write your SQL statements as efficiently as possible. Try to do the majority of your data selection in the SQL statement and as little as possible in python. You may use multiple SQL statements as long as they do different things. For example, the following would be fine. Use the SELECT statement in buy_cheapest to get the cheapest item and its price, then in a separate statement UPDATE the count if it is greater than 1, or DELETE the row if count is 1.
 
 
 
@@ -32,7 +32,7 @@ In this homework you will practice:
   
 You are a developer creating a simple e-commerce marketplace app.
 
-ou will be given a CSV file which has an inventory of items. The CSV file has the columns: itemName,value,quantity. You will be using this file to create a table with the primary key of the table being the itemName. You will also be creating an Owner class that will have the ability to sell and buy inventory. The Owner class will keep track of their inventory and the amount of the cash they have. You will then create a main function that will allow a user to create multiple owners that can buy and sell inventory from the same database. The owners table of inventory and money will have to update with each transaction that an owner completes.
+You will be given a CSV file which has an inventory of items. The CSV file has the columns: itemName,price,quantity. You will be using this file to create a table with the primary key of the table being the itemName. You will also be creating an Owner class that will have the ability to sell and buy inventory. The Owner class will keep track of their inventory and the amount of the cash they have. You will then create a main function that will allow a user to create multiple owners that can buy and sell inventory from the same database. The owners table of inventory and money will have to update with each transaction that an owner completes.
 
 If an owner trys to sell something not in their inventory, or trys to buy something that they cant afford, or trys to buy something from the database that doesnt exist, please do not allow the code to throw errors. Use try and expect statements and print a helpful message to the console that is relevant to whatever caused the error.
 
@@ -81,7 +81,7 @@ class Owner:
          	enough money to buy what they passed in, or if they did not pass in anything,
          	if they do not have enough money to buy the cheapest thing in the database,
          	the database should print a message to the user that they do not have 
-         	sufficient funds.
+         	sufficient funds and not add it to their inventory or remove it from the database.
         	
 
 		Parameters:
