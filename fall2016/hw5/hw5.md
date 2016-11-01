@@ -16,7 +16,9 @@ Notes:
 - Include a comment with your name and GTID at the top of all Python files.
 - *Do not wait until the last minute* to do this assignment in case you run into problems.
 - You must include docstrings for all functions! There will be a point deduction if your code doesn't have docstrings. You should copy the docstrings from the instructions below, and feel free to add your own use cases for your own testing purposes.
-- As stated at the bottom of this page, non-compiling code (code that does not run at all due to substantial runtime/syntax errors) will receive few to zero points! Make sure to test your submitted file and make sure the code runs.
+- Non-compiling code (code that does not run at all due to substantial runtime/syntax errors) will receive few to zero points! Make sure to test your submitted file and make sure the code runs.
+- Write your SQL statements as efficiently as possible. Try to do the majority of your data selection in the SQL statement and as little as possible in python. You may use multiple SQL statements as long as they do different things. For example, the following would be fine. use the SELECT statement buy_cheapest to get the cheapest item and its price, then in a separate statement UPDATE the count if it is greater than 1, or DELETE the row if count is 1.
+
 
 
 ### Introduction
@@ -223,6 +225,3 @@ Practice safe submission! Verify that your HW files were truly submitted correct
     - It helps you realize if you omit a file or files. Missing files will not be given any credit, and non-compiling homework solutions will receive few to zero points. Also recall that late homework will not be accepted regardless of excuse. Treat the due date with respect.  Do not wait until the last minute! (If you do discover that you omitted a file, submit all of your files again, not just the missing one.)
     - Helps find syntax errors or runtime errors that you may have added after you last tested your code.
 
--Non Compiling Code Will Recieve a 0
-
--Write your SQL statements as efficiently as possible. Try to do the majority of your data selection in the SQL statement and as little as possible in python. You may use multiple SQL statements as long as they do different things. For example, the following would be fine. use the SELECT statement buy_cheapest to get the cheapest item and its price, then in a separate statement UPDATE the count if it is greater than 1, or DELETE the row if count is 1.
