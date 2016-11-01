@@ -224,4 +224,5 @@ Practice safe submission! Verify that your HW files were truly submitted correct
     - Helps find syntax errors or runtime errors that you may have added after you last tested your code.
 
 -Non Compiling Code Will Recieve a 0
+
 -Write your SQL statements as efficiently as possible. Try to do the majority of your data selection in the SQL statement and as little as possible in python. You may use multiple SQL statements as long as they do different things. For example, the following would be fine. use the SELECT statement buy_cheapest to get the cheapest item and its price, then in a separate statement UPDATE the count if it is greater than 1, or DELETE the row if count is 1.
