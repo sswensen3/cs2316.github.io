@@ -261,9 +261,23 @@ def path_to_actor(costar_id, movies, actors):
 
 ### Task 6: Bringing Home the Bacon
 
-Finally, we'll want a main function that wraps up what was done above, except for any actor.
+Finally, we'll want a main function that wraps up what was done above, except for any actor. 
+
+Also, in this one particular case, it's useful to write `API_KEY = <your api key>` as a global variable near the top of your script. But **don't leave it in your code during submission**.
 
 ```python 
+# your name
+# your GTID#
+
+# import all the modules
+
+API_KEY =  # enter your API key from sub-task 1.5 as a global variable
+## SUPER IMPORTANT! Delete your API key before submitting homework!
+## You'll need it to test your code, but it's literally your key, not ours.
+## -20 points if you don't delete it before submission.
+
+# all the helper functions
+
 def main(args):
    """Write your docstring here."""
    pass  # delete this after writing some code  
@@ -276,11 +290,17 @@ if __name__ == "__main__":
 
 The main function needs to:
 
-1. Handle up to two arguments (excluding the script name itself, i.e. `args[0]`).
-2. If a **first** argument (i.e. `args[1]`) is given, use it as the actor ID (an `int`) to search [themoviedb.org](https://www.themoviedb.org/)'s API. If the argument is invalid or the actor does not exist, print an error and quit.
-3. If a *second* argument is given, write a `.csv` file where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. If the argument is not valid, print an error and quit.
-4. If a *second* argument is *not* given, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in.
-5. If the **first** argument is *not* given, ask if the user wants to play One Degree from Kevin Bacon. If they do, run the program using Kevin Bacon's ID and print the output to console. If they don't, print a parting message and quit.
+1. Handle up to two additional arguments (excluding the script name itself, i.e. `args[0]`).
+3. The first additional argument (i.e. `args[1]`) is *optional*. It's the `actor_id`, according to [themoviedb.org](https://www.themoviedb.org/).
+  + If the `actor_id` is given, it should be an `int` and it needs to be used to search [themoviedb.org](https://www.themoviedb.org/)'s API. 
+    + If the `actor_id` argument is invalid or the actor does not exist, print an error and quit.
+  + If the `actor_id` is *not* given, ask if the user wants to play One Degree from Kevin Bacon. 
+    + If they do, run the program using Kevin Bacon's ID and print the output to console. 
+    + If they don't, print a parting message and quit.
+4. The second additional argument is *optional*. It's the filename for a `.csv` file.
+  + If a filename is given, write a `.csv` file where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. 
+     + If the filename argument is not valid, print an error and quit.
+  + If a filename is *not* given, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in.
 
 ### Examples
 
@@ -347,9 +367,11 @@ Whoa, buddy! We can't write to files like that. Try again, and please try to kee
 
 ## Submission Instructions
 
+***Delete your API key, or else!*** Every API key is a unique snowflake generated uniquely for your account. You should never share your API keys to anyone else, including your instructor, your TA, your aunt Sally, your roommate, your roommate's dog, your future mother-in-law, my ex-girlfriend or anyone else who could possibly begin to harbor a grudge (except your TAs and instructors; we'll don't know even know what grudges are). We don't want your key. We don't want the responsiblilty of having it. Don't submit it with your homework. Delete it as a global variable when you're ready to submit your homework. -20 points to anyone who doesn't delete it.
+
 Attach your `hw6.py` file to your T-Square HW6 assignment submission.
 
-***Homework 6 submissions should run without syntax or runtime errors! Non-compiling code will receive a 0. Be sure to follow the instructions below to verify that files are submitted correctly and the code works when you run it.***
+***Homework 6 submissions should run without syntax or runtime errors!*** Non-compiling code will receive a 0. Be sure to follow the instructions below to verify that files are submitted correctly and the code works when you run it.
 
 ## Verify Your T-Square Submission!
 
