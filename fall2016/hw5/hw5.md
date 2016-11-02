@@ -61,7 +61,9 @@ class Owner:
 
 	def __init__(self, name, starting_cash = 500):
 		"""money has an initital default value, but any other money amount can be 
-		passed in to the init method
+		passed in to the init method. It is up to you you if you would like to have a 
+		default parameter in init for InventoryDict, but you can also just instantiate 
+		it in init.
 
 		Parameters:
 		self
