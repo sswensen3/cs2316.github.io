@@ -69,7 +69,7 @@ Before you do that, it might help to do the following for more insight:
 4. Enter **4724** in the `Integer` field next to `person_id` in the `Path Params` section.
 5. Click the pinkish `SEND REQUEST` button.
 
-Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the `Response` section below it, there is a response that looks a lot like a dictionary^\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary. (^\*Note: it's not actually a dictionary. It's a JSON object, and what that is isn't that important... but it can be converted fairly easily to a dictionary-like object. You'll need to be able to do that if you want to get the name out. Read on.)
+Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the `Response` section below it, there is a response that looks a lot like a dictionary\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary. (\**Note: it's not actually a dictionary. It's a JSON object, and what that is isn't that important... but it can be converted fairly easily to a dictionary-like object. You'll need to be able to do that if you want to get the name out. Read on.*)
 
 But we don't want to get names by using the web browser. We want to get them in Python using the `requests` module. If you don't know how to use `requests`, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll literally only need to read the first three sections (starting with "Make a Request").
 
