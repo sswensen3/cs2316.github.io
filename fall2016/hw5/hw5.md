@@ -59,15 +59,17 @@ class Owner:
 	owner's unique name, money, and a dictionary of their inventory in the form {(item, price): count)}
 	"""
 
-	def __init__(self, name, database, starting_cash = 500):
+	def __init__(self, name, starting_cash = 500):
 		"""money has an initital default value, but any other money amount can be 
-		passed in to the init method
+		passed in to the init method. It is up to you you if you would like to have a 
+		default parameter in init for InventoryDict, but you can also just instantiate 
+		it in init.
 
 		Parameters:
 		self
 		name: String
 		money: int -- the Owner's money, is 500 if not given
-		database: connection -- Use the Owner class variable 
+		
 		"""
 
 	def buy_cheapest(self, item_name = None):
