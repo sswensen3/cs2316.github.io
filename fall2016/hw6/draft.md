@@ -367,11 +367,9 @@ Whoa, buddy! We can't write to files like that. Try again, and please try to kee
 
 ## Submission Instructions
 
-***Delete your API key, or else!*** Every API key is a unique snowflake generated uniquely for your account. You should never share your API keys to anyone else, including your instructor, your TA, your aunt Sally, your roommate, your roommate's dog, your future mother-in-law, my ex-girlfriend or anyone else who could possibly begin to harbor a grudge (except your TAs and instructors; we'll don't know even know what grudges are). We don't want your key. We don't want the responsiblilty of having it. Don't submit it with your homework. Delete it as a global variable when you're ready to submit your homework. -20 points to anyone who doesn't delete it.
-
-Attach your `hw6.py` file to your T-Square HW6 assignment submission.
-
-***Homework 6 submissions should run without syntax or runtime errors!*** Non-compiling code will receive a 0. Be sure to follow the instructions below to verify that files are submitted correctly and the code works when you run it.
+- [ ] Attach your `hw6.py` file to your T-Square HW6 assignment submission.
+- [ ] ***Delete your API key, or else!*** Every API key is a unique snowflake generated uniquely for your account. You should never share your API keys to anyone else, including your instructor, your TA, your aunt Sally, your roommate, your roommate's dog, your future mother-in-law, my ex-girlfriend or anyone else who could possibly begin to harbor a grudge (except your TAs and instructors; we'll don't know even know what grudges are). We don't want your key. We don't want the responsiblilty of having it. Don't submit it with your homework. Delete it as a global variable when you're ready to submit your homework. -20 points to anyone who doesn't delete it.
+- [ ] ***Homework 6 submissions should run without syntax or runtime errors!*** Non-compiling code will receive a 0. Be sure to follow the instructions below to verify that files are submitted correctly and the code works when you run it.
 
 ## Verify Your T-Square Submission!
 
