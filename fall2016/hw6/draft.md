@@ -93,6 +93,7 @@ def lookup_actor_name_by_id(actor_id):
     'Kevin Bacon'
     >>> lookup_actor_name_by_id(2963)
     'Nicolas Cage'
+    """
 ```
 
 ### Task 3: A Movie for Every Bacon, A Bacon for Every Movie
@@ -129,6 +130,7 @@ def req_movies_for_actor(actor_id):
    True
    >>> "Titanic" in [movie["name"] for movie in movies.values()]
    False
+   """
 ```
 
 ```python
@@ -156,6 +158,7 @@ def req_actors_for_movie(movie_id):
     True
     >>> 'Nicolas Cage' in [cast["name"] in cast in cast_dict.values()]
     False
+    """
 ```
 
 ### Task 4: First Degree Baconry
@@ -216,6 +219,7 @@ def one_deg_from_actor(from_actor_id):
     1031
     >>> bacon_costars.get(4724, None) == None
     True
+    """
 ```
 
 ### Task 5: Bacon Links
@@ -244,6 +248,7 @@ def path_to_actor(costar_id, movies, actors):
     >>> bacon_movies, bacon_costars = one_deg_from_actor(4724)
     >>> path_to_actor(30614, bacon_movies, bacon_costars)
     'Kevin Bacon > Crazy, Stupid, Love. > Ryan Gosling'
+    """
 ```
 
 ### Task 6: Bringing Home the Bacon
