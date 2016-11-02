@@ -52,7 +52,7 @@ Third, jot down that handy `API Key (v3 auth)` key in a computer file somewhere;
 
 ##### themoviedb.org API Documentation
 
-Here's a link to [themoviedb.org API documentation](https://developers.themoviedb.org/3). There is a lot of information there. Probably, too much. Bookmark this webpage anyway. You'll need that for later, too.
+Here's a link to [themoviedb.org API documentation](https://developers.themoviedb.org/3). There is a lot of information there. Probably too much. Bookmark this webpage anyway. You'll need that for later, too.
 
 ### Task 2: In The Name of Bacon
 
