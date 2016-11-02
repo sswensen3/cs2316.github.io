@@ -320,7 +320,6 @@ Briggs Branning,Bottle Rocket,Isiah Ellis
 Briggs Branning,Bottle Rocket,Luke Wilson
 Briggs Branning,Bottle Rocket,Owen Wilson
 Briggs Branning,Bottle Rocket,Robert Musgrave
-Briggs Branning,Bottle Rocket,Briggs Branning
 Briggs Branning,Bottle Rocket,Temple Nash
 ```
 
@@ -335,7 +334,6 @@ Briggs Branning > Bottle Rocket > Isiah Ellis
 Briggs Branning > Bottle Rocket > Luke Wilson
 Briggs Branning > Bottle Rocket > Owen Wilson
 Briggs Branning > Bottle Rocket > Robert Musgrave
-Briggs Branning > Bottle Rocket > Briggs Branning
 Briggs Branning > Bottle Rocket > Temple Nash
 ```
 
