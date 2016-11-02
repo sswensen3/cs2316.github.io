@@ -59,17 +59,17 @@ Here's a link to [themoviedb.org API documentation](https://developers.themovied
 Since we're at the [themoviedb.org](https://www.themoviedb.org/) we might as well bring up Kevin's page:  
 https://www.themoviedb.org/person/4724-kevin-bacon
 
-See that fancy `4724` in the URL? That's Kevin Bacon's actor ID for [themoviedb.org](https://www.themoviedb.org/). Take a note of that because we're going to need it in our first API function.
+See that fancy **4724** in the URL? That's Kevin Bacon's actor ID for [themoviedb.org](https://www.themoviedb.org/). Take a note of that because we're going to need it in our first API function.
 
 Before you do that, it might help to do the following for more insight:
 
 1. Stare at the following page for a bit; it's the documentation for the Get Details API call in the `PEOPLE` section of the API: https://developers.themoviedb.org/3/people
-2. After you're done staring, click the "Try it out" tab.
-3. Enter your API key (you wrote that down, right?) in the field marked "Your TMDb API key" next to `api_key` in the "Variables" section.
-4. Enter `4724` in the "Integer" field next to `person_id` in the "Path Params" section.
-5. Click the pinkish "SEND REQUEST" button.
+2. After you're done staring, click the `Try it out` tab.
+3. Enter your API key (you wrote that down, right?) in the field marked `Your TMDb API key` next to `api_key` in the `Variables` section.
+4. Enter **4724** in the `Integer` field next to `person_id` in the `Path Params` section.
+5. Click the pinkish `SEND REQUEST` button.
 
-Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the "Response" section below it, there is a response that looks a lot like a dictionary\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary. (\* Note: it's not actually a dictionary. It's a JSON, which isn't that important... but which can be converted fairly easily to a dictionary-like object. You'll need to be able to do that if you want to get the name out.)
+Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the `Response` section below it, there is a response that looks a lot like a dictionary^\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary. (^\*Note: it's not actually a dictionary. It's a JSON object, and what that is isn't that important... but it can be converted fairly easily to a dictionary-like object. You'll need to be able to do that if you want to get the name out. Read on.)
 
 But we don't want to get names by using the web browser. We want to get them in Python using the `requests` module. If you don't know how to use `requests`, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll literally only need to read the first three sections (starting with "Make a Request").
 
@@ -183,9 +183,9 @@ import time
 time.sleep(60)
 ```
 
-However, waiting for 60 seconds between requests takes a really a long time. Figure out a good amount of time to delay between requests. Points off, if your (entire) code takes more than 1 minute to run (when we try Kevin Bacon)! We'll be checking!
+However, waiting for 60 seconds between requests takes a really a long time. Figure out a good amount of time to delay between requests. Points off if your entire code takes more than 1 minute to run, when we run this for Kevin Bacon! We'll be checking!
 
-Okay, now without any further delay.
+Okay, now without any further delay...
 
 Write a function that looks up all of the movies of a given actor, and then finds their co-stars for all those movies together. Oh yeah, don't include the starting actor with result all of their co-stars. It's not like they're staring in a movie with themselves.
 
@@ -268,8 +268,8 @@ if __name__ == "__main__":
 
 The main function needs to:
 
-1. Handle up to two arguments (excluding the script name itself, i.e. args[0]).
-2. If a **first** argument (i.e. args[1]) is given, use it as the actor ID (an int) according to the themoviedb.org. If the argument is invalid or the actor does not exist, print an error and quit.
+1. Handle up to two arguments (excluding the script name itself, i.e. `args[0]`).
+2. If a **first** argument (i.e. `args[1]`) is given, use it as the actor ID (an int) according to the [themoviedb.org](https://www.themoviedb.org/). If the argument is invalid or the actor does not exist, print an error and quit.
 3. If a second argument is given, write a csv where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. If the argument is not valid, print an error and quit.
 4. If a second argument is *not* given, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in.
 5. If the **first** argument is *not* given, ask if the user wants to play One Degree from Kevin Bacon. If they do, run the program using Kevin Bacon's ID and print the output to console. If they don't, print a parting message and quit.
