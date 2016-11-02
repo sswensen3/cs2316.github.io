@@ -48,11 +48,11 @@ First, get an account from [themoviedb.org](https://www.themoviedb.org/). You ca
 
 Second, sign in and go to your account page. In the left column under your username, there is a link to the API section of your account.
 
-Third, jot down that handy `API Key (v3 auth)` key in a computer file somewhere, you'll need that for later.
+Third, jot down that handy `API Key (v3 auth)` key in a computer file somewhere; you'll need that for later. ***Don't share this key with anyone. No really, don't share it.***
 
 ##### themoviedb.org API Documentation
 
-Here's a link to [themoviedb.org API documentation](https://developers.themoviedb.org/3). There is a lot of information there. Too much enough. Bookmark this webpage. You'll want it for later too.
+Here's a link to [themoviedb.org API documentation](https://developers.themoviedb.org/3). There is a lot of information there. Probably, too much. Bookmark this webpage anyway. You'll need that for later, too.
 
 ### Task 2: In The Name of Bacon
 
@@ -69,11 +69,11 @@ Before you do that, it might help to do the following for more insight:
 4. Enter **4724** in the `Integer` field next to `person_id` in the `Path Params` section.
 5. Click the pinkish `SEND REQUEST` button.
 
-Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the `Response` section below it, there is a response that looks a lot like a dictionary\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary. (\**Note: it's not actually a dictionary. It's a JSON object, and what that is isn't that important... but it can be converted fairly easily to a dictionary-like object. You'll need to be able to do that if you want to get the name out. Read on.*)
+Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the `Response` section below it, there is a response that looks a lot like a nested dictionary\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary as well. (\**Note: it's not actually a nested dictionary. It's a JSON object, and what that is isn't that important... but it can be converted fairly easily to a dictionary-like object. You'll need to be able to do that if you want to get the name out. Read on.*)
 
-But we don't want to get names by using the web browser. We want to get them in Python using the `requests` module. If you don't know how to use `requests`, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll literally only need to read the first three sections (starting with "Make a Request").
+But we don't want to get names by using the web browser. We want to get them in Python using the `requests` module. If you don't know how to use `requests`, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll literally only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
 
-Once a request has been made, and you've gotten a response -- we'll call it `response` -- you'll need to convert the output -- `response.text` (see that JSON I was talking about now?) -- into the form of a dictionary using the `json` module in Python (Hint: `response.text` is actually a string of the JSON, not a JSON object. Look for the `json` command that deserializes strings.)
+Once a request has been made, and you've gotten a response -- we'll call it `response` -- you'll need to convert the text output, `response.text`, into the form of a dictionary using the `json` module in Python (Hint: `response.text` is actually a string of the JSON, not a JSON object. Look for the `json` function that deserializes strings.)
 
 This is the most basic of the API requests that can be made.
 
@@ -157,14 +157,14 @@ def req_actors_for_movie(movie_id):
         and cast_name: str -- the name of the cast member for the given ID
 
     Usage Examples:
-    >>> cast = req_actors_for_movie(9362)
-    >>> 'Kevin Bacon' in [cast["name"] in cast in cast_dict.values()]
+    >>> cast_members = req_actors_for_movie(9362)
+    >>> 'Kevin Bacon' in [cast["name"] in cast in cast_members.values()]
     True
-    >>> 'Nicolas Cage' in [cast["name"] in cast in cast_dict.values()]
+    >>> 'Nicolas Cage' in [cast["name"] in cast in cast_members.values()]
     False
-    >>> 9362 in [cast["parent"] in cast in cast_dict.values()]
+    >>> 9362 in [cast["parent"] in cast in cast_members.values()]
     True
-    >>> 597 in [cast["parent"] in cast in cast_dict.values()]
+    >>> 597 in [cast["parent"] in cast in cast_members.values()]
     False
     """
 ```
