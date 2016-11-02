@@ -130,6 +130,10 @@ def req_movies_for_actor(actor_id):
    True
    >>> "Titanic" in [movie["name"] for movie in movies.values()]
    False
+   >>> 4724 in [movie["parent"] for movie in movies.values()]
+   True
+   >>> 2963 in [movie["parent"] for movie in movies.values()]
+   False
    """
 ```
 
@@ -157,6 +161,10 @@ def req_actors_for_movie(movie_id):
     >>> 'Kevin Bacon' in [cast["name"] in cast in cast_dict.values()]
     True
     >>> 'Nicolas Cage' in [cast["name"] in cast in cast_dict.values()]
+    False
+    >>> 9362 in [cast["parent"] in cast in cast_dict.values()]
+    True
+    >>> 597 in [cast["parent"] in cast in cast_dict.values()]
     False
     """
 ```
@@ -269,9 +277,9 @@ if __name__ == "__main__":
 The main function needs to:
 
 1. Handle up to two arguments (excluding the script name itself, i.e. `args[0]`).
-2. If a **first** argument (i.e. `args[1]`) is given, use it as the actor ID (an int) according to the [themoviedb.org](https://www.themoviedb.org/). If the argument is invalid or the actor does not exist, print an error and quit.
-3. If a second argument is given, write a csv where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. If the argument is not valid, print an error and quit.
-4. If a second argument is *not* given, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in.
+2. If a **first** argument (i.e. `args[1]`) is given, use it as the actor ID (an `int`) to search [themoviedb.org](https://www.themoviedb.org/)'s API. If the argument is invalid or the actor does not exist, print an error and quit.
+3. If a *second* argument is given, write a `.csv` file where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. If the argument is not valid, print an error and quit.
+4. If a *second* argument is *not* given, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in.
 5. If the **first** argument is *not* given, ask if the user wants to play One Degree from Kevin Bacon. If they do, run the program using Kevin Bacon's ID and print the output to console. If they don't, print a parting message and quit.
 
 ### Examples
