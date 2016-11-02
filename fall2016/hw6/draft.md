@@ -11,13 +11,13 @@ In this homework you will practice mining data from the internet.
 
 ## Problem Description
 
-Many years ago, before the advent of the Internet, an ancient game was played by the forefathers to test their knowledge of the cinematic arts. One person would simply name an random actor to the player; the player would attempt to connect this random actor with whom they had co-starred in some movie, or with whom that co-star had co-starred in some other movie, and so on... until, within six jumps, the random actor was connected to the almighty cohesive force of the silver screen: Kevin Bacon. 
+Many years ago, before the advent of the Google Search, an ancient game was played by the forefathers to test their knowledge of the cinematic arts. One person would simply name an random actor to the player; the player would attempt to connect this random actor with whom they had co-starred in some movie, or with whom that co-star had co-starred in some other movie, and so on... until, within six jumps, the random actor was connected to the almighty cohesive force of the silver screen: Kevin Bacon. 
 
 This game was henceforth known as Six Degrees from Kevin Bacon...
 
-...but this was before the Internet. Before Googles, before IMDb's, and even before Python. And it has long been forgotten.
+...but this was before the Internet was popular, before the IMDb had its first page, and even before Python was hatched. And it has long been forgotten.
 
-Today, within the span of a few hours, and with the power of Python, the Internets, and our new friend the API, any decent programmer can write a program to start to unravel the mystery that is Kevin Bacon.
+Today, within the span of a few hours, and with the power of Python, the Internets, and our new friend the API, any decent programmer can write a program to start to unravel the mystery that once was: Kevin Bacon.
 
 ## Solution Description
 
@@ -30,7 +30,7 @@ We'll need to write a Python function to scrape out all the movies and their nam
 # KATIE! FOR PETE'S SAKE WRITE STUFF HERE!
 
 
-### Sub-Task 1.5: The Key to Finding More Bacon
+#### Sub-task 1.5: The Key to Finding More Bacon
 
 Scraping is no fun. Way too many items to inspect. One could iterate through all those movies and find who acts in them, but why bother? It's going to take forever to look at every webpage, write up a script for it, and make sure it doesn't run into any more problems. Instead, let's switch over to using a more powerful tool: **the API**.
 
@@ -42,15 +42,15 @@ To use it, we'll need two things:
  
 Luckily, it's easy to do both.
  
-#### Getting an API key
+##### Getting an API key
 
 First, get an account from [themoviedb.org](https://www.themoviedb.org/). You can sign up [here](https://www.themoviedb.org/account/signup).
 
 Second, sign in and go to your account page. In the left column under your username, there is a link to the API section of your account.
 
-Third, jot down that handy "API Key (v3 auth)" key in a computer file somewhere, you'll need that for later.
+Third, jot down that handy `API Key (v3 auth)` key in a computer file somewhere, you'll need that for later.
 
-#### themoviedb.org API Documentation
+##### themoviedb.org API Documentation
 
 Here's a link to [themoviedb.org API documentation](https://developers.themoviedb.org/3). There is a lot of information there. Too much enough. Bookmark this webpage. You'll want it for later too.
 
@@ -63,22 +63,21 @@ See that fancy `4724` in the URL? That's Kevin Bacon's actor ID for themoviedb.o
 
 Before you do that, it might help to do the following for more insight:
 
-1. Stare at this page for a bit. It's the documentation for the Get Details API call in the `PEOPLE` section of the API: https://developers.themoviedb.org/3/people
+1. Stare at the following page for a bit; it's the documentation for the Get Details API call in the `PEOPLE` section of the API: https://developers.themoviedb.org/3/people
 2. After you're done staring, click the "Try it out" tab.
 3. Enter your API key (you wrote that down, right?) in the field marked "Your TMDb API key" next to `api_key` in the "Variables" section.
 4. Enter `4724` in the "Integer" field next to `person_id` in the "Path Params" section.
 5. Click the pinkish "SEND REQUEST" button.
 
-Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the "Response" section below it, there is a response that looks a lot like a dictionary\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary. (\* Note: it's not actually a dictionary. It's a JSON, which isn't that important... but which can be converted fairly easily to dictionary. You'll need to be able to do that if you want to get the name out.)
+Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the "Response" section below it, there is a response that looks a lot like a dictionary\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary. (\* Note: it's not actually a dictionary. It's a JSON, which isn't that important... but which can be converted fairly easily to a dictionary-like object. You'll need to be able to do that if you want to get the name out.)
 
 But we don't want to get names by using the web browser. We want to get them in Python using the `requests` module. If you don't know how to use `requests`, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll literally only need to read the first three sections (starting with "Make a Request").
 
-Once a request has been made, and you've gotten a response -- we'll call it `response` -- you'll need to convert the output -- `request.text` (see that JSON I was talking about now?) -- into the form of a dictionary using the `json` module in Python (Hint: `response.text` is actually a string of the JSON, not a JSON object. Look for the `json` command that deserializes strings.)
+Once a request has been made, and you've gotten a response -- we'll call it `response` -- you'll need to convert the output -- `response.text` (see that JSON I was talking about now?) -- into the form of a dictionary using the `json` module in Python (Hint: `response.text` is actually a string of the JSON, not a JSON object. Look for the `json` command that deserializes strings.)
 
 This is the most basic of the API requests that can be made.
 
 ```python
-
 def lookup_actor_name_by_id(actor_id):
     """Returns an actor's name by taking in the actor's actor_id using the 
     themoviedb.org's API and the requests module and the json module.
@@ -94,19 +93,18 @@ def lookup_actor_name_by_id(actor_id):
     'Kevin Bacon'
     >>> lookup_actor_name_by_id(2963)
     'Nicolas Cage'
-
 ```
 
 ### Task 3: A Movie for Every Bacon, A Bacon for Every Movie
 
 Now that we're able to collect the name of any actor given their ID (even though the only ID that really matters is Kevin Bacon's), let's put that ID to use.
 
-First, write a function to return all the movies an actor has been cast in. Second, let's also get the cast list for all the actors in a given movie.
+First, write a function to return all the movies an actor has been cast in.   
+Second, let's also get the cast list for all the actors in a given movie.
 
-Hint: The `PEOPLE` section of the API documentation is the right place to start looking for the right API call.
+Hint: The `PEOPLE` section of the API documentation is the right place to start looking for the right API call for the first function. But the API call needed for the second function is in a different section.
 
 ```python
-
 def req_movies_for_actor(actor_id):
     """Looks up all the movies in which an actor with actor_id has been casted. 
     Returns the movies as a nested dictionary with the movie_id as the key, and 
@@ -131,11 +129,9 @@ def req_movies_for_actor(actor_id):
    True
    >>> "Titanic" in [movie["name"] for movie in movies.values()]
    False
-
 ```
 
 ```python
-
 def req_actors_for_movie(movie_id):
     """Looks up all the cast members in the movie with movie_id. Returns the 
     cast as a nested dictionary with the cacst_id as the key, and the name of 
@@ -160,35 +156,37 @@ def req_actors_for_movie(movie_id):
     True
     >>> 'Nicolas Cage' in [cast["name"] in cast in cast_dict.values()]
     False
-
 ```
 
 ### Task 4: First Degree Baconry
 
-Now that there's way to see what movies an actor has been cast in, and a way to see what actors have worked in a given movie, now we need a function to combine it.
+Now that there's a way to see what movies an actor has been cast in, and a way to see what actors have worked in a given movie, now we need a function to combine it.
 
 Write a function that looks up all of the--
 
-**Wait! Before you do that, you need to know something!** Folks who run APIs know that other people love to query their APIs constantly. In fact, if web scrapers had it their way, they'd try to eat up all the bandwidth of the website running the API.
+**Wait! Before you do that, you need to know something!**  
+Folks who run APIs know that other people love to query their APIs constantly. In fact, if web scrapers had it their way, they'd try to eat up all the bandwidth of the website running the API.
 
-To combat the web scrapers, the API admins at themoviedb.org have set a limit of 40 requests in 10 seconds. If you make 41 requests before the 10 seconds is up, they send you a fake response that says: `{"status_code":25,"status_message":"Your request count (41) is over the allowed limit of 40."}`. You might not even know it unless you check the response! That means you might not know if a fake request was sent for a given movie!
+To combat the web scrapers, the API admins at themoviedb.org have set a limit of 40 requests in 10 seconds. 
+
+If you make 41 requests before the 10 seconds is up, they send you a fake response that says:  
+`{"status_code":25,"status_message":"Your request count (41) is over the allowed limit of 40."}`   
+You might not even know it unless you check the response! That means you might not know if a fake request was sent for a given movie!
 
 To combat the API admins and avoid getting a fake response, we'll need to put a delay on the requests so that the request timer can reset after 10 seconds. To make Python delay its next command for 60 sec, you could use this code:
 
 ```python
-
 import time
 time.sleep(60)
-
 ```
 
-However, waiting for 60 secs between requests takes a really a long time. Figure out a good amount of time to delay between requests. Points off, if your (entire) code takes more than 1 minute to run (for Kevin Bacon)! We'll be checking!
+However, waiting for 60 seconds between requests takes a really a long time. Figure out a good amount of time to delay between requests. Points off, if your (entire) code takes more than 1 minute to run (when we try Kevin Bacon)! We'll be checking!
 
-Okay, now without any further delay:
+Okay, now without any further delay.
+
 Write a function that looks up all of the movies of a given actor, and then finds their co-stars for all those movies together. Oh yeah, don't include the starting actor with result all of their co-stars. It's not like they're staring in a movie with themselves.
 
 ```python
-
 def one_deg_from_actor(from_actor_id):
     """Looks up all the co-stars for an actor with from_actor_id. Returns a 
     tuple with a nested dictionary of all the movies by id with their names and 
@@ -218,7 +216,6 @@ def one_deg_from_actor(from_actor_id):
     1031
     >>> bacon_costars.get(4724, None) == None
     True
-    
 ```
 
 ### Task 5: Bacon Links
@@ -228,7 +225,6 @@ At this point, there should be way to get a list of Kevin Bacon movies and to ge
 Let's write a print function using the output from the `one_deg_from_actor` function using a costar's id.
 
 ```python
-
 def path_to_actor(costar_id, movies, actors):
     """Prints the link back up one degree from a costar with costar_id using
     the movies dictionary and actors dictionary output from one_deg_from_actor.
@@ -248,15 +244,13 @@ def path_to_actor(costar_id, movies, actors):
     >>> bacon_movies, bacon_costars = one_deg_from_actor(4724)
     >>> path_to_actor(30614, bacon_movies, bacon_costars)
     'Kevin Bacon > Crazy, Stupid, Love. > Ryan Gosling'
-    
 ```
 
 ### Task 6: Bringing Home the Bacon
 
 Finally, we'll want a main function that wraps up what was done above, except for any actor.
 
-```python
-   
+```python 
 def main(args):
    """Write your docstring here."""
    pass  # delete this after writing some code  
@@ -265,7 +259,6 @@ def main(args):
 if __name__ == "__main__":
     import sys
     main(sys.argv)
-
 ```
 
 The main function needs to:
@@ -300,7 +293,7 @@ Briggs Branning,Bottle Rocket,Temple Nash
 
 #### Example 2: Prints to Console
 
-The following command prints the following to the console
+This command prints the following to the console, in some order.
 
 ```
 $ python hw6.py 1117334
@@ -319,7 +312,7 @@ This command prints something like the following to the console. The prompt stat
 
 ```
 $ python hw6.py
-No actor chosen. Do you want to play one degree from the chosen one, Kevin Bacon? 
+No actor chosen. Do you want to play one degree from the default chosen one, Kevin Bacon? 
 <if yes, prints output to console; this line not actually printed>
 <if no, prints parting message>
 ```
@@ -330,7 +323,7 @@ These commands print something like the following. The error message should refl
 
 ```
 $ python hw6.py 12345678901234567890
-We've don't recognize id. They're obviously not connected to Kevin Bacon or anyone else 
+We've don't recognize that id. They're obviously not connected to Kevin Bacon or anyone else 
 for that matter. Please play again.
 ```
 
