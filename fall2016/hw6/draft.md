@@ -107,10 +107,10 @@ Hint: The `PEOPLE` section of the API documentation is the right place to start 
 
 ```python
 def req_movies_for_actor(actor_id):
-    """Looks up all the movies in which an actor with actor_id has been casted. 
+   """Looks up all the movies in which an actor with actor_id has been casted. 
     Returns the movies as a nested dictionary with the movie_id as the key, and 
     the name of the movie and the actor's ID as values in the nested dictionary.
-    
+
     Parameters:
     actor_id: int -- the themoviedb.org ID number of an actor
 
@@ -123,7 +123,7 @@ def req_movies_for_actor(actor_id):
             }}
         and movie_id: int -- the themoviedb.org ID number of the movie
         and movie_name: str -- the name of the movie for the given ID
-   
+
     Usage Examples:
     >>> movies = req_movies_for_actor(4724)
     >>> "Tremors" in [movie["name"] for movie in movies.values()]
@@ -220,7 +220,11 @@ def one_deg_from_actor(from_actor_id):
                 "parent": movie_id}}
     
     Usage Examples:
-    >>> bacon_movies, bacon_costars = one_deg_from_actor(4724)
+    >>> start_time = time.time()
+    >>> bacon_movies, bacon_costars = one_deg_from_actor(4724) # this should take less than 60 secs
+    >>> end_time = time.time() - start_time
+    >>> end_time < 60
+    True
     >>> len(bacon_movies)
     72
     >>> len(bacon_costars)
