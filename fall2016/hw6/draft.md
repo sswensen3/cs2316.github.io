@@ -261,9 +261,9 @@ def path_to_actor(costar_id, movies, actors):
 
 ### Task 6: Bringing Home the Bacon
 
-Finally, we'll want a main function that wraps up what was done above, except for any actor. 
+Finally, we'll want a main function that wraps up what was done above, and we want it work for any actor... although mostly for Kevin Bacon.
 
-Also, in this one particular case, it's useful to write `API_KEY = <your api key>` as a global variable near the top of your script. But **don't leave it in your code during submission**.
+Also, in this one particular case, it's useful to write `API_KEY = <your api key>` as a *global variable* near the top of your script. But **don't leave it in your code during submission**.
 
 ```python 
 # your name
