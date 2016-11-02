@@ -56,10 +56,10 @@ Here's a link to [themoviedb.org API documentation](https://developers.themovied
 
 ### Task 2: In The Name of Bacon
 
-Since we're at the themoviedb.org we might as well bring up Kevin's page:
+Since we're at the [themoviedb.org](https://www.themoviedb.org/) we might as well bring up Kevin's page:  
 https://www.themoviedb.org/person/4724-kevin-bacon
 
-See that fancy `4724` in the URL? That's Kevin Bacon's actor ID for themoviedb.org. Take a note of that because we're going to need it in our first API function.
+See that fancy `4724` in the URL? That's Kevin Bacon's actor ID for [themoviedb.org](https://www.themoviedb.org/). Take a note of that because we're going to need it in our first API function.
 
 Before you do that, it might help to do the following for more insight:
 
@@ -168,9 +168,9 @@ Now that there's a way to see what movies an actor has been cast in, and a way t
 Write a function that looks up all of the--
 
 **Wait! Before you do that, you need to know something!**  
-Folks who run APIs know that other people love to query their APIs constantly. In fact, if web scrapers had it their way, they'd try to eat up all the bandwidth of the website running the API.
+Folks who run APIs know that web scrapers like yourself love to query their APIs constantly. In fact, if web scrapers had it their way, they'd try to eat up all the bandwidth of the website running the API.
 
-To combat the web scrapers, the API admins at themoviedb.org have set a limit of 40 requests in 10 seconds. 
+To combat the web scrapers, the API admins at [themoviedb.org](https://www.themoviedb.org/) have set a limit of 40 requests in 10 seconds. 
 
 If you make 41 requests before the 10 seconds is up, they send you a fake response that says:  
 `{"status_code":25,"status_message":"Your request count (41) is over the allowed limit of 40."}`   
