@@ -269,23 +269,23 @@ end_time = time.time() - start_time
 print("Took {:.1f} seconds".format(end_time))
 ```
 
-The main function needs to:
+#### `main()` Function Requirements
 
 1. Handle up to two additional arguments (excluding the script name itself, i.e. `args[0]`).
-3. The first additional argument (i.e. `args[1]`) is *optional*. It's the `actor_id`, according to [themoviedb.org](https://www.themoviedb.org/).
+2. The first additional argument (i.e. `args[1]`) is *optional*. It's the `actor_id`, according to [themoviedb.org](https://www.themoviedb.org/).
   + If the `actor_id` is given, it should be an `int` and it needs to be used to search [themoviedb.org](https://www.themoviedb.org/)'s API. 
     + If the `actor_id` argument is invalid or the actor does not exist, print an error and quit.
   + If the `actor_id` is *not* given, ask if the user wants to play One Degree from Kevin Bacon. 
     + If they do, run the program using Kevin Bacon's ID and print the output to console. 
     + If they don't, print a parting message and quit.
-4. The second additional argument is *optional*. It's the filename for a `.csv` file.
-  + If a filename is given, write a `.csv` file where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. Each row in the `.csv` file should have the form "actor_name,movie_name,costar_name\n". See example below. Also, print a message showing the file was written properly.
+3. The second additional argument is *optional*. It's the filename for a `.csv` file.
+  + If a filename is given, write a `.csv` file where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. Each row in the `.csv` file should have the form `"actor_name,movie_name,costar_name\n"`. Also, print a message to the console showing the file was written properly. See example below.
      + If the filename argument is not valid, print an error and quit.
   + If a filename is *not* given, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in. The form of the print out should be `actor_name > movie_name > costar_name`. See example below.
 
-### Examples
+#### Examples
 
-#### Example 1: Writes to File
+##### Example 1: Writes to File
 
 The following command...
 
@@ -307,7 +307,7 @@ Briggs Branning,Bottle Rocket,Robert Musgrave
 Briggs Branning,Bottle Rocket,Temple Nash
 ```
 
-#### Example 2: Prints to Console
+##### Example 2: Prints to Console
 
 This command prints the following to the console, in some order.
 
@@ -323,7 +323,7 @@ Briggs Branning > Bottle Rocket > Temple Nash
 Took <however many> seconds.
 ```
 
-#### Example 3: No Arguments
+##### Example 3: No Arguments
 
 This command prints something like the following to the console. The prompt statement can be worded as you like.
 
@@ -336,7 +336,7 @@ No actor chosen. Do you want to play one degree from the default chosen one, Kev
 Took <however many> seconds.
 ```
 
-#### Example 4: Invalid Arguments
+##### Example 4: Invalid Arguments
 
 These commands print something like the following. The error message should reflect the error.
 
