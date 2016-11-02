@@ -124,17 +124,17 @@ def req_movies_for_actor(actor_id):
         and movie_id: int -- the themoviedb.org ID number of the movie
         and movie_name: str -- the name of the movie for the given ID
    
-   Usage Examples:
-   >>> movies = req_movies_for_actor(4724)
-   >>> "Tremors" in [movie["name"] for movie in movies.values()]
-   True
-   >>> "Titanic" in [movie["name"] for movie in movies.values()]
-   False
-   >>> 4724 in [movie["parent"] for movie in movies.values()]
-   True
-   >>> 2963 in [movie["parent"] for movie in movies.values()]
-   False
-   """
+    Usage Examples:
+    >>> movies = req_movies_for_actor(4724)
+    >>> "Tremors" in [movie["name"] for movie in movies.values()]
+    True
+    >>> "Titanic" in [movie["name"] for movie in movies.values()]
+    False
+    >>> 4724 in [movie["parent"] for movie in movies.values()]
+    True
+    >>> 2963 in [movie["parent"] for movie in movies.values()]
+    False
+    """
 ```
 
 ```python
@@ -158,13 +158,13 @@ def req_actors_for_movie(movie_id):
 
     Usage Examples:
     >>> cast_members = req_actors_for_movie(9362)
-    >>> 'Kevin Bacon' in [cast["name"] in cast in cast_members.values()]
+    >>> 'Kevin Bacon' in [cast["name"] for cast in cast_members.values()]
     True
-    >>> 'Nicolas Cage' in [cast["name"] in cast in cast_members.values()]
+    >>> 'Nicolas Cage' in [cast["name"] for cast in cast_members.values()]
     False
-    >>> 9362 in [cast["parent"] in cast in cast_members.values()]
+    >>> 9362 in [cast["parent"] for cast in cast_members.values()]
     True
-    >>> 597 in [cast["parent"] in cast in cast_members.values()]
+    >>> 597 in [cast["parent"] for cast in cast_members.values()]
     False
     """
 ```
@@ -202,21 +202,21 @@ def one_deg_from_actor(from_actor_id):
     """Looks up all the co-stars for an actor with from_actor_id. Returns a 
     tuple with a nested dictionary of all the movies by id with their names and 
     parent actor (as in req_movies_for_actor) and a nested dictionary of all the
-    actors by id with their names and parent movie (as in req_actors_for_movie),
-    excluding the from_actor_id themselves.
+    costars by id with their names and parent movie (as in 
+    req_actors_for_movie), excluding the from_actor_id themselves.
 
     Parameters:
     movie_id: int -- the themoviedb.org ID number of a movie
 
     Return:
-    (movies, actors): tuple --
+    (movies, costars): tuple --
         where movies = {
             movie_id:{
                 "name": movie_name,
-                "parent": actor_id}}
-        and actors = {
-            cast_id:{
-                "name": cast_name,
+                "parent": from_actor_id}}
+        and costars = {
+            costar_id:{
+                "name": costar_name,
                 "parent": movie_id}}
     
     Usage Examples:
@@ -230,40 +230,13 @@ def one_deg_from_actor(from_actor_id):
     """
 ```
 
-### Task 5: Bacon Links
-
-At this point, there should be way to get a list of Kevin Bacon movies and to get a list of Kevin Bacon's costars. But how are these co-stars linked to our man Bacon?
-
-Let's write a print function using the output from the `one_deg_from_actor` function using a costar's id.
-
-```python
-def path_to_actor(costar_id, movies, actors):
-    """Prints the link back up one degree from a costar with costar_id using
-    the movies dictionary and actors dictionary output from one_deg_from_actor.
-    
-    The output should be formatted like so:
-    'parent_actor_name > parent_movie_name > costar_name'
-    
-    Parameters:
-    costar_id: int -- the themoviedb.org ID number of an actor
-    movies: dict -- output from one_deg_from_actor
-    actors: dict -- output from one_deg_from_actor
-
-    Return:
-    None
-    
-    Usage Examples:
-    >>> bacon_movies, bacon_costars = one_deg_from_actor(4724)
-    >>> path_to_actor(30614, bacon_movies, bacon_costars)
-    'Kevin Bacon > Crazy, Stupid, Love. > Ryan Gosling'
-    """
-```
-
-### Task 6: Bringing Home the Bacon
+### Task 5: Bringing Home the Bacon
 
 Finally, we'll want a main function that wraps up what was done above, and we want it work for any actor... although mostly for Kevin Bacon.
 
-Also, in this one particular case, it's useful to write `API_KEY = <your api key>` as a *global variable* near the top of your script. But **don't leave it in your code during submission**.
+In this one particular case, it's useful to write `API_KEY = <your api key>` as a *global variable* near the top of your script. But **don't leave it in your code during submission**.
+
+Also, we've put a timer around the `if __name__ == "__main__"` statement so that you can see how much time your code took to execute.
 
 ```python 
 # your name
@@ -276,16 +249,20 @@ API_KEY =  # enter your API key from sub-task 1.5 as a global variable
 ## You'll need it to test your code, but it's literally your key, not ours.
 ## -20 points if you don't delete it before submission.
 
-# all the helper functions
+# write all the helper functions
 
 def main(args):
    """Write your docstring here."""
-   pass  # delete this after writing some code  
+   # Write your code here.
 
 
+print("If testing for Kevin Bacon, this should take less than 60 seconds.")
+start_time = time.time()
 if __name__ == "__main__":
     import sys
     main(sys.argv)
+end_time = time.time() - start_time
+print("Took {:.1f} seconds".format(end_time))
 ```
 
 The main function needs to:
@@ -298,9 +275,9 @@ The main function needs to:
     + If they do, run the program using Kevin Bacon's ID and print the output to console. 
     + If they don't, print a parting message and quit.
 4. The second additional argument is *optional*. It's the filename for a `.csv` file.
-  + If a filename is given, write a `.csv` file where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. 
+  + If a filename is given, write a `.csv` file where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. Each row in the `.csv` file should have the form "actor_name,movie_name,costar_name\n". See example below. Also, print a message showing the file was written properly.
      + If the filename argument is not valid, print an error and quit.
-  + If a filename is *not* given, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in.
+  + If a filename is *not* given, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in. The form of the print out should be `actor_name > movie_name > costar_name`. See example below.
 
 ### Examples
 
@@ -310,6 +287,9 @@ The following command...
 
 ```
 $ python hw6.py 1117334 output.csv
+If testing for Kevin Bacon, this should take less than 60 seconds.
+Writing data to output.csv file... done.
+Took <however many> seconds.
 ```
 
 ...writes to `output.csv` with the following text in some order:
@@ -329,12 +309,14 @@ This command prints the following to the console, in some order.
 
 ```
 $ python hw6.py 1117334
+If testing for Kevin Bacon, this should take less than 60 seconds.
 Briggs Branning > Bottle Rocket > Elissa Sommerfield
 Briggs Branning > Bottle Rocket > Isiah Ellis
 Briggs Branning > Bottle Rocket > Luke Wilson
 Briggs Branning > Bottle Rocket > Owen Wilson
 Briggs Branning > Bottle Rocket > Robert Musgrave
 Briggs Branning > Bottle Rocket > Temple Nash
+Took <however many> seconds.
 ```
 
 #### Example 3: No Arguments
@@ -343,9 +325,11 @@ This command prints something like the following to the console. The prompt stat
 
 ```
 $ python hw6.py
+If testing for Kevin Bacon, this should take less than 60 seconds.
 No actor chosen. Do you want to play one degree from the default chosen one, Kevin Bacon? 
 <if yes, prints output to console; this line not actually printed>
 <if no, prints parting message>
+Took <however many> seconds.
 ```
 
 #### Example 4: Invalid Arguments
@@ -354,13 +338,17 @@ These commands print something like the following. The error message should refl
 
 ```
 $ python hw6.py 12345678901234567890
-We've don't recognize that id. They're obviously not connected to Kevin Bacon or anyone else 
+If testing for Kevin Bacon, this should take less than 60 seconds.
+ERROR: We've don't recognize that id. They're obviously not connected to Kevin Bacon or anyone else 
 for that matter. Please play again.
+Took <however many> seconds.
 ```
 
 ```
 $ python hw6.py 4724 :@#*&$!
-Whoa, buddy! We can't write to files like that. Try again, and please try to keep it clean.
+If testing for Kevin Bacon, this should take less than 60 seconds.
+ERROR: Whoa, buddy! We can't write to files like that. Try again, and please try to keep it clean.
+Took <however many> seconds.
 ```
 
 ## Submission Instructions
