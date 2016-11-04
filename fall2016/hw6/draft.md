@@ -68,11 +68,13 @@ To use it, we'll need two things:
   
 ##### Getting an API key
 
-First, get an account from [themoviedb.org](https://www.themoviedb.org/). You can sign up [here](https://www.themoviedb.org/account/signup).
-
-Second, sign in and go to your account page. In the left column under your username, there is a link to the API section of your account.
-
-Third, write down the very long `API Key (v3 auth)` alphanumeric key in a computer file somewhere; you'll need that for later. ***You should not share this key with anyone ever for security reasons.***
+1. Get an account from [themoviedb.org](https://www.themoviedb.org/). You can sign up [here](https://www.themoviedb.org/account/signup). You'll need to verify the account with through the email you've provided before you can sign in.
+2. Sign in and go to your account page. In the left column under your username, use the `API` link to go to the API section of your account.
+3. Request an API key using the link in the `Request an API Key` section.
+4. Click on `Developer`.
+5. Read and accept the terms.
+6. Fill out the form. In the Application Name and Application Summary, state that that the key is request for 'student use' and give www.gatech.edu as the Application URL. The key will be generated immediately after this form is submitted.
+7. Write down the very long `API Key (v3 auth)` alphanumeric key in a computer file somewhere; you'll need that for later. ***You should not share this key with anyone ever for security reasons.***
 
 ##### themoviedb.org API Documentation
 
