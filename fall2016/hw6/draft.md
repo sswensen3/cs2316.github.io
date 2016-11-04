@@ -11,71 +11,66 @@ In this homework you will practice mining data from the internet.
 
 ## Problem Description
 
-Many years ago, before the advent of the Google Search, an ancient game was played by the forefathers to test their knowledge of the cinematic arts. One person would simply name an random actor to the player; the player would attempt to connect this random actor with whom they had co-starred in some movie, or with whom that co-star had co-starred in some other movie, and so on... until, within six jumps, the random actor was connected to the almighty cohesive force of the silver screen: Kevin Bacon. 
+In the 90's before Google was around, people used to play a game called *Six Degrees from Kevin Bacon*. Kevin Bacon was a relatively well-known actor at the time who was said to be connected to almost anyone in the movie industry. 
 
-This game was henceforth known as Six Degrees from Kevin Bacon...
+The game was played by asking your friend to name a random actor. Using that random actor as a starting point, you'd choose a movie the actor was in, and then choose a costar -- a *first-degree* costar, so to speak -- from that movie. Then you'd choose a second-degree costar who shared a different movie with the first-degree costar, and so on. The goal of the game was to connect back to Kevin Bacon within six degrees (i.e. within six costars away), and since Google wasn't around, it was pretty impressive if someone could. Here's [a video on Youtube](https://www.youtube.com/watch?v=RvQ-h6KTzCA) that demonstrates it.
 
-...but this was before the Internet was popular, before the IMDb had its first page, and even before Python was hatched. And it has long been forgotten.
-
-Today, within the span of a few hours, and with the power of Python, the Internets, and our new friend the API, any decent programmer can write a program to start to unravel the mystery that once was: Kevin Bacon.
+This homework attempts to re-create that game, except it will only go to one degree from Kevin Bacon because our computers will (figuratively) explode if they try to do six degrees.
 
 ## Solution Description
 
 ### Task 1: Scraping for Bacon
 
-The first stop on this magical journey is to the cybersource of all things movies: the [Internet Movie Database](http://www.imdb.com/), affectionately known as the IMDb. A quick websearch with turn up the webpage entry for Mr. Bacon; but just looking in awe at his filmography is not nearly enough for the task.
+The first stop on this magical journey is the [Internet Movie Database](http://www.imdb.com/). A quick websearch with turn up the webpage entry for [Kevin Bacon](http://www.imdb.com/name/nm0000102/).
 
 We'll need to write a Python function to scrape out all the movies and their names and URLs.
 
-# KATIE! FOR PETE'S SAKE WRITE STUFF HERE!
-
+# KATIE'S SPACE
 
 #### Sub-task 1.5: The Key to Finding More Bacon
 
-Scraping is no fun. Way too many items to inspect. One could iterate through all those movies and find who acts in them, but why bother? It's going to take forever to look at every webpage, write up a script for it, and make sure it doesn't run into any more problems. Instead, let's switch over to using a more powerful tool: **the API**.
+Web scraping is difficult. It takes a long time to inspect every webpage, write up a script for it, and make sure it doesn't run into any more problems. Instead, let's switch over to using a more powerful tool: **the API**.
 
-While IMDb doesn't have an API available, [themoviedb.org](https://www.themoviedb.org/) does. And like any worthwhile API, it's totally free.
+While IMDb doesn't have an API available, [themoviedb.org](https://www.themoviedb.org/) does.
 
 To use it, we'll need two things:
  + get an API key
  + learn how to use the API
- 
-Luckily, it's easy to do both.
- 
+  
 ##### Getting an API key
 
 First, get an account from [themoviedb.org](https://www.themoviedb.org/). You can sign up [here](https://www.themoviedb.org/account/signup).
 
 Second, sign in and go to your account page. In the left column under your username, there is a link to the API section of your account.
 
-Third, jot down that handy `API Key (v3 auth)` key in a computer file somewhere; you'll need that for later. ***Don't share this key with anyone. No really, don't share it.***
+Third, write down the very long `API Key (v3 auth)` alphanumeric key in a computer file somewhere; you'll need that for later. ***You should not share this key with anyone ever for security reasons.***
 
 ##### themoviedb.org API Documentation
 
-Here's a link to [themoviedb.org API documentation](https://developers.themoviedb.org/3). There is a lot of information there. Probably too much. Bookmark this webpage anyway. You'll need that for later, too.
+Here's a link to [themoviedb.org API documentation](https://developers.themoviedb.org/3). There is a lot of information there. Bookmark this webpage because you'll need it.
 
 ### Task 2: In The Name of Bacon
 
-Since we're at the [themoviedb.org](https://www.themoviedb.org/) we might as well bring up Kevin's page:  
+At the [themoviedb.org](https://www.themoviedb.org/), bring up Kevin's page:  
 https://www.themoviedb.org/person/4724-kevin-bacon
 
-See that fancy **4724** in the URL? That's Kevin Bacon's actor ID for [themoviedb.org](https://www.themoviedb.org/). Take a note of that because we're going to need it in our first API function.
+See that **4724** number in the URL above? That's Kevin Bacon's actor ID for [themoviedb.org](https://www.themoviedb.org/). Take a note of that because we're going to need it in the first API function.
 
 Before you do that, it might help to do the following for more insight:
 
-1. Stare at the following page for a bit; it's the documentation for the Get Details API call in the `PEOPLE` section of the API: https://developers.themoviedb.org/3/people
-2. After you're done staring, click the `Try it out` tab.
-3. Enter your API key (you wrote that down, right?) in the field marked `Your TMDb API key` next to `api_key` in the `Variables` section.
+1. Load the following webpage; it's the documentation for the Get Details API call in the `PEOPLE` section of the API: https://developers.themoviedb.org/3/people
+2. Read what you can on the webpage. Click the `Try it out` tab.
+3. Enter your API key (which you wrote down earlier) in the field marked `Your TMDb API key` next to `api_key` in the `Variables` section.
 4. Enter **4724** in the `Integer` field next to `person_id` in the `Path Params` section.
 5. Click the pinkish `SEND REQUEST` button.
 
 Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the `Response` section below it, there is a response that looks a lot like a nested dictionary\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary as well. (\**Note: it's not actually a nested dictionary. It's a JSON object, and what that is isn't that important... but it can be converted fairly easily to a dictionary-like object. You'll need to be able to do that if you want to get the name out. Read on.*)
 
-But we don't want to get names by using the web browser. We want to get them in Python using the `requests` module. If you don't know how to use `requests`, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll literally only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
+To get the name of the actor in Python, we'll be using the `requests` module. If you don't know how to use `requests`, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
 
-Once a request has been made, and you've gotten a response -- we'll call it `response` -- you'll need to convert the text output, `response.text`, into the form of a dictionary using the `json` module in Python (Hint: `response.text` is actually a string of the JSON, not a JSON object. Look for the `json` function that deserializes strings.)
+Once a request has been made, and you've gotten a response -- we'll call it `response` -- you'll notice that the text output, `response.text`, is the same nested dictionary as above. Convert the `response.text` into the form of a dictionary using the `json` module in Python (Hint: `response.text` is actually a string of the JSON, not a JSON object. Look for the `json` function that deserializes strings.)
 
-This is the most basic of the API requests that can be made.
+Now, let's write up a function to return the name of the actor using the API given we know the actor's ID.
 
 ```python
 def lookup_actor_name_by_id(actor_id):
@@ -98,10 +93,10 @@ def lookup_actor_name_by_id(actor_id):
 
 ### Task 3: A Movie for Every Bacon, A Bacon for Every Movie
 
-Now that we're able to collect the name of any actor given their ID (even though the only ID that really matters is Kevin Bacon's), let's put that ID to use.
+Now that we're able to collect the name of any actor given their ID, let's put the rest of the API to use.
 
-First, write a function to return all the movies an actor has been cast in.   
-Second, let's also get the cast list for all the actors in a given movie.
+First, write a function to return all the movies an actor has been cast in using that actor's ID. Try looking up other actors' IDs just like we looked up Kevin Bacon's. 
+Second, let's also get the cast list for all the actors in a given movie using its movie ID. Note that movies had IDs too, and that you might want to look up a few webpages of your favorite movies to test your code.
 
 Hint: The `PEOPLE` section of the API documentation is the right place to start looking for the right API call for the first function. But the API call needed for the second function is in a different section.
 
@@ -171,11 +166,9 @@ def req_actors_for_movie(movie_id):
 
 ### Task 4: First Degree Baconry
 
-Now that there's a way to see what movies an actor has been cast in, and a way to see what actors have worked in a given movie, now we need a function to combine it.
+Now that there's a way to see what movies an actor has been cast in, and a way to see what actors have worked in a given movie, let's make a function to combine the two.
 
-Write a function that looks up all of the--
-
-**Wait! Before you do that, you need to know something!**  
+**Before you do that, you need to know something!**  
 Folks who run APIs know that web scrapers like yourself love to query their APIs constantly. In fact, if web scrapers had it their way, they'd try to eat up all the bandwidth of the website running the API.
 
 To combat the web scrapers, the API admins at [themoviedb.org](https://www.themoviedb.org/) have set a limit of 40 requests in 10 seconds. 
@@ -193,9 +186,7 @@ time.sleep(60)
 
 However, waiting for 60 seconds between requests takes a really a long time. Figure out a good amount of time to delay between requests. Points off if your entire code takes more than 1 minute to run, when we run this for Kevin Bacon! We'll be checking!
 
-Okay, now without any further delay...
-
-Write a function that looks up all of the movies of a given actor, and then finds their co-stars for all those movies together. Oh yeah, don't include the starting actor with result all of their co-stars. It's not like they're staring in a movie with themselves.
+Now that that's out of the way, write a function that looks up all of the movies of a given actor, and then finds their co-stars for all those movies together. Oh yeah, don't include the starting actor with result all of their co-stars. It's not like they're staring in a movie with themselves.
 
 ```python
 def one_deg_from_actor(from_actor_id):
@@ -204,6 +195,8 @@ def one_deg_from_actor(from_actor_id):
     parent actor (as in req_movies_for_actor) and a nested dictionary of all the
     costars by id with their names and parent movie (as in 
     req_actors_for_movie), excluding the from_actor_id themselves.
+    Also, puts a delay before each request so that the script doesn't get an
+    undesirable response from the API.
 
     Parameters:
     movie_id: int -- the themoviedb.org ID number of a movie
@@ -236,9 +229,9 @@ def one_deg_from_actor(from_actor_id):
 
 ### Task 5: Bringing Home the Bacon
 
-Finally, we'll want a main function that wraps up what was done above, and we want it work for any actor... although mostly for Kevin Bacon.
+Finally, we'll want a main function that wraps up what was done above, and we want it work for any actor, not just Kevin Bacon.
 
-In this one particular case, it's useful to write `API_KEY = <your api key>` as a *global variable* near the top of your script. But **don't leave it in your code during submission**.
+In this one particular case, it's useful to write `API_KEY = <your api key>` as a *global variable* near the top of your script. But **don't leave it in your code during submission for security reasons**.
 
 Also, we've put a timer around the `if __name__ == "__main__"` statement so that you can see how much time your code took to execute.
 
@@ -358,7 +351,7 @@ Took <however many> seconds.
 ## Submission Instructions
 
 - [ ] Attach your `hw6.py` file to your T-Square HW6 assignment submission.
-- [ ] ***Delete your API key, or else!*** Every API key is a unique snowflake generated uniquely for your account. You should never share your API keys to anyone else, including your instructor, your TA, your aunt Sally, your roommate, your roommate's dog, your future mother-in-law, my ex-girlfriend or anyone else who could possibly begin to harbor a grudge (except your TAs and instructors; we'll don't know even know what grudges are). We don't want your key. We don't want the responsiblilty of having it. Don't submit it with your homework. Delete it as a global variable when you're ready to submit your homework. -20 points to anyone who doesn't delete it.
+- [ ] ***Delete your API key before submission.*** Every API key is generated uniquely for your account. It's creates a secure link with the website you're working with. It also helps the website track malicious activity should it ever occur. This is why you should never share your API keys to anyone else, including your instructor and your TA. We'll have our own API keys so don't worry about us. Don't submit your API key with your homework. Delete the global variable line when you're ready to submit your homework. -20 points if it is not deleted.
 - [ ] ***Homework 6 submissions should run without syntax or runtime errors!*** Non-compiling code will receive a 0. Be sure to follow the instructions below to verify that files are submitted correctly and the code works when you run it.
 
 ## Verify Your T-Square Submission!
