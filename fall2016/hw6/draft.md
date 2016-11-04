@@ -350,7 +350,13 @@ Took <however many> seconds.
 
 ## Submission Instructions
 
-- [ ] Attach your `hw6.py` file to your T-Square HW6 assignment submission.
+- [ ] Attach your `hw6.py` file to your T-Square HW6 assignment submission with the following functions:
+   - [ ] the function from task 1
+   - [ ] `lookup_actor_name_by_id`
+   - [ ] `req_movies_for_actor`
+   - [ ] `req_actors_for_movie`
+   - [ ] `one_deg_from_actor`
+   - [ ] `main`
 - [ ] ***Delete your API key before submission.*** Every API key is generated uniquely for your account. It's creates a secure link with the website you're working with. It also helps the website track malicious activity should it ever occur. This is why you should never share your API keys to anyone else, including your instructor and your TA. We'll have our own API keys so don't worry about us. Don't submit your API key with your homework. Delete the global variable line when you're ready to submit your homework. -20 points if it is not deleted.
 - [ ] ***Homework 6 submissions should run without syntax or runtime errors!*** Non-compiling code will receive a 0. Be sure to follow the instructions below to verify that files are submitted correctly and the code works when you run it.
 
