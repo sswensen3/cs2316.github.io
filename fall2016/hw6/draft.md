@@ -26,7 +26,7 @@ The first stop on this magical journey is the [Internet Movie Database](http://w
 We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs. To do so, you should use the Requests module to obtain a webpage's code in HTML. Then, use the Beautiful Soup module to parse and extract the necessary data.
 
 ```python
-def all_movies(url):
+def scrape_all_movies(url):
     """Use the requests and beautifulsoup modules to extract the movie names and urls from
     an actor's themoviedb.org webpage. Return a dictionary of all of the 
     extracted movies. The keys will be the movie titles, and the values 
@@ -382,7 +382,7 @@ Took <however many> seconds.
 ## Submission Instructions
 
 - [ ] Attach your `hw6.py` file to your T-Square HW6 assignment submission with the following functions:
-   - [ ] the function from task 1
+   - [ ] `scrape_all_movies`
    - [ ] `lookup_actor_name_by_id`
    - [ ] `req_movies_for_actor`
    - [ ] `req_actors_for_movie`
