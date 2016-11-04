@@ -23,13 +23,42 @@ This homework attempts to re-create that game, except it will only go to one deg
 
 The first stop on this magical journey is the [Internet Movie Database](http://www.imdb.com/). A quick websearch with turn up the webpage entry for [Kevin Bacon](http://www.imdb.com/name/nm0000102/).
 
-We'll need to write a Python function to scrape out all the movies and their names and URLs.
+We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs. To do so, you should use the Requests module to obtain a webpage's code in HTML. Then, use the Beautiful Soup module to parse and extract the necessary data.
 
-# KATIE'S SPACE
+```python
+def all_movies(url):
+    """Use the requests and beautifulsoup modules to extract the movie names and urls from
+    an actor's themoviedb.org webpage. Return a dictionary of all of the 
+    extracted movies. The keys will be the movie titles, and the values 
+    will be the corresponding urls (in string form) to that movie. Be 
+    sure to only include movies- not TV shows or shorts. 
+    
+    Parameters:
+    url: str -- the url for the imdb page of your chosen actor
+
+    Return:
+    all_movies: dict --
+         where all_movies = {movie_name: movie_url, movie_name: movie_url}
+             and movie_name: str -- the name of a Kevin Bacon movie
+             and movie_url: str -- the url address for that movie's page
+    
+    Usage Examples (note: not the complete dictionary - the doctest will fail with correct code):
+    >>> all_movies('http://www.imdb.com/name/nm0000102/')
+    {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 
+    'Mystic River': 'http://www.imdb.com/title/tt0327056/?ref_=nm_knf_t3', 
+    'Footloose': 'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
+    """
+```
+Learn more about [Requests](http://docs.python-requests.org/en/master/user/quickstart/#make-a-request)
+
+Learn more about [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+
+If you get an error importing the bs4 module, refer to Professor Simpkins' Homework 0 instructions for installing Beautiful Soup.
+
 
 #### Sub-task 1.5: The Key to Finding More Bacon
 
-Web scraping is difficult. It takes a long time to inspect every webpage, write up a script for it, and make sure it doesn't run into any more problems. Instead, let's switch over to using a more powerful tool: **the API**.
+Now you know how to find movie information by web scraping! But web scraping is difficult. It takes a long time to inspect every webpage, write up a script for it, and make sure it doesn't run into any more problems. Instead, let's switch over to using a more powerful tool: **the API**.
 
 While IMDb doesn't have an API available, [themoviedb.org](https://www.themoviedb.org/) does.
 
