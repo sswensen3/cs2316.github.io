@@ -3,7 +3,7 @@ layout: homework
 title: Homework 6
 ---
 
-# Homework 6: ~~Six~~ One Degree~~s~~ from Kevin Bacon
+# Homework 6: ~~Six Degrees~~ One Degree from Kevin Bacon
 
 ## Introduction
 
