@@ -45,12 +45,16 @@ def scrape_all_movies(url):
 
     Return:
     all_movies: dict --
-         where all_movies = {movie_name: movie_url, movie_name: movie_url}
+         where all_movies = {
+                movie_name1: movie_url1,
+                movie_name2: movie_url2,
+                ...
+                }
              and movie_name: str -- the name of a Kevin Bacon movie
              and movie_url: str -- the url address for that movie's page
     
     Usage Examples (note: not a complete test of all dictionary contents):
-    >>> imdb_movies = all_movies('http://www.imdb.com/name/nm0000102/')
+    >>> imdb_movies = scrape_all_movies('http://www.imdb.com/name/nm0000102/')
     >>> 'Apollo 13' in imdb_movies
     True
     >>> 'http://www.imdb.com/title/tt0327056' in [url[:35] for url in imdb_movies.values()]
@@ -145,10 +149,11 @@ def req_movies_for_actor(actor_id):
     Return:
     movie_dict: dict --
         where movie_dict ={
-            movie_id: {
-              "name": movie_name,
-              "parent": actor_id
-            }}
+            movie_id1: {
+              "name": movie_name1,
+              "parent": actor_id1
+            },
+            movie_id2: ...}
         and movie_id: int -- the themoviedb.org ID number of the movie
         and movie_name: str -- the name of the movie for the given ID
 
@@ -177,10 +182,11 @@ def req_actors_for_movie(movie_id):
     Return:
     cast_dict = dict --
         where cast_dict = {
-            cast_id: {
-                "name": cast_name,
-                "parent": movie_id
-            }}
+            cast_id1: {
+                "name": cast_name1,
+                "parent": movie_id1
+            },
+            cast_id2: ...}
         and cast_id: int -- the themoviedb.org ID number of an actor
         and cast_name: str -- the name of the cast member for the given ID
 
@@ -237,13 +243,15 @@ def one_deg_from_actor(from_actor_id):
     Return:
     (movies, costars): tuple --
         where movies = {
-            movie_id:{
-                "name": movie_name,
-                "parent": from_actor_id}}
+            movie_id1:{
+                "name": movie_name1,
+                "parent": from_actor_id},
+            movie_id2: ...}
         and costars = {
-            costar_id:{
-                "name": costar_name,
-                "parent": movie_id}}
+            costar_id1:{
+                "name": costar_name1,
+                "parent": movie_id1},
+            costar_id2: ...}
     
     Usage Examples:
     >>> start_time = time.time()
