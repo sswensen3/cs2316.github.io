@@ -25,7 +25,9 @@ The first stop on this magical journey is the [Internet Movie Database](http://w
 
 We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs. To do so, you should use the `Requests` module to obtain a webpage's code in HTML. Then, use the `Beautiful Soup` module to parse and extract the necessary data.
 
-To use the `Requests` module, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
+To use the `Requests` module, check out this documentation:   
+http://docs.python-requests.org/en/master/user/quickstart/#make-a-request   
+You'll only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
 
 Learn more about [Beautiful Soup here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
 
