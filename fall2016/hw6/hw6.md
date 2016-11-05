@@ -299,15 +299,15 @@ print("Took {:.1f} seconds".format(end_time))
 
 1. Handle up to two additional arguments (excluding the script name itself, i.e. `args[0]`).
 2. The first additional argument (i.e. `args[1]`) is *optional*. It's the `actor_id`, according to [themoviedb.org](https://www.themoviedb.org/).
-  + If the `actor_id` is given, it should be an `int` and it needs to be used to search [themoviedb.org](https://www.themoviedb.org/)'s API. 
-    + If the `actor_id` argument is invalid or the actor does not exist, print an error and quit.
-  + If the `actor_id` is *not* given, ask if the user wants to play One Degree from Kevin Bacon. 
-    + If they do, run the program using Kevin Bacon's ID and print the output to console. 
-    + If they don't, print a parting message and quit.
+  + If a valid `actor_id` is given, it should be an `int` and it needs to be used to search [themoviedb.org](https://www.themoviedb.org/)'s API. 
+  + If the `actor_id` argument is not *valid* **or** the actor does not exist, print an error and quit.
+  + If the `actor_id` arguemnt is not *provided*, ask if the user wants to play One Degree from Kevin Bacon. 
+  + If the user accepts, run the program using Kevin Bacon's ID and print the output to console. 
+  + If the user declines, print a parting message and quit.
 3. The second additional argument is *optional*. It's the filename for a `.csv` file.
-  + If a filename is given, write a `.csv` file where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. Each row in the `.csv` file should have the form `"actor_name,movie_name,costar_name\n"`. Also, print a message to the console showing the file was written properly. See example below.
-     + If the filename argument is not valid, print an error and quit.
-  + If a filename is *not* given, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in. The form of the print out should be `actor_name > movie_name > costar_name`. See example below.
+  + If a valid filename is given, write a `.csv` file where each row is the link between that actor and everyone they have co-starred with including the movie they co-starred in. Each row in the `.csv` file should have the form `"actor_name,movie_name,costar_name\n"`. Also, print a message to the console showing the file was written properly. Note that the filename should have a ".csv" extension or it is considered invalid. See example below.
+  + If the filename argument is not *valid*, print an error and quit.
+  + If the filename argument is not *provided*, print the linking path between that actor and everyone that actor has co-starred with, including the movie they co-starred in. The form of the print out should be `actor_name > movie_name > costar_name`. See example below.
 
 #### Examples
 
@@ -371,6 +371,13 @@ $ python hw6.py 12345678901234567890
 If testing for Kevin Bacon, this should take less than 60 seconds.
 ERROR: We've don't recognize that id. They're obviously not connected to Kevin Bacon or anyone else 
 for that matter. Please play again.
+Took <however many> seconds.
+```
+
+```
+$ python hw6.py 4724 output.txt
+If testing for Kevin Bacon, this should take less than 60 seconds.
+ERROR: The output filename provided does not have a .csv extension. Please try again with a valid filename.
 Took <however many> seconds.
 ```
 
