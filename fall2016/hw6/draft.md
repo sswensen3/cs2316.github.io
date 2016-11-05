@@ -23,7 +23,13 @@ This homework attempts to re-create that game, except it will only go to one deg
 
 The first stop on this magical journey is the [Internet Movie Database](http://www.imdb.com/). A quick websearch with turn up the webpage entry for [Kevin Bacon](http://www.imdb.com/name/nm0000102/).
 
-We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs. To do so, you should use the Requests module to obtain a webpage's code in HTML. Then, use the Beautiful Soup module to parse and extract the necessary data.
+We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs. To do so, you should use the `Requests` module to obtain a webpage's code in HTML. Then, use the `Beautiful Soup` module to parse and extract the necessary data.
+
+To use the `Requests` module, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
+
+Learn more about [Beautiful Soup here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
+
+
 
 ```python
 def scrape_all_movies(url):
@@ -43,15 +49,17 @@ def scrape_all_movies(url):
              and movie_url: str -- the url address for that movie's page
     
     Usage Examples (note: not the complete dictionary - the doctest will fail with correct code):
-    >>> all_movies('http://www.imdb.com/name/nm0000102/')
-    {'Apollo 13': 'http://www.imdb.com/title/tt0112384/?ref_=nm_knf_t1', 
-    'Mystic River': 'http://www.imdb.com/title/tt0327056/?ref_=nm_knf_t3', 
-    'Footloose': 'http://www.imdb.com/title/tt0087277/?ref_=nm_knf_t2'...}
+    >>> imdb_movies = all_movies('http://www.imdb.com/name/nm0000102/')
+    >>> 'Apollo 13' in imdb_movies
+    True
+    >>> 'http://www.imdb.com/title/tt0327056' in [url[:35] for url in imdb_movies.values()]
+    True
+    >>> 'Captain America' in imdb_movies
+    False
     """
 ```
 Learn more about [Requests](http://docs.python-requests.org/en/master/user/quickstart/#make-a-request)
 
-Learn more about [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
 If you get an error importing the bs4 module, refer to Professor Simpkins' Homework 0 instructions for installing Beautiful Soup.
 
@@ -97,9 +105,7 @@ Before you do that, it might help to do the following for more insight:
 
 Notice the a URL has popped up (`https://api.themoviedb.org/3/person/4724?api_key=<your_api_key>&language=en-US`), and in the `Response` section below it, there is a response that looks a lot like a nested dictionary\*. If you enter the URL above into your browser (with your API key inserted properly), the webpage will look like that dictionary as well. (\**Note: it's not actually a nested dictionary. It's a JSON object, and what that is isn't that important... but it can be converted fairly easily to a dictionary-like object. You'll need to be able to do that if you want to get the name out. Read on.*)
 
-To get the name of the actor in Python, we'll be using the `requests` module. If you don't know how to use `requests`, check out this documentation: http://docs.python-requests.org/en/master/user/quickstart/#make-a-request. You'll only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
-
-Once a request has been made, and you've gotten a response -- we'll call it `response` -- you'll notice that the text output, `response.text`, is the same nested dictionary as above. Convert the `response.text` into the form of a dictionary using the `json` module in Python (Hint: `response.text` is actually a string of the JSON, not a JSON object. Look for the `json` function that deserializes strings.)
+Just like before, for the API we'll be using the `Requests` module (see Task 1 if you need more details). Unlike the last module, once a request has been made, and you've gotten a response -- we'll call it `response` -- you'll notice that the text output, `response.text`, is the same nested dictionary as the one mentioned in the previous paragraph. Convert the `response.text` output into the form of a dictionary using the `json` module in Python (Hint: `response.text` is actually a string of the JSON, not a JSON object. Look for the `json` function that deserializes strings.)
 
 Now, let's write up a function to return the name of the actor using the API given we know the actor's ID.
 
