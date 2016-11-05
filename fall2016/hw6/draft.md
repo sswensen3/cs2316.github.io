@@ -29,7 +29,7 @@ To use the `Requests` module, check out this documentation:
 http://docs.python-requests.org/en/master/user/quickstart/#make-a-request   
 You'll only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
 
-Learn more about [Beautiful Soup here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). If you get an error importing the bs4 module, refer to Professor Simpkins' Homework 0 instructions for installing Beautiful Soup.
+Learn more about [Beautiful Soup here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). If you get an error importing the `bs4` module, refer to the instructions on the class web site's [Resources](http://cs2316.gatech.edu/resources.html) page.
 
 
 ```python
