@@ -153,7 +153,9 @@ def req_movies_for_actor(actor_id):
               "name": movie_name1,
               "parent": actor_id1
             },
-            movie_id2: ...}
+            movie_id2: {...},
+            ...
+            }
         and movie_id: int -- the themoviedb.org ID number of the movie
         and movie_name: str -- the name of the movie for the given ID
 
@@ -186,7 +188,9 @@ def req_actors_for_movie(movie_id):
                 "name": cast_name1,
                 "parent": movie_id1
             },
-            cast_id2: ...}
+            cast_id2: {...},
+            ...
+            }
         and cast_id: int -- the themoviedb.org ID number of an actor
         and cast_name: str -- the name of the cast member for the given ID
 
@@ -246,12 +250,16 @@ def one_deg_from_actor(from_actor_id):
             movie_id1:{
                 "name": movie_name1,
                 "parent": from_actor_id},
-            movie_id2: ...}
+            movie_id2: {...},
+            ...
+            }
         and costars = {
             costar_id1:{
                 "name": costar_name1,
                 "parent": movie_id1},
-            costar_id2: ...}
+            costar_id2: {...},
+            ...
+            }
     
     Usage Examples:
     >>> start_time = time.time()
