@@ -11,7 +11,7 @@ In this homework you will practice mining data from the internet.
 
 ## Problem Description
 
-In the 90's before Google was around, people used to play a game called *Six Degrees from Kevin Bacon*. Kevin Bacon was a relatively well-known actor at the time who was said to be connected to almost anyone in the movie industry. 
+In the 90's before Google was around, people used to play a game called [*Six Degrees from Kevin Bacon*](https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon). Kevin Bacon was a relatively well-known actor at the time who was said to be connected to almost anyone in the movie industry. 
 
 The game was played by asking your friend to name a random actor. Using that random actor as a starting point, you'd choose a movie the actor was in, and then choose a costar -- a *first-degree* costar, so to speak -- from that movie. Then you'd choose a second-degree costar who shared a different movie with the first-degree costar, and so on. The goal of the game was to connect back to Kevin Bacon within six degrees (i.e. within six costars away), and since Google wasn't around, it was pretty impressive if someone could. Here's [a video on Youtube](https://www.youtube.com/watch?v=RvQ-h6KTzCA) that demonstrates it.
 
