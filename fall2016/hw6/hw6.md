@@ -26,7 +26,7 @@ The first stop on this magical journey is the [Internet Movie Database](http://w
 We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs. To do so, you should use the `Requests` module to obtain a webpage's code in HTML. Then, use the `Beautiful Soup` module to parse and extract the necessary data.
 
 To use the `Requests` module, check out this documentation:   
-http://docs.python-requests.org/en/master/user/quickstart/#make-a-request   
+[http://docs.python-requests.org/en/master/user/quickstart/#make-a-request](http://docs.python-requests.org/en/master/user/quickstart/#make-a-request) 
 You'll only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
 
 Learn more about [Beautiful Soup here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). If you get an error importing the `Beautiful Soup` module, refer to the instructions on the class web site's [Resources](http://cs2316.gatech.edu/resources.html) page.
@@ -87,13 +87,13 @@ Here's a link to [themoviedb.org API documentation](https://developers.themovied
 ### Task 2: In The Name of Bacon
 
 At the [themoviedb.org](https://www.themoviedb.org/), bring up Kevin's page:  
-https://www.themoviedb.org/person/4724-kevin-bacon
+[https://www.themoviedb.org/person/4724-kevin-bacon](https://www.themoviedb.org/person/4724-kevin-bacon)
 
 See that **4724** number in the URL above? That's Kevin Bacon's actor ID for [themoviedb.org](https://www.themoviedb.org/). Take a note of that because we're going to need it in the first API function.
 
 Before you do that, it might help to do the following for more insight:
 
-1. Load the following webpage; it's the documentation for the Get Details API call in the `PEOPLE` section of the API: https://developers.themoviedb.org/3/people
+1. Load the following webpage; it's the documentation for the Get Details API call in the `PEOPLE` section of the API:   [https://developers.themoviedb.org/3/people](https://developers.themoviedb.org/3/people)
 2. Read what you can on the webpage. Click the `Try it out` tab.
 3. Enter your API key (which you wrote down earlier) in the field marked `Your TMDb API key` next to `api_key` in the `Variables` section.
 4. Enter **4724** in the `Integer` field next to `person_id` in the `Path Params` section.
