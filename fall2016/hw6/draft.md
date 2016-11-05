@@ -29,8 +29,7 @@ To use the `Requests` module, check out this documentation:
 http://docs.python-requests.org/en/master/user/quickstart/#make-a-request   
 You'll only need to read the first three sections (starting with "Make a Request") and skip the parts about POST, PUT, DELETE, HEAD, and OPTIONS. Those are way too much HTML for us.
 
-Learn more about [Beautiful Soup here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
-
+Learn more about [Beautiful Soup here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). If you get an error importing the bs4 module, refer to Professor Simpkins' Homework 0 instructions for installing Beautiful Soup.
 
 
 ```python
@@ -60,11 +59,6 @@ def scrape_all_movies(url):
     False
     """
 ```
-Learn more about [Requests](http://docs.python-requests.org/en/master/user/quickstart/#make-a-request)
-
-
-If you get an error importing the bs4 module, refer to Professor Simpkins' Homework 0 instructions for installing Beautiful Soup.
-
 
 #### Sub-task 1.5: The Key to Finding More Bacon
 
