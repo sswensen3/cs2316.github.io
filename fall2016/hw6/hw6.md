@@ -109,7 +109,7 @@ Just like before, for the API we'll be using the `Requests` module (see Task 1 i
 
 Now, let's write up a function to return the name of the actor using the API given we know the actor's ID.
 
-```python
+```Python
 def lookup_actor_name_by_id(actor_id):
     """Returns an actor's name by taking in the actor's actor_id using the 
     themoviedb.org's API and the requests module and the json module.
@@ -137,7 +137,7 @@ Second, let's also get the cast list for all the actors in a given movie using i
 
 Hint: The `PEOPLE` section of the API documentation is the right place to start looking for the right API call for the first function. But the API call needed for the second function is in a different section.
 
-```python
+```Python
 def req_movies_for_actor(actor_id):
    """Looks up all the movies in which an actor with actor_id has been casted. 
     Returns the movies as a nested dictionary with the movie_id as the key, and 
@@ -172,7 +172,7 @@ def req_movies_for_actor(actor_id):
     """
 ```
 
-```python
+```Python
 def req_actors_for_movie(movie_id):
     """Looks up all the cast members in the movie with movie_id. Returns the 
     cast as a nested dictionary with the cacst_id as the key, and the name of 
@@ -222,7 +222,7 @@ You might not even know it unless you check the response! That means you might n
 
 To combat the API admins and avoid getting a fake response, we'll need to put a delay on the requests so that the request timer can reset after 10 seconds. To make Python delay its next command for 60 sec, you could use this code:
 
-```python
+```Python
 import time
 time.sleep(60)
 ```
@@ -231,7 +231,7 @@ However, waiting for 60 seconds between requests takes a really a long time. Fig
 
 Now that that's out of the way, write a function that looks up all of the movies of a given actor, and then finds their co-stars for all those movies together. Oh yeah, don't include the starting actor with result all of their co-stars. It's not like they're staring in a movie with themselves.
 
-```python
+```Python
 def one_deg_from_actor(from_actor_id):
     """Looks up all the co-stars for an actor with from_actor_id. Returns a 
     tuple with a nested dictionary of all the movies by id with their names and 
@@ -284,7 +284,7 @@ In this one particular case, it's useful to write `API_KEY = <your api key>` as 
 
 Also, we've put a timer around the `if __name__ == "__main__"` statement so that you can see how much time your code took to execute.
 
-```python 
+```Python 
 # your name
 # your GTID#
 
