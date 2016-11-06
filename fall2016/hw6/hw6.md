@@ -23,7 +23,9 @@ This homework attempts to re-create that game, except it will only go to one deg
 
 The first stop on this magical journey is the [Internet Movie Database](http://www.imdb.com/). A quick websearch with turn up the webpage entry for [Kevin Bacon](http://www.imdb.com/name/nm0000102/).
 
-We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs. To do so, you should use the `Requests` module to obtain a webpage's code in HTML. Then, use the `Beautiful Soup` module to parse and extract the necessary data.
+We'll need to write a Python function to scrape out all of Kevin Bacon's movies names and their URLs. To do so, you should use the `Requests` module to obtain a webpage's code in HTML. Then, use the `Beautiful Soup` module to parse and extract the necessary data and return a dictionary of movies and URLs.
+
+In this function you can return all types of filmography the given actor acted in. This can include TV shows, shorts, TV movies, and documentaries. It should not return filmography in which the person is credited only with a role other than actor (director, writer, etc).
 
 To use the `Requests` module, check out this documentation:   
 [http://docs.python-requests.org/en/master/user/quickstart/#make-a-request](http://docs.python-requests.org/en/master/user/quickstart/#make-a-request) 
@@ -37,8 +39,10 @@ def scrape_all_movies(url):
     """Use the requests and beautifulsoup modules to extract the movie names and urls from
     an actor's themoviedb.org webpage. Return a dictionary of all of the 
     extracted movies. The keys will be the movie titles, and the values 
-    will be the corresponding urls (in string form) to that movie. Be 
-    sure to only include movies- not TV shows or shorts. 
+    will be the corresponding urls (in string form) to that movie. The dictionary 
+    will include all types of filmography the given actor acted in. This can include 
+    TV shows, shorts, TV movies, and documentaries. It should not return filmography 
+    in which the person is credited only with a role other than actor (director, writer, etc).
     
     Parameters:
     url: str -- the url for the imdb page of your chosen actor
