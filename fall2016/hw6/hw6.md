@@ -32,7 +32,7 @@ You'll only need to read the first three sections (starting with "Make a Request
 Learn more about [Beautiful Soup here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). If you get an error importing the `Beautiful Soup` module, refer to the instructions on the class web site's [Resources](http://cs2316.gatech.edu/resources.html) page.
 
 
-```python
+```Python
 def scrape_all_movies(url):
     """Use the requests and beautifulsoup modules to extract the movie names and urls from
     an actor's themoviedb.org webpage. Return a dictionary of all of the 
