@@ -37,7 +37,7 @@ Learn more about [Beautiful Soup here](https://www.crummy.com/software/Beautiful
 ```Python
 def scrape_all_movies(url):
     """Use the requests and beautifulsoup modules to extract the movie names and urls from
-    an actor's themoviedb.org webpage. Return a dictionary of all of the 
+    an actor's IMDb webpage. Return a dictionary of all of the 
     extracted movies. The keys will be the movie titles, and the values 
     will be the corresponding urls (in string form) to that movie. The dictionary 
     will include all types of filmography the given actor acted in. This can include 
