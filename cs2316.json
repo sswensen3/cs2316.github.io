@@ -155,7 +155,10 @@
     },
     "web-mining": {
         "topic": "[Web Mining](slides/web-mining.html)",
-        "materials": ["[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)", "[Requests](http://docs.python-requests.org/en/master/)", "[wx.py](code/web/wx.py)"],
+        "materials": ["[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)",
+                      "[Requests](http://docs.python-requests.org/en/master/)",
+                      "[wx.py](code/web/wx.py)",
+                      "[movie.py](code/web/movie.py)"],
         "order": [31]
     },
     "python-guis": {
