@@ -246,7 +246,8 @@ def one_deg_from_actor(from_actor_id):
     undesirable response from the API.
 
     Parameters:
-    from_actor_id: int -- the themoviedb.org ID number of a movie
+    from_actor_id: int -- the themoviedb.org ID number of the actor to find one
+      degree from
 
     Return:
     (movies, costars): tuple --
