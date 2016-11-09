@@ -188,7 +188,7 @@ def req_actors_for_movie(movie_id):
 
     Return:
     member_dict = dict --
-        where cast_dict = {
+        where member_dict = {
             member_id1: {
                 "name": member_name1,
                 "parent": movie_id
