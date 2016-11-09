@@ -155,7 +155,7 @@ def req_movies_for_actor(actor_id):
         where movie_dict ={
             movie_id1: {
               "name": movie_name1,
-              "parent": actor_id1
+              "parent": actor_id
             },
             movie_id2: {...},
             ...
@@ -179,34 +179,35 @@ def req_movies_for_actor(actor_id):
 ```Python
 def req_actors_for_movie(movie_id):
     """Looks up all the cast members in the movie with movie_id. Returns the 
-    cast as a nested dictionary with the cacst_id as the key, and the name of 
-    the cast member and the movie's ID as values in the nested dictionary.
+    cast as a nested dictionary with the cast member's ID as the key, and the 
+    name of the cast member and the movie's ID as values in the nested 
+    dictionary.
     
     Parameters:
     movie_id: int -- the themoviedb.org ID number of a movie
 
     Return:
-    cast_dict = dict --
+    member_dict = dict --
         where cast_dict = {
-            cast_id1: {
-                "name": cast_name1,
-                "parent": movie_id1
+            member_id1: {
+                "name": member_name1,
+                "parent": movie_id
             },
-            cast_id2: {...},
+            member_id2: {...},
             ...
             }
-        and cast_id: int -- the themoviedb.org ID number of an actor
-        and cast_name: str -- the name of the cast member for the given ID
+        and member_id: int -- the themoviedb.org ID number of an actor
+        and member_name: str -- the name of the cast member for the given ID
 
     Usage Examples:
     >>> cast_members = req_actors_for_movie(9362)
-    >>> 'Kevin Bacon' in [cast["name"] for cast in cast_members.values()]
+    >>> 'Kevin Bacon' in [member["name"] for member in cast_members.values()]
     True
-    >>> 'Nicolas Cage' in [cast["name"] for cast in cast_members.values()]
+    >>> 'Nicolas Cage' in [member["name"] for member in cast_members.values()]
     False
-    >>> 9362 in [cast["parent"] for cast in cast_members.values()]
+    >>> 9362 in [member["parent"] for member in cast_members.values()]
     True
-    >>> 597 in [cast["parent"] for cast in cast_members.values()]
+    >>> 597 in [member["parent"] for member in cast_members.values()]
     False
     """
 ```
