@@ -404,7 +404,7 @@ Took <however many> seconds.
 ```
 
 ```
-$ python hw6.py 4724 :@#*&$!.csv
+$ python hw6.py 4724 /?@#.csv
 If testing for Kevin Bacon, this should take less than 60 seconds.
 ERROR: Whoa, buddy! We can't write to files like that. Try again, and please try to keep it clean.
 Took <however many> seconds.
