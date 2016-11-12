@@ -67,7 +67,7 @@ Explain all Extra Credit in your README!
 ## Suggested Solution Outline
 The following is a suggested outline of a solution for this assignment. These methods are provided to you as a starting point. You are encouraged to write additional methods and/or substitute different methods for those seen below.
 
-```python
+```Python
 class GUI:
     def __init__(self, rootwin):
         """Create the Home Screen GUI. The Home Screen must have at least one 
@@ -79,14 +79,14 @@ class GUI:
         an empty string. The Home Screen GUI must also have a "Start"
         button that should be deactivated until the user chooses a game from
         the radio buttons. The Start button must hide the Home Screen
-        and open the Game Board Screen (i.e., command=GameBoard).
+        and open the Game Board Screen (i.e., command=game_board).
 
         Parameters:
         rootwin: Tk window passed in as the root window
         """
 ```
-```python
-    def GameBoard(self):
+```Python
+    def game_board(self):
         """Create the Game Board Screen GUI using a TopLevel of the root Home
         Screen GUI. The GUI must display each player's name and score at the top.
         The score is the number of games the player has won. There should also be
@@ -124,20 +124,20 @@ class GUI:
         for one possible way of checking if a player has won. You can call it in play().
         """
 
-    def checkwin(self,curRow,curCol):
+    def check_win(self, cur_row, cur_col):
         """Checks each direction to determine if the current player has just won. The
         directions to check are down, left, right, diagonal left and down, and diagonal
         right and down.
 
         Parameters:
-        curRow: integer representing the row of the game piece that was just played
-        curCol: integer representing the column of the game piece that was just played
+        cur_row: integer representing the row of the game piece that was just played
+        cur_col: integer representing the column of the game piece that was just played
 
         Return:
         won: bool -- True if the currentPlayer has won, False otherwise
         """
 ```
-```python
+```Python
 def main(args):
     """Must create a Tk window to pass into an instance of the GUI class and run
     the mainloop() on it."""
