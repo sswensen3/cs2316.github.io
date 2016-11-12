@@ -144,11 +144,12 @@ def main(args):
 ```
 
 ## Example GUI Layouts
-Below are sample layouts for the Home Screen and Game Board Screen GUIs. Your GUIs do not need to look exactly like these, feel free to customize your GUI layouts as long as they are organized.
+Below are sample layouts for the Home Screen and Game Board Screen GUIs. The first Game Board shows an empty board, and the second one shows the Game Board after both players have made several moves. Your GUIs do not need to look exactly like these, feel free to customize your GUI layouts as long as they are organized.
 
 ![Home Screen](http://cs2316.gatech.edu/fall2016/hw7/start_screen.png "Start Screen")
 
 ![Game Board](http://cs2316.gatech.edu/fall2016/hw7/game_board.png "Game Board")
+
 ![Game Board](http://cs2316.gatech.edu/fall2016/hw7/game_board2.png "Game Board")
 
 
