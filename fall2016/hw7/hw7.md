@@ -144,11 +144,97 @@ def main(args):
 ```
 
 ## Example GUI Layouts
-Below are sample layouts for the Home Screen and Game Board Screen GUIs. Your GUIs do not need to look exactly like these, feel free to customize your GUI layouts as long as they are organized.
+Below are sample layouts for the Home Screen and Game Board Screen GUIs. The first Game Board shows an empty board, and the second one shows the Game Board after both players have made several moves. Your GUIs do not need to look exactly like these, feel free to customize your GUI layouts as long as they are organized.
 
 ![Home Screen](http://cs2316.gatech.edu/fall2016/hw7/start_screen.png "Start Screen")
 
 ![Game Board](http://cs2316.gatech.edu/fall2016/hw7/game_board.png "Game Board")
+
+![Game Board](http://cs2316.gatech.edu/fall2016/hw7/game_board2.png "Game Board")
+
+
+## Grading Rubric
+**Home Screen GUI [15]**
+- Radio Button (5)
+	* (2) radio button present 
+	* (3) radio button is linked to a variable that identifies the game to play (3)
+- Entries (5)
+	* (1) labels indicate what players should type in where
+	* (1) entries present
+	* (2) text from entries correspond to names of players in the game
+	* (1) player's name defaults to generic player title if entry left blank
+- Start Button (5)
+	* (2) deactivated until game is selected
+	* (3) hides the Home Screen and displays the GameBoard Screen when clicked
+	
+**(-5) if GUI has all elements but in a confusing or disorganized layout**
+
+
+
+**Connect 4 GUI [85]**
+- GUI elements (15)
+	* Initial Labels (5)
+		- (3) players names and scores are displayed
+		- (2) current player's turn is indicated
+	* Grid (5)
+		- (3) labels gridded correctly
+		- (1) labels have borders
+		- (1) grid is 6x6
+	* Quit Button (5)
+		- (1) Button present
+		- (2) When clicked, button asks user if they would like to quit with messagebox
+		- (2) Quits if user clicks Yes, continues the game otherwise
+- Game Play (70)
+	* Column Selection (15)
+		- (5) follows README description
+		- (10) column selection works
+	* Player's turn label is updated to reflect current player's turn (5)
+	* Game pieces are distinguishable (2)
+	* Pieces are played in the correct location (10)
+		- (3) column is correct
+		- (7) row is correct
+	* Winner Checking (30)
+		- each direction is checked correctly
+			* (5) down 
+			* (5) left
+			* (5) right
+			* (5) diagonal down and left
+			* (5) diagonal down and right
+		- (3) Winner is determined as soon as they win
+		- (2) Messagebox tells user when someone wins
+	* Game Board After Win (5)
+		- (2) Game Board reset after winner determined and user chooses to play again
+		- (3) Game Board reflects players scores after winner is determined
+	* Error Checking (8)
+		- (3) Error messagebox works if column is full or if no column is selected
+		- (5) Full game board handled correctly (messagebox pops up and asks if user would like to play again and neither player gets point)
+	* Game successfully closes and returns to Home Screen when user chooses not to play again (5)
+	* main() correctly instantiates object of the GUI class using a Tk() window (5)
+
+**(-5) if GUI has all elements but in a confusing or disorganized manner**
+
+**NOTE: TAs can take off points for errors not listed above (e.g., miscellaneous syntax errors, runtime errors)**
+
+
+
+**Extra Credit [100]:**
+- Tic Tac Toe (+20)
+	* (+10) Playing functionality works according to the rules of Tic Tac Toe (i.e., 3x3 grid, players take turns choosing a grid location to play, each player's game piece is a different symbol/image) and implementation is explained in README
+	* (+5) Winning Functionality (handles a win or tie)
+	* (+5) Keeps track of scores and turns in the same way Connect 4 does
+- Connect 5* (+20)
+	* must have same functionality as Connect 4, but grid must be 8x8 and the winner is determined after 5 pieces from the same player are played in a row
+- Connect 4 with 3 Players* (+20)
+	* must have same functionality as Connect 4, but must include a third player with a distinguishable game piece
+- Use of Images as Game Pieces (+10)
+- Creativity including extra formatting, functionality, colors, etc. (up to discretion of grading TA) (+10)
+- Scoreboard (+20)
+	* (+5) GUI looks like a scoreboard (see example image of a game scoreboard)
+		- ![Game Board](http://cs2316.gatech.edu/fall2016/hw7/scoreboard.gif "Scoreboard")
+	* (+10) winning players and number of wins (i.e., score) recorded
+	* (+5) players in order of highest score to lowest score
+
+**Only attempt Connect 5 and Connect 4 with 3 players if you have successfully completed Connect 4.**
 
 
 ## Submission Instructions
@@ -157,6 +243,7 @@ Turn in the following files:
 1. hw7.py
 2. README.txt
 3. any images you used
+
 
 ## Verify Your T-Square Submission!
 
