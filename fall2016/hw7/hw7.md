@@ -26,13 +26,13 @@ Most of the relevant Tkinter GUI widgets have been discussed in lecture slides (
 You must define a class called GUI and the `__init__` method must open a Home Screen GUI. Your code should have a main method that instantiates a GUI object and runs mainloop. How you choose to implement this is up to you and you must write a brief README file to explain what you did. If you use any images, the image files must be submitted with the assignment so the TAs can grade your homework.
 Your Connect 4 game should have the following properties:
 
-###Home Screen GUI:
+### Home Screen GUI:
 1. Must have at least one Radiobutton to choose the game to play. The user will choose a game and the game grid will reflect their choice. If you implement the extra credit games, add them as options (i.e., Radiobuttons), but even if you implement only Connect 4 you need to have at least one Radiobutton. 
 2. Must have an Entry input for each player's name. (If left blank, the game will continue with a generic player name such as "Player 1" or "P1").
 3. Must have a start Button that will close the Home Screen GUI window and open the Game Board GUI window. (Note: Start button must be deactivated until the user has selected a game to play.)
 4. The user should be able to easily identify the functionality of each of the widgets.
 
-###Game Board Screen:
+### Game Board Screen:
 1. Must display each player's name and score at the top. The score is the number of games the player has won.
 2. Must indicate which player's turn it is
 3. Must display a bordered grid of 6x6 squares (Hint: use Labels) for Connect 4
@@ -42,13 +42,13 @@ Your Connect 4 game should have the following properties:
 7. Must display an error messagebox if a column is full of game pieces or if no column is selected. This does not end the player's turn.
 8. Must have a "Quit" Button that first opens a messagebox to ask the user if they are sure they want to quit (hint: messagebox.askyesno). If a user chooses to quit, the Game Board Screen must close and the Home Screen must open. If the user does not choose to quit, the game should resume where it left off.
 
-###Winner Checking:
+### Winner Checking:
 9. The winner must be identified as soon as they win and a messagebox must pop up to ask if the players would like to play again (hint: messagebox.askyesno).
 10. If the user chooses to play again, the game board should be cleared and the players’ scores should be updated to reflect the results of the previous game(s). If the user does not choose to play again, the Game Board Screen must close and the Home Screen should open. 
 11. Each direction should be checked to determine if the current player has just won (i.e., down, left, right, diagonal down and left, diagonal down and right)
 12. If no player has won and the Game Board fills up with pieces, a messagebox should pop up to inform the user that the game was a draw and ask if they would like to play again (see #9). Neither player should earn a winning point in this case.
 
-###Extra Credit (Up to the Discretion of Grading TA):
+### Extra Credit (Up to the Discretion of Grading TA):
 - (+20 points) Tic Tac Toe
 	* for reference: https://www.exploratorium.edu/brain_explorer/tictactoe.html 
 - (+10 points) if images are used as game pieces in Connect 4 or Tic Tac Toe
@@ -60,7 +60,7 @@ Your Connect 4 game should have the following properties:
 
 Explain all Extra Credit in your README!
 
-###What is expected:
+### What is expected:
 1. You must implement Connect 4 CORRECTLY to get 100/100
 2. Connect 5, Connect 4 with 3 players, and Tic Tac Toe are all EXTRA CREDIT
 
@@ -84,7 +84,8 @@ class GUI:
         Parameters:
         rootwin: Tk window passed in as the root window
         """
-
+```
+```python
     def GameBoard(self):
         """Create the Game Board Screen GUI using a TopLevel of the root Home
         Screen GUI. The GUI must display each player's name and score at the top.
@@ -135,7 +136,8 @@ class GUI:
         Return:
         won: bool -- True if the currentPlayer has won, False otherwise
         """
-
+```
+```python
 def main(args):
     """Must create a Tk window to pass into an instance of the GUI class and run
     the mainloop() on it."""
