@@ -155,6 +155,7 @@ Below are sample layouts for the Home Screen and Game Board Screen GUIs. The fir
 
 ## Grading Rubric
 **Home Screen GUI [15]**
+
 - Radio Button (5)
 	* (2) radio button present 
 	* (3) radio button is linked to a variable that identifies the game to play (3)
@@ -172,6 +173,7 @@ Below are sample layouts for the Home Screen and Game Board Screen GUIs. The fir
 
 
 **Connect 4 GUI [85]**
+
 - GUI elements (15)
 	* Initial Labels (5)
 		- (3) players names and scores are displayed
@@ -218,6 +220,7 @@ Below are sample layouts for the Home Screen and Game Board Screen GUIs. The fir
 
 
 **Extra Credit [100]:**
+
 - Tic Tac Toe (+20)
 	* (+10) Playing functionality works according to the rules of Tic Tac Toe (i.e., 3x3 grid, players take turns choosing a grid location to play, each player's game piece is a different symbol/image) and implementation is explained in README
 	* (+5) Winning Functionality (handles a win or tie)
@@ -230,7 +233,9 @@ Below are sample layouts for the Home Screen and Game Board Screen GUIs. The fir
 - Creativity including extra formatting, functionality, colors, etc. (up to discretion of grading TA) (+10)
 - Scoreboard (+20)
 	* (+5) GUI looks like a scoreboard (see example image of a game scoreboard)
-		- ![Game Board](http://cs2316.gatech.edu/fall2016/hw7/scoreboard.gif "Scoreboard")
+	
+	![Game Board](http://cs2316.gatech.edu/fall2016/hw7/scoreboard.gif "Scoreboard")
+		
 	* (+10) winning players and number of wins (i.e., score) recorded
 	* (+5) players in order of highest score to lowest score
 
