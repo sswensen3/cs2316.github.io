@@ -1,6 +1,6 @@
 ---
-layout: exercises
-title: Python Bootcamp - Resources
+layout: exercise
+title: Hangman Exercise
 ---
 
 # Hangman Exercise
