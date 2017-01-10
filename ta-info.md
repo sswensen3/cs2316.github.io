@@ -6,27 +6,17 @@ title: CS 2316 - TAs
 # Meet the TAs
 
 ### TA Recitation Sections:
-- **A1**: Daniel Paré & Katie Lau
-- **A2/A6/GR**: Michael Tarbell & Samuel Yeager
-- **A3**: Megi Guliashvili & Brandon Best
-- **A4**: Elise Alfonso & Alex Ketchum
-- **A5**: Zeba Munshi & Smita Tejo
 
-## Head TA: Kate Unsworth
-![](images/kate.jpg "Kate")
-**Major**: Industrial Engineering
-**Year**: 5th (victory lap)
-**Hometown**: Lawrenceville, GA
-**Hobbies**: "Cooking and baking, laughing at salads."
-kunsworth@gatech.edu
+TBD
 
-## Elise Alfonso
-![](images/elise.jpg "Elise")
+## Head TA: Daniel Paré
+![](images/daniel.png "Daniel")
 **Major**: Industrial Engineering
 **Year**: 4th
-**Hometown**: Miami, FL
-**Hobbies**: "I enjoy dancing, cooking, baking, and watching TV."
-ealfonso7@gatech.edu
+**Hometown**: Dalton, GA
+**Fun Fact**: "I'm a Boston sports fan because half of my family is from there and the other half is from Canada."
+pare421@gmail.com
+
 
 ## Brandon Best
 ![](images/brandon.png "Brandon")
@@ -69,14 +59,6 @@ katiel@gatech.edu
 **Hobbies**: "Hobbies include making people laugh and eating donuts."
 zsmunshi@gatech.edu
 
-## Daniel Paré
-![](images/daniel.png "Daniel")
-**Major**: Industrial Engineering
-**Year**: 4th
-**Hometown**: Dalton, GA
-**Fun Fact**: "I'm a Boston sports fan because half of my family is from there and the other half is from Canada."
-pare421@gmail.com
-
 ## Michael Tarbell
 ![](images/michael.jpg "Michael")
 **Major**: Industrial Engineering
@@ -92,11 +74,3 @@ mtarbell3@gatech.edu
 **Hometown**: Plainsboro, NJ
 **Hobbies**: "I like making bad playlists on Spotify."
 smitatejo@gatech.edu
-
-## Sam Yeager
-![](images/sam.JPG "Sam")
-**Major**: MS Analytics
-**Year**: 2nd
-**Hometown**: Memphis, TN
-**Hobbies**: "Hiking."
-samyeager@gatech.edu
