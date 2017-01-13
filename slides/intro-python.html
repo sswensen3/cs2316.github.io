@@ -106,13 +106,13 @@ Python <span class="fl">3.5.2</span> :: Continuum Analytics, Inc.</code></pre></
 <h1>Executing Python Code</h1>
 <ul>
 <li><p>You can run a Python program, which has a .py extension by convention:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="kw">python</span> myprogram.py</code></pre></div></li>
+<pre class="sh"><code>$ python myprogram.py</code></pre></li>
 <li><p>Or you can invoke the interactive Python shell (sometimes called REPL for &quot;Read-Eval-Print Loop&quot;):</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="kw">python3</span>
-<span class="kw">Python</span> 3.5.2 <span class="kw">|Continuum</span> Analytics, Inc.<span class="kw">|</span> <span class="kw">(default</span>, Jul  2 2016, 17:53:06<span class="kw">)</span>
-[<span class="kw">GCC</span> 4.4.7 20120313 (Red Hat 4.4.7-1)] <span class="kw">on</span> linux
-<span class="kw">Type</span> <span class="st">&quot;help&quot;</span>, <span class="st">&quot;copyright&quot;</span>, <span class="st">&quot;credits&quot;</span> or <span class="st">&quot;license&quot;</span> for more information.
-<span class="kw">&gt;&gt;&gt;</span></code></pre></div>
+<pre class="sh"><code>$ python3
+Python 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;</code></pre>
 <p>To exit the Python shell type Ctrl-D on Unix, or Ctrl-Z on Windows.</p></li>
 </ul>
 </section>
@@ -123,7 +123,7 @@ Python <span class="fl">3.5.2</span> :: Continuum Analytics, Inc.</code></pre></
 <li><p>Open your text editor, paste the following code into a buffer (or tab or window or whatever your editor calls it), and save it as <code>hello.py</code>:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="bu">print</span>(<span class="st">&quot;Hello, world!&quot;</span>)</code></pre></div></li>
 <li><p>Then open your command shell (terminal on Unix or CMD.exe on Windows), go to the directory where you saved <code>hello.py</code> and enter:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="kw">python3</span> hello.py</code></pre></div>
+<pre class="sh"><code>$ python3 hello.py</code></pre>
 <p>Hello, world! will be printed to the console on the next line.</p></li>
 </ul>
 </section>
@@ -140,11 +140,11 @@ Python <span class="fl">3.5.2</span> :: Continuum Analytics, Inc.</code></pre></
 <section id="the-python-repl" class="slide level1">
 <h1>The Python REPL</h1>
 <p>Invoke the Python interactive shell by entering python3 at your command shell’s prompt without any arguments and type in the same line we put in hello.py:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="kw">python3</span>
-<span class="kw">Python</span> 3.5.2 <span class="kw">|Continuum</span> Analytics, Inc.<span class="kw">|</span> <span class="kw">(default</span>, Jul  2 2016, 17:53:06<span class="kw">)</span>
-[<span class="kw">GCC</span> 4.4.7 20120313 (Red Hat 4.4.7-1)] <span class="kw">on</span> linux
-<span class="kw">Type</span> <span class="st">&quot;help&quot;</span>, <span class="st">&quot;copyright&quot;</span>, <span class="st">&quot;credits&quot;</span> or <span class="st">&quot;license&quot;</span> for more information.
-<span class="kw">&gt;&gt;&gt;</span></code></pre></div>
+<pre class="sh"><code>$ python3
+Python 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06)
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;</code></pre>
 <p><code>&gt;&gt;&gt;</code> is the command prompt for the Python REPL.</p>
 <ul>
 <li>REPL stands for <strong>R</strong>ead <strong>E</strong>val <strong>P</strong>rint <strong>L</strong>oop -- <strong>R</strong>ead an expression or statement at the command prompt, <strong>E</strong>valuate the expression or execute the statement, <strong>P</strong>rint the result to the console, <strong>L</strong>oop back to <strong>R</strong>ead step</li>

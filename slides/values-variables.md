@@ -162,15 +162,15 @@ break      except     in         raise
 Python evaluates the expression on the right-hand side, then binds the expression's value to the variable on the left-hand side. Variables can be reassigned:
 
 ```Python
->>> a = "Ok"
+>>> a = 'Littering and ... '
 >>> a
-'Ok'
->>> a = a * 3
+'Littering and ... '
+>>> a = a * 2
 >>> a
-'OkOkOk'
->>> a = a * 3
->>> a
-'OkOkOkOkOkOkOkOkOk'
+'Littering and ... Littering and ... '
+>>> a = a * 2
+>>> a              # I'm freakin' out, man!
+'Littering and ... Littering and ... Littering and ... Littering and ... '
 ```
 
 Note that the value of `a` used in the expression on the right hand side is the value it had before the assignment statement.

@@ -178,15 +178,15 @@ Traceback (most recent call last):
 <section id="assignment-semantics" class="slide level1">
 <h1>Assignment Semantics</h1>
 <p>Python evaluates the expression on the right-hand side, then binds the expression's value to the variable on the left-hand side. Variables can be reassigned:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> <span class="st">&quot;Ok&quot;</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> <span class="st">&#39;Littering and ... &#39;</span>
 <span class="op">&gt;&gt;&gt;</span> a
-<span class="co">&#39;Ok&#39;</span>
-<span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> a <span class="op">*</span> <span class="dv">3</span>
+<span class="co">&#39;Littering and ... &#39;</span>
+<span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> a <span class="op">*</span> <span class="dv">2</span>
 <span class="op">&gt;&gt;&gt;</span> a
-<span class="co">&#39;OkOkOk&#39;</span>
-<span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> a <span class="op">*</span> <span class="dv">3</span>
-<span class="op">&gt;&gt;&gt;</span> a
-<span class="co">&#39;OkOkOkOkOkOkOkOkOk&#39;</span></code></pre></div>
+<span class="co">&#39;Littering and ... Littering and ... &#39;</span>
+<span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> a <span class="op">*</span> <span class="dv">2</span>
+<span class="op">&gt;&gt;&gt;</span> a              <span class="co"># I&#39;m freakin&#39; out, man!</span>
+<span class="co">&#39;Littering and ... Littering and ... Littering and ... Littering and ... &#39;</span></code></pre></div>
 <p>Note that the value of <code>a</code> used in the expression on the right hand side is the value it had before the assignment statement.</p>
 <p>What's the type of <code>a</code>?</p>
 </section>
