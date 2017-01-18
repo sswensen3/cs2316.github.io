@@ -51,3 +51,39 @@ that will give you the basic skills you need for this class should you choose to
 - Online Python documentation: [https://docs.python.org/3/](https://docs.python.org/3/)
 - [Python Style Guide](http://legacy.python.org/dev/peps/pep-0008/)
 - Jay Summet's previous [CS 2316 class web sites](http://www.cc.gatech.edu/~summetj/teaching.html#cs2316)
+
+## Enrolled in Modern Physics 2?
+
+If you're enrolled in Modern Physics 2 and need to run VPython for Physics, then you'll need to manage a Python 2 installation for Physics and Python3 for CS 2316. You can manage two Python version using [conda environments](http://conda.pydata.org/docs/using/envs.html). To set it up, do this at the command line:
+
+```sh
+conda create -n py27 python=2.7
+conda install psutil
+source activate py27
+conda install -c mwcraig vpython=6.11.0
+``
+
+The first two lines create a conda environment for Python 2.7, the third line activates it, and the fourth line installs vpython into your Python 2.7 environment (named py27).
+
+With this setup, any time you want to run vpython you have to do
+
+```sh
+source activate p27
+```
+
+And when you're done you can go back to the root 3.5 environment for CS 2316 with
+
+```sh
+source deactivate
+```
+
+### Non-Conda Solution
+
+Some students have reported success installing the Physics VPython software after installing Python 2 from [python.org](https://www.python.org/). With this setup you would use `python` for Physics stuff and `python3` for CS 2316 stuff. At the command line you should get something like this:
+
+```sh
+$ python --version
+Python 2.7.3
+$ python3 --version
+Python 3.5.2 :: Continuum Analytics, Inc.
+```
