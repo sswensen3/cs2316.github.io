@@ -77,7 +77,7 @@ NameError: name 'math' is not defined
 
 # Importing Names from a Module
 
-You can import only certain names from a module:
+You can choose to import only certain names from a module:
 
 ```Python
 >>> from math import sqrt
@@ -102,7 +102,7 @@ Or all names from a module:
 ```
 
 Notice that with this syntax you don't have to use a fully-qualified
-name, e.g., module.name
+name, e.g., `module.name`
 
 # Module Search Path
 
@@ -121,7 +121,7 @@ Just as an operating system command shell searches for executable programs by se
  '/home/chris/miniconda3/lib/python3.5/site-packages/setuptools-23.0.0-py3.5.egg']
 ```
 
-Notice that the current directory, represented by the ” at the beginning of the search path.
+Notice that the current directory, represented by the `''` at the beginning of the search path.
 
 Also, note use of `pprint`.
 
@@ -240,7 +240,6 @@ else:
 ```Python
 $ ./arguments.py Pickles
 Pickles? Well I disagree!
-[chris@lawn-128-61-62-82 ~/work/vcs/github/data-python/code]
 $ ./arguments.py
 You've given me nothing to work with.
 ```

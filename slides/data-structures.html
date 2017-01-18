@@ -155,8 +155,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>The + operator concatenates two lists (note 'Butters' in list):</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys <span class="op">+</span> [<span class="st">&#39;Butters&#39;</span>]
-[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>, <span class="st">&#39;Butters&#39;</span>]
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> girls <span class="op">=</span> [<span class="st">&#39;Wendy&#39;</span>, <span class="st">&#39;Annie&#39;</span>, <span class="st">&#39;Bebe&#39;</span>, <span class="st">&#39;Heidi&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys <span class="op">+</span> girls
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>, <span class="st">&#39;Wendy&#39;</span>, <span class="st">&#39;Annie&#39;</span>, <span class="st">&#39;Bebe&#39;</span>, <span class="st">&#39;Heidi&#39;</span>]
 The <span class="op">*</span> operator repeats a <span class="bu">list</span> to produce a new <span class="bu">list</span>:
 <span class="op">&gt;&gt;&gt;</span> [<span class="st">&#39;Ni&#39;</span>] <span class="op">*</span> <span class="dv">5</span>
 [<span class="st">&#39;Ni&#39;</span>, <span class="st">&#39;Ni&#39;</span>, <span class="st">&#39;Ni&#39;</span>, <span class="st">&#39;Ni&#39;</span>, <span class="st">&#39;Ni&#39;</span>]</code></pre></div>
@@ -242,7 +243,9 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
 <ul>
 <li><code>s.pop()</code> removes and returns the last element of the list</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys.pop()
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys
+[<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Jimmy&#39;</span>]
+<span class="op">&gt;&gt;&gt;</span> boys.pop()
 <span class="co">&#39;Jimmy&#39;</span>
 <span class="op">&gt;&gt;&gt;</span> boys
 [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>]</code></pre></div>

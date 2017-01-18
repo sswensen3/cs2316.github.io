@@ -116,8 +116,9 @@ False
 - The + operator concatenates two lists (note 'Butters' in list):
 
 ```Python
->>> boys + ['Butters']
-['Stan', 'Kyle', 'Cartman', 'Kenny', 'Butters']
+>>> girls = ['Wendy', 'Annie', 'Bebe', 'Heidi']
+>>> boys + girls
+['Stan', 'Kyle', 'Cartman', 'Kenny', 'Wendy', 'Annie', 'Bebe', 'Heidi']
 The * operator repeats a list to produce a new list:
 >>> ['Ni'] * 5
 ['Ni', 'Ni', 'Ni', 'Ni', 'Ni']
@@ -224,6 +225,8 @@ ValueError: list.remove(x): x not in list
 - `s.pop()` removes and returns the last element of the list
 
 ```Python
+>>> boys
+['Stan', 'Kyle', 'Cartman', 'Butters', 'Tweak', 'Jimmy']
 >>> boys.pop()
 'Jimmy'
 >>> boys

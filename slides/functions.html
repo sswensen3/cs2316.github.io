@@ -242,55 +242,6 @@ man
 <span class="dv">120</span></code></pre></div>
 <p><code>fac_iter()</code> is a (tail) recursive function. Recursion is important for computer scientists, but a practically-oriented Python-programming engineer will mostly use iteration, higher-order functions and loops, which are more <a href="http://neopythonic.blogspot.com/2009/04/tail-recursion-elimination.html">Pythonic</a>. Any recursive computation can be formulated as an imperative computation.</p>
 </section>
-<section id="higher-order-functions" class="slide level1">
-<h1>Higher-Order Functions</h1>
-<p>A higher order function is a function that takes another function as a parameter or returns a function as a value. We've already used one:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">help</span>(<span class="bu">sorted</span>)
-...
-<span class="bu">sorted</span>(iterable, key<span class="op">=</span><span class="va">None</span>, reverse<span class="op">=</span><span class="va">False</span>)
-    Return a new <span class="bu">list</span> containing <span class="bu">all</span> items <span class="im">from</span> the iterable <span class="op">in</span> ascending order.
-
-    A custom key function can be supplied to customise the sort order, <span class="op">and</span> the
-    reverse flag can be <span class="bu">set</span> to request the result <span class="op">in</span> descending order.</code></pre></div>
-<p>The second parameter, <code>key</code>, is a function. In general, a <em>sort key</em> is the part of an object on which comparisons are made in a sorting algorithm.</p>
-</section>
-<section id="sorting-without-a-key" class="slide level1">
-<h1>Sorting without a <code>key</code></h1>
-<p>Say we have a list of tuples, <em>(name, gpa, major)</em>:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> pprint <span class="im">as</span> pp
-<span class="op">&gt;&gt;&gt;</span> studs <span class="op">=</span> [(<span class="st">&quot;Stan&quot;</span>, <span class="fl">2.5</span>, <span class="st">&quot;ISyE&quot;</span>), (<span class="st">&quot;Kyle&quot;</span>, <span class="fl">2.2</span>, <span class="st">&quot;CS&quot;</span>),
-...          (<span class="st">&quot;Cartman&quot;</span>, <span class="fl">2.4</span>, <span class="st">&quot;CmpE&quot;</span>), (<span class="st">&quot;Kenny&quot;</span>, <span class="fl">4.0</span>, <span class="st">&quot;ME&quot;</span>)]</code></pre></div>
-<p>The default sort order is simply elementwise by the default order for each type in the tuple:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> pp.pprint(<span class="bu">sorted</span>(studs))
-[(<span class="st">&#39;Cartman&#39;</span>, <span class="fl">2.4</span>, <span class="st">&#39;CmpE&#39;</span>),
- (<span class="st">&#39;Kenny&#39;</span>, <span class="fl">4.0</span>, <span class="st">&#39;ME&#39;</span>),
- (<span class="st">&#39;Kyle&#39;</span>, <span class="fl">2.2</span>, <span class="st">&#39;CS&#39;</span>),
- (<span class="st">&#39;Stan&#39;</span>, <span class="fl">2.5</span>, <span class="st">&#39;ISyE&#39;</span>)]</code></pre></div>
-<p>Answer for yourself: what if two students had the same name?</p>
-</section>
-<section id="sorting-with-a-key" class="slide level1">
-<h1>Sorting with a <code>key</code></h1>
-<p>If we want a different sort order, we can define a function that extracts the part of each tuple by which we want to sort.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> by_gpa(stud):
-...     <span class="cf">return</span> stud[<span class="dv">1</span>]
-...
-<span class="op">&gt;&gt;&gt;</span> pp.pprint(<span class="bu">sorted</span>(studs, key<span class="op">=</span>by_gpa))
-[(<span class="st">&#39;Kyle&#39;</span>, <span class="fl">2.2</span>, <span class="st">&#39;CS&#39;</span>),
- (<span class="st">&#39;Cartman&#39;</span>, <span class="fl">2.4</span>, <span class="st">&#39;CmpE&#39;</span>),
- (<span class="st">&#39;Stan&#39;</span>, <span class="fl">2.5</span>, <span class="st">&#39;ISyE&#39;</span>),
- (<span class="st">&#39;Kenny&#39;</span>, <span class="fl">4.0</span>, <span class="st">&#39;ME&#39;</span>)]</code></pre></div>
-</section>
-<section id="lambda-functions" class="slide level1">
-<h1>Lambda Functions</h1>
-<p>The <code>by_gpa</code> function is pretty simple. Instead of defining a named function, we can define it inline with an anonymous function, a.k.a., a <em>lambda function</em>:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> pp.pprint(<span class="bu">sorted</span>(studs, key<span class="op">=</span><span class="kw">lambda</span> t: t[<span class="dv">1</span>]))
-[(<span class="st">&#39;Kyle&#39;</span>, <span class="fl">2.2</span>, <span class="st">&#39;CS&#39;</span>),
- (<span class="st">&#39;Cartman&#39;</span>, <span class="fl">2.4</span>, <span class="st">&#39;CmpE&#39;</span>),
- (<span class="st">&#39;Stan&#39;</span>, <span class="fl">2.5</span>, <span class="st">&#39;ISyE&#39;</span>),
- (<span class="st">&#39;Kenny&#39;</span>, <span class="fl">4.0</span>, <span class="st">&#39;ME&#39;</span>)]</code></pre></div>
-<p>The general form is <code>lambda &lt;parameter_list&gt;: &lt;expression&gt;</code></p>
-<p>The body of a lambda function is limited to a single expression, which is implicitly returned.</p>
-</section>
     </div>
   </div>
 

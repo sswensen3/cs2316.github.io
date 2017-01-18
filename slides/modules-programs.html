@@ -126,7 +126,7 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
 </section>
 <section id="importing-names-from-a-module" class="slide level1">
 <h1>Importing Names from a Module</h1>
-<p>You can import only certain names from a module:</p>
+<p>You can choose to import only certain names from a module:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> math <span class="im">import</span> sqrt
 <span class="op">&gt;&gt;&gt;</span> sqrt(<span class="dv">64</span>)
 <span class="fl">8.0</span>
@@ -142,7 +142,7 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
 <span class="fl">0.0</span>
 <span class="op">&gt;&gt;&gt;</span> sin(.<span class="dv">5</span> <span class="op">*</span> pi)
 <span class="fl">1.0</span></code></pre></div>
-<p>Notice that with this syntax you don't have to use a fully-qualified name, e.g., module.name</p>
+<p>Notice that with this syntax you don't have to use a fully-qualified name, e.g., <code>module.name</code></p>
 </section>
 <section id="module-search-path" class="slide level1">
 <h1>Module Search Path</h1>
@@ -157,7 +157,7 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
  <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/lib-dynload&#39;</span>,
  <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/site-packages&#39;</span>,
  <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/site-packages/setuptools-23.0.0-py3.5.egg&#39;</span>]</code></pre></div>
-<p>Notice that the current directory, represented by the ” at the beginning of the search path.</p>
+<p>Notice that the current directory, represented by the <code>''</code> at the beginning of the search path.</p>
 <p>Also, note use of <code>pprint</code>.</p>
 </section>
 <section id="packages" class="slide level1">
@@ -232,7 +232,6 @@ Give me a number <span class="op">and</span> I<span class="st">&#39;ll double it
     <span class="bu">print</span>(sys.argv[<span class="dv">1</span>] <span class="op">+</span><span class="st">&quot;? Well I disagree!&quot;</span>)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ .<span class="op">/</span>arguments.py Pickles
 Pickles? Well I disagree<span class="op">!</span>
-[chris@lawn<span class="dv">-128-61-62-82</span> <span class="op">~/</span>work<span class="op">/</span>vcs<span class="op">/</span>github<span class="op">/</span>data<span class="op">-</span>python<span class="op">/</span>code]
 $ .<span class="op">/</span>arguments.py
 You<span class="st">&#39;ve given me nothing to work with.</span></code></pre></div>
 </section>
