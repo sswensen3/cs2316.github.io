@@ -61,7 +61,7 @@ conda create -n py27 python=2.7
 conda install psutil
 source activate py27
 conda install -c mwcraig vpython=6.11.0
-``
+```
 
 The first two lines create a conda environment for Python 2.7, the third line activates it, and the fourth line installs vpython into your Python 2.7 environment (named py27).
 
