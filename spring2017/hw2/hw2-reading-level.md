@@ -29,9 +29,9 @@ Notes:
 - Unless otherwise stated, you can assume inputs will be valid in this assignment (i.e. error checking is not required).
 - In a Python module you must define a value (such as a function) before referencing it. So if you call function A from function B, the definition of function A must come before the definition of function B in the file.
 
-## Problem Descrtiption
+## Problem Description
 
-You're a curious linguist with computer hacking skills and you want to use your Python skills to analyze text files! The functions below will help you figure out your writing level, the most occuring words in your text, and the number of complex words you're using!
+You're a curious linguist with computer hacking skills and you want to use your Python skills to analyze text files! The functions below will help you figure out your writing level, the most occurring words in your text, and the number of complex words you're using!
 
 ## Solution Description
 
@@ -45,7 +45,7 @@ Because each function will have a docstring that includes usage examples formatt
 
 
 ```sh
-python -m doctest -v readling-level.py
+python -m doctest -v reading-level.py
 ```
 
 **IMPORTANT**: Do not modify the provided docstrings!
@@ -54,7 +54,7 @@ python -m doctest -v readling-level.py
 ```Python
 def normalize_text(text):
     """Return a list of all of the sentences in text with all whitespace
-    (including newlines) collaped to single spaces, punctuation
+    (including newlines) collapsed to single spaces, punctuation
     removed and all characters converted to lowercase
 
     Parameters:
@@ -72,7 +72,7 @@ def normalize_text(text):
 ```
 
 ```Python
-def word_count(sentence_list):
+def word_counts(sentence_list):
     """Return a dictionary mapping words in normalized text to their
     counts in the text.
 
@@ -84,7 +84,7 @@ def word_count(sentence_list):
 
     Usage Examples: (Note technique for testing dict equality.)
 
-    >>> word_count(["i dont even have any skills", "i have numchuk skills \
+    >>> word_counts(["i dont even have any skills", "i have numchuk skills \
     bow hunting skills computer hacking skills"]) == {'butcher': 1, 'baker': 1, 'candlestick': 1, 'the': 3, \
     'maker': 1}
     True
@@ -152,9 +152,9 @@ if __name__=="__main__":
    main(sys.argv)
 ```
 
-The user will supply one command line argument to **your** Python script. The first argument to the `python` interpreter, `sys.argv[0]`, is the name of your script, i.e.,  `args[0] = "readling-level.py"`, so there will be 2 arguments in sys.argv, the second being the file name of the text.  A list of strings (sys.argv), should be passed as-is to the `main()` function to minimize confusion.
+The user will supply one command line argument to **your** Python script. The first argument to the `python` interpreter, `sys.argv[0]`, is the name of your script, i.e.,  `args[0] = "reading-level.py"`, so there will be 2 arguments in sys.argv, the second being the file name of the text.  A list of strings (sys.argv), should be passed as-is to the `main()` function to minimize confusion.
 
-  * The first argument will be the file name of Python script (ie. `args[0] = "readling-level.py"`).
+  * The first argument will be the file name of Python script (ie. `args[0] = "reading-level.py"`).
   * The second argument must be the name of a text file to read and analyze.
     + If the user supplies a file name on the command line and the file does not exist, you may allow the program to exit due to the missing file and let Python report that the file was not found.
 
@@ -192,7 +192,7 @@ Here's a sample program run, using the file i-have-a-dream.txt and then twinkle.
 
 
 ```sh
-$ python readling-level.py i-have-a-dream.txt
+$ python reading-level.py i-have-a-dream.txt
 Writing level: 9.83
 total words: 522
 top words greater than 5 characters
@@ -232,7 +232,7 @@ top words greater than 7 characters
 
 
 ```sh
-$ python readling-level.py twinkle.txt
+$ python reading-level.py twinkle.txt
 Writing level: 7.34
 total words: 52
 top words greater than 5 characters
@@ -267,7 +267,7 @@ Rubric coming soon!
 
 ## Submission Instructions
 
-Attach your `readling-level.py` file to your T-Square HW2 assignment submission.
+Attach your `reading-level.py` file to your T-Square HW2 assignment submission.
 
 ## Verify Your T-Square Submission!
 
