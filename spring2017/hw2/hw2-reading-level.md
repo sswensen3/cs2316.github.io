@@ -85,8 +85,9 @@ def word_counts(sentence_list):
     Usage Examples: (Note technique for testing dict equality.)
 
     >>> word_counts(["i dont even have any skills", "i have numchuk skills \
-    bow hunting skills computer hacking skills"]) == {'butcher': 1, 'baker': 1, 'candlestick': 1, 'the': 3, \
-    'maker': 1}
+    bow hunting skills computer hacking skills"]) == {'have': 2, 'numchuk': 1,\
+    'hacking': 1, 'i': 2, 'even': 1, 'computer': 1, 'any': 1, 'bow': 1,\
+    'hunting': 1, 'dont': 1, 'skills': 4}
     True
     """
 ```
@@ -94,7 +95,7 @@ def word_counts(sentence_list):
 ```Python
 def writing_level(sentence_list):
     """ Calculates the writing level of the text according to this formula:
-    writingLevel = (.39 x ASL) + (11.8 x AWL / 3) - 25.59
+    writingLevel = (0.39 x ASL) + (11.8 x AWL / 3) - 15.59
     ASL = average sentence length (number of words divided by the number of
     sentences not including white space characters)
     AWL = average word length (number of characters divided by number
@@ -110,7 +111,7 @@ def writing_level(sentence_list):
 
     >>> writing_level(["i dont even have any skills", "i have numchuk skills \
     bow hunting skills computer hacking skills"])
-    8.60
+    6.46
     """
 ```
 
