@@ -136,7 +136,7 @@ def filter_words(word_counts, length):
     Usage Examples:
     >>> filter_words({'butcher': 1, 'baker': 2, 'candlestick': 1, 'the': 3, \
     'maker': 1}, 5)
-    [('baker', 2), ('butcher', 1), ('candlestick', 1), (maker', 1)]
+    [('candlestick', 1), ('butcher', 1), ('baker', 2), ('maker', 1)]
     """
 ```
 
@@ -264,7 +264,46 @@ top words greater than 7 characters
 
 ## Grading
 
-Rubric coming soon!
+normalize text - 15 points
+    punctuation removed - 5 points
+    string converted to lower case - 5 points
+    newline characters removed - 3 points
+    each element in a list is a sentence - 2 points
+
+
+
+
+word count - 15 points
+    correct keys (words) - 5 points
+    correct count of words for each key - 5 points
+    returns a dictionary - 5 points
+
+
+
+writing level - 20 points
+    calculates the ASL correctly - 5 points
+    calculates the AWL correctly - 5 points
+    ignores whitespace characters - 2 points
+    uses the correct formula to get the writing level - 5 points
+    returns a float rounded to 2 decimal places - 3 points
+
+
+filter words - 25 points
+    correctly determines which words meet the length criteria - 5 points
+    generates a tuple of the word and its count - 5 points 
+    list of tuples sorted correctly - 10 points
+        * by word length - 5 points
+        * by count of the word - 5 points
+    returns an empty list of no words meet the criteria - 3 points
+    returns a list with the correct words - 2 points
+
+
+main - 25 points
+    correctly retrieves the file name specified in the command line - 5 points
+    exits if incorrect file name is provided - 5 points
+    opens the file correctly and reads it in as a string - 5 points
+    makes correct calls to the previously defined functions - 5 points
+    prints the outputs to the user in a readable format - 5 points 
 
 ## Submission Instructions
 
