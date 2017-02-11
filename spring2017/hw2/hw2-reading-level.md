@@ -66,8 +66,8 @@ def normalize_text(text):
     Usage Examples:
     >>> normalize_text("I don't even have any skills. I have: Numchuk skills, \
     bow hunting skills, computer hacking skills.")
-    ["i dont even have any skills", "i have numchuk skills \
-    bow hunting skills computer hacking skills"]
+    ['i dont even have any skills', 'i have numchuk skills \
+    bow hunting skills computer hacking skills']
     """
 ```
 
