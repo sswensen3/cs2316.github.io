@@ -66,8 +66,8 @@ def normalize_text(text):
     Usage Examples:
     >>> normalize_text("I don't even have any skills. I have: Numchuk skills, \
     bow hunting skills, computer hacking skills.")
-    ["i dont even have any skills", "i have numchuk skills bow hunting skills \
-    computer hacking skills"]
+    ["i dont even have any skills", "i have numchuk skills \
+    bow hunting skills computer hacking skills"]
     """
 ```
 
@@ -85,7 +85,7 @@ def word_counts(sentence_list):
     Usage Examples: (Note technique for testing dict equality.)
 
     >>> word_counts(["i dont even have any skills", "i have numchuk skills \
-    bow hunting skills computer hacking skills"]) == {'have': 2, 'numchuk': 1,\
+    bow hunting skills computer hacking skills"]) == {'have': 2, 'numchuk': 1, \
     'hacking': 1, 'i': 2, 'even': 1, 'computer': 1, 'any': 1, 'bow': 1,\
     'hunting': 1, 'dont': 1, 'skills': 4}
     True
@@ -136,7 +136,7 @@ def filter_words(word_counts, length):
     Usage Examples:
     >>> filter_words({'butcher': 1, 'baker': 2, 'candlestick': 1, 'the': 3, \
     'maker': 1}, 5)
-    [('baker',2),('butcher',1),('candlestick',1),(maker',1)]
+    [('baker', 2), ('butcher', 1), ('candlestick', 1), (maker', 1)]
     """
 ```
 
