@@ -4,7 +4,7 @@ Week 1
 2017-01-13;values-variables
 Week 2
 2017-01-16;MLK Day - No Class
-2017-01-18;values-variables;[HW0 Due 2017-01-19](spring2017/hw0/hw0.html)
+2017-01-18;strings;[HW0 Due 2017-01-19](spring2017/hw0/hw0.html)
 2017-01-20;data-structures;[HW1 Released 2017-01-20](spring2017/hw1/hw1-fit.html)
 Week 3
 2017-01-23;data-structures
@@ -25,29 +25,29 @@ Week 6
 Week 7
 2017-02-20;csv-files
 2017-02-22;csv-files
-2017-02-24;xml
+2017-02-24;csv-files
 Week 8
-2017-02-27;xml
-2017-03-01;relational-databases
-2017-03-03;sql
+2017-02-27;numpy
+2017-03-01;matplotlib
+2017-03-03;pandas
 Week 9
-2017-03-06;sql
+2017-03-06;pandas
 2017-03-08;review2
 2017-03-10;exam2
 Week 10
-2017-03-13;html
-2017-03-15;flask
-2017-03-17;regular-expressions
+2017-03-13;xml
+2017-03-15;xml
+2017-03-17;xml
 Week 11
 2017-03-20;Spring Break - No Class
 2017-03-22;Spring Break - No Class
 2017-03-24;Spring Break - No Class
 Week 12
-2017-03-27;web-mining
-2017-03-29;web-mining
-2017-03-31;web-services
+2017-03-27;relational-databases
+2017-03-29;sql
+2017-03-31;sql
 Week 13
-2017-04-03;web-services
+2017-04-03;python-guis
 2017-04-05;python-guis
 2017-04-07;python-guis
 Week 14
@@ -55,10 +55,10 @@ Week 14
 2017-04-12;review3
 2017-04-14;exam3
 Week 15
-2017-04-17;numpy
-2017-04-19;matplotlib
-2017-04-21;pandas
+2017-04-17;html
+2017-04-19;regular-expressions
+2017-04-21;web-mining
 Week 16
-2017-04-24;Special Topics
-2017-04-26;Special Topics
+2017-04-24;web-services
+2017-04-26;web-services
 2017-04-28;Final Exam: 11:30 - 14:20
