@@ -195,7 +195,7 @@ Here's a sample program run, using the file i-have-a-dream.txt and then twinkle.
 ```sh
 $ python reading-level.py i-have-a-dream.txt
 Writing level: 9.83
-total words: 522
+total words: 1622
 top words greater than 5 characters
 ('discrimination', 1)
 ('interposition', 1)
@@ -235,7 +235,7 @@ top words greater than 7 characters
 ```sh
 $ python reading-level.py twinkle.txt
 Writing level: 7.34
-total words: 52
+total words: 71
 top words greater than 5 characters
 ('glorious', 1)
 ('twinkle', 4)
