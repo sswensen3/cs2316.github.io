@@ -189,7 +189,7 @@ Once you read the contents of the file into a `str`, use the functions you creat
     - top 10 words over 7 letters
 
 
-Here's a sample program run, using the file i-have-a-dream.txt and then twinkle.txt
+Here's a sample program run, using the file [i-have-a-dream.txt](i-have-a-dream.txt) and then [twinkle.txt](twinkle.txt)
 
 
 ```sh
