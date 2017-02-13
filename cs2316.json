@@ -59,7 +59,7 @@
     },
     "review1": {
         "topic": "Review 1",
-        "materials": [""],
+        "materials": ["[cs2316-exam1-practice.pdf](cs2316-exam1-practice.pdf)"],
         "order": [16]
     },
     "exam1": {
@@ -104,7 +104,7 @@
     },
     "review2": {
         "topic": "Review 2",
-        "materials": [""],
+        "materials": ["[cs2316-exam2-practice.pdf](cs2316-exam2-practice.pdf)"],
         "order": [25]
     },
     "exam2": {
@@ -163,7 +163,7 @@
     },
     "review3": {
         "topic": "Review 3",
-        "materials": [""],
+        "materials": ["[cs2316-exam3-practice.pdf](cs2316-exam3-practice.pdf)"],
         "order": [37]
     },
     "exam3": {
