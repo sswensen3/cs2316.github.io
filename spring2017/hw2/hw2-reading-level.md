@@ -64,10 +64,8 @@ def normalize_text(text):
     punctuation, and all characters in lowercase
 
     Usage Examples:
-    >>> normalize_text("I don't even have any skills. I have: Numchuk skills, \
-    bow hunting skills, computer hacking skills.")
-    ['i dont even have any skills', 'i have numchuk skills \
-    bow hunting skills computer hacking skills']
+    >>> normalize_text("I don't even have any skills. I have: Numchuk skills, bow hunting skills, computer hacking skills.")
+    ['i dont even have any skills', 'i have numchuk skills bow hunting skills computer hacking skills']
     """
 ```
 
@@ -109,8 +107,7 @@ def writing_level(sentence_list):
 
     Usage Examples:
 
-    >>> writing_level(["i dont even have any skills", "i have numchuk skills \
-    bow hunting skills computer hacking skills"])
+    >>> writing_level(["i dont even have any skills", "i have numchuk skills bow hunting skills computer hacking skills"])
     6.46
     """
 ```
