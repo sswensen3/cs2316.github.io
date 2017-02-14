@@ -181,9 +181,9 @@ Once you read the contents of the file into a `str`, use the functions you creat
 - print the following in a readable format:
     - reading level
     - total words
-    - top 10 words over 5 letters
-    - top 10 words over 6 letters
-    - top 10 words over 7 letters
+    - top 10 words at least 5 letters
+    - top 10 words at least 6 letters
+    - top 10 words at least 7 letters
 
 
 Here's a sample program run, using the file [i-have-a-dream.txt](i-have-a-dream.txt) and then [twinkle.txt](twinkle.txt)
@@ -193,7 +193,7 @@ Here's a sample program run, using the file [i-have-a-dream.txt](i-have-a-dream.
 $ python reading-level.py i-have-a-dream.txt
 Writing level: 9.83
 total words: 1664
-top words greater than 5 characters
+top words at least 5 characters long
 ('discrimination', 1)
 ('interposition', 1)
 ('demonstration', 1)
@@ -204,7 +204,7 @@ top words greater than 5 characters
 ('insufficient', 2)
 ('proclamation', 1)
 ('difficulties', 1)
-top words greater than 6 characters
+top words at least 6 characters long
 ('discrimination', 1)
 ('interposition', 1)
 ('demonstration', 1)
@@ -215,7 +215,7 @@ top words greater than 6 characters
 ('insufficient', 2)
 ('proclamation', 1)
 ('difficulties', 1)
-top words greater than 7 characters
+top words at least 7 characters long
 ('discrimination', 1)
 ('interposition', 1)
 ('demonstration', 1)
@@ -233,7 +233,7 @@ top words greater than 7 characters
 $ python reading-level.py twinkle.txt
 Writing level: 7.34
 total words: 71
-top words greater than 5 characters
+top words at least 5 characters long
 ('glorious', 1)
 ('twinkle', 4)
 ('diamond', 1)
@@ -244,7 +244,7 @@ top words greater than 5 characters
 ('night', 2)
 ('light', 2)
 ('fills', 1)
-top words greater than 6 characters
+top words at least 6 characters long
 ('glorious', 1)
 ('twinkle', 4)
 ('diamond', 1)
@@ -252,7 +252,7 @@ top words greater than 6 characters
 ('little', 2)
 ('wonder', 1)
 ('golden', 1)
-top words greater than 7 characters
+top words at least 7 characters long
 ('glorious', 1)
 ('twinkle', 4)
 ('diamond', 1)
