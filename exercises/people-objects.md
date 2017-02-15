@@ -1,6 +1,6 @@
 ---
 layout: exercise
-title: Exercise: Treating People as Objects
+title: Treating People as Objects
 ---
 
 # Exercise: Treating People as Objects
@@ -22,8 +22,10 @@ The [`people.py`](people.py) has starter code that creates `Person` objects in a
   - an `__init__` method that takes:
     - a name,
     - a birthdate for matted in [ISO 8601](http://www.iso.org/iso/home/standards/iso8601.htm) format,
-    - a height in cm, and
-    - a weight in kilograms;
+    - a height in cm,
+    - a weight in kilograms,
+  - a `__repr__` method that returns the `name` field;
+
 
   - a `height_inches` method that returns the `Person` object's height in inches, and
   - a `weight_pounds` method that returns the `Person` object's weight in pounds.
