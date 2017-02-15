@@ -42,4 +42,4 @@ The [`people.py`](people.py) module has starter code that creates `Person` objec
 
   - Bonus: write a function, `dict_builder`, that takes a list of ojects and a  `key_val` function that takes a single parameter that is an element of the list, and returns a tuple that becomes a key-value mapping in a dict returned by `dict_builder`.
 
-- Write an expression that assigns to `peeps_by_age` a list of `Person` objects in `peeps` sorted in ascending order by age.
+- Write an expression that assigns to `peeps_by_age` a list of `Person` objects in `peeps` sorted in descending order by age.
