@@ -59,7 +59,8 @@
     },
     "review1": {
         "topic": "Review 1",
-        "materials": ["[cs2316-exam1-practice.pdf](cs2316-exam1-practice.pdf)"],
+        "materials": ["[cs2316-exam1-practice.pdf](cs2316-exam1-practice.pdf)",
+                     "[Treating People as Objects](exercises/people-objects.html)"],
         "order": [16]
     },
     "exam1": {
