@@ -191,7 +191,7 @@ Here's a sample program run, using the file [i-have-a-dream.txt](i-have-a-dream.
 
 ```sh
 $ python reading-level.py i-have-a-dream.txt
-Writing level: 9.83
+Writing level: 9.46
 total words: 1664
 top words at least 5 characters long
 ('discrimination', 1)
