@@ -21,23 +21,23 @@ Week 5
 Week 6
 2017-02-13;classes-objects
 2017-02-15;review1;[HW2 Due 2017-02-15](spring2017/hw2/hw2-reading-level.html)
-2017-02-17;exam1
+2017-02-17;exam1;[HW3 Released 2017-02-17]()
 Week 7
 2017-02-20;csv-files
 2017-02-22;csv-files
 2017-02-24;csv-files
 Week 8
 2017-02-27;numpy
-2017-03-01;matplotlib
-2017-03-03;pandas
+2017-03-01;matplotlib;[HW3 Due 2017-03-02]()
+2017-03-03;pandas;[HW4 Released 2017-03-03]()
 Week 9
 2017-03-06;pandas
 2017-03-08;review2
 2017-03-10;exam2
 Week 10
-2017-03-13;xml
-2017-03-15;xml
-2017-03-17;xml
+2017-03-13;xml;[HW5 Released 2017-03-14]()
+2017-03-15;html;[HW4 Due 2017-03-16]()
+2017-03-17;regular-expressions
 Week 11
 2017-03-20;Spring Break - No Class
 2017-03-22;Spring Break - No Class
@@ -47,8 +47,8 @@ Week 12
 2017-03-29;sql
 2017-03-31;sql
 Week 13
-2017-04-03;python-guis
-2017-04-05;python-guis
+2017-04-03;python-guis;[HW5 Due 2017-04-04]()
+2017-04-05;python-guis;[HW6 Released 2017-04-05]()
 2017-04-07;python-guis
 Week 14
 2017-04-10;python-guis
@@ -56,7 +56,7 @@ Week 14
 2017-04-14;exam3
 Week 15
 2017-04-17;html
-2017-04-19;regular-expressions
+2017-04-19;regular-expressions;[HW6 Due 2017-04-20]()
 2017-04-21;web-mining
 Week 16
 2017-04-24;web-services

@@ -1,0 +1,541 @@
+\documentclass[addpoints,9pt]{exam}
+\usepackage{verbatim, multicol, tabularx,}
+\usepackage{amsmath,amsthm, amssymb, latexsym, listings, qtree}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=1mm,
+  belowskip=0mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\ttfamily},
+  numbers=none,
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=true
+}
+
+
+\title{CS 2316 Exam 1 Practice}
+\date{}
+\setcounter{page}{0}
+\begin{document}
+
+\maketitle
+\thispagestyle{head}
+%% \firstpageheader{}
+%%               {\tiny Copyright \textcopyright\ 2014 All rights reserved. Duplication and/or usage for purposes of any kind without permission is strictly forbidden.}
+%%               {}
+
+
+\runningheader{}
+              {\tiny Copyright \textcopyright\ 2014 All rights reserved. Duplication and/or usage for purposes of any kind without permission is strictly forbidden.}
+              {}
+
+\footer{Page \thepage\ of \numpages}
+              {}
+              {Points available: \pointsonpage{\thepage} -
+               points lost: \makebox[.5in]{\hrulefill} =
+               points earned:  \makebox[.5in]{\hrulefill}.
+              Graded by: \makebox[.5in]{\hrulefill}}
+
+
+\ifprintanswers
+\begin{center}
+{\LARGE ANSWER KEY}
+\end{center}
+\else
+\vspace{0.1in}
+\hbox to \textwidth{Name (print clearly): \enspace\hrulefill}
+\vspace{0.3in}
+\hbox to \textwidth{Signature: \hrulefill}
+
+\vspace{0.3in}
+\hbox to \textwidth{GT account username (gtg, gth, msmith3, etc): \enspace\hrulefill}
+
+\fi
+
+\vfill
+
+\begin{itemize}
+\item Signing signifies you are aware of and in accordance with the {\bf Academic Honor Code of Georgia Tech}.
+\item Calculators and cell phones are NOT allowed.
+\item This is a Python programming test.  Where asked for Python statements or expressions you must print them exactly as they would be typed in a Python source file or interactive shell.
+\end{itemize}
+
+\vfill
+
+% Points Table
+%\begin{center}
+\addpoints
+%\gradetable[v][pages]
+%\end{center}
+
+% Points Table
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{|l|c|X|X|X|}
+        \hline
+Question & Points per Page & Points Lost & Points Earned & Graded By \\
+\hline
+Page 1 & \pointsonpage{1} & - & =  &\\
+\hline
+Page 2 & \pointsonpage{2} & - & =  &\\
+\hline
+Page 3 & \pointsonpage{3} & - & =  &\\
+\hline
+Page 4 & \pointsonpage{4} & - & =  &\\
+\hline
+Page 5 & \pointsonpage{5} & - & =  &\\
+\hline
+Page 6 & \pointsonpage{6} & - & =  &\\
+\hline
+Page 7 & \pointsonpage{7} & - & =  &\\
+\hline
+Page 8 & \pointsonpage{8} & - & =  &\\
+\hline
+TOTAL & \numpoints & - & =  & \\
+\hline
+\end{tabularx}
+\end{center}
+
+\newpage
+
+%\normalsize
+
+\pointsinmargin
+\bracketedpoints
+
+\marginpointname{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\question {\bf True or False}
+
+In each of the blanks below, write ``T'' if the statement beside the blank is true, ``F'' otherwise.\\
+
+\begin{parts}
+
+\ifprintanswers
+\part[1] \underline{ {\bf T} } Every Python value has a type such as {\tt float} or {\tt int}.\\
+\else
+\part[1] \makebox[.25in]{\hrulefill} Every Python value has a type such as {\tt float} or {\tt int}.\\
+\fi
+
+\ifprintanswers
+\part[1] \underline{ {\bf F} } Python variables are statically typed, meaning that once you assign a value to a variable you can only assign new values of the same type.  For example, after {\tt x = 3.14} you can only assign {\tt float} values to {\tt x}.\\
+\else
+\part[1] \makebox[.25in]{\hrulefill} Python variables are statically typed, meaning that once you assign a value to a variable you can only assign new values of the same type.  For example, after {\tt x = 3.14} you can only assign {\tt float} values to {\tt x}.\\
+\fi
+
+\ifprintanswers
+\part[1] \underline{ {\bf F} } The {\tt +} operator means the same for {\tt str} values as it does for {\tt int} values.\\
+\else
+\part[1] \makebox[.25in]{\hrulefill} The {\tt +} operator means the same for {\tt str} values as it does for {\tt int} values.\\
+\fi
+
+\ifprintanswers
+\part[1] \underline{ {\bf F} } {\tt try = try + 1 \# increment the number of tries} is a valid Python statement.\\
+\else
+\part[1] \makebox[.25in]{\hrulefill} {\tt try = try + 1 \# increment the number of tries} is a valid Python statement.\\
+\fi
+
+% \ifprintanswers
+% \part[1] \underline{ {\bf F} } \\
+% \else
+% \part[1] \makebox[.25in]{\hrulefill} \\
+% \fi
+
+% \ifprintanswers
+% \part[1] \underline{ {\bf F} } \\
+% \else
+% \part[1] \makebox[.25in]{\hrulefill} \\
+% \fi
+
+% \ifprintanswers
+% \part[1] \underline{ {\bf F} } \\
+% \else
+% \part[1] \makebox[.25in]{\hrulefill} \\
+% \fi
+
+% \ifprintanswers
+% \part[1] \underline{ {\bf F} } \\
+% \else
+% \part[1] \makebox[.25in]{\hrulefill} \\
+% \fi
+
+% \ifprintanswers
+% \part[1] \underline{ {\bf F} } \\
+% \else
+% \part[1] \makebox[.25in]{\hrulefill} \\
+% \fi
+
+% \ifprintanswers
+% \part[1] \underline{ {\bf F} } \\
+% \else
+% \part[1] \makebox[.25in]{\hrulefill} \\
+% \fi
+
+\end{parts}
+
+\newpage
+
+\question {\bf Expression Evaluation}
+
+\begin{parts}
+
+For each expression below, write the value and then the Python data type of the evaluated legal expression in the space provided.  Be exact.\\\\
+
+\ifprintanswers
+\hspace{-.5in} Expression: {\tt 7 / 2}
+\part[1] Calculated value: \underline{ 3.5 }\\
+\part[1] Type: \underline{ {\tt float}  }\\\\
+\else
+\hspace{-.5in} Expression: {\tt 7 / 2}
+\part[1] Calculated value: \makebox[1in]{\hrulefill}\\
+\part[1] Type: \makebox[1in]{\hrulefill}\\\\
+\fi
+
+\ifprintanswers
+\hspace{-.5in} Expression: {\tt 64 - 16 * 2}
+\part[1] Calculated value: \underline{ 32  }\\
+\part[1] Type: \underline{ {\tt int}  }\\\\
+\else
+\hspace{-.5in} Expression: {\tt 64 - 16 * 2}
+\part[1] Calculated value: \makebox[1in]{\hrulefill}\\
+\part[1] Type: \makebox[1in]{\hrulefill}\\\\
+\fi
+
+\ifprintanswers
+\hspace{-.5in} Expression: {\tt 'Ni' * 3}
+\part[1] Calculated value: \underline{ 'NiNiNi'  }\\
+\part[1] Type: \underline{ {\tt str}  }\\\\
+\else
+\hspace{-.5in} Expression: {\tt 'Ni' * 3}
+\part[1] Calculated value: \makebox[1in]{\hrulefill}\\
+\part[1] Type: \makebox[1in]{\hrulefill}\\\\
+\fi
+
+\ifprintanswers
+\hspace{-.5in} Expression: {\tt 1 // 2}
+\part[1] Calculated value: \underline{ 0  }\\
+\part[1] Type: \underline{ {\tt int}  }\\\\
+\else
+\hspace{-.5in} Expression: {\tt 1 // 2}
+\part[1] Calculated value: \makebox[1in]{\hrulefill}\\
+\part[1] Type: \makebox[1in]{\hrulefill}\\\\
+\fi
+
+\ifprintanswers
+\hspace{-.5in} Expression: {\tt True and (1 == 2)}
+\part[1] Calculated value: \underline{ {\tt False}  }\\
+\part[1] Type: \underline{ {\tt bool}  }\\
+\else
+\hspace{-.5in} Expression: {\tt True and (1 == 2)}
+\part[1] Calculated value: \makebox[1in]{\hrulefill}\\
+\part[1] Type: \makebox[1in]{\hrulefill}\\
+\fi
+
+\end{parts}
+
+
+\newpage
+
+
+\question  {\bf Multiple Choice} Circle the letter of the correct choice.
+
+\begin{parts}
+
+\part[2] Given the following code:
+
+\begin{lstlisting}[language=Python]
+capitals = {}
+capitals['Murica'] = 'Warshington'
+capitals['Germany'] = 'Bonn'
+capitals['France'] = 'Paris'
+capitals['Engalnd'] = 'London'
+capitals['Germany'] = 'Berlin'
+\end{lstlisting}
+
+What is {\tt capitals['Germany']}?
+
+\begin{choices}
+\correctchoice {\tt 'Berlin'}
+\choice {\tt 'Sweden'}
+\choice {\tt 'Paris'}
+\choice {\tt 'London'}
+\end{choices}
+
+\part[2] What is {\tt len(set(['A', 'b', 'b', 'a']))}
+
+\begin{choices}
+\choice 2
+\correctchoice 3
+\choice 4
+\choice 0
+\end{choices}
+
+\part[2] What is wrong with this code:
+
+\begin{lstlisting}[language=Python]
+n = 5
+while n > 0:
+    print(n)
+n -= 1
+\end{lstlisting}
+
+\begin{choices}
+\choice The variable {\tt n} is declared outside the scope of the {\tt while} loop.
+\correctchoice The {\tt while} loop never finishes.
+\choice The variable {\tt n} is the wrong type.
+\choice There is nothing wrong with this code.
+\end{choices}
+
+\part[2] What's the value of the expression {\tt ''.join('h a n d s'.split())}
+
+\begin{choices}
+\correctchoice {\tt 'hands'}
+\choice {\tt 'h a n d s'}
+\choice {\tt ['h', 'a', 'n', 'd', 's']}
+\choice {\tt None}
+\end{choices}
+
+
+\end{parts}
+
+\newpage
+
+\question {\bf Tracing}
+
+\begin{parts}
+
+Consider the following program:
+\begin{lstlisting}[language=Python]
+counter = 0;
+
+def incrementCounter():
+    global counter
+    counter += 1
+    return True
+
+if __name__ == '__main__':
+    a = True
+    b = False;
+    if b or incrementCounter():
+        print("Boo")
+    if (a or b) and incrementCounter():
+        print("ya!")
+    print(counter)
+\end{lstlisting}
+
+\part[5] What is printed when this program is run from the command line?
+
+\begin{solution}[2in]
+Boo\\
+ya!\\
+2
+\end{solution}
+
+Consider the following program:
+\begin{lstlisting}[language=Python]
+mystery = "mnerigpaba"
+solved = ""
+for i in range(len(mystery) // 2):
+    j = -i - 1
+    solved += mystery[i] + mystery[j]
+print(solved)
+\end{lstlisting}
+
+\part[5] What is printed when this program is run from the command line?
+
+\begin{solution}[2in]
+manbearpig
+\end{solution}
+
+
+\end{parts}
+
+\newpage
+
+\question {\bf Short Answer}
+\begin{parts}
+
+\part[2] What is the value of "abcdefg"[::-1]
+
+\begin{solution}[1in]
+\begin{verbatim}
+'gfedcba'
+\end{verbatim}
+\end{solution}
+
+\part[2] Write a list comprehension that returns a list of the first 5 squares where the first square is 1.
+
+\begin{solution}[1in]
+\begin{verbatim}
+[x * x for x in range(1, 6)]
+\end{verbatim}
+\end{solution}
+
+\part[2] Write an expression that computes the average of a list of numbers {\tt nums}.
+
+\begin{solution}[1in]
+\begin{verbatim}
+sum(nums) / len(nums)
+\end{verbatim}
+\end{solution}
+
+\part[2] Make the dictionary variable, {\tt e2f}, that contains mappings from English words to their French equivalents.  Use these words: dog is chien, cat is chat, and walrus is morse.
+
+\begin{solution}[1in]
+\begin{verbatim}
+e2f = {'dog': 'chien', 'cat': 'chat', 'walrus': 'morse'}
+\end{verbatim}
+\end{solution}
+
+\part[2] Write a dictionary comprehension that converts {\tt e2f} to a dictionary from French words to their english equivalents and assigns this new dictionary to a variable {\tt f2e}
+
+\begin{solution}[1in]
+\begin{verbatim}
+f2e = {f: e for e, f in e2f.items()}
+\end{verbatim}
+\end{solution}
+
+
+\end{parts}
+
+\newpage
+
+\question {\bf Complete the Method}
+
+\begin{parts}
+
+\part[5] Fill in the code for the following method that takes a list of numbers and returns the number of even numbers in list argument.  Your code should use a {\tt for} statement.
+
+\begin{verbatim}
+def evens(nums):
+\end{verbatim}
+\begin{solution}[3in]
+\begin{verbatim}
+    count = 0
+    for num in nums:
+        if num % 2 == 0:
+            count += 1
+    return count
+\end{verbatim}
+\end{solution}
+
+\part[5] Fill in the code for the following method that takes a list of numbers and a number and returns {\tt True} if the list contains the number, {\tt False} otherwise.  You will need a loop, and your loop must not execute more iterations than necessary, and you cannot use {\tt break} or {\tt continue} or the {\tt in} operator.
+
+\begin{verbatim}
+def contains(nums, n):
+    // Your code goes here
+\end{verbatim}
+\begin{solution}[3in]
+\begin{verbatim}
+    found = False
+    i = 0
+    while i < len(nums) and not found:
+        if nums[i] == n:
+            found = True
+        i += 1
+    return found
+\end{verbatim}
+\end{solution}
+
+
+\end{parts}
+
+
+\newpage
+
+\question {\bf Write the method.}  Assume valid input.
+
+\begin{parts}
+
+\part[10] Given a $m \times n$ matrix $\mathbf{A}$:
+
+   \[
+   \mathbf{A} = \left[\begin{array}{cccc}
+                  A_{11} & A_{12} & \cdots & A_{1n} \\
+                  A_{21} & A_{22} & \cdots & A_{2n} \\
+                  \vdots & \vdots  & \ddots & \vdots \\
+                  A_{m1} & A_{m2} & \cdots & A_{mn} \\
+                  \end{array}\right]
+   \]
+
+The transpose $\mathbf{A}^T$ is defined as: $\left[\mathbf{A}^T\right]_{ji} = \left[\mathbf{A}\right]_{ij}$.  Think ``the rows of a matrix are the columns of its transpose.''  One way to represent matrices in Python is as a list of lists, for example:
+\begin{verbatim}
+m = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+\end{verbatim}
+Write a method {\tt transpose} that takes a single parameter {\tt m} representing a 2-dimensional matrix as a list of lists and returns its transpose as a list of lists.  Hint: it's possible to do this in one line, but you may use {\tt for} statements instead.
+
+\ifprintanswers
+\begin{lstlisting}[language=Java]
+def transpose(m):
+    mt = [[0] * len(m) for column in m[0]]
+    for row in range(len(m)):
+        for column in range(len(m[row])):
+            mt[column][row] = m[row][column]
+    return mt
+
+def transpose2(m):
+    return [[row[i] for row in m] for i in range(len(m[0]))]
+
+def transpose3(m):
+    return [list(row) for row in zip(*m)]
+\end{lstlisting}
+\else
+\vspace{3in}
+\fi
+
+
+\end{parts}
+
+\newpage
+
+\begin{parts}
+
+\part[5] Write a class {\tt Person} with three instance variables: {\tt name}, {\tt age}, and {\tt email} and two methods:
+\begin{itemize}
+\item {\tt is\_senior()}, which returns {\tt True} if the {\tt Person} instance's {\tt age} is greater than 59, and
+\item {\tt user\_name()}, which returns the user name portion of the instance's {\tt email}, that is, the part before the {\tt @} symbol.
+\end{itemize}
+
+\ifprintanswers
+\begin{lstlisting}[language=Python]
+class Person():
+    def __init__(self, name, age, email):
+        self.name = name
+        self.age = age
+        self.email = email
+
+    def is_senior(self):
+        return self.age > 59
+
+    def user_name(self):
+        return self.email.split('@')[0]
+\end{lstlisting}
+\else
+\vspace{4in}
+\fi
+
+\part[5] Write function, {\tt oldest}, that takes a variable number of {\tt Person} (from previous question) parameters (that is, a variable number of single {\tt Person} objects) and returns the oldest {\tt Person} among the arguments.  Assume {\tt oldest} is always called with at least one argument.
+
+\ifprintanswers
+\begin{lstlisting}[language=Python]
+def oldest(*persons):
+    return sorted(persons, key=lambda p: p.age)[-1]
+\end{lstlisting}
+\else
+\vspace{2in}
+\fi
+
+\end{parts}
+
+\end{questions}
+
+\end{document}
