@@ -339,7 +339,7 @@ All Dog's were sold!
 Snake's are now half off!
 >>> Welcome to your pet store! What would you like to do? breed
 >>> What species would you like to breed? Bird
->>> What would you like to name this babe Bird? James
+>>> What would you like to name this baby Bird? James
 Baby James was added to your inventory!
 >>> Welcome to your pet store! What would you like to do? money
 Your Pet Store has $2100!
