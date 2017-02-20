@@ -32,6 +32,21 @@ Notes:
 
 ## Problem Description
 
-You have decided to open a Pet Store!  However you quickly realize that in order to have a well run pet store you are going to need some sort of inventory system to keep track of all the pets you have for sale and how much money the pet store has. You will create a Pet class that defines the properties of a Pet, then create a Pet Store class that will manage an inventory of Pet objects.  You will also need to be able 
+You have decided to open a Pet Store!  However you quickly realize that in order to have a well run pet store you are going to need some sort of inventory system to keep track of all the pets you have for sale and how much money the pet store has. You will create a Pet class that defines the properties of a Pet, then create a Pet Store class that will manage an inventory of Pet objects.  You will also need to be able to populate the Pet Store based on a csv file with information on pets.  
+
+## Solution Description
 
 In this homework you will be writing 2 classes, a method to read in data from a csv file, and a main method to call all of the methods that you write. 
+
+### `doctest`
+
+The specifications for each function is given as a [docstring](https://www.python.org/dev/peps/pep-0257/) -- which you should include in your code -- and the types of arguments and return values are given using type hints documented in [PEP 484 -- Type Hints](https://www.python.org/dev/peps/pep-0484/).
+
+Because each function will have a docstring that includes usage examples formatted as Python interactive sessions, you can use [doctest](https://docs.python.org/3/library/doctest.html) to test your code using this command line invocation:
+
+
+```sh
+python -m doctest -v reading-level.py
+```
+
+**IMPORTANT**: Do not modify the provided docstrings!
