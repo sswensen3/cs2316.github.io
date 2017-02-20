@@ -38,7 +38,7 @@ You have decided to open a Pet Store!  However you quickly realize that in order
 
 In this homework you will be writing 2 classes, a method to read in data from a csv file, and a main method to call all of the methods that you write. 
 
-### `doctest`
+### Doctest
 
 The specifications for each function is given as a [docstring](https://www.python.org/dev/peps/pep-0257/) -- which you should include in your code -- and the types of arguments and return values are given using type hints documented in [PEP 484 -- Type Hints](https://www.python.org/dev/peps/pep-0484/).
 
