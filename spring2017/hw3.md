@@ -317,4 +317,8 @@ os.path.exists("file_name.txt") # returns True if file_name.txt exists
 
 Once you have a valid file name, call populate, passing in this file name and the pet store you just instantiated as the parameters.  
 After the populate function is run the user should be able to call any of the functions of the pet store class, as well as be able to print out all the pets in the store and the amount of money the store has at any time. The commands that the user may enter are as follows:
-- asdf
+- sellC: calls sell_cheapest
+- sellA: calls sell_all
+- discount: calls discout
+- breed: calls breed
+
