@@ -289,7 +289,7 @@ def populate(self, starting_inventory, store):
          store: PetStore Object -- the pet store to add the inventory to
     """
 ```
-### `main`
+### `Main`
 
 Structure your main method as we have been taught:
 
@@ -317,15 +317,61 @@ os.path.exists("file_name.txt") # returns True if file_name.txt exists
 
 Once you have a valid file name, call populate, passing in this file name and the pet store you just instantiated as the parameters.  
 After the populate function is run the user should be able to call any of the functions of the pet store class, as well as be able to print out all the pets in the store and the amount of money the store has at any time. The commands that the user may enter are as follows:
-- sellC: calls sell_cheapest
-- sellA: calls sell_all
-- discount: calls discout
-- breed: calls breed
+- sellC: calls sell_cheapest, then prints a confirmation message
+- sellA: calls sell_all, then prints a confirmation message
+- discount: calls discout, then prints a confirmation message
+- breed: calls breed, then prints a confirmation message
 - inventory: prints out the pet store inventory grouped by species
 - money: prints out the stores money
 - quit: exits the program gracefully
 
-The first 4 of these commands take in a species as a parameter, so after the user calls one of those functions, the main method should prompt the user for which species they would like to perform the action on.  
+The first 4 of these commands take in a species as a parameter, so after the user calls one of those functions, the main method should prompt the user for which species they would like to perform the action on.  When breed is called, you should prompt the user for a name for the new baby.  
+
+```
+>>> Welcome to your pet store! What would you like to do? sellC
+>>> What species would you like to sell? Cat
+The cheapest Cat was sold!
+>>> Welcome to your pet store! What would you like to do? sellA
+>>> What species would you like to sell? Dog
+All Dog's were sold!
+>>> Welcome to your pet store! What would you like to do? discount
+>>> What species would you like to discount? Snake
+Snake's are now half off!
+>>> Welcome to your pet store! What would you like to do? breed
+>>> What species would you like to breed? Bird
+>>> What would you like to name this babe Bird? James
+Baby James was added to your inventory!
+>>> Welcome to your pet store! What would you like to do? money
+Your Pet Store has $2100!
+>>> Welcome to your pet store! What would you like to do? inventory
+Bird:
+Species: Bird, Name: Larry, Age: 56, Color: Red, Price: 400
+Species: Bird, Name: Emma, Age: 18, Color: Blue, Price: 400
+Species: Bird, Name: Leia, Age: 42, Color: Green, Price: 450
+-----------------------------------
+
+Cat:
+Species: Cat, Name: James, Age: 2, Color: Orange, Price: 200
+Species: Cat, Name: Kathy, Age: 4, Color: White, Price: 215
+Species: Cat, Name: Laura, Age: 3, Color: Black, Price: 600
+-----------------------------------
+
+Dog:
+Species: Dog, Name: Alex, Age: 4, Color: Gold, Price: 150
+Species: Dog, Name: Todd, Age: 8, Color: Brown, Price: 100
+Species: Dog, Name: Gaston, Age: 7, Color: White, Price: 125
+-----------------------------------
+
+Snake:
+Species: Snake, Name: Draco, Age: 11, Color: Gray, Price: 20
+Species: Snake, Name: Pansey, Age: 7, Color: Brown, Price: 75
+Species: Snake, Name: Vincent , Age: 9, Color: Silver, Price: 900
+Species: Snake, Name: Albert, Age: 11, Color: Tan, Price: 78
+-----------------------------------
+>>> Welcome to your pet store! What would you like to do? quit
+Bye!
+```
+
 
 ## Submission Instructions
 
