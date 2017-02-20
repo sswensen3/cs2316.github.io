@@ -1,6 +1,6 @@
 ---
 layout: homework
-title: Homework 3- Pet Store
+title: Homework 3 - Pet Store
 ---
 
 # Homework 3 - Pet Store
@@ -31,3 +31,7 @@ Notes:
 - In a Python module you must define a value (such as a function) before referencing it. So if you call function A from function B, the definition of function A must come before the definition of function B in the file.
 
 ## Problem Description
+
+You have decided to open a Pet Store!  However you quickly realize that in order to have a well run pet store you are going to need some sort of inventory system to keep track of all the pets you have for sale and how much money the pet store has. You will create a Pet class that defines the properties of a Pet, then create a Pet Store class that will manage an inventory of Pet objects.  You will also need to be able 
+
+In this homework you will be writing 2 classes, a method to read in data from a csv file, and a main method to call all of the methods that you write. 
