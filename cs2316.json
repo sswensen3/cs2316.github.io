@@ -74,9 +74,14 @@
         "materials": [""],
         "order": [100]
     },
+    "file-io": {
+        "topic": "[File IO](slides/file-io.html)",
+        "materials": ["IP 8", "[Exercise: Tree](exercises/tree.html)"],
+        "order": [18,19]
+    },
     "csv-files": {
         "topic": "[CSV Files](slides/csv-files.html)",
-        "materials": ["IP 8", "Exercise: [T^2 is Awful](exercises/t2isawful.html) ([Sample Answer](exercises/student_emails.py))", "Exercise: [Tides](exercises/tides.html)", "Exercise: [Grades Report](exercises/grades_report.html)"],
+        "materials": ["IP 8", "Exercise: [Student Emails](exercises/student-emails.html) ([Sample Answer](exercises/student_emails.py))", "Exercise: [Tides](exercises/tides.html)", "Exercise: [Grades Report](exercises/grades_report.html)"],
         "order": [18,19]
     },
     "xml": {
