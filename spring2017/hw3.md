@@ -275,6 +275,7 @@ class PetStore:
         """
 ```
 ### `Populate`
+This function should be outside of any class, and will be called in your main method.  
 ```Python
 def populate(self, starting_inventory, store):
     """Initializes the pet store with all the animals in the provided
@@ -288,4 +289,32 @@ def populate(self, starting_inventory, store):
          store: PetStore Object -- the pet store to add the inventory to
     """
 ```
-This function should be outside of any class, and will be called in your main method.  
+### `main`
+
+Structure your main method as we have been taught:
+
+```Python
+def main(args):
+    # code intended to be executed when run as a script
+
+if __name__=="__main__":
+   import sys
+   main(sys.argv)
+```
+
+Write a main function that allows the user to run the pet store.  This function should run when this file is run as a script on the command line. 
+```sh
+python hw3.py
+```
+The first thing this function should do is instantiate an instance of the Pet Store class.  Next, check the command line arguments passed in on the command line.  If there is no file passed in as an argument, or the file provided does not exist in the current directory, please print a message to the console asking the user to run the script again with a valid file name and exit without throwing an error.
+
+Here's a snippet of code that checks for the existence of a file:
+
+```Python
+import os.path
+os.path.exists("file_name.txt") # returns True if file_name.txt exists
+```
+
+Once you have a valid file name, call populate, passing in this file name and the pet store you just instantiated as the parameters.  
+After the populate function is run the user should be able to call any of the functions of the pet store class, as well as be able to print out all the pets in the store and the amount of money the store has at any time. The commands that the user may enter are as follows:
+- asdf
