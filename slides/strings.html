@@ -91,7 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1>String Formatting with <code>%</code></h1>
 <p>Specify field widths with a number between % and conversion rule:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> sunbowl2012 <span class="op">=</span> [(<span class="st">&#39;Georgia Tech&#39;</span>, <span class="dv">21</span>), (<span class="st">&#39;USC&#39;</span>, <span class="dv">7</span>)]
-<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="op">in</span> sunbowl2012:
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="kw">in</span> sunbowl2012:
 ...     <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">%14s</span><span class="st"> </span><span class="sc">%2d</span><span class="st">&#39;</span> <span class="op">%</span> team)
 ...
 Georgia Tech <span class="dv">21</span>
@@ -100,7 +100,7 @@ Georgia Tech <span class="dv">21</span>
 <section id="alignment-with" class="slide level1">
 <h1>Alignment with <code>%</code></h1>
 <p>Fields right-aligned by default. Left-align with - in front of field width:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="op">in</span> sunbowl2012:
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="kw">in</span> sunbowl2012:
 ...     <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">%-14s</span><span class="st"> </span><span class="sc">%2d</span><span class="st">&#39;</span> <span class="op">%</span> team)
 ...
 Georgia Tech   <span class="dv">21</span>
@@ -113,7 +113,7 @@ USC             <span class="dv">7</span></code></pre></div>
 <section id="string-interpolation-with-format" class="slide level1">
 <h1>String Interpolation with <code>format()</code></h1>
 <p>New-style (3.X) interpolation uses the string method <code>format</code>:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;{} {} {} {} {}&quot;</span>.<span class="bu">format</span>(<span class="dv">6</span>, <span class="st">&#39;Easy&#39;</span>, <span class="st">&#39;Pieces&#39;</span>, <span class="st">&#39;of&#39;</span>, <span class="fl">3.14</span>)
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="dv">6</span>, <span class="st">&#39;Easy&#39;</span>, <span class="st">&#39;Pieces&#39;</span>, <span class="st">&#39;of&#39;</span>, <span class="fl">3.14</span>)
 <span class="co">&#39;6 Easy Pieces of 3.14&#39;</span></code></pre></div>
 <p>Old-style formats only resolve arguments by position. New-style formats can take values from any position by putting the position number in the <code>{}</code> (Notice that positions start with 0):</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;</span><span class="sc">{4}</span><span class="st"> </span><span class="sc">{3}</span><span class="st"> </span><span class="sc">{2}</span><span class="st"> </span><span class="sc">{1}</span><span class="st"> </span><span class="sc">{0}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="dv">6</span>, <span class="st">&#39;Easy&#39;</span>, <span class="st">&#39;Pieces&#39;</span>, <span class="st">&#39;of&#39;</span>, <span class="fl">3.14</span>)
@@ -126,17 +126,17 @@ USC             <span class="dv">7</span></code></pre></div>
 <span class="co">&#39;3 pieces of punkin pie&#39;</span></code></pre></div>
 <p>Or dictionaries (note that there's one dict argument, number 0):</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;</span><span class="sc">{0[count]}</span><span class="st"> pieces of </span><span class="sc">{0[kind]}</span><span class="st"> pie&quot;</span>.<span class="bu">format</span>({<span class="st">&#39;kind&#39;</span>:<span class="st">&#39;punkin&#39;</span>,
-<span class="co">&#39;count&#39;</span>:<span class="dv">3</span>})
+<span class="st">&#39;count&#39;</span>:<span class="dv">3</span>})
 <span class="co">&#39;3 pieces of punkin pie&#39;</span></code></pre></div>
 </section>
 <section id="string-formatting-with-format" class="slide level1">
 <h1>String Formatting with <code>format()</code></h1>
 <p>Conversion types appear after a colon:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;{:d} {} {} {} {:f}&quot;</span>.<span class="bu">format</span>(<span class="dv">6</span>, <span class="st">&#39;Easy&#39;</span>, <span class="st">&#39;Pieces&#39;</span>, <span class="st">&#39;of&#39;</span>, <span class="fl">3.14</span>)
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;</span><span class="sc">{:d}</span><span class="st"> </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st"> </span><span class="sc">{:f}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="dv">6</span>, <span class="st">&#39;Easy&#39;</span>, <span class="st">&#39;Pieces&#39;</span>, <span class="st">&#39;of&#39;</span>, <span class="fl">3.14</span>)
 <span class="co">&#39;6 Easy Pieces of 3.140000&#39;</span></code></pre></div>
 <p>Argument names can appear before the :, and field formatters appear between the : and the conversion specifier (note the &lt; and &gt; for left and right alignment):</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="op">in</span> sunbowl2012:
-...     <span class="bu">print</span>(<span class="st">&#39;{:&lt;14s} {:&gt;2d}&#39;</span>.<span class="bu">format</span>(team[<span class="dv">0</span>], team[<span class="dv">1</span>]))
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="kw">in</span> sunbowl2012:
+...     <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">{:&lt;14s}</span><span class="st"> </span><span class="sc">{:&gt;2d}</span><span class="st">&#39;</span>.<span class="bu">format</span>(team[<span class="dv">0</span>], team[<span class="dv">1</span>]))
 ...
 Georgia Tech  <span class="dv">21</span>
 USC            <span class="dv">7</span></code></pre></div>
@@ -144,8 +144,8 @@ USC            <span class="dv">7</span></code></pre></div>
 <section id="sequence-unpacking" class="slide level1">
 <h1>Sequence Unpacking</h1>
 <p>Recall that <code>sunbowl2012</code> is a list of tuples. You can unpack the tuple to supply its elements as individual arguments to format (or any function) by prepending tuple with * :</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="op">in</span> sunbowl2012:
-...     <span class="bu">print</span>(<span class="st">&#39;{:&lt;14s} {:&gt;2d}&#39;</span>.<span class="bu">format</span>(<span class="op">*</span>team))
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> team <span class="kw">in</span> sunbowl2012:
+...     <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">{:&lt;14s}</span><span class="st"> </span><span class="sc">{:&gt;2d}</span><span class="st">&#39;</span>.<span class="bu">format</span>(<span class="op">*</span>team))
 ...
 Georgia Tech  <span class="dv">21</span>
 USC            <span class="dv">7</span></code></pre></div>
@@ -222,7 +222,7 @@ USC            <span class="dv">7</span></code></pre></div>
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

@@ -96,8 +96,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>... but not for <code>str</code> (string) values:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&quot;pie&quot;</span><span class="op">**</span><span class="dv">3</span>
 Traceback (most recent call last):
-  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
-<span class="pp">TypeError</span>: unsupported operand <span class="bu">type</span>(s) <span class="cf">for</span> <span class="op">**</span> <span class="op">or</span> <span class="bu">pow</span>(): <span class="st">&#39;str&#39;</span> <span class="op">and</span> <span class="st">&#39;int&#39;</span></code></pre></div>
+  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">TypeError</span>: unsupported operand <span class="bu">type</span>(s) <span class="cf">for</span> <span class="op">**</span> <span class="kw">or</span> <span class="bu">pow</span>(): <span class="st">&#39;str&#39;</span> <span class="kw">and</span> <span class="st">&#39;int&#39;</span></code></pre></div>
 </section>
 <section id="python-is-dynamically-typed" class="slide level1">
 <h1>Python is Dynamically Typed</h1>
@@ -167,13 +167,13 @@ Traceback (most recent call last):
           <span class="op">^</span>
 <span class="pp">SyntaxError</span>: invalid syntax</code></pre></div>
 <p>The assignment statement failed becuase class is one of Python's keywords:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="va">False</span>      <span class="kw">class</span>      <span class="cf">finally</span>    <span class="op">is</span>         <span class="cf">return</span>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="va">False</span>      <span class="kw">class</span>      <span class="cf">finally</span>    <span class="kw">is</span>         <span class="cf">return</span>
 <span class="va">None</span>       <span class="cf">continue</span>   <span class="cf">for</span>        <span class="kw">lambda</span>     <span class="cf">try</span>
 <span class="va">True</span>       <span class="kw">def</span>        <span class="im">from</span>       <span class="kw">nonlocal</span>   <span class="cf">while</span>
-<span class="op">and</span>        <span class="kw">del</span>        <span class="kw">global</span>     <span class="op">not</span>        <span class="cf">with</span>
-<span class="im">as</span>         <span class="cf">elif</span>       <span class="cf">if</span>         <span class="op">or</span>         <span class="cf">yield</span>
+<span class="kw">and</span>        <span class="kw">del</span>        <span class="kw">global</span>     <span class="kw">not</span>        <span class="cf">with</span>
+<span class="im">as</span>         <span class="cf">elif</span>       <span class="cf">if</span>         <span class="kw">or</span>         <span class="cf">yield</span>
 <span class="cf">assert</span>     <span class="cf">else</span>       <span class="im">import</span>     <span class="cf">pass</span>
-<span class="cf">break</span>      <span class="cf">except</span>     <span class="op">in</span>         <span class="cf">raise</span></code></pre></div>
+<span class="cf">break</span>      <span class="cf">except</span>     <span class="kw">in</span>         <span class="cf">raise</span></code></pre></div>
 </section>
 <section id="assignment-semantics" class="slide level1">
 <h1>Assignment Semantics</h1>
@@ -203,7 +203,7 @@ Traceback (most recent call last):
 <span class="co">&#39;True&#39;</span>
 <span class="op">&gt;&gt;&gt;</span> <span class="bu">int</span>(<span class="st">&quot;False&quot;</span>)
 Traceback (most recent call last):
-  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
 <span class="pp">ValueError</span>: invalid literal <span class="cf">for</span> <span class="bu">int</span>() <span class="cf">with</span> base <span class="dv">10</span>: <span class="st">&#39;False&#39;</span></code></pre></div>
 </section>
 <section id="exercise" class="slide level1">
@@ -313,7 +313,7 @@ even made a home page <span class="cf">for</span> my dog.</code></pre></div>
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
