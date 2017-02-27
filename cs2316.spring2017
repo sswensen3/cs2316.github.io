@@ -1,3 +1,4 @@
+Python Review
 Week 1
 2017-01-09;intro-cs2316;[HW0 Released 2017-01-09](spring2017/hw0/hw0.html)
 2017-01-11;intro-python
@@ -27,11 +28,11 @@ Week 7
 2017-02-22;csv-files;[HW3 Released 2017-02-23](spring2017/hw3/hw3-pet-store.html)
 2017-02-24;csv-files
 Week 8
-2017-02-27;numpy
-2017-03-01;matplotlib
+2017-02-27;scipy
+2017-03-01;numpy
 2017-03-03;pandas;[HW4 Released 2017-03-03]()
 Week 9
-2017-03-06;pandas;[HW3 Due 2017-02-17](spring2017/hw3/hw3-pet-store.html)
+2017-03-06;matplotlib;[HW3 Due 2017-03-07](spring2017/hw3/hw3-pet-store.html)
 2017-03-08;review2
 2017-03-10;exam2
 Week 10
@@ -42,10 +43,12 @@ Week 11
 2017-03-20;Spring Break - No Class
 2017-03-22;Spring Break - No Class
 2017-03-24;Spring Break - No Class
+Storing Data
 Week 12
 2017-03-27;relational-databases
 2017-03-29;sql
 2017-03-31;sql
+Desktop Data Manipulation
 Week 13
 2017-04-03;python-guis;[HW5 Due 2017-04-04]()
 2017-04-05;python-guis;[HW6 Released 2017-04-05]()

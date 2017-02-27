@@ -183,20 +183,25 @@
         "materials": [""],
         "order": [100]
     },
-    "numpy": {
-        "topic": "NumPy",
+    "scipy": {
+        "topic": "[SciPy](slides/scipy.pdf)",
         "materials": [""],
         "order": [39]
     },
-    "matplotlib": {
-        "topic": "MatPlotLib",
+    "numpy": {
+        "topic": "[NumPy](slides/numpy.html)",
         "materials": [""],
-        "order": [40]
+        "order": [39]
     },
     "pandas": {
-        "topic": "Pandas",
+        "topic": "[Pandas](slides/pandas.html)",
         "materials": [""],
         "order": [41]
+    },
+    "matplotlib": {
+        "topic": "[Matplotlib](slides/matplotlib.html)",
+        "materials": [""],
+        "order": [40]
     },
     "review4": {
         "topic": "Review 4",
