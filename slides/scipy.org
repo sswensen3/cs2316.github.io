@@ -201,7 +201,64 @@ In [37]: %timeit _ = nparray.copy() * 2
 - Profiling with ~%prun~
 - Interactive debugging wity ~%debug~ and ~%pdb~
 
-** Plotting in iPython
+** A Taste of Data Analytics in iPython Shell
+
+#+BEGIN_SRC sh
+In [1]: cd analytics/
+/home/chris/vcs/github.com/cs2316/cs2316.github.io/code/analytics
+
+In [3]: exam1grades = np.loadtxt('exam1grades.txt')
+
+In [4]: import matplotlib.pyplot as plt
+
+In [5]: %matplotlib qt5
+
+In [6]: plt.hist(exam1grades)
+Out[6]:
+(array([  2.,   6.,   8.,  14.,  23.,  22.,  31.,  17.,   4.,   8.]),
+ array([  31. ,   38.3,   45.6,   52.9,   60.2,   67.5,   74.8,   82.1,
+          89.4,   96.7,  104. ]),
+ <a list of 10 Patch objects>)
+#+END_SRC
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :height 1.5in
+[[file:../code/analytics/exam1grades.png]]
+#+END_CENTER
 
 
 ** Jupyter Notebooks
+
+Go to the directory that holds your notebooks, or the class web site repo's ~code/analytics~ directory for this example and enter ~jupter notebook~.
+
+#+BEGIN_SRC sh
+[chris@bolshoi ~/vcs/github.com/cs2316/cs2316.github.io/code/analytics]
+$ jupyter notebook
+[I 15:06:15.705 NotebookApp] Serving notebooks from local directory: /home/chris/vcs/github.com/cs2316/cs2316.github.io/code/analytics
+[I 15:06:15.705 NotebookApp] 0 active kernels
+[I 15:06:15.705 NotebookApp] The Jupyter Notebook is running at: http://localhost:8888/
+[I 15:06:15.705 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+Created new window in existing browser session.
+#+END_SRC
+
+Now a Jupter Notebook server is running and you're ready to use iPython from the Jupyter Notebook web interface.
+
+** Jupyter Web Interface
+
+After running ~jupyter notebook~ from your OS command shell, open a browser and navigate to ~localhost:8888~. You'll see a screen that looks like this:
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :height 2in
+[[file:jupyter-notebook-home.png]]
+#+END_CENTER
+
+Notice the listing of files in the directory in which you started the Jupyter notebook server.
+
+** A Taste of Data Analytics in Jupyter Notebook
+
+Select the ~exam1grades.ipynb~ file and you'll get this:
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :height 3in
+[[file:jupyter-notebook-exam1grades.png]]
+#+END_CENTER
