@@ -40,7 +40,15 @@ Two modes:
 
 - Jupyter notebook
 
-  - Interactive documents mixing text, executable code, graphics
+  - Interactive web-based documents mixing text, executable code, graphics
+
+Before we proceed, make sure your computer is ready (OS shell):
+
+#+BEGIN_SRC sh
+$ conda update conda
+$ conda update python ipython jupyter numpy pandas matplotlib
+
+#+END_SRC
 
 ** iPython Shell History
 
@@ -62,11 +70,13 @@ Out[5]: ['Sage', 'Thyme', 'Oragano', 'Posh']
 In [6]: spices is Out[1]
 Out[6]: True
 #+END_SRC
+
 ~In~ is a list, ~Out~ is a dict.
 
 ** iPython Help
 
 Single ~?~ gives abbeviated version of python's ~help~
+
 #+BEGIN_SRC sh
 In [7]: def add(a, b):
    ...:     """Return the result of + operation on a and b"""
@@ -78,7 +88,9 @@ Docstring: Return the result of + operation on a and b
 File:      ~/cs2316/<ipython-input-7-af5293282e78>
 Type:      function
 #+END_SRC
+
 Double ~??~ gives source code, if available.
+
 #+BEGIN_SRC sh
 In [9]: add??
 Signature: add(a, b)
@@ -179,9 +191,8 @@ fun.py     grades.py  maths.py   people.py  pp.py
 
   - ~%cd~, ~%cat~, ~ %cp~,~ %env~, ~ %ls~, ~ %man~, ~ %mkdir~, ~ %more~, ~ %mv~, ~ %pwd~, ~ %rm~,  and ~%rmdir~
 
-** iPython Developement Tools
 
-- Timing code with ~%time~ and ~%timeit~
+** Timing code with ~%time~ and ~%timeit~
 
 #+BEGIN_SRC sh
 In [23]: import numpy as np
@@ -195,11 +206,15 @@ In [35]: %timeit _ = [x * 2 for x in pylist]
 
 In [37]: %timeit _ = nparray.copy() * 2
 100 loops, best of 3: 3.76 ms per loop
-
 #+END_SRC
 
-- Profiling with ~%prun~
-- Interactive debugging wity ~%debug~ and ~%pdb~
+Notice that I copied the Numpy array before applying the ~* 2~ operation to it to make the comparison to the Python list comprehension fair. You'll learn why when we discuss Numpy in the next lecture.
+
+** Profiling with ~%prun~
+
+
+
+** Interactive debugging wity ~%debug~ and ~%pdb~
 
 ** A Taste of Data Analytics in iPython Shell
 
