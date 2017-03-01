@@ -189,10 +189,10 @@ fun.py     grades.py  maths.py   people.py  pp.py
 
 - These commands work with automagic:
 
-  - ~%cd~, ~%cat~, ~ %cp~,~ %env~, ~ %ls~, ~ %man~, ~ %mkdir~, ~ %more~, ~ %mv~, ~ %pwd~, ~ %rm~,  and ~%rmdir~
+  - ~%cd~, ~%cat~, ~%cp~, ~%env~, ~%ls~, ~%man~, ~%mkdir~, ~%more~, ~%mv~, ~%pwd~, ~%rm~,  and ~%rmdir~
 
 
-** Timing code with ~%time~ and ~%timeit~
+** Timing Code in iPython
 
 #+BEGIN_SRC sh
 In [23]: import numpy as np
@@ -208,13 +208,73 @@ In [37]: %timeit _ = nparray.copy() * 2
 100 loops, best of 3: 3.76 ms per loop
 #+END_SRC
 
-Notice that I copied the Numpy array before applying the ~* 2~ operation to it to make the comparison to the Python list comprehension fair. You'll learn why when we discuss Numpy in the next lecture.
+Notice that I copied the Numpy array before applying the ~* 2~ operation to make the comparison to the Python list comprehension fair. You'll learn why when we discuss Numpy in the next lecture.
 
-** Profiling with ~%prun~
+** Profiling a Script
 
 
+#+BEGIN_SRC sh
+In [7]: %run -p -l 10 -s cumulative funcalc.py
+         2673375 function calls (1147466 primitive calls) in 1.691 seconds
 
-** Interactive debugging wity ~%debug~ and ~%pdb~
+   Ordered by: cumulative time
+   List reduced from 56 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      2/1    0.000    0.000    1.691    1.691 {built-in method builtins.exec}
+        1    0.000    0.000    1.691    1.691 <string>:1(<module>)
+        1    0.000    0.000    1.691    1.691 interactiveshell.py:2431(safe_execfile)
+        1    0.000    0.000    1.691    1.691 py3compat.py:182(execfile)
+        1    0.000    0.000    1.690    1.690 funcalc.py:1(<module>)
+        1    0.000    0.000    1.689    1.689 funcalc.py:46(main)
+        1    0.039    0.039    1.689    1.689 funcalc.py:34(profile)
+510961/10000    0.510    0.000    0.603    0.000 funcalc.py:14(sub)
+510961/10000    0.514    0.000    0.598    0.000 funcalc.py:6(add)
+510961/10000    0.340    0.000    0.340    0.000 funcalc.py:22(mult)
+#+END_SRC
+
+- ~-p~ means profile
+- ~-l 10~ means show only 10 lines
+- ~-s cumulative~ means sort by cumulative time
+
+** Profiling a Function
+
+~%prun~ profiles a function. Uses same options as ~% run -p~.
+
+#+BEGIN_SRC python
+In [10]: %prun -l 10 -s cumulative funcalc.profile()
+         2673429 function calls (1148052 primitive calls) in 1.726 seconds
+
+   Ordered by: cumulative time
+   List reduced from 15 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    1.726    1.726 {built-in method builtins.exec}
+        1    0.000    0.000    1.726    1.726 <string>:1(<module>)
+        1    0.042    0.042    1.726    1.726 funcalc.py:34(profile)
+511231/10000    0.537    0.000    0.620    0.000 funcalc.py:6(add)
+511231/10000    0.523    0.000    0.615    0.000 funcalc.py:14(sub)
+511231/10000    0.336    0.000    0.336    0.000 funcalc.py:22(mult)
+    20000    0.019    0.000    0.097    0.000 random.py:223(randint)
+   501231    0.092    0.000    0.092    0.000 funcalc.py:15(dec)
+   501231    0.082    0.000    0.082    0.000 funcalc.py:7(inc)
+    20000    0.036    0.000    0.078    0.000 random.py:179(randrange)
+#+END_SRC
+
+
+** Interactive Debugging in iPython
+
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+Enter a debug session with ~%debug~ ...
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
 
 ** A Taste of Data Analytics in iPython Shell
 
