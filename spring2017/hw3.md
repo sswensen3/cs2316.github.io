@@ -277,7 +277,7 @@ class PetStore:
 ### `Populate`
 This function should be outside of any class, and will be called in your main method.  
 ```Python
-def populate(self, starting_inventory, store):
+def populate(starting_inventory, store):
     """Initializes the pet store with all the animals in the provided
     CSV file.  The CSV file has a column for every parameter in the Pet
     class.  Use each line in the file to create a Pet and then add it to
@@ -375,7 +375,7 @@ Bye!
 
 ## Submission Instructions
 
-Attach your `hw3.py` file to your T-Square HW2 assignment submission.
+Attach your `hw3.py` file to your T-Square HW3 assignment submission.
 
 ## Verify Your T-Square Submission!
 
