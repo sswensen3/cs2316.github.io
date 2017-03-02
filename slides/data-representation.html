@@ -123,9 +123,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">&gt;&gt;&gt;</span> alyssa <span class="op">=</span> [’ahacker3’, ’Alyssa’, [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">100</span>]]
 <span class="op">&gt;&gt;&gt;</span> students <span class="op">=</span> [chris, eva, alyssa]</code></pre></div>
 <p>We can then use familiar list operations to operate on the student database:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> stud <span class="op">in</span> students:
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> stud <span class="kw">in</span> students:
 ...     stud[GRADES][<span class="dv">1</span>] <span class="op">+=</span> <span class="dv">10</span> <span class="co"># give each student 10 points on exam 2</span>
-<span class="op">&gt;&gt;&gt;</span> exam2avg <span class="op">=</span> <span class="bu">sum</span>([stud[GRADES][<span class="dv">1</span>] <span class="cf">for</span> stud <span class="op">in</span> students]) <span class="op">/</span>
+<span class="op">&gt;&gt;&gt;</span> exam2avg <span class="op">=</span> <span class="bu">sum</span>([stud[GRADES][<span class="dv">1</span>] <span class="cf">for</span> stud <span class="kw">in</span> students]) <span class="op">/</span>
 <span class="bu">len</span>(students)
 <span class="op">&gt;&gt;&gt;</span> exam2avg
 <span class="fl">103.33333333333333</span></code></pre></div>
@@ -154,7 +154,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
              ’name’: ’Alyssa’},
 [...]</code></pre></div>
 <p>We can use comprehensions to do queries. For example, to get the names of all students who scored higher than 90 on exam2:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> [students[stud][’name’] <span class="cf">for</span> stud <span class="op">in</span> students.keys()
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> [students[stud][’name’] <span class="cf">for</span> stud <span class="kw">in</span> students.keys()
 ...                         <span class="cf">if</span> students[stud][’grades’][’exam2’] <span class="op">&gt;</span> <span class="dv">90</span>]
 [’Alyssa’, ’Eva’]</code></pre></div>
 </section>
@@ -179,7 +179,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">&gt;&gt;&gt;</span> eva <span class="op">=</span> Student(’eluator3’, ’Eva Luator’, [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">100</span>])
 <span class="op">&gt;&gt;&gt;</span> alyssa <span class="op">=</span> Student(’ahacker3’, ’Alyssa Hacker’, [<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">100</span>])
 <span class="op">&gt;&gt;&gt;</span> students <span class="op">=</span> [chris, eva, alyssa]
-<span class="op">&gt;&gt;&gt;</span> [stud.name <span class="cf">for</span> stud <span class="op">in</span> students <span class="cf">if</span> stud.exam(<span class="dv">2</span>) <span class="op">&gt;</span> <span class="dv">90</span>]
+<span class="op">&gt;&gt;&gt;</span> [stud.name <span class="cf">for</span> stud <span class="kw">in</span> students <span class="cf">if</span> stud.exam(<span class="dv">2</span>) <span class="op">&gt;</span> <span class="dv">90</span>]
 [’Eva Luator’, ’Alyssa Hacker’]</code></pre></div>
 <p>We’ll learn about classes and objects in detail next lecture.</p>
 </section>
@@ -203,7 +203,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

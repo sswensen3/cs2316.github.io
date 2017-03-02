@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>SciPy - Data Analytics in Python</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/gt.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">SciPy - Data Analytics in Python</h1>
+</section>
+
+<section id="the-scipy-stack" class="slide level1">
+<h1>The SciPy Stack</h1>
+<p><a href="https://www.scipy.org/">SciPy</a> is a Python-based ecosystem of libraries and tools for scientific computing and data analytics</p>
+<ul>
+<li><a href="http://ipython.org/">iPython</a></li>
+<li><a href="http://jupyter.org/">Jupyter notebooks</a></li>
+<li><a href="http://www.numpy.org/">Numpy</a></li>
+<li><a href="http://pandas.pydata.org/">Pandas</a></li>
+<li><a href="http://matplotlib.org/">Matplotlib</a></li>
+</ul>
+<p>iPython is the primary way of interacting with the SciPy stack -- whether through the shell or a Jupyter notebook -- so we'll learn iPython first</p>
+</section>
+<section id="ipython" class="slide level1">
+<h1>iPython</h1>
+<p>Two modes:</p>
+<ul>
+<li><p>Interactive shell</p></li>
+<li><p>Replacement for <code>python</code> REPL</p></li>
+<li><p>Jupyter notebook</p></li>
+<li><p>Interactive documents mixing text, executable code, graphics</p></li>
+</ul>
+</section>
+<section id="ipython-shell-history" class="slide level1">
+<h1>iPython Shell History</h1>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">In</span> [1]: [<span class="st">&#39;Sage&#39;</span>, <span class="st">&#39;Thyme&#39;</span>, <span class="st">&#39;Oragano&#39;</span>, <span class="st">&#39;Posh&#39;</span>]
+<span class="ex">Out</span>[1]: [<span class="st">&#39;Sage&#39;</span>, <span class="st">&#39;Thyme&#39;</span>, <span class="st">&#39;Oragano&#39;</span>, <span class="st">&#39;Posh&#39;</span>]
+
+<span class="ex">In</span> [2]: type(In[1])
+<span class="ex">Out</span>[2]: str
+
+<span class="ex">In</span> [3]: type(Out[1])
+<span class="ex">Out</span>[3]: list
+
+<span class="ex">In</span> [4]: spices = Out[1]
+
+<span class="ex">In</span> [5]: spices
+<span class="ex">Out</span>[5]: [<span class="st">&#39;Sage&#39;</span>, <span class="st">&#39;Thyme&#39;</span>, <span class="st">&#39;Oragano&#39;</span>, <span class="st">&#39;Posh&#39;</span>]
+
+<span class="ex">In</span> [6]: spices is Out[1]
+<span class="ex">Out</span>[6]: True</code></pre></div>
+<p><code>In</code> is a list, <code>Out</code> is a dict.</p>
+</section>
+<section id="ipython-help" class="slide level1">
+<h1>iPython Help</h1>
+<p>Single <code>?</code> gives abbeviated version of python's <code>help</code></p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">In</span> [7]: def add(a, b)<span class="bu">:</span>
+   <span class="ex">...</span>:     <span class="st">&quot;&quot;&quot;Return the result of + operation on a and b&quot;&quot;&quot;</span>
+   <span class="ex">...</span>:     return a + b
+   <span class="ex">...</span>:
+
+<span class="ex">In</span> [8]: add?
+<span class="ex">Signature</span>: add(a, b)
+<span class="ex">Docstring</span>: Return the result of + operation on a and b
+<span class="ex">File</span>:      ~/cs2316/<span class="op">&lt;</span>ipython-input-7-af5293282e78<span class="op">&gt;</span>
+<span class="ex">Type</span>:      function</code></pre></div>
+<p>Double <code>??</code> gives source code, if available.</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">In</span> [9]: add??
+<span class="ex">Signature</span>: add(a, b)
+<span class="ex">Source</span>:
+<span class="ex">def</span> add(a, b)<span class="bu">:</span>
+    <span class="st">&quot;&quot;&quot;Return the result of + operation on a and b&quot;&quot;&quot;</span>
+    <span class="bu">return</span> a + b
+<span class="ex">File</span>:      ~/cs2316/<span class="op">&lt;</span>ipython-input-7-af5293282e78<span class="op">&gt;</span>
+<span class="ex">Type</span>:      function
+
+<span class="ex">In</span> [10]:</code></pre></div>
+</section>
+<section id="ipython-magic-commands" class="slide level1">
+<h1>iPython Magic Commands</h1>
+<p>Special commands provided by iPython. A few examples:</p>
+<ul>
+<li><p>Run a Python script from within iPython:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">In</span> [35]: %run people.py
+[<span class="op">&lt;</span><span class="ex">Stan</span>, 2008-08-13, 150cm, 45kg<span class="op">&gt;</span>,
+ <span class="op">&lt;</span><span class="ex">Kyle</span>, 2008-02-25, 160cm, 50kg<span class="op">&gt;</span>,
+ <span class="op">&lt;</span><span class="ex">Cartman</span>, 2008-05-26, 140cm, 100kg<span class="op">&gt;</span>,
+ <span class="op">&lt;</span><span class="ex">Kenny</span>, 2009-07-30, 130cm, 40kg<span class="op">&gt;</span>]</code></pre></div></li>
+<li><p>Paste multi-line formatt ```sh</p></li>
+</ul>
+<p>```</p>
+<p>Get a list of all magic commands with <code>%lsmagic</code></p>
+</section>
+<section id="ipython-shell-commands" class="slide level1">
+<h1>iPython Shell Commands</h1>
+<p>Run shell commands by prepending with a <code>!</code></p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">In</span> [27]: !ls *.py
+<span class="ex">fun.py</span>      grades.py   maths.py    people.py   pp.py
+
+<span class="ex">In</span> [28]: pyscripts = !ls *.py
+
+<span class="ex">In</span> [29]: pyscripts
+<span class="ex">Out</span>[29]: [<span class="st">&#39;fun.py&#39;</span>, <span class="st">&#39;grades.py&#39;</span>, <span class="st">&#39;maths.py&#39;</span>, <span class="st">&#39;people.py&#39;</span>, <span class="st">&#39;pp.py&#39;</span>]</code></pre></div>
+</section>
+<section id="ipython-automagic-commands" class="slide level1">
+<h1>iPython Automagic commands</h1>
+<p>With <code>automagic</code> turned on, some shell commands can be run as if they were built into iPython:</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">In</span> [22]: pwd
+<span class="ex">Out</span>[22]: <span class="st">&#39;/Users/chris/cs2316&#39;</span>
+
+<span class="ex">In</span> [23]: ls *.py
+<span class="ex">fun.py</span>     grades.py  maths.py   people.py  pp.py</code></pre></div>
+<p>Toggle automagic on and off with <code>%automagic</code>.</p>
+<p>These commands work with automagic: <code>%cd</code>, <code>%cat</code>, <code>%cp</code>,<code>%env</code>, <code>%ls</code>, <code>%man</code>, <code>%mkdir</code>, <code>%more</code>, <code>%mv</code>, <code>%pwd</code>, <code>%rm</code>, and <code>%rmdir</code></p>
+</section>
+<section id="jupyter-notebooks" class="slide level1">
+<h1>Jupyter Notebooks</h1>
+</section>
+<section id="numpy" class="slide level1">
+<h1>NumPy</h1>
+</section>
+<section id="pandas" class="slide level1">
+<h1>Pandas</h1>
+</section>
+<section id="matplotlib" class="slide level1">
+<h1>Matplotlib</h1>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

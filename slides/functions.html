@@ -119,8 +119,8 @@ Guten Tag<span class="op">!</span></code></pre></div>
 <p>Parameters are local variables. They are not visible outside the function:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> greeting
 Traceback (most recent call last):
-  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
-<span class="pp">NameError</span>: name <span class="st">&#39;greeting&#39;</span> <span class="op">is</span> <span class="op">not</span> defined</code></pre></div>
+  File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">NameError</span>: name <span class="st">&#39;greeting&#39;</span> <span class="kw">is</span> <span class="kw">not</span> defined</code></pre></div>
 <p>Global variables are visible outside the function and inside the function.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> global_hello <span class="op">=</span> <span class="st">&#39;Bonjour&#39;</span>
 <span class="op">&gt;&gt;&gt;</span> global_hello
@@ -262,7 +262,7 @@ man
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

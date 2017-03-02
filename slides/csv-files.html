@@ -67,100 +67,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="csv-files" class="slide level1">
 <h1>CSV Files</h1>
 </section>
-<section id="text-file-io" class="slide level1">
-<h1>Text File IO</h1>
-<ul>
-<li>File IO is done in Python with the built-in <code>File</code> object which is returned by the built-in <code>open</code> function</li>
-<li>Use the <code>'w'</code> open mode for writing</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python
-<span class="op">&gt;&gt;&gt;</span> f <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;hello.txt&quot;</span>,’w’) <span class="co"># open for writing, create if necessary</span>
-<span class="op">&gt;&gt;&gt;</span> f.write(<span class="st">&quot;Hello, file!</span><span class="ch">\n</span><span class="st">&quot;</span>) <span class="co"># write string to file; notice \n ending</span>
-<span class="op">&gt;&gt;&gt;</span> f.close()                 <span class="co"># close file, causing it to write to disk</span>
-<span class="op">&gt;&gt;&gt;</span> exit()
-$ cat hello.txt
-Hello, <span class="bu">file</span><span class="op">!</span></code></pre></div>
-<p>Use the ’r’ open mode for reading</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python
-<span class="op">&gt;&gt;&gt;</span> f <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;hello.txt&quot;</span>, <span class="st">&quot;r&quot;</span>) <span class="co"># open for reading in text mode</span>
-<span class="op">&gt;&gt;&gt;</span> contents <span class="op">=</span> f.read()
-<span class="co"># slurp the whole file into memory</span>
-<span class="op">&gt;&gt;&gt;</span> contents
-’Hello, <span class="bu">file</span><span class="op">!\</span>n’
-<span class="op">&gt;&gt;&gt;</span> exit()</code></pre></div>
-</section>
-<section id="reading-lines-from-text-files" class="slide level1">
-<h1>Reading Lines from Text Files</h1>
-<ul>
-<li>Text files often have data split into lines</li>
-<li>the <code>readlines()</code> function reads all lines into memory as a list</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> f <span class="op">=</span> <span class="bu">open</span>(’lines.txt’, ’r’)
-<span class="op">&gt;&gt;&gt;</span> f.readlines()
-[’line <span class="dv">1</span><span class="op">\</span>n’, ’line <span class="dv">2</span><span class="op">\</span>n’, ’line <span class="dv">3</span><span class="op">\</span>n’]</code></pre></div>
-</section>
-<section id="one-line-at-a-time" class="slide level1">
-<h1>One Line at a Time</h1>
-<ul>
-<li><code>readline()</code> reads one line at a time, returns empty string when fully read</li>
-<li>re-open file or use seek() to go back to beginning of file</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> f <span class="op">=</span> <span class="bu">open</span>(’lines.txt’, ’r’)
-<span class="op">&gt;&gt;&gt;</span> f.readline()
-’line <span class="dv">1</span><span class="op">\</span>n’
-<span class="op">&gt;&gt;&gt;</span> f.readline()
-’line <span class="dv">2</span><span class="op">\</span>n’
-<span class="op">&gt;&gt;&gt;</span> f.readline()
-’line <span class="dv">3</span><span class="op">\</span>n’
-<span class="op">&gt;&gt;&gt;</span> f.readline()
-<span class="co">&#39;&#39;</span>
-<span class="op">&gt;&gt;&gt;</span> f.seek(<span class="dv">0</span>)
-<span class="op">&gt;&gt;&gt;</span> f.readline()
-’line <span class="dv">1</span><span class="op">\</span>n’</code></pre></div>
-</section>
-<section id="processing-all-lines-in-a-text-file" class="slide level1">
-<h1>Processing All Lines in a Text File</h1>
-<p>Could use readlines() and iterate through list it returns</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> f <span class="op">=</span> <span class="bu">open</span>(’lines.txt’, ’r’)
-<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="op">in</span> f.readlines():
-...     <span class="bu">print</span> line
-...
-line <span class="dv">1</span>
-line <span class="dv">2</span>
-line <span class="dv">3</span></code></pre></div>
-<p>Better to take advantage of fact <code>File</code> is <code>Iterable</code></p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(’lines.txt’, ’r’):
-...     <span class="bu">print</span> line
-...
-line <span class="dv">1</span>
-line <span class="dv">2</span>
-line <span class="dv">3</span></code></pre></div>
-</section>
-<section id="files-are-buffered" class="slide level1">
-<h1>Files are Buffered</h1>
-<p>Try a little experiment: lauch a Python shell, create open a new file named bar, and write something to it.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> bar <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;bar&quot;</span>, ’w’)
-<span class="op">&gt;&gt;&gt;</span> bar.write(<span class="st">&quot;last call!&quot;</span>)
-<span class="dv">10</span></code></pre></div>
-<p>At this point, open another command shell or use your graphical file explorer to view the contents of the bar file. It’s empty. Now go back to your Python shell and do:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> bar.close()</code></pre></div>
-<p>Now view the contents of the <code>bar</code> file again. It has the text from the previous <code>write()</code> call. Files are buffered, and the buffer isn’t (guaranteed to be) flushed to disk until the file object is closed or the <code>File</code> Object goes out of scope or the program terminates (gracefully).</p>
-</section>
-<section id="context-management-with-with" class="slide level1">
-<h1>Context Management with <code>with</code></h1>
-<p>Python has context managers to close resources automatically. A context manager has the form</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">with</span> <span class="op">&lt;</span>expression<span class="op">&gt;</span> <span class="im">as</span> <span class="op">&lt;</span>variable<span class="op">&gt;</span>:
-    <span class="op">&lt;</span>block<span class="op">&gt;</span></code></pre></div>
-<p>which is equivalent to</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&lt;</span>variable<span class="op">&gt;</span> <span class="op">=</span> <span class="op">&lt;</span>expression<span class="op">&gt;</span>
-<span class="op">&lt;</span>block<span class="op">&gt;</span>
-<span class="op">&lt;</span>variable<span class="op">&gt;</span>.close()`</code></pre></div>
-<p>For example, the previous bar example is:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">with</span> <span class="bu">open</span>(’bar’, ’w’) <span class="im">as</span> bar:
-...     bar.write(’last call<span class="op">!</span>’)
-...</code></pre></div>
-<p>And the file is closed and flushed to disk automatically after the block under the with statement finishes.</p>
-</section>
 <section id="comma-separated-values-files" class="slide level1">
 <h1>&quot;Comma&quot;-Separated Values Files</h1>
 <p>Say we have data in a comma-separated values file</p>
@@ -172,19 +78,19 @@ U.S.A.,Washington, D.C</code></pre>
 <p>Can use line-by-line file reading with the split() function we saw earlier to process comma-separated value files</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">$ python
 <span class="op">&gt;&gt;&gt;</span> capitals <span class="op">=</span> {} <span class="co"># initialize a dictionary to hold our capitals data</span>
-<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(’capitals.dat’, ’r’): <span class="co"># for each line in file</span>
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(’capitals.dat’, ’r’): <span class="co"># for each line in file</span>
 ...     k, v <span class="op">=</span> line.split(’,’)             <span class="co"># split into key and value</span>
 ...     capitals[k] <span class="op">=</span> v                    <span class="co"># add key:value to dict</span>
 ...
 Traceback (most recent call last):
-File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">2</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">2</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
 <span class="pp">ValueError</span>: too many values to unpack</code></pre></div>
 <p>Why didn’t it work?</p>
 </section>
 <section id="csv-separator-characters" class="slide level1">
 <h1>CSV Separator Characters</h1>
 <p>We can troubleshoot in the Python interpreter</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(’capitals.dat’, ’r’):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(’capitals.dat’, ’r’):
 ...     <span class="bu">print</span> line.split(’,’)
 ...
 [’Japan’, ’Tokyo<span class="op">\</span>n’]
@@ -192,17 +98,17 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">2<
 [’Germany’, ’Berlin<span class="op">\</span>n’]
 [’U.S.A.’, ’Washington’, ’ D.C<span class="op">\</span>n’]</code></pre></div>
 <p>There’s a comma in Washington, D.C. that was taken as a separator So let’s change the capitals.dat file to use semicolons as the separators</p>
-<pre class="sh"><code>$ cat capitals.dat
-Japan;Tokyo
-France;Paris
-Germany;Berlin
-U.S.A.;Washington, D.C</code></pre>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="fu">cat</span> capitals.dat
+<span class="ex">Japan</span><span class="kw">;</span><span class="ex">Tokyo</span>
+<span class="ex">France</span><span class="kw">;</span><span class="ex">Paris</span>
+<span class="ex">Germany</span><span class="kw">;</span><span class="ex">Berlin</span>
+<span class="ex">U.S.A.</span><span class="kw">;</span><span class="ex">Washington</span>, D.C</code></pre></div>
 </section>
 <section id="csv-files-in-practice" class="slide level1">
 <h1>CSV Files in Practice</h1>
 <p>Now our capitals.dat file is readable as a &quot;comma&quot;-separated values file</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> capitals <span class="op">=</span> {}
-<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(’capitals.dat’, ’r’):
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(’capitals.dat’, ’r’):
 ...     k, v <span class="op">=</span> line.split(’<span class="op">;</span>’)
 ...     capitals[k] <span class="op">=</span> v
 ...
@@ -218,7 +124,7 @@ Berlin<span class="op">\</span>n’, ’France’: ’ Paris<span class="op">\</
 <ul>
 <li>We can make our code more robust with strip(), which removes leading and trailing whitespace and non-printing chars</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="op">in</span> <span class="bu">open</span>(’capitals.dat’, ’r’):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> line <span class="kw">in</span> <span class="bu">open</span>(’capitals.dat’, ’r’):
 ...     k, v <span class="op">=</span> line.split(’<span class="op">;</span>’)
 ...     capitals[k.strip()] <span class="op">=</span> v.strip()
 ...
@@ -256,7 +162,7 @@ Ruby,Yukihiro Matsumoto</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> csv
 <span class="op">&gt;&gt;&gt;</span> <span class="cf">with</span> <span class="bu">open</span>(’scripters’, ’r’) <span class="im">as</span> fin:
 ...     csvin <span class="op">=</span> csv.reader(fin)
-...     scripters <span class="op">=</span> [line <span class="cf">for</span> line <span class="op">in</span> csvin]
+...     scripters <span class="op">=</span> [line <span class="cf">for</span> line <span class="kw">in</span> csvin]
 ...
 <span class="op">&gt;&gt;&gt;</span> scripters
 [[’Perl’, ’Larry Wall’], [’Python’, ’Guido Van Rossum’], [’Ruby’,
@@ -269,7 +175,7 @@ Ruby,Yukihiro Matsumoto</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> csv
 <span class="op">&gt;&gt;&gt;</span> <span class="cf">with</span> <span class="bu">open</span>(’scripters’, ’r’) <span class="im">as</span> fin:
 ...     csvin <span class="op">=</span> csv.DictReader(fin, fieldnames<span class="op">=</span>[’langauge’, ’creator’])
-...     scripters <span class="op">=</span> [line <span class="cf">for</span> line <span class="op">in</span> csvin]
+...     scripters <span class="op">=</span> [line <span class="cf">for</span> line <span class="kw">in</span> csvin]
 ...
 <span class="op">&gt;&gt;&gt;</span> scripters
 [{’creator’: ’Larry Wall’, ’langauge’: ’Perl’}, {’creator’: ’Guido Van
@@ -323,7 +229,7 @@ Ruby,Yukihiro Matsumoto</code></pre></div>
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

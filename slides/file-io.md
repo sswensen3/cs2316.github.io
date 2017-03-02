@@ -128,3 +128,31 @@ For example, the previous bar example is:
 ```
 
 And the file is closed and flushed to disk automatically after the block under the with statement finishes.
+
+# Listing Files in a directory
+
+```Python
+import os
+dir = 'some_dir'
+for path in os.listdir(dir):
+    if os.path.isdir(submission_dir):
+        print(path + '/')
+    else:
+        print(path)
+```
+
+# Moving and Copying Files
+
+```Python
+import shutil
+shutil.move(source, destination)
+shutil.copy(source, destination)
+```
+
+Making directories
+
+```Python
+import shutil
+dir = 'some_dir'
+shutil.mkdir(dir)
+```

@@ -96,7 +96,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <span class="va">self</span>.name <span class="op">=</span> name <span class="cf">if</span> name <span class="cf">else</span> <span class="st">&quot;No one&quot;</span>
 
     <span class="kw">def</span> full_name(<span class="va">self</span>):
-        <span class="cf">return</span> <span class="st">&quot;{} Stark&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.name)</code></pre></div>
+        <span class="cf">return</span> <span class="st">&quot;</span><span class="sc">{}</span><span class="st"> Stark&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.name)</code></pre></div>
 <p><code>creator</code>, <code>words</code>, <code>sigil</code>, and <code>home</code> are <em>class attributes</em>. Class attributes belong to the class and are shared by all instances</p>
 </section>
 <section id="instance-attributes" class="slide level1">
@@ -111,7 +111,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         <span class="va">self</span>.name <span class="op">=</span> name <span class="cf">if</span> name <span class="cf">else</span> <span class="st">&quot;No one&quot;</span>
 
     <span class="kw">def</span> full_name(<span class="va">self</span>):
-        <span class="cf">return</span> <span class="st">&quot;{} Stark&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.name)</code></pre></div>
+        <span class="cf">return</span> <span class="st">&quot;</span><span class="sc">{}</span><span class="st"> Stark&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.name)</code></pre></div>
 <ul>
 <li><code>self.name</code> is an instance attribute becuase it is prefaced with <code>self.</code> and defined in a method that has a first parameter named <code>self</code>. Each instance of the class has its own copies of instance attributes.</li>
 <li><code>full_name</code> is an instance method because it defined in a class and has at least one parameter. The first parameter is implicitly a reference to the instance on which a method is called.</li>
@@ -143,7 +143,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">&gt;&gt;&gt;</span> robb.sigil
 <span class="co">&#39;Direwolf&#39;</span></code></pre></div>
 <p>Remember that the <code>is</code> operator returns <code>True</code> if its operands reference the same object in memory. So this deomonstrates that <code>sigil</code> is shared between the <code>Stark</code> class and all instances of the <code>Stark</code> class:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> got.Stark.sigil <span class="op">is</span> ned.sigil
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> got.Stark.sigil <span class="kw">is</span> ned.sigil
 <span class="va">True</span></code></pre></div>
 </section>
 <section id="superclasses" class="slide level1">
@@ -179,7 +179,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
     <span class="co"># Used by print()</span>
     <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):
-        <span class="cf">return</span> <span class="st">&quot;&lt;{} {}&gt;&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.name, <span class="st">&quot;:-{&quot;</span> <span class="cf">if</span> <span class="va">self</span>.is_mustached <span class="cf">else</span> <span class="st">&quot;:-|&quot;</span>)
+        <span class="cf">return</span> <span class="st">&quot;&lt;</span><span class="sc">{}</span><span class="st"> </span><span class="sc">{}</span><span class="st">&gt;&quot;</span>.<span class="bu">format</span>(<span class="va">self</span>.name, <span class="st">&quot;:-{&quot;</span> <span class="cf">if</span> <span class="va">self</span>.is_mustached <span class="cf">else</span> <span class="st">&quot;:-|&quot;</span>)
 
     <span class="co"># Used by REPL</span>
     <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):
@@ -187,9 +187,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
     <span class="co"># Makes instances of SuperTrooper orderable</span>
     <span class="kw">def</span> <span class="fu">__lt__</span>(<span class="va">self</span>, other):
-        <span class="cf">if</span> <span class="va">self</span>.is_mustached <span class="op">and</span> <span class="op">not</span> other.is_mustached:
+        <span class="cf">if</span> <span class="va">self</span>.is_mustached <span class="kw">and</span> <span class="kw">not</span> other.is_mustached:
             <span class="cf">return</span> <span class="va">False</span>
-        <span class="cf">elif</span> <span class="op">not</span> <span class="va">self</span>.is_mustached <span class="op">and</span> other.is_mustached:
+        <span class="cf">elif</span> <span class="kw">not</span> <span class="va">self</span>.is_mustached <span class="kw">and</span> other.is_mustached:
             <span class="cf">return</span> <span class="va">True</span>
         <span class="cf">else</span>:
             <span class="cf">return</span> <span class="va">self</span>.name <span class="op">&lt;</span> other.name</code></pre></div>
@@ -207,10 +207,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <span class="bu">print</span>(<span class="st">&quot;SuperTroopers sorted by mustache, then by name:&quot;</span>)
     <span class="bu">print</span>(<span class="bu">sorted</span>(sts))</code></pre></div>
 <p>Produces:</p>
-<pre class="sh"><code>SuperTroopers:
-[&lt;Thorny :-{&gt;, &lt;Mac :-{&gt;, &lt;Rabbit :-{&gt;, &lt;Farva :-{&gt;, &lt;Foster :-|&gt;]
-SuperTroopers sorted by mustache, then by name:
-[&lt;Foster :-|&gt;, &lt;Farva :-{&gt;, &lt;Mac :-{&gt;, &lt;Rabbit :-{&gt;, &lt;Thorny :-{&gt;]</code></pre>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">SuperTroopers</span>:
+[<span class="op">&lt;</span><span class="ex">Thorny</span> :-{<span class="op">&gt;</span>, <span class="op">&lt;</span>Mac :-{<span class="op">&gt;</span>, <span class="op">&lt;</span>Rabbit :-{<span class="op">&gt;</span>, <span class="op">&lt;</span>Farva :-{<span class="op">&gt;</span>, <span class="op">&lt;</span>Foster :-<span class="kw">|</span><span class="op">&gt;</span>]
+<span class="ex">SuperTroopers</span> sorted by mustache, then by name:
+[<span class="op">&lt;</span><span class="ex">Foster</span> :-<span class="kw">|</span><span class="op">&gt;</span>, <span class="op">&lt;</span><span class="ex">Farva</span> :-{<span class="op">&gt;</span>, <span class="op">&lt;</span>Mac :-{<span class="op">&gt;</span>, <span class="op">&lt;</span>Rabbit :-{<span class="op">&gt;</span>, <span class="op">&lt;</span>Thorny :-{<span class="op">&gt;</span>]</code></pre></div>
 </section>
 <section id="conclusion" class="slide level1">
 <h1>Conclusion</h1>
@@ -238,7 +238,7 @@ SuperTroopers sorted by mustache, then by name:
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

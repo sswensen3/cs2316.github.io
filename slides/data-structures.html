@@ -119,8 +119,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="st">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>)
 [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;f&#39;</span>, <span class="st">&#39;g&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;i&#39;</span>, <span class="st">&#39;j&#39;</span>, <span class="st">&#39;k&#39;</span>, <span class="st">&#39;l&#39;</span>, <span class="st">&#39;m&#39;</span>,
-<span class="co">&#39;n&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39;p&#39;</span>, <span class="st">&#39;q&#39;</span>, <span class="st">&#39;r&#39;</span>, <span class="st">&#39;s&#39;</span>, <span class="st">&#39;t&#39;</span>, <span class="st">&#39;u&#39;</span>, <span class="st">&#39;v&#39;</span>, <span class="st">&#39;w&#39;</span>, <span class="st">&#39;x&#39;</span>, <span class="st">&#39;y&#39;</span>,
-<span class="co">&#39;z&#39;</span>]</code></pre></div>
+<span class="st">&#39;n&#39;</span>, <span class="st">&#39;o&#39;</span>, <span class="st">&#39;p&#39;</span>, <span class="st">&#39;q&#39;</span>, <span class="st">&#39;r&#39;</span>, <span class="st">&#39;s&#39;</span>, <span class="st">&#39;t&#39;</span>, <span class="st">&#39;u&#39;</span>, <span class="st">&#39;v&#39;</span>, <span class="st">&#39;w&#39;</span>, <span class="st">&#39;x&#39;</span>, <span class="st">&#39;y&#39;</span>,
+<span class="st">&#39;z&#39;</span>]</code></pre></div>
 </section>
 <section id="accessing-list-elements" class="slide level1">
 <h1>Accessing List Elements</h1>
@@ -148,9 +148,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The <code>in</code> operator tests for list membership. Can be negated with not:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys
 [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Kenny&#39;</span>]
-<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Kyle&#39;</span> <span class="op">in</span> boys
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Kyle&#39;</span> <span class="kw">in</span> boys
 <span class="va">True</span>
-<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Kyle&#39;</span> <span class="op">not</span> <span class="op">in</span> boys
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Kyle&#39;</span> <span class="kw">not</span> <span class="kw">in</span> boys
 <span class="va">False</span></code></pre></div>
 <ul>
 <li>The + operator concatenates two lists (note 'Butters' in list):</li>
@@ -203,8 +203,8 @@ The <span class="op">*</span> operator repeats a <span class="bu">list</span> to
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">del</span> boys
 <span class="op">&gt;&gt;&gt;</span> boys
 Traceback (most recent call last):
-File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
-<span class="pp">NameError</span>: name <span class="st">&#39;boys&#39;</span> <span class="op">is</span> <span class="op">not</span> defined</code></pre></div>
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">NameError</span>: name <span class="st">&#39;boys&#39;</span> <span class="kw">is</span> <span class="kw">not</span> defined</code></pre></div>
 </section>
 <section id="list-methods" class="slide level1">
 <h1>List Methods</h1>
@@ -238,8 +238,8 @@ s.extend(t) adds the elements of t to the end of s
 [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Jimmy&#39;</span>]
 <span class="op">&gt;&gt;&gt;</span> boys.remove(<span class="st">&#39;Professor Chaos&#39;</span>)
 Traceback (most recent call last):
-File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
-<span class="pp">ValueError</span>: <span class="bu">list</span>.remove(x): x <span class="op">not</span> <span class="op">in</span> <span class="bu">list</span></code></pre></div>
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">ValueError</span>: <span class="bu">list</span>.remove(x): x <span class="kw">not</span> <span class="kw">in</span> <span class="bu">list</span></code></pre></div>
 <ul>
 <li><code>s.pop()</code> removes and returns the last element of the list</li>
 </ul>
@@ -299,14 +299,14 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
 <p>Operators create copies</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> brats <span class="op">+</span> [<span class="st">&#39;Bebe&#39;</span>, <span class="st">&#39;Wendy&#39;</span>]
 [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>, <span class="st">&#39;Bebe&#39;</span>,
-<span class="co">&#39;Wendy&#39;</span>]
+<span class="st">&#39;Wendy&#39;</span>]
 <span class="op">&gt;&gt;&gt;</span> brats
 [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]</code></pre></div>
 <p>You have to reassign to the list to make an update:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> brats <span class="op">=</span> brats <span class="op">+</span> [<span class="st">&#39;Bebe&#39;</span>, <span class="st">&#39;Wendy&#39;</span>] <span class="co"># could also use shortcut +=</span>
 <span class="op">&gt;&gt;&gt;</span> brats
 [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>, <span class="st">&#39;Bebe&#39;</span>,
-<span class="co">&#39;Wendy&#39;</span>]</code></pre></div>
+<span class="st">&#39;Wendy&#39;</span>]</code></pre></div>
 <p>Notice that after the reassignment, <code>brats</code> is no longer an alias of <code>boys</code></p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys
 [<span class="st">&#39;Stan&#39;</span>, <span class="st">&#39;Kyle&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>, <span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]</code></pre></div>
@@ -330,7 +330,7 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> boys[<span class="dv">0</span>:<span class="dv">2</span>] <span class="op">=</span> [<span class="st">&#39;Randy&#39;</span>, <span class="st">&#39;Sharon&#39;</span>, <span class="st">&#39;Gerald&#39;</span>, <span class="st">&#39;Sheila&#39;</span>]
 <span class="op">&gt;&gt;&gt;</span> boys
 [<span class="st">&#39;Randy&#39;</span>, <span class="st">&#39;Sharon&#39;</span>, <span class="st">&#39;Gerald&#39;</span>, <span class="st">&#39;Sheila&#39;</span>, <span class="st">&#39;Cartman&#39;</span>, <span class="st">&#39;Butters&#39;</span>,
-<span class="co">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]</code></pre></div>
+<span class="st">&#39;Tweak&#39;</span>, <span class="st">&#39;Timmy&#39;</span>]</code></pre></div>
 </section>
 <section id="a-few-more-list-operations" class="slide level1">
 <h1>A Few More List Operations</h1>
@@ -407,13 +407,13 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
 <span class="op">&gt;&gt;&gt;</span> capitals
 {<span class="st">&#39;Georgia&#39;</span>: <span class="st">&#39;Atlanta&#39;</span>}</code></pre></div>
 <p>Use the <code>in</code> operator to test for existence of key (not value)</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Georgia&#39;</span> <span class="op">in</span> capitals
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Georgia&#39;</span> <span class="kw">in</span> capitals
 <span class="va">True</span>
-<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Atlanta&#39;</span> <span class="op">in</span> capitals
+<span class="op">&gt;&gt;&gt;</span> <span class="st">&#39;Atlanta&#39;</span> <span class="kw">in</span> capitals
 <span class="va">False</span></code></pre></div>
 <p>Extend a dictionary with <code>update()</code> method, get values as a list with values method</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> capitals.update({<span class="st">&#39;Tennessee&#39;</span>: <span class="st">&#39;Nashville&#39;</span>, <span class="st">&#39;Mississippi&#39;</span>:
-<span class="co">&#39;Jackson&#39;</span>})
+<span class="st">&#39;Jackson&#39;</span>})
 <span class="op">&gt;&gt;&gt;</span> capitals.values()
 dict_values([<span class="st">&#39;Jackson&#39;</span>, <span class="st">&#39;Nashville&#39;</span>, <span class="st">&#39;Atlanta&#39;</span>])</code></pre></div>
 </section>
@@ -520,7 +520,7 @@ dict_values([<span class="st">&#39;Jackson&#39;</span>, <span class="st">&#39;Na
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

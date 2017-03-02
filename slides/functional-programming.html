@@ -59,7 +59,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 </head>
 <body>
   <div class="reveal">
@@ -67,7 +67,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section>
   <h1 class="title">Functional Programming in Python</h1>
-  <h2 class="author">% A brief introduction</h2>
+  <p class="author">% A brief introduction</p>
 </section>
 
 <section id="functional-features-in-python" class="slide level1">
@@ -85,10 +85,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">help</span>(<span class="bu">sorted</span>)
 ...
 <span class="bu">sorted</span>(iterable, key<span class="op">=</span><span class="va">None</span>, reverse<span class="op">=</span><span class="va">False</span>)
-    Return a new <span class="bu">list</span> containing <span class="bu">all</span> items <span class="im">from</span> the iterable <span class="op">in</span> ascending order.
+    Return a new <span class="bu">list</span> containing <span class="bu">all</span> items <span class="im">from</span> the iterable <span class="kw">in</span> ascending order.
 
-    A custom key function can be supplied to customise the sort order, <span class="op">and</span> the
-    reverse flag can be <span class="bu">set</span> to request the result <span class="op">in</span> descending order.</code></pre></div>
+    A custom key function can be supplied to customise the sort order, <span class="kw">and</span> the
+    reverse flag can be <span class="bu">set</span> to request the result <span class="kw">in</span> descending order.</code></pre></div>
 <p>The second parameter, <code>key</code>, is a function. In general, a <em>sort key</em> is the part of an object on which comparisons are made in a sorting algorithm.</p>
 </section>
 <section id="sorting-without-a-key" class="slide level1">
@@ -134,7 +134,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Common task: build a sequence out of transformations of elements of an existing sequence. Here's the imperative approach:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> houses <span class="op">=</span> [<span class="st">&quot;Stark&quot;</span>, <span class="st">&quot;Lannister&quot;</span>, <span class="st">&quot;Targaryen&quot;</span>]
 <span class="op">&gt;&gt;&gt;</span> shout <span class="op">=</span> []
-<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> house <span class="op">in</span> houses:
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> house <span class="kw">in</span> houses:
 ...     shout.append(house.upper())
 ...
 <span class="op">&gt;&gt;&gt;</span> shout
@@ -156,12 +156,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1>List Comprehensions</h1>
 <p>A list comprehension iterates over a (optionally filtered) sequence, applies an operation to each element, and collects the results of these operations in a new list, just like <code>map</code>.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> grades <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">80</span>]
-<span class="op">&gt;&gt;&gt;</span> [x <span class="cf">for</span> x <span class="op">in</span> grades]
+<span class="op">&gt;&gt;&gt;</span> [x <span class="cf">for</span> x <span class="kw">in</span> grades]
 [<span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">80</span>]
-<span class="op">&gt;&gt;&gt;</span> [x <span class="op">+</span> <span class="dv">10</span> <span class="cf">for</span> x <span class="op">in</span> grades]
+<span class="op">&gt;&gt;&gt;</span> [x <span class="op">+</span> <span class="dv">10</span> <span class="cf">for</span> x <span class="kw">in</span> grades]
 [<span class="dv">110</span>, <span class="dv">100</span>, <span class="dv">10</span>, <span class="dv">90</span>]</code></pre></div>
 <p>We can also filter in a comprehension:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> [x <span class="op">+</span> <span class="dv">50</span> <span class="cf">for</span> x <span class="op">in</span> grades <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">50</span>]
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> [x <span class="op">+</span> <span class="dv">50</span> <span class="cf">for</span> x <span class="kw">in</span> grades <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">50</span>]
 [<span class="dv">50</span>]</code></pre></div>
 <p>Comprehensions are more Pythonic than using <code>map</code> and <code>filter</code> directly.</p>
 </section>
@@ -172,7 +172,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="op">&gt;&gt;&gt;</span> <span class="bu">list</span>(<span class="bu">zip</span>(houses, words))
 [(<span class="st">&#39;Stark&#39;</span>, <span class="st">&#39;Winter is coming&#39;</span>), (<span class="st">&#39;Lannister&#39;</span>, <span class="st">&#39;Hear me roar&#39;</span>), (<span class="st">&#39;Targaryen&#39;</span>, <span class="st">&#39;Fire and blood&#39;</span>)]</code></pre></div>
 <p>Dictionary comprehension using tuple unpacking:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> house2words <span class="op">=</span> {house: words <span class="cf">for</span> house, words <span class="op">in</span> <span class="bu">zip</span>(houses, words)}
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> house2words <span class="op">=</span> {house: words <span class="cf">for</span> house, words <span class="kw">in</span> <span class="bu">zip</span>(houses, words)}
 <span class="op">&gt;&gt;&gt;</span> house2words
 {<span class="st">&#39;Lannister&#39;</span>: <span class="st">&#39;Hear me roar&#39;</span>, <span class="st">&#39;Stark&#39;</span>: <span class="st">&#39;Winter is coming&#39;</span>, <span class="st">&#39;Targaryen&#39;</span>: <span class="st">&#39;Fire and blood&#39;</span>}</code></pre></div>
 <p>Of course, we could just use the <code>dict</code> constructor on the <code>zip</code> object.</p>
@@ -204,10 +204,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">    &quot;&quot;&quot;</span>
     day <span class="op">=</span> first
     <span class="co"># e.g., &quot;MWF&quot; =&gt; [0, 2, 4]</span>
-    class_day_ints <span class="op">=</span> [i <span class="cf">for</span> i, letter <span class="op">in</span> <span class="bu">enumerate</span>(<span class="st">&quot;MTWRFSU&quot;</span>)
-                           <span class="cf">if</span> letter <span class="op">in</span> class_days]
+    class_day_ints <span class="op">=</span> [i <span class="cf">for</span> i, letter <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="st">&quot;MTWRFSU&quot;</span>)
+                           <span class="cf">if</span> letter <span class="kw">in</span> class_days]
     <span class="cf">while</span> day <span class="op">&lt;=</span> last:
-        <span class="cf">if</span> day.weekday() <span class="op">in</span> class_day_ints:
+        <span class="cf">if</span> day.weekday() <span class="kw">in</span> class_day_ints:
             <span class="cf">yield</span> day
         day <span class="op">+=</span> dt.timedelta(days<span class="op">=</span><span class="dv">1</span>)</code></pre></div>
 </section>
@@ -238,7 +238,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

@@ -121,8 +121,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="fl">5.0</span>
 <span class="op">&gt;&gt;&gt;</span> math.sqrt(<span class="dv">64</span>)
 Traceback (most recent call last):
-File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
-<span class="pp">NameError</span>: name <span class="st">&#39;math&#39;</span> <span class="op">is</span> <span class="op">not</span> defined</code></pre></div>
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">NameError</span>: name <span class="st">&#39;math&#39;</span> <span class="kw">is</span> <span class="kw">not</span> defined</code></pre></div>
 </section>
 <section id="importing-names-from-a-module" class="slide level1">
 <h1>Importing Names from a Module</h1>
@@ -132,8 +132,8 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
 <span class="fl">8.0</span>
 <span class="op">&gt;&gt;&gt;</span> floor(<span class="fl">1.2</span>)
 Traceback (most recent call last):
-File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
-<span class="pp">NameError</span>: name <span class="st">&#39;floor&#39;</span> <span class="op">is</span> <span class="op">not</span> defined</code></pre></div>
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+<span class="pp">NameError</span>: name <span class="st">&#39;floor&#39;</span> <span class="kw">is</span> <span class="kw">not</span> defined</code></pre></div>
 <p>Or all names from a module:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> math <span class="im">import</span> <span class="op">*</span>
 <span class="op">&gt;&gt;&gt;</span> floor(<span class="fl">1.2</span>)
@@ -151,12 +151,12 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
 <span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> pprint <span class="im">as</span> pp
 <span class="op">&gt;&gt;&gt;</span> pp.pprint(sys.path)
 [<span class="st">&#39;&#39;</span>,
- <span class="co">&#39;/home/chris/miniconda3/lib/python35.zip&#39;</span>,
- <span class="co">&#39;/home/chris/miniconda3/lib/python3.5&#39;</span>,
- <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/plat-linux&#39;</span>,
- <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/lib-dynload&#39;</span>,
- <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/site-packages&#39;</span>,
- <span class="co">&#39;/home/chris/miniconda3/lib/python3.5/site-packages/setuptools-23.0.0-py3.5.egg&#39;</span>]</code></pre></div>
+ <span class="st">&#39;/home/chris/miniconda3/lib/python35.zip&#39;</span>,
+ <span class="st">&#39;/home/chris/miniconda3/lib/python3.5&#39;</span>,
+ <span class="st">&#39;/home/chris/miniconda3/lib/python3.5/plat-linux&#39;</span>,
+ <span class="st">&#39;/home/chris/miniconda3/lib/python3.5/lib-dynload&#39;</span>,
+ <span class="st">&#39;/home/chris/miniconda3/lib/python3.5/site-packages&#39;</span>,
+ <span class="st">&#39;/home/chris/miniconda3/lib/python3.5/site-packages/setuptools-23.0.0-py3.5.egg&#39;</span>]</code></pre></div>
 <p>Notice that the current directory, represented by the <code>''</code> at the beginning of the search path.</p>
 <p>Also, note use of <code>pprint</code>.</p>
 </section>
@@ -209,7 +209,7 @@ Give me a number: <span class="dv">3</span>
 <span class="co">&#39;3&#39;</span></code></pre></div>
 <p>And remember, input() returns a string that may need to be converted.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Give me a number and I&#39;ll double it: &quot;</span>))
-Give me a number <span class="op">and</span> I<span class="st">&#39;ll double it: 3</span>
+Give me a number <span class="kw">and</span> I<span class="st">&#39;ll double it: 3</span>
 <span class="st">6</span></code></pre></div>
 </section>
 <section id="command-line-arguments" class="slide level1">
@@ -260,7 +260,7 @@ You<span class="st">&#39;ve given me nothing to work with.</span></code></pre></
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

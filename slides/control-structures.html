@@ -58,7 +58,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <!--[if lt IE 9]>
   <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
 </head>
 <body>
   <div class="reveal">
@@ -117,8 +117,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section id="logical-expressions" class="slide level1">
 <h1>Logical Expressions</h1>
 <p>Simple boolean expressions can be combined to form larger expressions using logical operators and, or, and not.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(<span class="dv">1</span> <span class="op">==</span> <span class="dv">1</span>) <span class="op">and</span> (<span class="dv">1</span> <span class="op">!=</span> <span class="dv">1</span>) <span class="op">//</span> <span class="va">False</span>
-(<span class="dv">1</span> <span class="op">==</span> <span class="dv">1</span>) <span class="op">or</span> (<span class="dv">1</span> <span class="op">!=</span> <span class="dv">1</span>) <span class="op">//</span> <span class="va">True</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">(<span class="dv">1</span> <span class="op">==</span> <span class="dv">1</span>) <span class="kw">and</span> (<span class="dv">1</span> <span class="op">!=</span> <span class="dv">1</span>) <span class="op">//</span> <span class="va">False</span>
+(<span class="dv">1</span> <span class="op">==</span> <span class="dv">1</span>) <span class="kw">or</span> (<span class="dv">1</span> <span class="op">!=</span> <span class="dv">1</span>) <span class="op">//</span> <span class="va">True</span></code></pre></div>
 </section>
 <section id="truth-in-python" class="slide level1">
 <h1>Truth in Python</h1>
@@ -184,7 +184,7 @@ else:
 <section id="short-circuit-evaluation" class="slide level1">
 <h1>Short-Circuit Evaluation</h1>
 <p>Here's a common idiom for testing an operand before using it:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> (kids <span class="op">!=</span> <span class="dv">0</span>) <span class="op">and</span> ((pieces <span class="op">/</span> kids) <span class="op">&gt;=</span> <span class="dv">2</span>):
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">if</span> (kids <span class="op">!=</span> <span class="dv">0</span>) <span class="kw">and</span> ((pieces <span class="op">/</span> kids) <span class="op">&gt;=</span> <span class="dv">2</span>):
     <span class="bu">print</span>(<span class="st">&quot;Each kid may have two pieces.&quot;</span>)</code></pre></div>
 <p>In this example Python uses short-circuit evaluation. If</p>
 <p><code>kids != 0</code></p>
@@ -232,7 +232,7 @@ Blast off<span class="op">!</span></code></pre></div>
 </ul>
 <p>In the for loop:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> animal <span class="op">=</span> <span class="st">&#39;Peacock&#39;</span>
-<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> animal <span class="op">in</span> [<span class="st">&#39;Giraffe&#39;</span>, <span class="st">&#39;Alligator&#39;</span>, <span class="st">&#39;Liger&#39;</span>]:
+<span class="op">&gt;&gt;&gt;</span> <span class="cf">for</span> animal <span class="kw">in</span> [<span class="st">&#39;Giraffe&#39;</span>, <span class="st">&#39;Alligator&#39;</span>, <span class="st">&#39;Liger&#39;</span>]:
 ...     <span class="bu">print</span>(animal)
 ...
 Giraffe
@@ -252,7 +252,7 @@ Liger
 <li>optional <code>else</code> clause executes only of loop completes without executing a <code>break</code> (weird - don't ever write code with <code>for</code>-<code>else</code>)</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="kw">def</span> sweet_animals(animals):
-...     <span class="cf">for</span> animal <span class="op">in</span> animals:
+...     <span class="cf">for</span> animal <span class="kw">in</span> animals:
 ...         <span class="bu">print</span>(animal)
 ...         <span class="cf">if</span> animal <span class="op">==</span> <span class="st">&#39;Liger&#39;</span>:
 ...             <span class="bu">print</span>(<span class="st">&#39;Mad drawing skillz!&#39;</span>)
@@ -275,7 +275,7 @@ No animals of note.</code></pre></div>
 <p>An error detected during execution is called an exception and is represented at runtime by an exception object. The Python interpreter raises an exception at the point an error occurs. The exception is handled by some exception-handling code. Here we don't handle the ValueError ourselves, so it's handled by the Python shell:</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="op">&gt;&gt;&gt;</span> <span class="bu">int</span>(<span class="st">&#39;e&#39;</span>)
 Traceback (most recent call last):
-File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="op">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
+File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span>
 <span class="pp">ValueError</span>: invalid literal <span class="cf">for</span> <span class="bu">int</span>() <span class="cf">with</span> base <span class="dv">10</span>: <span class="st">&#39;e&#39;</span></code></pre></div>
 <p>We can handle an exception by enclosing potentially error-raising code in a try block and handling errors in an except clause.</p>
 <div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="cf">try</span>:
@@ -300,7 +300,7 @@ File <span class="st">&quot;&lt;stdin&gt;&quot;</span>, line <span class="dv">1<
 ...
 <span class="op">&gt;&gt;&gt;</span> get_number_from_user()
 Please enter a whole number: e
-e <span class="op">is</span> <span class="op">not</span> a whole number. Try again.
+e <span class="kw">is</span> <span class="kw">not</span> a whole number. Try again.
 Please enter a whole number: <span class="dv">3</span>
 <span class="dv">3</span></code></pre></div>
 <p>For more information, see <a href="https://docs.python.org/3/tutorial/errors.html" class="uri">https://docs.python.org/3/tutorial/errors.html</a></p>
@@ -325,7 +325,7 @@ Please enter a whole number: <span class="dv">3</span>
         dependencies: [
           { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+              { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

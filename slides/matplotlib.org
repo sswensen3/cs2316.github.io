@@ -1,0 +1,49 @@
+#+TITLE: Matplotlib
+#+AUTHOR: Data Visualization in Python
+#+EMAIL:
+#+DATE:
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS: H:2 toc:nil num:t
+#+BEAMER_FRAME_LEVEL: 2
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [smaller]
+#+LaTeX_HEADER: \usepackage{verbatim, multicol, tabularx,}
+#+LaTeX_HEADER: \usepackage{amsmath,amsthm, amssymb, latexsym, listings, qtree}
+#+LaTeX_HEADER: \lstset{frame=tb, aboveskip=1mm, belowskip=0mm, showstringspaces=false, columns=flexible, basicstyle={\scriptsize\ttfamily}, numbers=left, frame=single, breaklines=true, breakatwhitespace=true}
+#+LaTeX_HEADER: \setbeamertemplate{footline}[frame number]
+
+
+* Matplotlib
+
+** Matplotlib in iPython Shells
+
+** Matplotlib in iPython Notebooks
+
+** Line Plots
+
+** Scatter Plots
+
+** Error Bars
+
+** Density Plots
+
+** Contour Plots
+
+** Histograms
+
+** Plot Legends
+
+** Plot Colors
+
+** Subplots
+
+** Annotations
+
+** 3-D Plots
+
+** Geographic Data
+
+** Seaborn

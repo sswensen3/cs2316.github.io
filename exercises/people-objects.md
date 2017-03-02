@@ -25,8 +25,6 @@ The [`people.py`](people.py) module has starter code that creates `Person` objec
     - a height in cm (int),
     - a weight in kilograms (float),
   - a `__repr__` method that returns a `str` like `<name, birthdate, height, weight>` field, e.g., `<Stan, 2008-08-13, 150cm, 45kg>`;
-
-
   - a `height_inches` method that returns the `Person` object's height in inches (1in = 2.54cm), and
   - a `weight_pounds` method that returns the `Person` object's weight in pounds (1kg = 2.2lb).
 
