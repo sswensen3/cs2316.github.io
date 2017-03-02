@@ -32,23 +32,21 @@ Week 8
 2017-03-01;scipy
 2017-03-03;numpy
 Week 9
-2017-03-06;pandas;[HW3 Due 2017-03-07](spring2017/hw3/hw3-pet-store.html),[HW4 Released 2017-03-06]()
-2017-03-08;matplotlib
+2017-03-06;numpy;[HW3 Due 2017-03-07](spring2017/hw3/hw3-pet-store.html),[HW4 Released 2017-03-06]()
+2017-03-08;web-services
 2017-03-10;exam2
 Week 10
-2017-03-13;xml;[HW5 Released 2017-03-14]()
-2017-03-15;xml;[HW4 Due 2017-03-16]()
-2017-03-17;relational-databases
+2017-03-13;pandas;[HW5 Released 2017-03-14]()
+2017-03-15;pandas;[HW4 Due 2017-03-16]()
+2017-03-17;matplotlib
 Week 11
 2017-03-20;Spring Break - No Class
 2017-03-22;Spring Break - No Class
 2017-03-24;Spring Break - No Class
-Storing Data
 Week 12
 2017-03-27;relational-databases
 2017-03-29;sql
 2017-03-31;sql
-Desktop Data Manipulation
 Week 13
 2017-04-03;python-guis;[HW5 Due 2017-04-04]()
 2017-04-05;python-guis;[HW6 Released 2017-04-05]()
@@ -58,10 +56,10 @@ Week 14
 2017-04-12;review3
 2017-04-14;exam3
 Week 15
-2017-04-17;html
-2017-04-19;regular-expressions;[HW6 Due 2017-04-20]()
+2017-04-17;regular-expressions
+2017-04-19;html;[HW6 Due 2017-04-20]()
 2017-04-21;web-mining
 Week 16
-2017-04-24;web-services
-2017-04-26;web-services
+2017-04-24;xml
+2017-04-26;flask
 2017-04-28;Final Exam: 11:30 - 14:20
