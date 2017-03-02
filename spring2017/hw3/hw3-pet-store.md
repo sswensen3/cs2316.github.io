@@ -371,7 +371,9 @@ Species: Snake, Name: Albert, Age: 11, Color: Tan, Price: 78
 >>> Welcome to your pet store! What would you like to do? quit
 Bye!
 ```
+## Test file
 
+If you would like to test your code on a csv file, use [initial_pets.csv](initial_pets.csv)
 
 ## Submission Instructions
 
