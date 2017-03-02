@@ -36,7 +36,7 @@ You have decided to open a Pet Store!  However you quickly realize that in order
 
 ## Solution Description
 
-In this homework you will be writing 2 classes, a method to read in data from a csv file, and a main method to call all of the methods that you write. 
+In this homework you will be writing 2 classes, a method to read in data from a csv file, and a main method to call all of the methods that you write.
 
 ## Doctest
 
@@ -62,7 +62,7 @@ class Pet:
     """An object of Pet will have a species, name, age, color, and price.  The
     Pet object should also be able to be printed in an informative manner.
     """
-    
+
     def __init__(self, species, name, age, color, price):
         """Creates a new pet object with the instance attributes of its species,
          name, age, color, and price.
@@ -302,7 +302,7 @@ if __name__=="__main__":
    main(sys.argv)
 ```
 
-Write a main function that allows the user to run the pet store.  This function should run when this file is run as a script on the command line. 
+Write a main function that allows the user to run the pet store.  This function should run when this file is run as a script on the command line.
 ```sh
 python hw3.py
 ```
