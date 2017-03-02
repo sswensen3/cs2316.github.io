@@ -189,17 +189,17 @@
         "order": [39]
     },
     "numpy": {
-        "topic": "[NumPy](slides/numpy.html)",
+        "topic": "[NumPy](slides/numpy.pdf)",
         "materials": [""],
         "order": [39]
     },
     "pandas": {
-        "topic": "[Pandas](slides/pandas.html)",
+        "topic": "[Pandas](slides/pandas.pdf)",
         "materials": [""],
         "order": [41]
     },
     "matplotlib": {
-        "topic": "[Matplotlib](slides/matplotlib.html)",
+        "topic": "[Matplotlib](slides/matplotlib.pdf)",
         "materials": [""],
         "order": [40]
     },
