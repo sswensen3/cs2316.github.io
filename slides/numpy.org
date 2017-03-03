@@ -20,32 +20,122 @@
 
 ** Numerical Python
 
+Provides efficient storage and operations on dense data buffers, i.e., arrays.
+
+#+BEGIN_SRC Python
+In [1]: import numpy as np
+#+END_SRC
+
 ** NumPy Basics
+
+Arrays have fixed data type
+
+#+BEGIN_SRC python
+In [2]: nums = [1, 2, 3.14]
+
+In [3]: nums
+Out[3]: [1, 2, 3.14]
+
+In [4]: np.array(nums)
+Out[4]: array([ 1.  ,  2.  ,  3.14])
+
+In [5]: type(Out[4][0])
+Out[5]: numpy.float64
+#+END_SRC
+
+- Notice that the values were converted to floats.
+
+You can specify an explicit type:
+#+BEGIN_SRC python
+In [6]: np.array(nums, dtype='int')
+Out[6]: array([1, 2, 3])
+#+END_SRC
+
+
 
 ** NumPy Array Attributes
 
+#+BEGIN_SRC python
+
+#+END_SRC
+
+
 ** NumPy Array Indexing
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
 
 ** NumPy Array Slicing
 
+#+BEGIN_SRC python
+
+#+END_SRC
+
+
 ** NumPy Array Reshaping
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
 
 ** Joining and Splitting NumPy Arrays
 
+#+BEGIN_SRC python
+
+#+END_SRC
+
+
 ** Universal Functions on NumPy Arrays
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
 
 ** Array Aggregations
 
+#+BEGIN_SRC python
+
+#+END_SRC
+
+
 ** Array Broadcasting
+
+#+BEGIN_SRC python
+
+#+END_SRC
 
 ** Array Masks
 
+#+BEGIN_SRC python
+
+#+END_SRC
+
 ** Comparisons in Arrays
+
+#+BEGIN_SRC python
+
+#+END_SRC
 
 ** Sorting Arrays
 
+#+BEGIN_SRC python
+
+#+END_SRC
+
 ** Partitioning Arrays
+
+#+BEGIN_SRC python
+
+#+END_SRC
 
 ** Structured Arrays
 
 Brief introduction to motivate Pandas
+
+#+BEGIN_SRC python
+
+#+END_SRC
