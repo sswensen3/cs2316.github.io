@@ -45,97 +45,96 @@ Out[5]: numpy.float64
 
 - Notice that the values were converted to floats.
 
-You can specify an explicit type:
+You can specify an explicit element type with the ~dtype~ keyword argument:
 #+BEGIN_SRC python
 In [6]: np.array(nums, dtype='int')
 Out[6]: array([1, 2, 3])
 #+END_SRC
 
 
+# ** NumPy Array Attributes
 
-** NumPy Array Attributes
+# #+BEGIN_SRC python
 
-#+BEGIN_SRC python
-
-#+END_SRC
-
-
-** NumPy Array Indexing
-
-#+BEGIN_SRC python
-
-#+END_SRC
+# #+END_SRC
 
 
-** NumPy Array Slicing
+# ** NumPy Array Indexing
 
-#+BEGIN_SRC python
+# #+BEGIN_SRC python
 
-#+END_SRC
-
-
-** NumPy Array Reshaping
-
-#+BEGIN_SRC python
-
-#+END_SRC
+# #+END_SRC
 
 
-** Joining and Splitting NumPy Arrays
+# ** NumPy Array Slicing
 
-#+BEGIN_SRC python
+# #+BEGIN_SRC python
 
-#+END_SRC
-
-
-** Universal Functions on NumPy Arrays
-
-#+BEGIN_SRC python
-
-#+END_SRC
+# #+END_SRC
 
 
-** Array Aggregations
+# ** NumPy Array Reshaping
 
-#+BEGIN_SRC python
+# #+BEGIN_SRC python
 
-#+END_SRC
+# #+END_SRC
 
 
-** Array Broadcasting
+# ** Joining and Splitting NumPy Arrays
 
-#+BEGIN_SRC python
+# #+BEGIN_SRC python
 
-#+END_SRC
+# #+END_SRC
 
-** Array Masks
 
-#+BEGIN_SRC python
+# ** Universal Functions on NumPy Arrays
 
-#+END_SRC
+# #+BEGIN_SRC python
 
-** Comparisons in Arrays
+# #+END_SRC
 
-#+BEGIN_SRC python
 
-#+END_SRC
+# ** Array Aggregations
 
-** Sorting Arrays
+# #+BEGIN_SRC python
 
-#+BEGIN_SRC python
+# #+END_SRC
 
-#+END_SRC
 
-** Partitioning Arrays
+# ** Array Broadcasting
 
-#+BEGIN_SRC python
+# #+BEGIN_SRC python
 
-#+END_SRC
+# #+END_SRC
 
-** Structured Arrays
+# ** Array Masks
 
-Brief introduction to motivate Pandas
+# #+BEGIN_SRC python
 
-#+BEGIN_SRC python
+# #+END_SRC
 
-#+END_SRC
+# ** Comparisons in Arrays
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# ** Sorting Arrays
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# ** Partitioning Arrays
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# ** Structured Arrays
+
+# Brief introduction to motivate Pandas
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
