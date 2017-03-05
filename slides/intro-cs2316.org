@@ -1,0 +1,53 @@
+#+TITLE: Introduction to CS 2316
+#+AUTHOR:
+#+EMAIL:
+#+DATE:
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS: H:2 toc:nil num:t
+#+BEAMER_FRAME_LEVEL: 2
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [smaller]
+#+LaTeX_HEADER: \usepackage{verbatim, multicol, tabularx,}
+#+LaTeX_HEADER: \usepackage{amsmath,amsthm, amssymb, latexsym, listings, qtree}
+#+LaTeX_HEADER: \lstset{frame=tb, aboveskip=1mm, belowskip=0mm, showstringspaces=false, columns=flexible, basicstyle={\scriptsize\ttfamily}, numbers=left, frame=single, breaklines=true, breakatwhitespace=true}
+#+LaTeX_HEADER: \setbeamertemplate{footline}[frame number]
+#+LaTeX_HEADER: \hypersetup{colorlinks=true,urlcolor=blue}
+
+* Introduction to CS 2316
+
+** The Role of CS 2316
+
+- A practically oriented "CS2 for IE majors" but useful for anyone!
+
+  - So useful that CoC is developing a "CS 2316 on sterioids" for CS majors
+
+- Preparation for popular follow-on courses:
+
+  - CSE 6240/CX 4240 Introduction to Computational Data Analysis
+  - CSE 6242/CX 4242 Data and Visual Analytics
+  - CS 4400 Introduction to Database Systems (required for IE majors)
+
+- Fundamental skills required for Data Science, the [[https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century][sexiest job of the 21st century]]. (Next steps would be the courses listed above.)
+
+** Course Web Sites
+
+- T-Square: FERPA-protected information
+
+  - Grades
+  - Homework submission
+
+- [[http://cs2316.gatech.edu/][http://cs2316.gatech.edu/]]: everything else
+
+  - Syllabus, schedule, office hours
+  - Resources: installing required software, documentation, how-tos, etc.
+
+** Getting Started
+
+Go to the [[http://cs2316.gatech.edu/resources.html][Resources]] section of the  [[http://cs2316.gatech.edu/][class web site]] and do the steps under "Get Started".
+
+** Meet the Teacher(s)
+
+- [[http://cs1331.gatech.edu/slides/meet-simpkins.html][Prof. Simpkins]]
