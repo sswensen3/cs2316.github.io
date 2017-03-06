@@ -6,7 +6,7 @@
 #+KEYWORDS:
 #+LANGUAGE:  en
 #+OPTIONS: H:2 toc:nil num:t
-#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_FRAME_LEVEL: 3
 #+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
 #+LaTeX_CLASS: beamer
 #+LaTeX_CLASS_OPTIONS: [smaller]
@@ -51,12 +51,28 @@ In [6]: np.array(nums, dtype='int')
 Out[6]: array([1, 2, 3])
 #+END_SRC
 
+** NumPy Array Attributes
 
-# ** NumPy Array Attributes
+*** NuMpy arrays have attrributes                                   :B_block:
+    :PROPERTIES:
+    :BEAMER_COL: 0.48
+    :BEAMER_ENV: block
+    :END:
 
-# #+BEGIN_SRC python
+for the first viable Beamer setup in Org
 
-# #+END_SRC
+*** NuMpy arrays have attrributes                                   :B_block:
+    :PROPERTIES:
+    :BEAMER_COL: 0.48
+    :BEAMER_ENV: block
+    :END:
+
+ for the first viable Beamer setup in Org
+
+
+#+BEGIN_SRC python
+
+#+END_SRC
 
 
 # ** NumPy Array Indexing

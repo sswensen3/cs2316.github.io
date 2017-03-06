@@ -6,18 +6,18 @@
         "order": [1]
     },
     "intro-python": {
-        "topic": "[Intro to Python](slides/intro-python.html)",
+        "topic": "[Intro to Python](slides/intro-python.pdf)",
         "materials": ["[ITCS - Introduction](http://interactivepython.org/runestone/static/thinkcspy/GeneralIntro/introduction.html)",
                      "IP 1"],
         "order": [2]
     },
     "values-variables": {
-        "topic": "[Values and Variables](slides/values-variables.html)",
+        "topic": "[Values and Variables](slides/values-variables.pdf)",
         "materials": ["[ITCS - Simple Data](http://interactivepython.org/runestone/static/thinkcspy/SimplePythonData/toctree.html)", "IP 2"],
         "order": [3]
     },
     "data-structures": {
-        "topic": "[Data Structures](slides/data-structures.html)",
+        "topic": "[Data Structures](slides/data-structures.pdf)",
         "materials": ["[ITCS - Lists](http://interactivepython.org/runestone/static/thinkcspy/Lists/toctree.html)", "[ITCS - Dictionaries](http://interactivepython.org/runestone/static/thinkcspy/Dictionaries/toctree.html)", "IP 2-3"],
         "order": [4]
     },
@@ -27,23 +27,23 @@
         "order": [100]
     },
     "control-structures": {
-        "topic": "[Control Structures](slides/control-structures.html)",
+        "topic": "[Control Structures](slides/control-structures.pdf)",
         "materials": ["[ITCS - Selection](http://interactivepython.org/runestone/static/thinkcspy/Selection/toctree.html)",
                       "[ITCS - Iteration](http://interactivepython.org/runestone/static/thinkcspy/MoreAboutIteration/toctree.html)", "IP 4","Exercise: [grades.py](exercises/grades.py)"],
         "order": [5]
     },
     "functions": {
-        "topic": "[Functions](slides/functions.html)",
+        "topic": "[Functions](slides/functions.pdf)",
         "materials": ["[ITCS - Functions](http://interactivepython.org/runestone/static/thinkcspy/Functions/toctree.html)", "[ITCS - Turtles](http://interactivepython.org/runestone/static/thinkcspy/PythonTurtle/toctree.html)", "IP 4"],
         "order": [6]
     },
     "modules-programs": {
-        "topic": "[Modules and Programs](slides/modules-programs.html)",
+        "topic": "[Modules and Programs](slides/modules-programs.pdf)",
         "materials": ["[ITCS - Modules](http://interactivepython.org/runestone/static/thinkcspy/PythonModules/toctree.html)", "IP 6", "[hanglib](code/hanglib/)", "Exercise: [Hangman](exercises/hangman.html)"],
         "order": [7]
     },
     "functional-programming": {
-        "topic": "[Functional programming](slides/functional-programming.html)",
+        "topic": "[Functional programming](slides/functional-programming.pdf)",
         "materials": [""],
         "order": [8]
     },
@@ -53,7 +53,7 @@
         "order": [100]
     },
     "classes-objects": {
-        "topic": "[Classes and Objects](slides/classes-objects.html)",
+        "topic": "[Classes and Objects](slides/classes-objects.pdf)",
         "materials": ["[ITCS - Classes and Objects](http://interactivepython.org/runestone/static/thinkcspy/ClassesBasics/toctree.html)", "[OOP Code](https://github.com/cs2316/cs2316.github.io/tree/master/code/classes)"],
         "order": [9]
     },
@@ -75,12 +75,12 @@
         "order": [100]
     },
     "file-io": {
-        "topic": "[File IO](slides/file-io.html)",
+        "topic": "[File IO](slides/file-io.pdf)",
         "materials": ["IP 8", "[Exercise: Tree](exercises/tree.html)"],
         "order": [12]
     },
     "csv-files": {
-        "topic": "[CSV Files](slides/csv-files.html)",
+        "topic": "[CSV Files](slides/csv-files.pdf)",
         "materials": ["IP 8", "Exercise: [Student Emails](exercises/student-emails.html) ([Sample Answer](exercises/student_emails.py))", "Exercise: [Tides](exercises/tides.html)", "Exercise: [Grades Report](exercises/grades_report.html)"],
         "order": [13]
     },
@@ -105,7 +105,7 @@
         "order": [18]
     },
     "web-scraping": {
-        "topic": "[Web Mining](slides/web-scraping.html)",
+        "topic": "[Web Mining](slides/web-scraping.pdf)",
         "materials": ["[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)",
                       "[wx.py](code/web/wx.py)",
                       "[movie.py](code/web/movie.py)"],
