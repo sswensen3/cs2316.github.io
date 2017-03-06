@@ -128,7 +128,8 @@
     },
     "review2": {
         "topic": "Review 2",
-        "materials": ["[cs2316-exam2-practice.pdf](cs2316-exam2-practice.pdf)"],
+        "materials": ["[cs2316-exam2-practice.pdf](cs2316-exam2-practice.pdf)",
+                      "[cs2316-exam2-practice-answers.pdf](cs2316-exam2-practice-answers.pdf)"],
         "order": [23]
     },
     "exam2": {
@@ -177,7 +178,7 @@
         "order": [100]
     },
     "python-guis": {
-        "topic": "[Python GUIs](slides/pyqt-guis.html)",
+        "topic": "[Python GUIs](slides/pyqt-guis.pdf)",
         "materials": ["[GUI Example Code](code/gui/)"],
         "order": [34, 35, 36]
     },

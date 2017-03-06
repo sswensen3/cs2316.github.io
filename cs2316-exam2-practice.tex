@@ -1,0 +1,441 @@
+\documentclass[addpoints,9pt]{exam}
+\usepackage{verbatim, multicol, tabularx,}
+\usepackage{amsmath,amsthm, amssymb, latexsym, listings, qtree}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=1mm,
+  belowskip=0mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\ttfamily},
+  numbers=none,
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=true
+}
+
+
+\title{CS 2316 Exam 2 Practice}
+\date{}
+\setcounter{page}{0}
+\begin{document}
+
+\maketitle
+\thispagestyle{head}
+%% \firstpageheader{}
+%%               {\tiny Copyright \textcopyright\ 2014 All rights reserved. Duplication and/or usage for purposes of any kind without permission is strictly forbidden.}
+%%               {}
+
+
+\runningheader{}
+              {\tiny Copyright \textcopyright\ 2017 All rights reserved. Duplication and/or usage for purposes of any kind without permission is strictly forbidden.}
+              {}
+
+\footer{Page \thepage\ of \numpages}
+              {}
+              {Points available: \pointsonpage{\thepage} -
+               points lost: \makebox[.5in]{\hrulefill} =
+               points earned:  \makebox[.5in]{\hrulefill}.
+              Graded by: \makebox[.5in]{\hrulefill}}
+
+
+\ifprintanswers
+\begin{center}
+{\LARGE ANSWER KEY}
+\end{center}
+\else
+\vspace{0.1in}
+\hbox to \textwidth{Name (print clearly): \enspace\hrulefill}
+\vspace{0.3in}
+\hbox to \textwidth{Signature: \hrulefill}
+
+\vspace{0.3in}
+\hbox to \textwidth{GT account username (gtg, gth, msmith3, etc): \enspace\hrulefill}
+
+\fi
+
+\vfill
+
+\begin{itemize}
+\item Signing signifies you are aware of and in accordance with the {\bf Academic Honor Code of Georgia Tech}.
+\item Calculators and cell phones are NOT allowed.
+\item This is a Python programming test.  Where asked for Python statements or expressions you must print them exactly as they would be typed in a Python source file or interactive shell.
+\end{itemize}
+
+\vfill
+
+% Points Table
+%\begin{center}
+\addpoints
+%\gradetable[v][pages]
+%\end{center}
+
+% Points Table
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{|l|c|X|X|X|}
+        \hline
+Question & Points per Page & Points Lost & Points Earned & Graded By \\
+\hline
+Page 1 & \pointsonpage{1} & - & =  &\\
+\hline
+Page 2 & \pointsonpage{2} & - & =  &\\
+\hline
+Page 3 & \pointsonpage{3} & - & =  &\\
+\hline
+Page 4 & \pointsonpage{4} & - & =  &\\
+\hline
+Page 5 & \pointsonpage{5} & - & =  &\\
+\hline
+Page 6 & \pointsonpage{6} & - & =  &\\
+\hline
+Page 7 & \pointsonpage{7} & - & =  &\\
+\hline
+TOTAL & \numpoints & - & =  & \\
+\hline
+\end{tabularx}
+\end{center}
+
+\newpage
+
+%\normalsize
+
+\pointsinmargin
+\bracketedpoints
+
+\marginpointname{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\question {\bf True or False}
+
+In each of the blanks below, write ``T'' if the statement beside the blank is true, ``F'' otherwise.\\
+
+\begin{parts}
+
+\ifprintanswers
+\part[1] \underline{ {\bf F} } Comma-separated values (CSV) files have a tree structure, meaning they have elements that are nested to arbitray depths.\\
+\else
+\part[1] \makebox[.25in]{\hrulefill} Comma-separated values files have a tree structure, meaning they have elements that are nested to arbitray depths.\\
+\fi
+
+\ifprintanswers
+\part[1] \underline{ {\bf F} } CSV files are binary files whose contents can only be viewed with proprietary software.\\
+\else
+\part[1] \makebox[.25in]{\hrulefill} CSV files are binary files whose contents can only be viewed with proprietary software.\\
+\fi
+
+\ifprintanswers
+\part[1] \underline{ {\bf T} } Files in Python are buffered, meaning that they are not guaranteed to be completely written to disk until they are successfully closed.\\
+\else
+\part[1] \makebox[.25in]{\hrulefill} Files in Python are buffered, meaning that they are not guaranteed to be completely written to disk until they are successfully closed.\\
+\fi
+
+% 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8<
+% Add these back after Spring 2017
+
+%% \ifprintanswers
+%% \part[1] \underline{ {\bf F} } XML documents are not human-readable.\\
+%% \else
+%% \part[1] \makebox[.25in]{\hrulefill} XML documents are not human-readable.\\
+%% \fi
+
+%% \ifprintanswers
+%% \part[1] \underline{ {\bf T} } XML documents can be edited with any text editor.\\
+%% \else
+%% \part[1] \makebox[.25in]{\hrulefill} XML documents can be edited with any text editor.\\
+%% \fi
+
+%% \ifprintanswers
+%% \part[1] \underline{ {\bf T} } The fundamental data abstraction in relational databases is the table.\\
+%% \else
+%% \part[1] \makebox[.25in]{\hrulefill} The fundamental data abstraction in relational databases is the table.\\
+%% \fi
+
+% 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8<
+
+\end{parts}
+
+\newpage
+
+\question  {\bf Multiple Choice} Circle the letter of the correct choice.
+
+\begin{parts}
+
+\part[2] Given the following CSV file contents:
+
+\begin{lstlisting}[language=Python]
+'a'; 'b'; 'c'
+'d'; 'e'; 'f'
+'g'; 'e'; 'h'
+\end{lstlisting}
+
+What is the field delimiter?
+
+\begin{choices}
+\choice {\tt ','}
+\correctchoice {\tt ';'}
+\choice {\tt "'"'}
+\choice {\tt '"'}
+\end{choices}
+
+\part[2] What is the quote character?
+
+\begin{choices}
+\choice {\tt ','}
+\choice {\tt ';'}
+\correctchoice {\tt "'"}
+\choice {\tt '"'}
+\end{choices}
+
+\part[2] If you read the CSV file above with a {\tt csv.DictReader} like this:
+
+\begin{lstlisting}[language=Python]
+quote = ... # from question above
+delim = ... # from question above
+reader = csv.DictReader(csvfile, delimiter=delim, quotechar=quote)
+\end{lstlisting}
+
+what would it return for the first record?
+
+\begin{choices}
+\choice {\tt ['a', 'b', 'c']}
+\choice {\tt ('a', 'b', 'c')}
+\correctchoice {\tt \{'a': 'd', 'b': 'e', 'c': 'f'\}}
+\choice {\tt \{None: 'a', None: 'b', None: 'c'\}}
+\end{choices}
+
+% 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8<
+% Add these back after Spring 2017
+
+%% \part[2] Which of the following is {\bf not} well-formed XML?
+
+%% \begin{choices}
+%% \choice {\tt <a> <b> c </b> </a>}
+%% \choice {\tt <a> <b> <c/> </b> </a>}
+%% \correctchoice {\tt <a> <b> <c> </b> </a>}
+%% \choice {\tt <a> <b> <c> d </c> </b> </a>}
+%% \end{choices}
+
+
+%% \part[2] A musician can be a member of many bands and a band can have many musicians.  What kind of cardinality relationship exists between musicians and bands?
+
+%% \begin{choices}
+%% \choice one to one
+%% \choice one to many
+%% \correctchoice many to many
+%% \end{choices}
+
+% 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8<
+
+\end{parts}
+
+\newpage
+
+\question {\bf Short Answer}
+\begin{parts}
+
+\part[5] Say you have a python program that was run from the command line with {\tt python my\_program one two three}.  Within your program, how do you get the first command line argument {\it to your program} (not to the Python interpreter)?
+
+\begin{solution}[1in]
+\begin{verbatim}
+import sys
+first = sys.argv[1]
+\end{verbatim}
+\end{solution}
+
+\part[5] Say you have a python program that was run from the command line.  Write a snippet of Python code that checks whether any command line arguments were supplied to the Python program.
+
+\begin{solution}[1in]
+\begin{verbatim}
+if len(sys.argv) > 1:
+    # at least one command line argument was supplied to the Python program
+\end{verbatim}
+\end{solution}
+
+\part[5] Write a Python statement that opens a file for reading as text.  The file name is supplied by the first command line argument.
+
+\begin{solution}[1in]
+\begin{verbatim}
+fin = open(sys.argv[1], 'rt')
+\end{verbatim}
+\end{solution}
+
+\part[5] Write a Python statement that opens a file for writing as text.  The file name is the first command line argument with the text ".out" appended.
+
+\begin{solution}[1in]
+\begin{verbatim}
+fout = open(sys.argv[1] + '.out', 'wt')
+\end{verbatim}
+\end{solution}
+
+\end{parts}
+
+\newpage
+
+% 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8<
+% Add these back after Spring 2017
+
+%% \question {\bf Short Answer}
+
+%% \begin{parts}
+
+%% Given the following table schema for a dive log:
+
+%% \begin{lstlisting}[language=SQL]
+%% create table dive (
+%%   datetime text, -- the day and start time of the dive
+%%   duration text, -- duration of the dive from descent to ascent
+%%   location text, -- the location and dive site name
+%%   buddy text,    -- dive buddy
+%% );
+%% \end{lstlisting}
+
+%% \part[5] Which field, or fields, would make the best primary key?  Why?
+
+%% \begin{solution}[1in]
+%% \begin{verbatim}
+%% datetime should be unique - can't do two dives at once
+%% \end{verbatim}
+%% \end{solution}
+
+%% Given the following schema:
+
+%% \begin{lstlisting}[language=SQL]
+%% create table dog (
+%%     dogid integer primary key autoincrement,
+%%     name text not null check(name != ''),
+%%     sex text not null check(sex = 'M' or sex = 'F'),
+%%     ownerid references owner(ownerid)
+%% );
+
+%% create table owner (
+%%     ownerid integer primary key autoincrement,
+%%     name text not null check(name != '')
+%% );
+%% \end{lstlisting}
+
+%% \part[5] Write a {\tt select} statement that will return all the male dogs.
+
+%% \begin{solution}[1in]
+%% \begin{verbatim}
+%% select * from dog where sex = 'M';
+%% \end{verbatim}
+%% \end{solution}
+
+%% \part[5] Write a {\tt select} statement that will return all the dogs owned by 'Tom'.
+
+%% \begin{solution}[1in]
+%% \begin{verbatim}
+%% select * from dog join owner using (ownerid) where owner.name = 'Tom';
+%% \end{verbatim}
+%% \end{solution}
+
+%% \part[5] Write a {\tt select} statement that will return all the dogs whose names start with 'Butter'.
+
+%% \begin{solution}[1in]
+%% \begin{verbatim}
+%% select * from dog where name like 'Butter%;
+%% \end{verbatim}
+%% \end{solution}
+
+%% \end{parts}
+
+%% \newpage
+
+% 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8<
+
+\question[10] Write Python code that reads a CSV file that uses commas for delimiters, no quote characters and has no header row and stores the data as a list of lists.  For example, for a file like:\\
+
+\begin{verbatim}
+a,b,c
+d,e,f
+\end{verbatim}
+
+your code should create a list of lists like:
+
+\begin{verbatim}
+[['a', 'b', 'c'], ['d', 'e', 'f']]
+\end{verbatim}
+
+Use whatever Python programming techniques you wish.
+
+\ifprintanswers
+\begin{lstlisting}[language=Python]
+import csv
+with open(fine_name, 'r') as fin
+    reader = csv.reader(fin)
+    data = [line for line in reader]
+\end{lstlisting}
+Or
+\begin{lstlisting}[language=Python]
+import csv
+data = []
+with open(fine_name, 'r') as fin
+    reader = csv.reader(fin)
+    for line in reader:
+        data.append(line)
+\end{lstlisting}
+Or
+\begin{lstlisting}[language=Python]
+with open(fine_name, 'r') as fin
+    data = [line.split(',') for line in fin]
+\end{lstlisting}
+Or
+\begin{lstlisting}[language=Python]
+data = []
+with open(fine_name, 'r') as fin
+    for line in fin:
+        data.append(line.split(','))
+\end{lstlisting}
+Or ...
+\fi
+
+
+
+\newpage
+
+% 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8<
+% Add these back after Spring 2017
+
+
+%% \question[10] Write a funtion called {\tt last\_name} that takes an {\tt ElemenetTree} element parameter and returns the text of the {\tt lastName} sub-element of the parameter.  Assume that {\tt xml.etree.ElementTree} has been imported as {\tt et}.
+
+%% \ifprintanswers
+%% \begin{lstlisting}[language=Python]
+%% def last_name(element):
+%%   return element.find("lastName").text
+%% \end{lstlisting}
+%% \fi
+
+%% \newpage
+
+%% \question[10] Write the create statements for a database of employees and departments.  For employees store name, hire date, salary, and department.  For department store the name, description, and the department head, who is an employee.  Add any fields you need for keys and be sure to include foreign keys as necessary.
+
+%% \ifprintanswers
+%% \begin{lstlisting}[language=SQL]
+%% create table employee (
+%%   empid integer primary key,
+%%   name text,
+%%   hiredate text,
+%%   salary float,
+%%   deptid references department(deptid)
+%% );
+
+%% create table department (
+%%   deptid integer primary key,
+%%   name text,
+%%   description text,
+%%   head references employee(empid)
+%% );
+%% \end{lstlisting}
+%% \fi
+
+% 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8< 8<
+
+
+\end{questions}
+
+\end{document}
