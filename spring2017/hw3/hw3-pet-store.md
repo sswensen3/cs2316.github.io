@@ -392,3 +392,45 @@ Practice safe submission! Verify that your HW files were truly submitted correct
     - It helps insure that you turn in the correct files.
     - It helps you realize if you omit a file or files. Missing files will not be given any credit, and non-compiling homework solutions will receive few to zero points. Also recall that late homework will not be accepted regardless of excuse. Treat the due date with respect.  Do not wait until the last minute! (If you do discover that you omitted a file, submit all of your files again, not just the missing one.)
     - Helps find syntax errors or runtime errors that you may have added after you last tested your code.
+
+## Rubric
+
+Pet Class - 25 Points
+
+- init: 3 Points for instantiating variables correctly
+- repr: 2 Points for a string representation of the object
+- eq: 5 points for testing equality
+- gt: 5 points for correctly ordering Pet objects
+
+Pet Store Class - 55 Points
+
+- init: 5 points for instatntiating correct instance vbariables
+- add_pet: 5 points for adding a pet to the Pet store
+- sell_cheapest: 15 points.
+    - 5 points for sorting on price correctly
+    - 5 points for sorting on name if there is a tie
+    - 2 points for removing a pet from the dictionary
+    - 2 points for updating the pet store's money correctly
+    - 1 point for handling errors correctly
+- sell_all: 10 points
+    - 7 points for removing the correct pets from the inventory
+    - 3 points for updating the pet store's money correctly
+    - 1 point for handling errors correctly
+- discount: 10 points
+    - 5 points for altering the correct pets' prices
+    - 4 points for the correct price
+    - 1 point for handling errors correctly
+- breed: 10 points
+    - 6 points for choosing the correct two pets
+    - 3 points for adding the baby to the Pet Store with the right attributes
+    - 1 point for handling errors correctly   
+
+Populate Function - 5 Points
+- adds every pet in the csv file to the inventory of the Pet store class passed in as a parameter
+
+Main Method - 15 Points
+- 5 points gets the csv file name from the command line, instantiates a pet store, reads contents of csv into pet store with populate
+- 5 points handles errors gracefully (no errors no matter the input.  These points will not be awarded if the main function is not implemented
+- 5 points every keyword calls the correct function and the program can be quit
+
+    
