@@ -1,9 +1,9 @@
 ---
 layout: homework
-title: Homework 4 - Amaz(on)ing
+title: Homework 4 - Amaz(on)ing!
 ---
 
-# Homework 4 - Amaz(on)ing
+# Homework 4 - Amaz(on)ing!
 
 ## Introduction
 
@@ -31,21 +31,21 @@ Notes:
 
 ## Problem Description
 
-You have just been hired as a data analyst for Amazon.  Your first assignment on the job is to analyze the review data for food products sold on Amazon.com.  To assit in your analysis, You have been given a CSV file with information pertaining to more than 500,000 reviews from the site.
+You have just been hired as a data analyst for Amazon.  Your first assignment on the job is to analyze the review data for food products sold on Amazon.com.  To assist in your analysis, you have been given a [CSV file](reviews.csv) with information pertaining to more than 500,000 reviews from the site.
 
 Each row in the CSV file contains the productID of the product being reviewed, the userID of the person making the review, the profile name of the reviewer, the helpfulnessNum and helpfulnessDen (which correspond the the numerator and denominator of the fraction of people who marked the review as helpful), the score given by the review, the time of the review, the title of the review, and the text of the review.
 
 
 ## Solution Description - IMPORTANT
 
-For this assignment you must write your code in a Jupyter Notebook.  Because of the structure of the sciPy stack and the Jupyter Notebook, you do not need to write your code in seperate functions.  Instead, use seperate cells for each block of code you write.  You should turn in a neat, completed iPython Notebook File `amazon_analysis.ipynb` with your answers and explorations into the questions below clearly marked.
+For this assignment you must write your code in a Jupyter Notebook.  Because of the structure of the SciPy stack and the Jupyter Notebook, you do not need to write your code in separate functions.  Instead, use separate cells for each block of code you write.  You should turn in a neat, completed iPython Notebook File `amazon_analysis.ipynb` with your answers and explorations into the questions below clearly marked.
 
-To get credit for this assignment, you must complete all of the tasks using a Pandas dataframe.  Becuase Pandas and numpy are vectorized, each task can be completed with at most a few lines of code.  You can (and should) complete this assignment without using a single for loop.
+To get credit for this assignment, you must complete all of the tasks using a Pandas dataframe.  Because Pandas and numpy are vectorized, each task can be completed with at most a few lines of code.  You can (and should) complete this assignment without using a single for loop.
 
 
 ## Getting Started
 
-Before the data can be analyzed, it must be imported.  Use the read_csv method from the Pandas module to read the data into a Pandas DataFrame.  The `pandas.read_csv()` method has many optional arguments that can be used to help it work for a wide variety of csv files.  When importing the reviews.csv file, set the econding argument to "latin-1" and specify the datatypes of both of the helpfulness columns as np.float64.
+Before the data can be analyzed, it must be imported.  Use the read_csv method from the Pandas module to read the data into a Pandas DataFrame.  The `pandas.read_csv()` method has many optional arguments that can be used to help it work for a wide variety of csv files.  When importing the reviews.csv file, set the encoding argument to "latin-1" and specify the data types of both of the helpfulness columns as np.float64.
 
 Before moving on, be sure that the DataFrame was set up correctly.  The .head(n) method will display the first n rows of the DataFrame, default 5.
 
