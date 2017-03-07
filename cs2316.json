@@ -59,14 +59,13 @@
     },
     "review1": {
         "topic": "Review 1",
-        "materials": ["[cs2316-exam1-practice.pdf](cs2316-exam1-practice.pdf)",
-                      "[cs2316-exam1-practice-answers.pdf](cs2316-exam1-practice-answers.pdf)",
-                     "[Treating People as Objects](exercises/people-objects.html)"],
+        "materials": ["[Treating People as Objects](exercises/people-objects.html)"],
         "order": [10]
     },
     "exam1": {
         "topic": "**Exam 1**",
-        "materials": [""],
+        "materials": ["[cs2316-exam1-practice.pdf](cs2316-exam1-practice.pdf)",
+                      "[cs2316-exam1-practice-answers.pdf](cs2316-exam1-practice-answers.pdf)"],
         "order": [11]
     },
     "pq1": {
@@ -128,13 +127,13 @@
     },
     "review2": {
         "topic": "Review 2",
-        "materials": ["[cs2316-exam2-practice.pdf](cs2316-exam2-practice.pdf)",
-                      "[cs2316-exam2-practice-answers.pdf](cs2316-exam2-practice-answers.pdf)"],
+        "materials": [""],
         "order": [23]
     },
     "exam2": {
         "topic": "**Exam 2**",
-        "materials": [""],
+        "materials": ["[cs2316-exam2-practice.pdf](cs2316-exam2-practice.pdf)",
+                      "[cs2316-exam2-practice-answers.pdf](cs2316-exam2-practice-answers.pdf)"],
         "order": [24]
     },
     "pq2": {
@@ -164,13 +163,13 @@
     },
     "review3": {
         "topic": "Review 3",
-        "materials": ["[cs2316-exam3-practice.pdf](cs2316-exam3-practice.pdf)",
-                     "[cs2316-exam3-practice-answers.pdf](cs2316-exam3-practice-answers.pdf)"],
+        "materials": [""],
         "order": [32]
     },
     "exam3": {
         "topic": "**Exam 3**",
-        "materials": [""],
+        "materials": ["[cs2316-exam3-practice.pdf](cs2316-exam3-practice.pdf)",
+                     "[cs2316-exam3-practice-answers.pdf](cs2316-exam3-practice-answers.pdf)"],
         "order": [33]
     },
     "pq3": {
