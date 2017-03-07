@@ -164,7 +164,8 @@
     },
     "review3": {
         "topic": "Review 3",
-        "materials": ["[cs2316-exam3-practice.pdf](cs2316-exam3-practice.pdf)"],
+        "materials": ["[cs2316-exam3-practice.pdf](cs2316-exam3-practice.pdf)",
+                     "[cs2316-exam3-practice-answers.pdf](cs2316-exam3-practice-answers.pdf)"],
         "order": [32]
     },
     "exam3": {
