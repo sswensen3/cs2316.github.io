@@ -194,18 +194,66 @@ Software Engineer         101000
 dtype: int64
 #+END_SRC
 
-# ** DataFrame
+** DataFrame
 
-# #+BEGIN_SRC python
+#+BEGIN_SRC python
+In [42]: jobs = pd.DataFrame({'salary': salary_data, 'openings': openings})
 
-# #+END_SRC
+In [43]: jobs
+Out[43]:
+                        openings  salary
+Analytics Manager           1958  112000
+Data Engineer               2599  106000
+Data Scientist              4184  110000
+Database Administrator      2877   93000
+DevOps Engineer             2725  110000
+Software Architect          2232  125000
+Software Engineer          17085  101000
+Supply Chain Manager        1270  100000
+UX Designer                 1691   92500
+#+END_SRC
+
+#+BEGIN_SRC python
+In [46]: jobs.index
+Out[46]:
+Index(['Analytics Manager', 'Data Engineer', 'Data Scientist',
+       'Database Administrator', 'DevOps Engineer', 'Software Architect',
+       'Software Engineer', 'Supply Chain Manager', 'UX Designer'],
+      dtype='object')
+
+In [47]: jobs.columns
+Out[47]: Index(['openings', 'salary'], dtype='object')
+#+END_SRC
+
+** Simple DataFrame Indexing
+
+In a NumPy array you index a 2-d array by row. In a Panda DataFrame you index by column.
+
+#+BEGIN_SRC python
+In [48]: jobs['salary']
+Out[48]:
+Analytics Manager         112000
+Data Engineer             106000
+Data Scientist            110000
+Database Administrator     93000
+DevOps Engineer           110000
+Software Architect        125000
+Software Engineer         101000
+Supply Chain Manager      100000
+UX Designer                92500
+Name: salary, dtype: int64
+#+END_SRC
+
+
+Each colum is a Series:
+#+BEGIN_SRC python
+In [49]: type(jobs['salary'])
+Out[49]: pandas.core.series.Series
+#+END_SRC
 
 
 # ** Index
 
-# #+BEGIN_SRC python
-
-# #+END_SRC
 
 
 # ** Data Selection in Series
