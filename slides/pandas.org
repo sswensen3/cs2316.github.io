@@ -14,14 +14,15 @@
 #+LaTeX_HEADER: \usepackage{amsmath,amsthm, amssymb, latexsym, listings, qtree}
 #+LaTeX_HEADER: \lstset{frame=tb, aboveskip=1mm, belowskip=0mm, showstringspaces=false, columns=flexible, basicstyle={\scriptsize\ttfamily}, numbers=left, frame=single, breaklines=true, breakatwhitespace=true}
 #+LaTeX_HEADER: \setbeamertemplate{footline}[frame number]
-
+#+LaTeX_HEADER: \hypersetup{colorlinks=true,urlcolor=blue}
 
 * Pandas
 
 ** Pandas
 
 - Built on NumPy
-- Adds
+- Adds data structures and data manipulation tools
+- Enables easier data cleaning and analysis
 
 #+BEGIN_SRC python
 import pandas as pd
@@ -196,6 +197,8 @@ dtype: int64
 
 ** DataFrame
 
+
+The simplest way to create a DataFrame is with a dictionary of dictionaries:
 #+BEGIN_SRC python
 In [42]: jobs = pd.DataFrame({'salary': salary_data, 'openings': openings})
 
@@ -227,7 +230,7 @@ Out[47]: Index(['openings', 'salary'], dtype='object')
 
 ** Simple DataFrame Indexing
 
-In a NumPy array you index a 2-d array by row. In a Panda DataFrame you index by column.
+Simplest indexing of DataFrame is by column name.
 
 #+BEGIN_SRC python
 In [48]: jobs['salary']
@@ -252,7 +255,111 @@ Out[49]: pandas.core.series.Series
 #+END_SRC
 
 
-# ** Index
+** General Row Indexing
+
+The ~loc~ indexer indexes by row name:
+#+BEGIN_SRC python
+In [13]: jobs.loc['Software Engineer']
+Out[13]:
+openings     17085
+salary      101000
+Name: Software Engineer, dtype: int64
+
+In [14]: jobs.loc['Data Engineer':'Databse Administrator']
+Out[14]:
+                        openings  salary
+Data Engineer               2599  106000
+Data Scientist              4184  110000
+Database Administrator      2877   93000
+#+END_SRC
+
+Note that slice ending is inclusive when indexing by name.
+
+The ~iloc~ indexer indexes rows by position:
+#+BEGIN_SRC python
+In [15]: jobs.iloc[1:3]
+Out[15]:
+                openings  salary
+Data Engineer       2599  106000
+Data Scientist      4184  110000
+#+END_SRC
+
+Note that slice ending is exclusive when indexing by integer position.
+
+
+** Special Case Row Indexing
+
+#+BEGIN_SRC python
+In [16]: jobs[:2]
+Out[16]:
+                   openings  salary
+Analytics Manager      1958  112000
+Data Engineer          2599  106000
+
+In [17]: jobs[jobs['salary'] > 100000]
+Out[17]:
+                    openings  salary
+Analytics Manager       1958  112000
+Data Engineer           2599  106000
+Data Scientist          4184  110000
+DevOps Engineer         2725  110000
+Software Architect      2232  125000
+Software Engineer      17085  101000
+#+END_SRC
+
+These are shortcuts for ~loc~ and ~iloc~ indexing:
+
+#+BEGIN_SRC python
+In [20]: jobs.iloc[:2]
+Out[20]:
+                   openings  salary
+Analytics Manager      1958  112000
+Data Engineer          2599  106000
+
+In [21]: jobs.loc[jobs['salary'] > 100000]
+Out[21]:
+                    openings  salary
+Analytics Manager       1958  112000
+Data Engineer           2599  106000
+Data Scientist          4184  110000
+DevOps Engineer         2725  110000
+Software Architect      2232  125000
+Software Engineer      17085  101000
+#+END_SRC
+
+** Adding Columns
+
+Add column by broadcasting a single value:
+#+BEGIN_SRC python
+In [23]: jobs
+Out[23]:
+                        openings  salary 2316 Prepares
+Analytics Manager           1958  112000          True
+Data Engineer               2599  106000          True
+Data Scientist              4184  110000          True
+Database Administrator      2877   93000          True
+DevOps Engineer             2725  110000          True
+Software Architect          2232  125000          True
+Software Engineer          17085  101000          True
+Supply Chain Manager        1270  100000          True
+#+END_SRC
+
+Add column by computing value based on row's data:
+#+BEGIN_SRC python
+In [24]: jobs['6 Figures'] = jobs['salary'] > 100000
+
+In [25]: jobs
+Out[25]:
+                        openings  salary 2316 Prepares 6 Figures
+Analytics Manager           1958  112000          True      True
+Data Engineer               2599  106000          True      True
+Data Scientist              4184  110000          True      True
+Database Administrator      2877   93000          True     False
+DevOps Engineer             2725  110000          True      True
+Software Architect          2232  125000          True      True
+Software Engineer          17085  101000          True      True
+Supply Chain Manager        1270  100000          True     False
+#+END_SRC
 
 
 
@@ -365,3 +472,5 @@ pd.read_csv('wpb-tides-2017.txt', sep='\t', skiprows=14, header=None,
             names=['Date', 'Day', 'Time', 'Pred(ft)', 'Pred(cm)', 'High/Low'],
             parse_dates=['Date','Time'])
 #+END_SRC
+
+Let's use the indexing and data selection techniques we've learned to re-do the  [[../exercises/tides.html][Tides Exercise]] as a Jupyter Notebook. For convenience, ~wpb-tides-2017.txt~ is in the [[https://github.com/cs2316/cs2316.github.io/tree/master/code/analytics][code/analytics]] directory, or you can [[../code/analytics/wpb-tides-2017.txt][download it]].
