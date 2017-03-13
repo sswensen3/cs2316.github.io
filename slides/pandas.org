@@ -354,3 +354,14 @@ Out[49]: pandas.core.series.Series
 # #+BEGIN_SRC python
 
 # #+END_SRC
+
+** Messy CSV Files
+
+Remember the [[../exercises/tides.html][Tides Exercise]]? Pandas's ~read_csv~ can handle most of the data pre-processing:
+
+#+BEGIN_SRC python
+pd.read_csv('wpb-tides-2017.txt', sep='\t', skiprows=14, header=None,
+            usecols=[0,1,2,3,5,7],
+            names=['Date', 'Day', 'Time', 'Pred(ft)', 'Pred(cm)', 'High/Low'],
+            parse_dates=['Date','Time'])
+#+END_SRC
