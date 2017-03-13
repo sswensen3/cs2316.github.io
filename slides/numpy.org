@@ -257,9 +257,18 @@ array([[ 1,  2,  3],
 
 # #+END_SRC
 
-** Universal Functions on NumPy Arrays
+** Universal Functions: Vectorized Operations on Arrays
 
-Operations between scalars and arrays are /vectorized/.
+
+Operations between like-shaped arrays are /vectorized/, that is, the loop that applies the operations to the elements of the arrays elementwise is pushed into the compiled C-code layer instead of Python. For example:
+
+#+BEGIN_SRC python
+In [114]: np.arange(2, 20, 2) / np.arange(1, 10)
+Out[114]: array([ 2.,  2.,  2.,  2.,  2.,  2.,  2.,  2.,  2.])
+#+END_SRC
+
+When arrays don't have the same shape, the smaller array is "broadcast" across the larger array. The simplest example is when the smaller array is a scalar value:
+
 #+BEGIN_SRC python
 In [108]: a = np.arange(9)
 
@@ -276,12 +285,7 @@ array([[  1,   2,   4],
        [ 64, 128, 256]])
 #+END_SRC
 
-Operations between like-shaped arrays are also vectorized:
-#+BEGIN_SRC python
-In [114]: np.arange(2, 20, 2) / np.arange(1, 10)
-Out[114]: array([ 2.,  2.,  2.,  2.,  2.,  2.,  2.,  2.,  2.])
-#+END_SRC
-
+In general, broadcasting can occur between any two arrays with compatible dimensions. General braodcasting between multi-dimensional arrays is beyond the scope of this course. See [[https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html][the NumPy docs]] for details.
 
 ** Array Aggregations
 
@@ -318,6 +322,85 @@ Out[134]: array([0, 3, 6])
 In [135]: np.arange(9).reshape(3,3).max(axis=1)
 Out[135]: array([2, 5, 8])
 #+END_SRC
+
+** Boolean Operations
+
+You can broadcast boolean expressions just like arithmentic expressions:
+
+#+BEGIN_SRC python
+In [163]: exam1scores = np.loadtxt('exam1grades.txt')
+
+In [164]: exam1scores
+Out[164]:
+array([  72.,   72.,   50.,   65.,   60.,   73.,   93.,   88.,   97., ...
+         84.,   75.,   88.,   75.,   86.,   49.,   65.,   69.,   87.])
+#+END_SRC
+
+How many people "passed"? First, you can apply a comparison operator to an array to get an array of boooleans:
+
+#+BEGIN_SRC python
+In [165]: exam1scores > 70
+Out[165]:
+array([ True,  True, False, False, False,  True,  True,  True,  True, ...
+        True,  True,  True,  True,  True, False, False, False,  True], dtype=bool)
+#+END_SRC
+
+Then you can apply the ~np.sum~ aggregation function to count the booleans in the resulting array of booleans:
+
+#+BEGIN_SRC python
+In [169]: np.sum(exam1scores > 70)
+Out[169]: 77
+#+END_SRC
+
+You can also combine comparisons with logical operators. How many Bs?
+
+#+BEGIN_SRC python
+In [173]: np.sum((exam1scores >= 80) & (exam1scores < 90))
+Out[173]: 27
+#+END_SRC
+
+Note the syntax with single ~&~ -- NumPy uses efficient bitwise logical operators.
+
+** Masking
+
+First, boolean indexing: you can use a like-shaped array of bools to index into an array, which selects items from the array. The arrays of bools is called a /mask/ and using it to select elements is called /masking/.
+#+BEGIN_SRC python
+In [175]: xs = np.array([0,1,2,3,4,5,6,7,8,9])
+
+In [177]: xs[[True, False, True, False, True, False, True, False, True, False]]
+Out[177]: array([0, 2, 4, 6, 8])
+#+END_SRC
+
+Since you can create arrays of bools easily with comparison ufuncs, you can combine boolean indexing with broadcasting to easily mask an array:
+
+#+BEGIN_SRC python
+In [179]: xs[(xs % 2) == 0]
+Out[179]: array([0, 2, 4, 6, 8])
+#+END_SRC
+
+** Fancy Indexing
+
+In its simplest form, fancy indexing means using an array of indices to access arbitrary array elements.
+
+#+BEGIN_SRC python
+In [175]: xs = np.array([0,1,2,3,4,5,6,7,8,9])
+
+In [181]: xs[[0, 5, 9]]
+Out[181]: array([0, 5, 9])
+
+In [182]: ys = np.array([0,2,4,6,8,10,12,14,16,18])
+
+In [183]: ys[[0, 5, 9]]
+Out[183]: array([ 0, 10, 18])
+#+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
 
 ** Loading Data From Files
 
@@ -356,30 +439,6 @@ In [101]: exam1_avg = np.array(studs[1:, 1], dtype=float).mean()
 In [102]: exam1_avg
 Out[102]: 75.666666666666671
 #+END_SRC
-
-# ** Array Broadcasting
-
-# #+BEGIN_SRC python
-
-# #+END_SRC
-
-# ** Array Masks
-
-# #+BEGIN_SRC python
-
-# #+END_SRC
-
-# ** Comparisons in Arrays
-
-# #+BEGIN_SRC python
-
-# #+END_SRC
-
-# ** Sorting Arrays
-
-# #+BEGIN_SRC python
-
-# #+END_SRC
 
 # ** Partitioning Arrays
 
