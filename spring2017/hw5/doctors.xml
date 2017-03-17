@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<doctors>
+  <doctor>
+    <firstName>Julius</firstName>
+    <lastName>Erving</lastName>
+    <specialty>Dunking</specialty>
+  </doctor>
+  <doctor>
+    <firstName>Dough</firstName>
+    <lastName>Nut</lastName>
+    <specialty>Dunking</specialty>
+  </doctor>
+  <doctor>
+    <firstName>Ben</firstName>
+    <lastName>Carson</lastName>
+    <specialty>Brain Surgery</specialty>
+  </doctor>
+</doctors>
