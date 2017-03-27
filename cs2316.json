@@ -145,8 +145,8 @@
         "materials": [""],
         "order": [100]
     },
-    "scipy": {
-        "topic": "[SciPy](slides/scipy.pdf)",
+    "ipython": {
+        "topic": "[iPython](slides/ipython.pdf)",
         "materials": [""],
         "order": [25]
     },
