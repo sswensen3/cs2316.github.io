@@ -18,32 +18,169 @@
 
 * Matplotlib
 
-** Matplotlib in iPython Shells
+** Matplotlib
 
-** Matplotlib in iPython Notebooks
+- Matlab-like plotting interface
 
-** Line Plots
+- Standard import:
+  #+BEGIN_SRC python
+  import matplotlib.pyplot as plt
+  #+END_SRC
 
-** Scatter Plots
+- To use in iPython:
+  #+BEGIN_SRC python
+  %matplotlib
+  #+END_SRC
 
-** Error Bars
+- To use in Jupyter Notebook:
+  #+BEGIN_SRC python
+  %matplotlib inline
+  #+END_SRC
 
-** Density Plots
+** Figures and Axes
 
-** Contour Plots
+Every plot resides in a figure.
+#+BEGIN_SRC python
+fig = plt.figure()
+#+END_SRC
 
-** Histograms
+The /axes/ is a bounding box with ticks and labels on which a plot is charted.
 
-** Plot Legends
+#+BEGIN_SRC python
 
-** Plot Colors
+#+END_SRC
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
 
 ** Subplots
 
-** Annotations
+# #+BEGIN_SRC python
 
-** 3-D Plots
+# #+END_SRC
 
-** Geographic Data
+# #+BEGIN_SRC python
 
-** Seaborn
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+# #+BEGIN_SRC python
+
+# #+END_SRC
+
+
+
+# ** Matplotlib in iPython Shells
+
+# ** Matplotlib in iPython Notebooks
+
+# ** Line Plots
+
+# ** Scatter Plots
+
+# ** Error Bars
+
+# ** Density Plots
+
+# ** Contour Plots
+
+# ** Histograms
+
+# ** Plot Legends
+
+# ** Plot Colors
+
+# ** Subplots
+
+# ** Annotations
+
+# ** 3-D Plots
+
+# ** Geographic Data
+
+# ** Seaborn

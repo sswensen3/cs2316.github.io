@@ -4,11 +4,19 @@
   <person>
     <firstName>Alan</firstName>
     <lastName>Turing</lastName>
-    <profession>Computer Scientist</profession>
+    <professions>
+      <profession>Computer Scientist</profession>
+      <profession>Mathematician</profession>
+      <profession>Computer Scientist</profession>
+      <profession>Cryptographer</profession>
+    </professions>
   </person>
   <person>
     <firstName>Stephen</firstName>
     <lastName>Hawking</lastName>
-    <profession>Physicist</profession>
+    <professions>
+      <profession>Physicist</profession>
+      <profession>Comedian</profession>
+    </professions>
   </person>
 </people>

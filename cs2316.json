@@ -83,9 +83,12 @@
         "materials": ["IP 8", "Exercise: [Student Emails](exercises/student-emails.html) ([Sample Answer](exercises/student_emails.py))", "Exercise: [Tides](exercises/tides.html)", "Exercise: [Grades Report](exercises/grades_report.html)"],
         "order": [13]
     },
-    "xml": {
-        "topic": "[XML](slides/xml.pdf)",
-        "materials": ["IP 8", "[people.xml](code/structured-files/people.xml)", "Exercise: [Books](exercises/books.html)"],
+    "data-exchange-formats": {
+        "topic": "[Data Exchange Formats](slides/data-exchange-formats.pdf)",
+        "materials": ["IP 8", "[XML](slides/xml.pdf)",
+                      "[JSON Spec](http://json.org/)",
+                      "[people.xml](code/structured-files/people.xml)",
+                      "Exercise: [Books](exercises/books.html)"],
         "order": [14]
     },
     "web-services": {
