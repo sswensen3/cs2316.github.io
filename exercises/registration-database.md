@@ -25,8 +25,9 @@ You work for the registrar of a major university and have been tasked with creat
 Write a SQL script named `registration.sql` that creates a database with the following tables:
 
 - `dept` - with `dept_id`, `name`, and `dean`
-- `course` - with `course_id`, `number` (like `CS 2316`), and `name`
+- `course` - with `course_id`, `number` (like `CS 2316`), `name`, and `dept_id`, where `dept_id` is a foreign key to the `dept` table.
 
+Choose appropriate primary keys for your tables.
 
 Write a SQL script that populates the `dept` and `course` tables with sample data of your choosing.
 
