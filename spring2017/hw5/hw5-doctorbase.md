@@ -76,7 +76,7 @@ Your `query-doctors.sql` should contain only the `SELECT` queries requested abov
 ## Tips
 
 - Your `import_doctors.py` should look like the example program we wrote in class.
-- Review the [example SQL code](../../code/databases) on the course web site.
+- Review the [example SQL code](https://github.com/cs2316/cs2316.github.io/tree/master/code/databases) on the course web site.
 - SQLite doesn't have a datetime data type, so you have two options: Julian day, or text.  The simplest approach is using the `text` type for your datetime column and storing datetime values using [the subest of ISO 8601 used by internet applications](http://www.w3.org/TR/NOTE-datetime).  For example, the text representing 11:55pm on 26 June 2014 would be `2014-06-26T23:55`.  Can you think of an advantage of formatting datetime strings like this?
 - If you use the datetime format suggested above, you can match parts of a field using the `LIKE` or `GLOB` SQL operators.  For example, to find all the rows in `visit` that occurred in March 2005, you could use ` select * from visit where date like '2005-03-%';` or `select * from visit where date glob '2005-03-*';`
 
