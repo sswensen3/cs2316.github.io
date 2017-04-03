@@ -86,6 +86,7 @@
     "data-exchange-formats": {
         "topic": "[Data Exchange Formats](slides/data-exchange-formats.pdf)",
         "materials": ["IP 8", "[XML](slides/xml.pdf)",
+                      "[Python XML and Database APIs](slides/python-xml-database.pdf)",
                       "[JSON Spec](http://json.org/)",
                       "[people.xml](code/structured-files/people.xml)",
                       "Exercise: [Books](exercises/books.html)"],
@@ -144,8 +145,8 @@
         "materials": [""],
         "order": [100]
     },
-    "scipy": {
-        "topic": "[SciPy](slides/scipy.pdf)",
+    "ipython": {
+        "topic": "[iPython](slides/ipython.pdf)",
         "materials": [""],
         "order": [25]
     },

@@ -21,7 +21,12 @@
 ** Data Exchange Formats
 
 - XML
+
+  - A verbose textual representation of trees
+
 - JSON
+
+  - JavaScript Object notation -- like a Python ~dict~
 
 ** XML Format
 
@@ -56,13 +61,113 @@
 
 - Python's built-in [[https://docs.python.org/3/library/xml.etree.elementtree.html][ElementTree API]]
 
+  - Builds a nested set of objects representing a Document Object Model (DOM) tree
+
 - [[https://github.com/martinblech/xmltodict][xmltodict]] "makes working with XML feel like you are working with JSON"
 
 
+** Parsing XML with ElementTree
+
+#+BEGIN_SRC python
+In [17]: import xml.etree.ElementTree as ET
+
+In [18]: root = ET.parse('people.xml')
+
+In [21]: persons = root.findall("person")
+
+In [24]: for person in persons:
+    ...:     print(person.find("firstName").text, end="")
+    ...:     print(person.find("lastName").text)
+    ...:     for profession in person.find("professions"):
+    ...:         print("\t", profession.text)
+    ...:
+AlanTuring
+	 Computer Scientist
+	 Mathematician
+	 Computer Scientist
+	 Cryptographer
+StephenHawking
+	 Physicist
+	 Comedian
+#+END_SRC
+
+** Parsing XML with ~xmltodict~
+
+#+BEGIN_SRC python
+In [5]: ps = xmltodict.parse(open('people.xml').read())
+
+In [6]: ps
+Out[6]:
+OrderedDict([('people',
+              OrderedDict([('person',
+                            [OrderedDict([('firstName', 'Alan'),
+                                          ('lastName', 'Turing'),
+                                          ('professions',
+                                           OrderedDict([('profession',
+                                                         ['Computer Scientist',
+                                                          'Mathematician',
+                                                          'Computer Scientist',
+                                                          'Cryptographer'])]))]),
+                             OrderedDict([('firstName', 'Stephen'),
+                                          ('lastName', 'Hawking'),
+                                          ('professions',
+                                           OrderedDict([('profession',
+                                                         ['Physicist',
+                                                          'Comedian'])]))])])]))])
+#+END_SRC
+
 ** JSON Format
 
-Just like Python data structures but you have to use double quotes for strings.
+Just like Python data structures but you have to use double quotes for strings. Here's the XML people example represented as JSON:
+
+#+BEGIN_SRC python
+{
+  "people": {
+    "person": [
+      {
+        "firstName": "Alan",
+        "lastName": "Turing",
+        "professions": {
+          "profession": ["Computer Scientist", "Mathematician",
+                         "Computer Scientist", "Cryptographer"]
+         }
+       },
+       {
+         "firstName": "Stephen",
+         "lastName": "Hawking",
+         "professions": {
+           "profession": ["Physicist", "Comedian"]
+         }
+       }
+    ]
+  }
+}
+#+END_SRC
 
 ** Processing JSON
 
-- Python's built-in [[https://docs.python.org/3/library/json.html][JSON encoder and decoder]]
+Use Python's built-in [[https://docs.python.org/3/library/json.html][JSON encoder and decoder]]
+
+- Loading from a string:
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+- Loading from a file:
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+- Dumping to a string
+
+#+BEGIN_SRC python
+
+#+END_SRC
+
+- Dumping to a file:
+
+#+BEGIN_SRC python
+
+#+END_SRC

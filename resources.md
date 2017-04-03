@@ -15,8 +15,8 @@ Try to do the following before the first day of class.
 
 ```sh
 $ conda update conda
-$ conda install pymysql flask requests beautifulsoup4 pyqt
-$ conda install numpy pandas scipy matplotlib scikit-learn ipython-notebook
+$ conda install requests beautifulsoup4 sqlite pyqt ipython numpy pandas matplotlib jupyter
+$ conda install scipy scikit-learn
 ```
 
 For this class you don't technically need the third line above, but these are common packages used in data analytics, which is a major application area for Python. We may discuss some of these as special topics during the last week of the course.
